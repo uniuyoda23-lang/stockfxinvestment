@@ -1,13 +1,16 @@
 import { useState, useEffect, FormEvent } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Button } from '../components/ui/Button';
 import { Input } from '../components/ui/Input';
 import { Logo } from '../components/investment/Logo';
-import { Mail, Lock } from 'lucide-react';
+import { Mail, Lock, CheckCircle2, AlertCircle } from 'lucide-react';
 import { setCurrentUserFromProfile, apiRegister } from '../lib/session';
+import { generateOTP, storeOTP, verifyOTP, deleteOTP, getOTPAttempts } from '../lib/otpService';
 interface RegisterPageProps {
   onNavigate: (page: string) => void;
 }
 export function RegisterPage({ onNavigate }: RegisterPageProps) {
+  const { t } = useTranslation();
   const [isLoading, setIsLoading] = useState(false);
 
   // Form state
@@ -18,11 +21,13 @@ export function RegisterPage({ onNavigate }: RegisterPageProps) {
 
   // Verification flow
   const [step, setStep] = useState<'form' | 'verify'>('form');
-  const [sentCode, setSentCode] = useState<string | null>(null);
+  const [sentOTP, setSentOTP] = useState<string | null>(null);
   const [codeInput, setCodeInput] = useState('');
   const [isVerifying, setIsVerifying] = useState(false);
   const [verifyError, setVerifyError] = useState<string | null>(null);
   const [resendCooldown, setResendCooldown] = useState(0);
+  const [sendOtpError, setSendOtpError] = useState<string | null>(null);
+  const [remainingAttempts, setRemainingAttempts] = useState(5);
 
   useEffect(() => {
     let t: number | undefined;
@@ -34,51 +39,103 @@ export function RegisterPage({ onNavigate }: RegisterPageProps) {
     };
   }, [resendCooldown]);
 
-  const sendVerificationCode = (toEmail: string) => {
-    const code = String(Math.floor(100000 + Math.random() * 900000));
-    setSentCode(code);
-    setResendCooldown(30);
-    console.info('Simulated verification code for', toEmail, '→', code);
+  const sendVerificationCode = async (toEmail: string) => {
+    setSendOtpError(null);
+    setIsLoading(true);
+    try {
+      // Generate OTP
+      const otp = generateOTP();
+      
+      // Store OTP locally for verification
+      storeOTP(toEmail, otp);
+
+      // Send OTP via email API
+      const response = await fetch('/api/send-otp', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email: toEmail,
+          otp: otp,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to send OTP email');
+      }
+
+      setSentOTP(otp);
+      setResendCooldown(60);
+      console.info('OTP sent to', toEmail);
+    } catch (err: any) {
+      setSendOtpError('Failed to send OTP. Please try again.');
+      console.error('Error sending OTP:', err);
+      deleteOTP(toEmail);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    setIsLoading(true);
-    setTimeout(() => {
-      setIsLoading(false);
-      // Start verification flow (simulate sending code)
-      sendVerificationCode(email);
-      setStep('verify');
-    }, 800);
+    setSendOtpError(null);
+    
+    // Validate form
+    if (!firstName || !lastName || !email || !password) {
+      setSendOtpError('Please fill in all fields');
+      return;
+    }
+
+    await sendVerificationCode(email);
+    setStep('verify');
+    setCodeInput('');
   };
 
   const handleVerify = async (e?: FormEvent) => {
     if (e) e.preventDefault();
+    
+    if (!codeInput.trim()) {
+      setVerifyError('Please enter the verification code');
+      return;
+    }
+
     setIsVerifying(true);
     setVerifyError(null);
-    setTimeout(async () => {
-      if (codeInput.trim() === sentCode) {
-        try {
-          // Call the API to register the user
-          const name = `${firstName} ${lastName}`.trim();
-          const user = await apiRegister(name, email, password);
-          setCurrentUserFromProfile(user);
-          onNavigate('dashboard');
-        } catch (err: any) {
-          setVerifyError(err?.message || 'Registration failed');
-        } finally {
-          setIsVerifying(false);
+
+    try {
+      // Verify OTP
+      if (!verifyOTP(email, codeInput.trim())) {
+        const attempts = getOTPAttempts(email);
+        setRemainingAttempts(attempts);
+        if (attempts === 0) {
+          setVerifyError('Too many incorrect attempts. Please request a new code.');
+        } else {
+          setVerifyError(`Invalid code. ${attempts} attempt${attempts !== 1 ? 's' : ''} remaining.`);
         }
-      } else {
         setIsVerifying(false);
-        setVerifyError('The verification code is incorrect.');
+        return;
       }
-    }, 800);
+
+      // OTP verified! Now register the user
+      const name = `${firstName} ${lastName}`.trim();
+      const user = await apiRegister(name, email, password);
+      setCurrentUserFromProfile(user);
+      
+      // Navigate to dashboard
+      onNavigate('dashboard');
+    } catch (err: any) {
+      setVerifyError(err?.message || 'Registration failed. Please try again.');
+      console.error('Registration error:', err);
+    } finally {
+      setIsVerifying(false);
+    }
   };
 
-  const handleResend = () => {
+  const handleResend = async () => {
     if (resendCooldown > 0) return;
-    sendVerificationCode(email);
+    setVerifyError(null);
+    await sendVerificationCode(email);
   };
   return (
     <div className="min-h-screen flex flex-col justify-center py-12 sm:px-6 lg:px-8 relative">
@@ -93,15 +150,15 @@ export function RegisterPage({ onNavigate }: RegisterPageProps) {
           </div>
         </div>
         <h2 className="mt-2 text-center text-3xl font-bold tracking-tight text-slate-900">
-          Create your account
+          {t('register.title')}
         </h2>
         <p className="mt-2 text-center text-sm text-slate-600">
-          Already have an account?{' '}
+          {t('register.subtitle')}{' '}
           <button
             onClick={() => onNavigate('login')}
             className="font-medium text-emerald-600 hover:text-emerald-500">
 
-            Sign in
+            {t('register.haveAccount')}
           </button>
         </p>
       </div>
@@ -112,14 +169,14 @@ export function RegisterPage({ onNavigate }: RegisterPageProps) {
           {step === 'form' && (
             <form className="space-y-6" onSubmit={handleSubmit}>
               <div className="grid grid-cols-2 gap-4">
-                <Input label="First Name" placeholder="John" required value={firstName} onChange={(e)=>setFirstName(e.target.value)} />
-                <Input label="Last Name" placeholder="Doe" required value={lastName} onChange={(e)=>setLastName(e.target.value)} />
+                <Input label={t('register.firstNameLabel')} placeholder={t('register.firstNamePlaceholder')} required value={firstName} onChange={(e)=>setFirstName(e.target.value)} />
+                <Input label={t('register.lastNameLabel')} placeholder={t('register.lastNamePlaceholder')} required value={lastName} onChange={(e)=>setLastName(e.target.value)} />
               </div>
 
               <Input
-                label="Email address"
+                label={t('register.emailLabel')}
                 type="email"
-                placeholder="you@example.com"
+                placeholder={t('register.emailPlaceholder')}
                 required
                 leftIcon={<Mail className="h-5 w-5" />}
                 value={email}
@@ -127,15 +184,21 @@ export function RegisterPage({ onNavigate }: RegisterPageProps) {
 
 
               <Input
-                label="Password"
+                label={t('register.passwordLabel')}
                 type="password"
-                placeholder="Create a password"
+                placeholder={t('register.passwordPlaceholder')}
                 required
                 leftIcon={<Lock className="h-5 w-5" />}
-                helperText="Must be at least 8 characters"
+                helperText={t('register.passwordHelper')}
                 value={password}
                 onChange={(e)=>setPassword(e.target.value)} />
 
+              {sendOtpError && (
+                <div className="flex items-start gap-3 rounded-lg bg-red-50 p-4 border border-red-200">
+                  <AlertCircle className="h-5 w-5 text-red-600 flex-shrink-0 mt-0.5" />
+                  <p className="text-sm text-red-700">{sendOtpError}</p>
+                </div>
+              )}
 
               <div className="flex items-start">
                 <div className="flex h-5 items-center">
@@ -149,19 +212,19 @@ export function RegisterPage({ onNavigate }: RegisterPageProps) {
                 </div>
                 <div className="ml-3 text-sm">
                   <label htmlFor="terms" className="font-medium text-slate-700">
-                    I agree to the{' '}
+                    {t('register.termsLabel')}{' '}
                     <a
                       href="#"
                       className="text-emerald-600 hover:text-emerald-500">
 
-                      Terms
+                      {t('register.terms')}
                     </a>{' '}
-                    and{' '}
+                    {t('register.and')}{' '}
                     <a
                       href="#"
                       className="text-emerald-600 hover:text-emerald-500">
 
-                      Privacy Policy
+                      {t('register.privacy')}
                     </a>
                   </label>
                 </div>
@@ -173,35 +236,74 @@ export function RegisterPage({ onNavigate }: RegisterPageProps) {
                 size="lg"
                 isLoading={isLoading}>
 
-                Create Account
+                {t('register.createButton')}
               </Button>
             </form>
           )}
 
           {step === 'verify' && (
             <>
+              <div className="mb-6">
+                <h3 className="text-lg font-semibold text-slate-900 mb-2">
+                  {t('register.verifyTitle')}
+                </h3>
+                <p className="text-sm text-slate-600">
+                  We sent a verification code to <span className="font-medium text-slate-900">{email}</span>
+                </p>
+              </div>
+
               <form className="space-y-6" onSubmit={handleVerify}>
-                <Input label="Verification code" placeholder="123456" required value={codeInput} onChange={(e)=>setCodeInput(e.target.value)} />
+                <Input
+                  label="Verification Code"
+                  placeholder={t('register.verifyPlaceholder')}
+                  required
+                  value={codeInput}
+                  onChange={(e) => setCodeInput(e.target.value.replace(/\D/g, '').slice(0, 6))}
+                  maxLength={6}
+                  autoComplete="off"
+                />
 
-                {verifyError && <p className="text-sm text-red-600">{verifyError}</p>}
-
-                {/* Debug: Show code for local dev */}
-                {sentCode && (
-                  <p className="text-xs text-emerald-600 text-center">DEV: Your code is <span className="font-mono font-bold">{sentCode}</span></p>
+                {verifyError && (
+                  <div className="flex items-start gap-3 rounded-lg bg-red-50 p-4 border border-red-200">
+                    <AlertCircle className="h-5 w-5 text-red-600 flex-shrink-0 mt-0.5" />
+                    <p className="text-sm text-red-700">{verifyError}</p>
+                  </div>
                 )}
 
-                <div className="flex items-center justify-between">
-                  <Button variant="ghost" onClick={()=>setStep('form')}>Change email</Button>
-                  <div className="flex items-center gap-3">
-                    <button type="button" onClick={handleResend} disabled={resendCooldown > 0} className="text-sm text-slate-500 hover:text-slate-900">
-                      {resendCooldown > 0 ? `Resend (${resendCooldown}s)` : 'Resend code'}
+                <div className="flex flex-col gap-4">
+                  <Button
+                    type="submit"
+                    className="w-full"
+                    size="lg"
+                    isLoading={isVerifying}>
+                    {t('register.verifyButton')}
+                  </Button>
+
+                  <div className="flex items-center justify-between text-sm">
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setStep('form');
+                        setCodeInput('');
+                        setVerifyError(null);
+                        deleteOTP(email);
+                      }}
+                      className="text-slate-600 hover:text-slate-900 font-medium">
+                      {t('register.changeEmail')}
                     </button>
-                    <Button type="submit" size="lg" isLoading={isVerifying}>Verify</Button>
+
+                    <button
+                      type="button"
+                      onClick={handleResend}
+                      disabled={resendCooldown > 0}
+                      className="text-emerald-600 hover:text-emerald-700 disabled:text-slate-400 font-medium">
+                      {resendCooldown > 0 ? `${t('register.resendCooldown').replace('{{seconds}}', String(resendCooldown))}` : t('register.resendCode')}
+                    </button>
                   </div>
                 </div>
               </form>
-                      </>
-                    )}
+            </>
+          )}
                   </div>
                 </div>
               </div>

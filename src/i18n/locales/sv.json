@@ -1,0 +1,174 @@
+{
+  "nav": {
+    "signIn": "Logga in",
+    "getStarted": "Kom igång"
+  },
+  "hero": {
+    "badge": "🎉 Provisionsfri handel på dina första $10.000",
+    "title1": "Investera smartare.",
+    "title2": "Väx snabbare.",
+    "description": "Nästa generationens plattform för aktier, krypto och ETF:er. Professionella verktyg. Noll komplexitet. Handla med säkerhet.",
+    "startButton": "Börja investera gratis",
+    "signInButton": "Logga in"
+  },
+  "features": {
+    "title": "Varför välja StockFx?",
+    "fast": {
+      "name": "Blixtsnabb",
+      "desc": "Utför affärer på millisekunder med ultralåg latens."
+    },
+    "security": {
+      "name": "Banksäkerhet",
+      "desc": "256-bitskryptering, 2FA, FDIC-försäkringsskydd."
+    },
+    "mobile": {
+      "name": "Mobil först",
+      "desc": "Fullfjädrad app. Handla överallt, när som helst."
+    },
+    "global": {
+      "name": "Globala marknader",
+      "desc": "Tillgång till aktier, kryptoenheter, ETF:er och optioner världen över."
+    }
+  },
+  "testimonials": {
+    "title": "Älskat av handlare över hela världen",
+    "subtitle": "Gå med över 2 miljoner investerare som litar på StockFx"
+  },
+  "stats": {
+    "traders": "Aktiva handlare",
+    "assets": "Omsatta tillgångar",
+    "commission": "Provisioner",
+    "uptime": "Drifttid"
+  },
+  "pricing": {
+    "title": "Investeringsplaner anpassade för dig",
+    "subtitle": "Välj en investeringsnivå som passar ditt portföljstorleken",
+    "starter": {
+      "name": "Startare",
+      "price": "$1.000 - $5.000",
+      "desc": "Initialinvesteringsintervall",
+      "duration": "1 månad"
+    },
+    "pro": {
+      "name": "Pro",
+      "price": "$5.000 - $25.000",
+      "desc": "Investeringstillväxt intervall",
+      "duration": "2-3 månader",
+      "popular": "Mest populär"
+    },
+    "enterprise": {
+      "name": "Företag",
+      "price": "$25.000+",
+      "desc": "Premium investeringsintervall",
+      "duration": "4+ månader"
+    },
+    "features": {
+      "commissionFree": "Provisionsfri handel",
+      "basicCharting": "Grundläggande diagramverktyg",
+      "mobileAccess": "Mobil appåtkomst",
+      "watchlists": "2 bevakningslistor",
+      "emailSupport": "E-poststöd",
+      "advancedCharting": "Avancerade diagram och analys",
+      "level2": "Realtidsnivå 2-data",
+      "unlimitedWatchlists": "Obegränsade bevakningslistor",
+      "support24": "Prioritetsstöd 24/7",
+      "apiAccess": "API-åtkomst",
+      "advancedAlerts": "Avancerade aviseringar",
+      "dedicatedManager": "Dedikerad portföljförvaltare",
+      "strategy": "Anpassad strategi rådgivning",
+      "whiteLabel": "White-label-lösningar",
+      "integrations": "Avancerade integrationer",
+      "sla": "SLA-garantier",
+      "institutionalPricing": "Institutionell prissättning"
+    },
+    "button": "Börja investera"
+  },
+  "trust": {
+    "title": "Ditt förtroende, vår prioritet",
+    "security": {
+      "name": "Militär-grade säkerhet",
+      "desc": "256-bitskryptering skyddar all din data i transit och i vila."
+    },
+    "insured": {
+      "name": "Försäkrad av FDIC och SIPC",
+      "desc": "Din kontanter ($250k) och värdepapper ($500k) är helt skyddad."
+    },
+    "compliant": {
+      "name": "Reglerad och kompatibel",
+      "desc": "Vi följer alla SEC-, FINRA- och regulatoriska krav."
+    }
+  },
+  "cta": {
+    "title": "Redo att börja handla?",
+    "subtitle": "Gå med miljoner investerare. Få $50 i gratis aktier idag.",
+    "button": "Skapa gratis konto"
+  },
+  "footer": {
+    "description": "Nästa generationens plattform för aktier, kryptoenheter och ETF:er. Professionella verktyg. Noll komplexitet.",
+    "platform": "Plattform",
+    "company": "Företag",
+    "legal": "Juridisk",
+    "social": "Följ oss",
+    "features": "Funktioner",
+    "pricing": "Prissättning",
+    "security": "Säkerhet",
+    "about": "Om oss",
+    "blog": "Blogg",
+    "contact": "Kontakt",
+    "privacy": "Sekretess",
+    "terms": "Villkor",
+    "disclosures": "Avslöjanden",
+    "twitter": "Twitter",
+    "linkedin": "LinkedIn",
+    "youtube": "YouTube",
+    "copyright": "© 2024 StockFx Investment Inc. Alla rättigheter förbehålles. NMLS #123456"
+  },
+  "contact": {
+    "title": "Behöver du hjälp?",
+    "message": "Har du frågor om handel? Våra kontoansvariga är här för att hjälpa dig komma igång!",
+    "contact": "Kontakta vårt team",
+    "later": "Kanske senare"
+  },
+  "login": {
+    "title": "Välkommen tillbaka",
+    "subtitle": "Eller skapa ett nytt konto",
+    "emailLabel": "E-postadress",
+    "emailPlaceholder": "du@exempel.com",
+    "passwordLabel": "Lösenord",
+    "passwordPlaceholder": "••••••••",
+    "signInButton": "Logga in",
+    "noAccount": "skapa ett nytt konto",
+    "backToHome": "Gå tillbaka till hemmet",
+    "serverChecking": "Kontrollerar server...",
+    "serverUp": "Servern är aktiv — försök logga in igen.",
+    "thirdParty": "Eller fortsätt med",
+    "thirdPartyDisabled": "Inloggning från tredje part är för närvarande inaktiverad."
+  },
+  "register": {
+    "title": "Skapa ditt konto",
+    "subtitle": "Har du redan ett konto?",
+    "haveAccount": "Logga in",
+    "firstNameLabel": "Förnamn",
+    "firstNamePlaceholder": "Johan",
+    "lastNameLabel": "Efternamn",
+    "lastNamePlaceholder": "Andersson",
+    "emailLabel": "E-postadress",
+    "emailPlaceholder": "du@exempel.com",
+    "passwordLabel": "Lösenord",
+    "passwordPlaceholder": "Skapa ett lösenord",
+    "passwordHelper": "Måste innehålla minst 8 tecken",
+    "termsLabel": "Jag godkänner",
+    "terms": "Villkor",
+    "and": "och",
+    "privacy": "Integritetspolicy",
+    "createButton": "Skapa konto",
+    "verifyTitle": "Verifieringskod",
+    "verifyPlaceholder": "123456",
+    "verifyError": "Verifieringskoden är felaktig.",
+    "devCode": "DEV: Din kod är",
+    "changeEmail": "Ändra e-post",
+    "resendCode": "Skicka igen kod",
+    "resendCooldown": "Skicka igen ({{seconds}}s)",
+    "verifyButton": "Verifiera"
+  }
+}

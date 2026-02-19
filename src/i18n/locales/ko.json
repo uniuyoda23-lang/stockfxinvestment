@@ -1,0 +1,174 @@
+{
+  "nav": {
+    "signIn": "로그인",
+    "getStarted": "시작하기"
+  },
+  "hero": {
+    "badge": "🎉 첫 $10,000의 수수료 없는 거래",
+    "title1": "더 똑똑하게 투자하세요.",
+    "title2": "더 빠르게 성장하세요.",
+    "description": "주식, 암호화폐 및 ETF를 위한 차세대 플랫폼. 전문가용 도구. 복잡성 없음. 자신감을 가지고 거래하세요.",
+    "startButton": "무료로 투자 시작",
+    "signInButton": "로그인"
+  },
+  "features": {
+    "title": "StockFx를 선택하는 이유는?",
+    "fast": {
+      "name": "빛의 속도",
+      "desc": "초저지연으로 밀리초 단위로 거래를 실행합니다."
+    },
+    "security": {
+      "name": "은행급 보안",
+      "desc": "256비트 암호화, 2FA, FDIC 보험 보호."
+    },
+    "mobile": {
+      "name": "모바일 우선",
+      "desc": "풀 기능 앱. 언제 어디서나 거래하세요."
+    },
+    "global": {
+      "name": "글로벌 시장",
+      "desc": "전 세계 주식, 암호화폐, ETF 및 옵션에 액세스하세요."
+    }
+  },
+  "testimonials": {
+    "title": "전 세계 거래자들에게 사랑받습니다",
+    "subtitle": "StockFx를 신뢰하는 200만 명 이상의 투자자에 합류하세요"
+  },
+  "stats": {
+    "traders": "활성 거래자",
+    "assets": "거래 자산",
+    "commission": "수수료",
+    "uptime": "가동 시간"
+  },
+  "pricing": {
+    "title": "당신을 위한 투자 계획",
+    "subtitle": "포트폴리오 규모에 맞는 투자 수준을 선택하세요",
+    "starter": {
+      "name": "스타터",
+      "price": "$1,000 - $5,000",
+      "desc": "초기 투자 범위",
+      "duration": "1개월"
+    },
+    "pro": {
+      "name": "프로",
+      "price": "$5,000 - $25,000",
+      "desc": "성장 투자 범위",
+      "duration": "2-3개월",
+      "popular": "가장 인기 있는"
+    },
+    "enterprise": {
+      "name": "엔터프라이즈",
+      "price": "$25,000+",
+      "desc": "프리미엄 투자 범위",
+      "duration": "4개월 이상"
+    },
+    "features": {
+      "commissionFree": "수수료 없는 거래",
+      "basicCharting": "기본 차트 도구",
+      "mobileAccess": "모바일 앱 접근",
+      "watchlists": "2개의 관심목록",
+      "emailSupport": "이메일 지원",
+      "advancedCharting": "고급 차트 및 분석",
+      "level2": "실시간 레벨 2 데이터",
+      "unlimitedWatchlists": "무제한 관심목록",
+      "support24": "우선 24/7 지원",
+      "apiAccess": "API 액세스",
+      "advancedAlerts": "고급 알림",
+      "dedicatedManager": "전담 포트폴리오 관리자",
+      "strategy": "맞춤형 전략 컨설팅",
+      "whiteLabel": "화이트 라벨 솔루션",
+      "integrations": "고급 통합",
+      "sla": "SLA 보증",
+      "institutionalPricing": "기관 가격 책정"
+    },
+    "button": "투자 시작"
+  },
+  "trust": {
+    "title": "당신의 신뢰, 우리의 우선순위",
+    "security": {
+      "name": "군사 등급 보안",
+      "desc": "256비트 암호화는 전송 및 저장 중 모든 데이터를 보호합니다."
+    },
+    "insured": {
+      "name": "FDIC 및 SIPC 보험",
+      "desc": "귀하의 현금($250k)과 증권($500k)은 완전히 보호됩니다."
+    },
+    "compliant": {
+      "name": "규제 대상 및 준수",
+      "desc": "모든 SEC, FINRA 및 규제 요구 사항을 준수합니다."
+    }
+  },
+  "cta": {
+    "title": "거래를 시작할 준비가 되셨나요?",
+    "subtitle": "수백만 명의 투자자에 합류하세요. 오늘 $50의 무료 주식을 받으세요.",
+    "button": "무료 계정 생성"
+  },
+  "footer": {
+    "description": "주식, 암호화폐 및 ETF를 위한 차세대 플랫폼. 전문가용 도구. 복잡성 없음.",
+    "platform": "플랫폼",
+    "company": "회사",
+    "legal": "법률",
+    "social": "팔로우",
+    "features": "특징",
+    "pricing": "가격",
+    "security": "보안",
+    "about": "정보",
+    "blog": "블로그",
+    "contact": "연락처",
+    "privacy": "개인정보 보호",
+    "terms": "약관",
+    "disclosures": "공개",
+    "twitter": "트위터",
+    "linkedin": "링크드인",
+    "youtube": "유튜브",
+    "copyright": "© 2024 StockFx Investment Inc. 판권 소유. NMLS #123456"
+  },
+  "contact": {
+    "title": "도움이 필요하신가요?",
+    "message": "거래에 대한 질문이 있으신가요? 저희 계정 담당자가 시작하도록 도와드리겠습니다!",
+    "contact": "당사 팀에 문의하세요",
+    "later": "나중에"
+  },
+  "login": {
+    "title": "환영합니다",
+    "subtitle": "또는 새 계정 만들기",
+    "emailLabel": "이메일 주소",
+    "emailPlaceholder": "당신@예제.com",
+    "passwordLabel": "비밀번호",
+    "passwordPlaceholder": "••••••••",
+    "signInButton": "로그인",
+    "noAccount": "새 계정 만들기",
+    "backToHome": "홈으로 돌아가기",
+    "serverChecking": "서버 확인 중...",
+    "serverUp": "서버가 작동 중입니다. 다시 로그인해보세요.",
+    "thirdParty": "또는 계속",
+    "thirdPartyDisabled": "제3자 로그인은 현재 비활성화되어 있습니다."
+  },
+  "register": {
+    "title": "계정 만들기",
+    "subtitle": "이미 계정이 있으신가요?",
+    "haveAccount": "로그인",
+    "firstNameLabel": "이름",
+    "firstNamePlaceholder": "길동",
+    "lastNameLabel": "성",
+    "lastNamePlaceholder": "홍",
+    "emailLabel": "이메일 주소",
+    "emailPlaceholder": "당신@예제.com",
+    "passwordLabel": "비밀번호",
+    "passwordPlaceholder": "비밀번호 만들기",
+    "passwordHelper": "최소 8자 이상이어야 합니다",
+    "termsLabel": "동의합니다",
+    "terms": "약관",
+    "and": "및",
+    "privacy": "개인정보 보호정책",
+    "createButton": "계정 만들기",
+    "verifyTitle": "확인 코드",
+    "verifyPlaceholder": "123456",
+    "verifyError": "확인 코드가 올바르지 않습니다.",
+    "devCode": "개발자: 귀하의 코드는",
+    "changeEmail": "이메일 변경",
+    "resendCode": "코드 재전송",
+    "resendCooldown": "재전송 ({{seconds}}s)",
+    "verifyButton": "확인"
+  }
+}

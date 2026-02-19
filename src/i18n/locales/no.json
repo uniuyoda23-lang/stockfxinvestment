@@ -1,0 +1,174 @@
+{
+  "nav": {
+    "signIn": "Logg inn",
+    "getStarted": "Kom i gang"
+  },
+  "hero": {
+    "badge": "🎉 Gebyrfri handel på dine første $10.000",
+    "title1": "Invester smartere.",
+    "title2": "Voks raskere.",
+    "description": "Neste generasjons plattform for aksjer, kryptovaluta og ETF-er. Profesjonelle verktøy. Null kompleksitet. Handle med selvtillit.",
+    "startButton": "Begynn å investere gratis",
+    "signInButton": "Logg inn"
+  },
+  "features": {
+    "title": "Hvorfor velge StockFx?",
+    "fast": {
+      "name": "Lynrask",
+      "desc": "Utfør handler på millisekunder med ultralav latens."
+    },
+    "security": {
+      "name": "Banknivå sikkerhet",
+      "desc": "256-bit kryptering, 2FA, FDIC forsikringsbeskyttelse."
+    },
+    "mobile": {
+      "name": "Mobil først",
+      "desc": "Fullt utbygd app. Handle hvor som helst, når som helst."
+    },
+    "global": {
+      "name": "Globale markeder",
+      "desc": "Få tilgang til aksjer, kryptovalutaer, ETF-er og opsjoner verden over."
+    }
+  },
+  "testimonials": {
+    "title": "Elsket av tradere over hele verden",
+    "subtitle": "Bli med over 2 millioner investorer som stoler på StockFx"
+  },
+  "stats": {
+    "traders": "Aktive tradere",
+    "assets": "Handlede eiendeler",
+    "commission": "Provisjoner",
+    "uptime": "Oppetid"
+  },
+  "pricing": {
+    "title": "Investeringsplaner tilpasset deg",
+    "subtitle": "Velg et investeringsnivå som passer størrelsen på porteføljen din",
+    "starter": {
+      "name": "Starter",
+      "price": "$1.000 - $5.000",
+      "desc": "Område for startinvestering",
+      "duration": "1 måned"
+    },
+    "pro": {
+      "name": "Pro",
+      "price": "$5.000 - $25.000",
+      "desc": "Område for vekstinvestering",
+      "duration": "2-3 måneder",
+      "popular": "Mest populær"
+    },
+    "enterprise": {
+      "name": "Bedrift",
+      "price": "$25.000+",
+      "desc": "Område for premium-investering",
+      "duration": "4+ måneder"
+    },
+    "features": {
+      "commissionFree": "Gebyrfri handel",
+      "basicCharting": "Grunnleggende kartverktøy",
+      "mobileAccess": "Mobilappstilgang",
+      "watchlists": "2 overvåkingslister",
+      "emailSupport": "E-poststøtte",
+      "advancedCharting": "Avanserte diagrammer og analyse",
+      "level2": "Sanntids nivå 2-data",
+      "unlimitedWatchlists": "Ubegrensede overvåkingslister",
+      "support24": "Prioritetsstøtte 24/7",
+      "apiAccess": "API-tilgang",
+      "advancedAlerts": "Avanserte varsler",
+      "dedicatedManager": "Dedikert porteføljeforvalter",
+      "strategy": "Tilpasset strategikonsultasjon",
+      "whiteLabel": "White-label-løsninger",
+      "integrations": "Avanserte integrasjoner",
+      "sla": "SLA-garantier",
+      "institutionalPricing": "Institusjonale priser"
+    },
+    "button": "Begynn å investere"
+  },
+  "trust": {
+    "title": "Din tillit, vår prioritet",
+    "security": {
+      "name": "Militær-gradert sikkerhet",
+      "desc": "256-bit kryptering beskytter alle dataene dine under overføring og i hvile."
+    },
+    "insured": {
+      "name": "Forsikret av FDIC og SIPC",
+      "desc": "Pengene dine ($250k) og verdipapirene ($500k) er fullstendig beskyttet."
+    },
+    "compliant": {
+      "name": "Regulert og kompatibel",
+      "desc": "Vi oppfyller alle SEC-, FINRA- og regulatoriske krav."
+    }
+  },
+  "cta": {
+    "title": "Klar til å begynne å handle?",
+    "subtitle": "Bli med millioner av investorer. Få $50 i gratis aksjer i dag.",
+    "button": "Opprett gratis konto"
+  },
+  "footer": {
+    "description": "Neste generasjons plattform for aksjer, kryptovalutaer og ETF-er. Profesjonelle verktøy. Null kompleksitet.",
+    "platform": "Plattform",
+    "company": "Selskap",
+    "legal": "Juridisk",
+    "social": "Følg oss",
+    "features": "Funksjoner",
+    "pricing": "Prising",
+    "security": "Sikkerhet",
+    "about": "Om oss",
+    "blog": "Blogg",
+    "contact": "Kontakt",
+    "privacy": "Personvern",
+    "terms": "Betingelser",
+    "disclosures": "Avsløringer",
+    "twitter": "Twitter",
+    "linkedin": "LinkedIn",
+    "youtube": "YouTube",
+    "copyright": "© 2024 StockFx Investment Inc. Alle rettigheter reservert. NMLS #123456"
+  },
+  "contact": {
+    "title": "Trenger du hjelp?",
+    "message": "Har du spørsmål om handel? Våre kontoansvarlige er her for å hjelpe deg i gang!",
+    "contact": "Kontakt teamet vårt",
+    "later": "Kanskje senere"
+  },
+  "login": {
+    "title": "Velkommen tilbake",
+    "subtitle": "Eller opprett en ny konto",
+    "emailLabel": "E-postadresse",
+    "emailPlaceholder": "du@eksempel.com",
+    "passwordLabel": "Passord",
+    "passwordPlaceholder": "••••••••",
+    "signInButton": "Logg inn",
+    "noAccount": "opprett en ny konto",
+    "backToHome": "Tilbake til hjemmet",
+    "serverChecking": "Sjekker server...",
+    "serverUp": "Serveren kjører — prøv å logge inn igjen.",
+    "thirdParty": "Eller fortsett med",
+    "thirdPartyDisabled": "Innlogging fra tredjeparter er for øyeblikket deaktivert."
+  },
+  "register": {
+    "title": "Opprett kontoen din",
+    "subtitle": "Har du allerede en konto?",
+    "haveAccount": "Logg inn",
+    "firstNameLabel": "Fornavn",
+    "firstNamePlaceholder": "Ola",
+    "lastNameLabel": "Etternavn",
+    "lastNamePlaceholder": "Nordmann",
+    "emailLabel": "E-postadresse",
+    "emailPlaceholder": "du@eksempel.com",
+    "passwordLabel": "Passord",
+    "passwordPlaceholder": "Opprett et passord",
+    "passwordHelper": "Må inneholde minst 8 tegn",
+    "termsLabel": "Jeg godtar",
+    "terms": "Vilkår",
+    "and": "og",
+    "privacy": "Personvernpolicy",
+    "createButton": "Opprett konto",
+    "verifyTitle": "Verifiseringskode",
+    "verifyPlaceholder": "123456",
+    "verifyError": "Verifiseringskoden er ugyldig.",
+    "devCode": "DEV: Koden din er",
+    "changeEmail": "Endre e-post",
+    "resendCode": "Send kode på nytt",
+    "resendCooldown": "Send på nytt ({{seconds}}s)",
+    "verifyButton": "Verifiser"
+  }
+}

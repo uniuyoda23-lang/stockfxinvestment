@@ -1,8 +1,11 @@
 ﻿ import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { TrendingUp, BarChart3, Zap, Shield, Smartphone, Star, Quote, ChevronDown, Mail, X, CheckCircle2, Lock, Users, Globe, Briefcase, Wallet, CreditCard, Cloud, Phone, Activity } from 'lucide-react';
+import { TrendingUp, BarChart3, Quote, ChevronDown, Mail, X, CheckCircle2, Lock, Users, Briefcase, Wallet, CreditCard, Cloud, Phone, Activity, Star } from 'lucide-react';
 import { Logo } from '../components/investment/Logo';
 import { LanguageSwitcher } from '../components/LanguageSwitcher';
+import { AnimatedButton } from '../components/investment/AnimatedButton';
+import { StatCounter } from '../components/investment/StatCounter';
+import { FeatureCard } from '../components/investment/FeatureCard';
 
 interface LandingPageProps {
   onNavigate: (page: string) => void;
@@ -22,6 +25,16 @@ export function LandingPage({ onNavigate }: LandingPageProps) {
   const [showContactModal, setShowContactModal] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [expandedPlan, setExpandedPlan] = useState<number | null>(null);
+  const [backgroundIndex, setBackgroundIndex] = useState(0);
+
+  // Background gradients related to trading/finance
+  const backgroundGradients = [
+    'from-slate-900 via-slate-800 to-slate-900',
+    'from-indigo-900 via-purple-900 to-slate-900',
+    'from-slate-900 via-blue-900 to-slate-900',
+    'from-slate-900 via-green-900 to-slate-900',
+    'from-slate-900 via-rose-900 to-slate-900',
+  ];
 
   const testimonials: Testimonial[] = [
     {
@@ -127,8 +140,17 @@ export function LandingPage({ onNavigate }: LandingPageProps) {
     return () => clearInterval(timer);
   }, []);
 
+  // Rotate background gradient every 5 seconds
+  useEffect(() => {
+    const bgTimer = setInterval(() => {
+      setBackgroundIndex((prev) => (prev + 1) % backgroundGradients.length);
+    }, 5000);
+
+    return () => clearInterval(bgTimer);
+  }, [backgroundGradients.length]);
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+    <div className={`min-h-screen bg-gradient-to-br ${backgroundGradients[backgroundIndex]} transition-all duration-1000 ease-in-out`}>
       {/* Navigation */}
       <nav className="flex items-center justify-between px-6 py-4 max-w-7xl mx-auto">
         <div className="flex items-center gap-3 cursor-pointer" onClick={() => onNavigate('landing')}>
@@ -136,8 +158,9 @@ export function LandingPage({ onNavigate }: LandingPageProps) {
         </div>
         <div className="flex gap-3 items-center">
           <LanguageSwitcher />
-          <button onClick={() => onNavigate('login')} className="px-4 py-2 text-white hover:text-amber-400 transition">{t('nav.signIn')}</button>
-          <button onClick={() => onNavigate('register')} className="px-4 py-2 bg-gradient-to-r from-amber-500 to-orange-500 text-white rounded-lg font-semibold hover:shadow-lg transition">{t('nav.getStarted')}</button>
+          <AnimatedButton onClick={() => onNavigate('admin-login')} variant="ghost" size="sm">Admin</AnimatedButton>
+          <AnimatedButton onClick={() => onNavigate('login')} variant="ghost" size="sm">{t('nav.signIn')}</AnimatedButton>
+          <AnimatedButton onClick={() => onNavigate('register')} variant="primary" size="md">{t('nav.getStarted')}</AnimatedButton>
         </div>
       </nav>
 
@@ -156,39 +179,53 @@ export function LandingPage({ onNavigate }: LandingPageProps) {
           {t('hero.description')}
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <button onClick={() => onNavigate('register')} className="px-8 py-4 bg-gradient-to-r from-amber-500 to-orange-500 text-white rounded-lg font-semibold hover:shadow-xl transition text-lg">
+          <AnimatedButton onClick={() => onNavigate('register')} variant="primary" size="lg">
             {t('hero.startButton')}
-          </button>
-          <button onClick={() => onNavigate('login')} className="px-8 py-4 bg-white/10 border border-slate-400 text-white rounded-lg font-semibold hover:bg-white/20 transition text-lg">
+          </AnimatedButton>
+          <AnimatedButton onClick={() => onNavigate('login')} variant="outline" size="lg">
             {t('hero.signInButton')}
-          </button>
+          </AnimatedButton>
+        </div>
+
+        {/* Background Carousel Indicators */}
+        <div className="flex gap-2 justify-center mt-12">
+          {backgroundGradients.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setBackgroundIndex(index)}
+              className={`h-2 rounded-full transition-all duration-300 ${
+                backgroundIndex === index ? 'w-8 bg-amber-400' : 'w-2 bg-white/30 hover:bg-white/50'
+              }`}
+              aria-label={`Background ${index + 1}`}
+            />
+          ))}
         </div>
       </section>
 
-      {/* Features Section */}
+      {/* Features Section with Visualization */}
       <section className="max-w-7xl mx-auto px-6 py-20">
         <h2 className="text-4xl font-bold text-white text-center mb-16">{t('features.title')}</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-white/10 transition">
-            <Zap className="h-10 w-10 text-amber-400 mb-3" />
-            <h3 className="text-lg font-bold text-white mb-2">{t('features.fast.name')}</h3>
-            <p className="text-slate-300 text-sm">{t('features.fast.desc')}</p>
-          </div>
-          <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-white/10 transition">
-            <Shield className="h-10 w-10 text-amber-400 mb-3" />
-            <h3 className="text-lg font-bold text-white mb-2">{t('features.security.name')}</h3>
-            <p className="text-slate-300 text-sm">{t('features.security.desc')}</p>
-          </div>
-          <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-white/10 transition">
-            <Smartphone className="h-10 w-10 text-amber-400 mb-3" />
-            <h3 className="text-lg font-bold text-white mb-2">{t('features.mobile.name')}</h3>
-            <p className="text-slate-300 text-sm">{t('features.mobile.desc')}</p>
-          </div>
-          <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-white/10 transition">
-            <Globe className="h-10 w-10 text-amber-400 mb-3" />
-            <h3 className="text-lg font-bold text-white mb-2">{t('features.global.name')}</h3>
-            <p className="text-slate-300 text-sm">{t('features.global.desc')}</p>
-          </div>
+          <FeatureCard 
+            icon="⚡" 
+            title={t('features.fast.name')} 
+            description={t('features.fast.desc')}
+            color="amber" />
+          <FeatureCard 
+            icon="🔒" 
+            title={t('features.security.name')} 
+            description={t('features.security.desc')}
+            color="blue" />
+          <FeatureCard 
+            icon="📱" 
+            title={t('features.mobile.name')} 
+            description={t('features.mobile.desc')}
+            color="emerald" />
+          <FeatureCard 
+            icon="🌍" 
+            title={t('features.global.name')} 
+            description={t('features.global.desc')}
+            color="purple" />
         </div>
       </section>
 
@@ -218,29 +255,298 @@ export function LandingPage({ onNavigate }: LandingPageProps) {
         </div>
       </section>
 
-      {/* Stats */}
-      <section className="max-w-7xl mx-auto px-6 py-20 grid md:grid-cols-4 gap-8 text-center">
-        <div>
-          <p className="text-4xl font-bold text-amber-400">2M+</p>
-          <p className="text-slate-300 mt-2">{t('stats.traders')}</p>
+      {/* Stats with Visualizations */}
+      <section className="max-w-7xl mx-auto px-6 py-20">
+        <h2 className="text-4xl font-bold text-white text-center mb-16">Platform Statistics</h2>
+        <div className="grid md:grid-cols-4 gap-8">
+          <StatCounter label={t('stats.traders')} value="2M+" icon="👥" trend="up" />
+          <StatCounter label={t('stats.assets')} value="$500B+" icon="💰" trend="up" />
+          <StatCounter label={t('stats.commission')} value="0%" icon="✨" />
+          <StatCounter label={t('stats.uptime')} value="99.9%" icon="⚡" trend="up" />
         </div>
-        <div>
-          <p className="text-4xl font-bold text-amber-400">$500B+</p>
-          <p className="text-slate-300 mt-2">{t('stats.assets')}</p>
+      </section>
+
+      {/* Why Choose StockFx - Image Carousel Section */}
+      <section className="relative py-48 overflow-hidden">
+        {/* Background image carousel */}
+        <div
+          className="absolute inset-0 transition-all duration-1000 ease-in-out"
+          style={{
+            backgroundImage: `url('https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&h=600&fit=crop')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundAttachment: 'fixed',
+            opacity: backgroundIndex % 5 === 0 ? 1 : 0,
+          }}
+        />
+        <div
+          className="absolute inset-0 transition-all duration-1000 ease-in-out"
+          style={{
+            backgroundImage: `url('https://images.unsplash.com/photo-1611974789855-9c2a0a7fbda3?w=1200&h=600&fit=crop')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundAttachment: 'fixed',
+            opacity: backgroundIndex % 5 === 1 ? 1 : 0,
+          }}
+        />
+        <div
+          className="absolute inset-0 transition-all duration-1000 ease-in-out"
+          style={{
+            backgroundImage: `url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1200&h=600&fit=crop')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundAttachment: 'fixed',
+            opacity: backgroundIndex % 5 === 2 ? 1 : 0,
+          }}
+        />
+        <div
+          className="absolute inset-0 transition-all duration-1000 ease-in-out"
+          style={{
+            backgroundImage: `url('https://images.unsplash.com/photo-1579532900298-0d2b25ba2b71?w=1200&h=600&fit=crop')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundAttachment: 'fixed',
+            opacity: backgroundIndex % 5 === 3 ? 1 : 0,
+          }}
+        />
+        <div
+          className="absolute inset-0 transition-all duration-1000 ease-in-out"
+          style={{
+            backgroundImage: `url('https://images.unsplash.com/photo-1626190174326-8eab0e94e9d0?w=1200&h=600&fit=crop')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundAttachment: 'fixed',
+            opacity: backgroundIndex % 5 === 4 ? 1 : 0,
+          }}
+        />
+
+        {/* Dark overlay for text readability */}
+        <div className="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
+
+        {/* Content */}
+        <div className="relative max-w-7xl mx-auto px-6 text-center z-10 flex flex-col justify-center h-full">
+          <div className="inline-flex items-center px-4 py-2 rounded-full bg-amber-500/20 border border-amber-500/40 text-amber-300 text-sm font-medium mb-8 justify-center">
+            <span className="flex h-2 w-2 rounded-full bg-amber-400 mr-2 animate-pulse" />
+            Limited Time Offer
+          </div>
+          <h2 className="text-7xl font-black text-white mb-8">
+            🎉 Zero-fee trading on your first $10,000
+          </h2>
+          <p className="text-2xl text-slate-200 mb-12 max-w-3xl mx-auto">
+            Join thousands of traders who are making smarter investment decisions every day. Start your journey with zero commission fees.
+          </p>
+          <button
+            onClick={() => onNavigate('register')}
+            className="px-10 py-5 bg-gradient-to-r from-amber-500 to-orange-500 text-white rounded-lg font-semibold hover:shadow-2xl transition text-xl w-fit mx-auto active:scale-95"
+          >
+            Claim Your Offer Now
+          </button>
+
+          {/* Image carousel indicators */}
+          <div className="flex gap-2 justify-center mt-16">
+            {[0, 1, 2, 3, 4].map((index) => (
+              <button
+                key={index}
+                onClick={() => setBackgroundIndex(index)}
+                className={`h-3 rounded-full transition-all duration-300 ${
+                  index === backgroundIndex % 5 ? 'w-10 bg-amber-400' : 'w-3 bg-white/30 hover:bg-white/50'
+                }`}
+                aria-label={`Image ${index + 1}`}
+              />
+            ))}
+          </div>
         </div>
-        <div>
-          <p className="text-4xl font-bold text-amber-400">0%</p>
-          <p className="text-slate-300 mt-2">{t('stats.commission')}</p>
+      </section>
+
+      {/* Crypto Trading - Image Carousel Section 2 */}
+      <section className="relative py-48 overflow-hidden">
+        {/* Background image carousel */}
+        <div
+          className="absolute inset-0 transition-all duration-1000 ease-in-out"
+          style={{
+            backgroundImage: `url('https://images.unsplash.com/photo-1518546305927-30bccb39ff38?w=1200&h=600&fit=crop')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundAttachment: 'fixed',
+            opacity: (backgroundIndex + 5) % 5 === 0 ? 1 : 0,
+          }}
+        />
+        <div
+          className="absolute inset-0 transition-all duration-1000 ease-in-out"
+          style={{
+            backgroundImage: `url('https://images.unsplash.com/photo-1516522973542-b23dd067fdd1?w=1200&h=600&fit=crop')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundAttachment: 'fixed',
+            opacity: (backgroundIndex + 5) % 5 === 1 ? 1 : 0,
+          }}
+        />
+        <div
+          className="absolute inset-0 transition-all duration-1000 ease-in-out"
+          style={{
+            backgroundImage: `url('https://images.unsplash.com/photo-1621761191007-11cf3b393641?w=1200&h=600&fit=crop')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundAttachment: 'fixed',
+            opacity: (backgroundIndex + 5) % 5 === 2 ? 1 : 0,
+          }}
+        />
+        <div
+          className="absolute inset-0 transition-all duration-1000 ease-in-out"
+          style={{
+            backgroundImage: `url('https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?w=1200&h=600&fit=crop')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundAttachment: 'fixed',
+            opacity: (backgroundIndex + 5) % 5 === 3 ? 1 : 0,
+          }}
+        />
+        <div
+          className="absolute inset-0 transition-all duration-1000 ease-in-out"
+          style={{
+            backgroundImage: `url('https://images.unsplash.com/photo-1563206772-641972bea9fa?w=1200&h=600&fit=crop')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundAttachment: 'fixed',
+            opacity: (backgroundIndex + 5) % 5 === 4 ? 1 : 0,
+          }}
+        />
+
+        {/* Dark overlay for text readability */}
+        <div className="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
+
+        {/* Content */}
+        <div className="relative max-w-7xl mx-auto px-6 text-center z-10 flex flex-col justify-center h-full">
+          <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-500/20 border border-blue-500/40 text-blue-300 text-sm font-medium mb-8 justify-center">
+            <span className="flex h-2 w-2 rounded-full bg-blue-400 mr-2 animate-pulse" />
+            New Feature
+          </div>
+          <h2 className="text-7xl font-black text-white mb-8">
+            💰 Trade Crypto with 50% Lower Fees
+          </h2>
+          <p className="text-2xl text-slate-200 mb-12 max-w-3xl mx-auto">
+            Access Bitcoin, Ethereum, and 500+ cryptocurrencies with real-time market data and advanced trading tools.
+          </p>
+          <AnimatedButton
+            onClick={() => onNavigate('register')}
+            variant="secondary"
+            size="lg"
+          >
+            Start Crypto Trading
+          </AnimatedButton>
+
+          {/* Image carousel indicators */}
+          <div className="flex gap-2 justify-center mt-16">
+            {[0, 1, 2, 3, 4].map((index) => (
+              <button
+                key={index}
+                onClick={() => setBackgroundIndex(index)}
+                className={`h-3 rounded-full transition-all duration-300 ${
+                  index === (backgroundIndex + 5) % 5 ? 'w-10 bg-blue-400' : 'w-3 bg-white/30 hover:bg-white/50'
+                }`}
+                aria-label={`Crypto Image ${index + 1}`}
+              />
+            ))}
+          </div>
         </div>
-        <div>
-          <p className="text-4xl font-bold text-amber-400">99.9%</p>
-          <p className="text-slate-300 mt-2">{t('stats.uptime')}</p>
+      </section>
+
+      {/* Mobile Trading - Image Carousel Section 3 */}
+      <section className="relative py-48 overflow-hidden">
+        {/* Background image carousel */}
+        <div
+          className="absolute inset-0 transition-all duration-1000 ease-in-out"
+          style={{
+            backgroundImage: `url('https://images.unsplash.com/photo-1556656793-08538906a9f8?w=1200&h=600&fit=crop')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundAttachment: 'fixed',
+            opacity: (backgroundIndex + 10) % 5 === 0 ? 1 : 0,
+          }}
+        />
+        <div
+          className="absolute inset-0 transition-all duration-1000 ease-in-out"
+          style={{
+            backgroundImage: `url('https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=1200&h=600&fit=crop')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundAttachment: 'fixed',
+            opacity: (backgroundIndex + 10) % 5 === 1 ? 1 : 0,
+          }}
+        />
+        <div
+          className="absolute inset-0 transition-all duration-1000 ease-in-out"
+          style={{
+            backgroundImage: `url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&h=600&fit=crop')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundAttachment: 'fixed',
+            opacity: (backgroundIndex + 10) % 5 === 2 ? 1 : 0,
+          }}
+        />
+        <div
+          className="absolute inset-0 transition-all duration-1000 ease-in-out"
+          style={{
+            backgroundImage: `url('https://images.unsplash.com/photo-1586348943529-beaae6c28db9?w=1200&h=600&fit=crop')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundAttachment: 'fixed',
+            opacity: (backgroundIndex + 10) % 5 === 3 ? 1 : 0,
+          }}
+        />
+        <div
+          className="absolute inset-0 transition-all duration-1000 ease-in-out"
+          style={{
+            backgroundImage: `url('https://images.unsplash.com/photo-1583394838336-acd977736f90?w=1200&h=600&fit=crop')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundAttachment: 'fixed',
+            opacity: (backgroundIndex + 10) % 5 === 4 ? 1 : 0,
+          }}
+        />
+
+        {/* Dark overlay for text readability */}
+        <div className="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
+
+        {/* Content */}
+        <div className="relative max-w-7xl mx-auto px-6 text-center z-10 flex flex-col justify-center h-full">
+          <div className="inline-flex items-center px-4 py-2 rounded-full bg-green-500/20 border border-green-500/40 text-green-300 text-sm font-medium mb-8 justify-center">
+            <span className="flex h-2 w-2 rounded-full bg-green-400 mr-2 animate-pulse" />
+            Available Everywhere
+          </div>
+          <h2 className="text-7xl font-black text-white mb-8">
+            📱 Trade On-the-Go, Anytime, Anywhere
+          </h2>
+          <p className="text-2xl text-slate-200 mb-12 max-w-3xl mx-auto">
+            Our award-winning mobile app puts professional trading tools right in your pocket. Never miss a trading opportunity again.
+          </p>
+          <AnimatedButton
+            onClick={() => onNavigate('register')}
+            variant="primary"
+            size="lg"
+          >
+            📱 Download Mobile App
+          </AnimatedButton>
+
+          {/* Image carousel indicators */}
+          <div className="flex gap-2 justify-center mt-16">
+            {[0, 1, 2, 3, 4].map((index) => (
+              <button
+                key={index}
+                onClick={() => setBackgroundIndex(index)}
+                className={`h-3 rounded-full transition-all duration-300 ${
+                  index === (backgroundIndex + 10) % 5 ? 'w-10 bg-green-400' : 'w-3 bg-white/30 hover:bg-white/50'
+                }`}
+                aria-label={`Mobile Image ${index + 1}`}
+              />
+            ))}
+          </div>
         </div>
       </section>
 
       {/* Investment Plans */}
       <section className="max-w-7xl mx-auto px-6 py-20">
-        <h2 className="text-4xl font-bold text-white text-center mb-4">{t('pricing.title')}</h2>
+        <h2 className="text-4xl font-bold text-white text-center mb-4">Why Choose StockFx?</h2>
         <p className="text-center text-slate-300 mb-12">{t('pricing.subtitle')}</p>
         <div className="grid md:grid-cols-3 gap-6">
           {pricing.map((plan, i) => (
@@ -280,14 +586,16 @@ export function LandingPage({ onNavigate }: LandingPageProps) {
                 </div>
               )}
 
-              <button 
+              <AnimatedButton 
                 onClick={(e) => { 
-                  e.stopPropagation();
+                  if (e) e.stopPropagation();
                   onNavigate('register');
                 }} 
-                className={`w-full py-3 rounded-lg font-semibold transition-all duration-300 ${plan.popular ? 'bg-amber-500 text-white hover:bg-amber-600 shadow-lg' : 'bg-white/10 text-white hover:bg-white/20'}`}>
+                variant={plan.popular ? "primary" : "outline"}
+                size="md"
+                className="w-full">
                 {t('pricing.button')}
-              </button>
+              </AnimatedButton>
             </div>
           ))}
         </div>
@@ -384,9 +692,9 @@ export function LandingPage({ onNavigate }: LandingPageProps) {
       <section className="max-w-4xl mx-auto px-6 py-20 text-center">
         <h2 className="text-5xl font-bold text-white mb-6">{t('cta.title')}</h2>
         <p className="text-xl text-slate-300 mb-8">{t('cta.subtitle')}</p>
-        <button onClick={() => onNavigate('register')} className="px-10 py-4 bg-gradient-to-r from-amber-500 to-orange-500 text-white rounded-lg font-semibold hover:shadow-xl transition text-lg">
+        <AnimatedButton onClick={() => onNavigate('register')} variant="primary" size="lg">
           {t('cta.button')}
-        </button>
+        </AnimatedButton>
       </section>
 
       {/* Footer */}
@@ -453,12 +761,12 @@ export function LandingPage({ onNavigate }: LandingPageProps) {
             </div>
             <p className="text-slate-300 mb-6">{t('contact.message')}</p>
             <div className="space-y-3">
-              <button onClick={() => { setShowContactModal(false); window.location.href = 'mailto:support@stockfx.com'; }} className="w-full px-4 py-3 bg-gradient-to-r from-amber-500 to-orange-500 text-white rounded-lg font-semibold hover:shadow-lg transition">
+              <AnimatedButton onClick={() => { setShowContactModal(false); window.location.href = 'mailto:support@stockfx.com'; }} variant="primary" size="md" className="w-full">
                 {t('contact.contact')}
-              </button>
-              <button onClick={() => setShowContactModal(false)} className="w-full px-4 py-3 bg-white/10 text-white rounded-lg font-semibold hover:bg-white/20 transition">
+              </AnimatedButton>
+              <AnimatedButton onClick={() => setShowContactModal(false)} variant="outline" size="md" className="w-full">
                 {t('contact.later')}
-              </button>
+              </AnimatedButton>
             </div>
           </div>
         </div>

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-export function PortfolioChart() {
+export function PortfolioChart({ totalBalance = 0 }: { totalBalance?: number }) {
   const [timeRange, setTimeRange] = useState('1M');
   const ranges = ['1D', '1W', '1M', '3M', '1Y', 'ALL'];
   return (
@@ -11,10 +11,10 @@ export function PortfolioChart() {
           </h3>
           <div className="flex items-baseline mt-1">
             <span className="text-3xl font-bold text-slate-900">
-              $124,592.00
+              ${totalBalance.toFixed(2)}
             </span>
             <span className="ml-2 text-sm font-medium text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full">
-              +2.4%
+              +0%
             </span>
           </div>
         </div>
@@ -94,7 +94,7 @@ export function PortfolioChart() {
         {/* Tooltip Simulation */}
         <div className="absolute top-1/3 left-[60%] transform -translate-x-1/2 -translate-y-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
           <div className="bg-slate-900 text-white text-xs rounded py-1 px-2 shadow-xl mb-2">
-            $118,420.50
+            ${Math.max(0, (totalBalance * 0.95)).toFixed(2)}
           </div>
         </div>
       </div>

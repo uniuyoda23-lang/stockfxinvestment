@@ -1,0 +1,174 @@
+{
+  "nav": {
+    "signIn": "Giriş Yap",
+    "getStarted": "Başla"
+  },
+  "hero": {
+    "badge": "🎉 İlk $10.000'ınız komisyonsuz",
+    "title1": "Daha akıllı yatırım yap.",
+    "title2": "Daha hızlı büyü.",
+    "description": "Hisse senedi, kripto para ve ETF'ler için yeni nesil platform. Profesyonel araçlar. Sıfır karmaşıklık. Güvenle ticaret yapın.",
+    "startButton": "Ücretsiz Yatırım Yapmaya Başla",
+    "signInButton": "Giriş Yap"
+  },
+  "features": {
+    "title": "Neden StockFx Seçmelisiniz?",
+    "fast": {
+      "name": "Işık Hızında",
+      "desc": "Ultra düşük gecikmeli milisaniye cinsinden işlem yürütün."
+    },
+    "security": {
+      "name": "Banka Düzeyinde Güvenlik",
+      "desc": "256 bit şifreleme, 2FA, FDIC sigorta koruması."
+    },
+    "mobile": {
+      "name": "Mobil Öncelikli",
+      "desc": "Tam özellikli uygulama. Her yerde, her zaman ticaret yapın."
+    },
+    "global": {
+      "name": "Küresel Pazarlar",
+      "desc": "Dünya çapında hisse senetleri, kripto paralar, ETF'ler ve opsiyonlara erişim."
+    }
+  },
+  "testimonials": {
+    "title": "Dünya çapındaki tüccarlar tarafından sevilir",
+    "subtitle": "StockFx'e güvenen 2 milyondan fazla yatırımcıya katılın"
+  },
+  "stats": {
+    "traders": "Aktif Tüccarlar",
+    "assets": "İşlem Gören Varlıklar",
+    "commission": "Komisyonlar",
+    "uptime": "Çalışma Süresi"
+  },
+  "pricing": {
+    "title": "Size Uyarlanmış Yatırım Planları",
+    "subtitle": "Portföy boyutunuza uygun bir yatırım seviyesi seçin",
+    "starter": {
+      "name": "Başlangıç",
+      "price": "$1.000 - $5.000",
+      "desc": "Başlangıç yatırım aralığı",
+      "duration": "1 ay"
+    },
+    "pro": {
+      "name": "Pro",
+      "price": "$5.000 - $25.000",
+      "desc": "Büyüme yatırım aralığı",
+      "duration": "2-3 ay",
+      "popular": "En Popüler"
+    },
+    "enterprise": {
+      "name": "Kurumsal",
+      "price": "$25.000+",
+      "desc": "Premium yatırım aralığı",
+      "duration": "4+ ay"
+    },
+    "features": {
+      "commissionFree": "Komisyonsuz ticaret",
+      "basicCharting": "Temel grafik araçları",
+      "mobileAccess": "Mobil uygulama erişimi",
+      "watchlists": "2 izleme listesi",
+      "emailSupport": "E-posta desteği",
+      "advancedCharting": "Gelişmiş grafikler ve analiz",
+      "level2": "Gerçek zamanlı Seviye 2 verileri",
+      "unlimitedWatchlists": "Sınırsız izleme listeleri",
+      "support24": "Öncelikli 24/7 destek",
+      "apiAccess": "API Erişimi",
+      "advancedAlerts": "Gelişmiş uyarılar",
+      "dedicatedManager": "Özel portföy yöneticisi",
+      "strategy": "Özel strateji danışmanlığı",
+      "whiteLabel": "Beyaz etiket çözümleri",
+      "integrations": "Gelişmiş entegrasyonlar",
+      "sla": "SLA Garantileri",
+      "institutionalPricing": "Kurumsal fiyatlandırma"
+    },
+    "button": "Yatırım Yapmaya Başla"
+  },
+  "trust": {
+    "title": "Sizin Güveniniz, Bizim Önceliğimiz",
+    "security": {
+      "name": "Askeri Düzeyinde Güvenlik",
+      "desc": "256 bit şifreleme, tüm verilerinizi aktarım sırasında ve kalan sırada korur."
+    },
+    "insured": {
+      "name": "FDIC ve SIPC Sigortalı",
+      "desc": "Paranız ($250k) ve menkul kıymetleriniz ($500k) tamamen korunmaktadır."
+    },
+    "compliant": {
+      "name": "Düzenlenen ve Uyumlu",
+      "desc": "Tüm SEC, FINRA ve düzenleyici gereksinimlere uygundur."
+    }
+  },
+  "cta": {
+    "title": "Ticaret Yapmaya Başlamaya Hazır mısınız?",
+    "subtitle": "Milyonlarca yatırımcıya katılın. Bugün $50 ücretsiz hisse alın.",
+    "button": "Ücretsiz Hesap Oluştur"
+  },
+  "footer": {
+    "description": "Hisse senedi, kripto para ve ETF'ler için yeni nesil platform. Profesyonel araçlar. Sıfır karmaşıklık.",
+    "platform": "Platform",
+    "company": "Şirket",
+    "legal": "Yasal",
+    "social": "Bizi Takip Edin",
+    "features": "Özellikler",
+    "pricing": "Fiyatlandırma",
+    "security": "Güvenlik",
+    "about": "Hakkında",
+    "blog": "Blog",
+    "contact": "İletişim",
+    "privacy": "Gizlilik",
+    "terms": "Şartlar",
+    "disclosures": "Açıklamalar",
+    "twitter": "Twitter",
+    "linkedin": "LinkedIn",
+    "youtube": "YouTube",
+    "copyright": "© 2024 StockFx Investment Inc. Tüm hakları saklıdır. NMLS #123456"
+  },
+  "contact": {
+    "title": "Yardıma mı ihtiyacınız var?",
+    "message": "Ticaret hakkında soruları var mı? Hesap müdürlerimiz başlamanıza yardımcı olmak için burada!",
+    "contact": "Ekibimizle İletişime Geçin",
+    "later": "Belki daha sonra"
+  },
+  "login": {
+    "title": "Hoş geldiniz",
+    "subtitle": "Veya yeni bir hesap oluşturun",
+    "emailLabel": "E-posta Adresi",
+    "emailPlaceholder": "siz@örnek.com",
+    "passwordLabel": "Parola",
+    "passwordPlaceholder": "••••••••",
+    "signInButton": "Giriş Yap",
+    "noAccount": "yeni bir hesap oluştur",
+    "backToHome": "Anasayfaya Dön",
+    "serverChecking": "Sunucu kontrol ediliyor...",
+    "serverUp": "Sunucu çalışıyor — tekrar giriş yapmayı deneyin.",
+    "thirdParty": "Veya devam et",
+    "thirdPartyDisabled": "Üçüncü taraf girişi şu anda devre dışıdır."
+  },
+  "register": {
+    "title": "Hesabınızı Oluşturun",
+    "subtitle": "Zaten bir hesabınız var mı?",
+    "haveAccount": "Giriş Yap",
+    "firstNameLabel": "Adı",
+    "firstNamePlaceholder": "Ahmet",
+    "lastNameLabel": "Soyadı",
+    "lastNamePlaceholder": "Yılmaz",
+    "emailLabel": "E-posta Adresi",
+    "emailPlaceholder": "siz@örnek.com",
+    "passwordLabel": "Parola",
+    "passwordPlaceholder": "Parola Oluşturun",
+    "passwordHelper": "En az 8 karakter içermelidir",
+    "termsLabel": "Aşağıdakilerine katılıyorum",
+    "terms": "Şartlar",
+    "and": "ve",
+    "privacy": "Gizlilik Politikası",
+    "createButton": "Hesap Oluştur",
+    "verifyTitle": "Doğrulama Kodu",
+    "verifyPlaceholder": "123456",
+    "verifyError": "Doğrulama kodu yanlış.",
+    "devCode": "DEV: Kodunuz",
+    "changeEmail": "E-postayı Değiştir",
+    "resendCode": "Kodu Yeniden Gönder",
+    "resendCooldown": "Yeniden Gönder ({{seconds}}s)",
+    "verifyButton": "Doğrula"
+  }
+}

@@ -1,0 +1,174 @@
+{
+  "nav": {
+    "signIn": "Aanmelden",
+    "getStarted": "Aan de slag"
+  },
+  "hero": {
+    "badge": "🎉 Commissieloos handelen op uw eerste $10.000",
+    "title1": "Investeer intelligenter.",
+    "title2": "Groei sneller.",
+    "description": "Platform van de volgende generatie voor aandelen, cryptocurrencies en ETF's. Professionele tools. Nul complexiteit. Trade met vertrouwen.",
+    "startButton": "Gratis beginnen met investeren",
+    "signInButton": "Aanmelden"
+  },
+  "features": {
+    "title": "Waarom StockFx kiezen?",
+    "fast": {
+      "name": "Sneller dan het licht",
+      "desc": "Voer trades uit in milliseconden met ultra-lage latency."
+    },
+    "security": {
+      "name": "Bankbeveiliging",
+      "desc": "256-bits versleuteling, 2FA, FDIC-verzekeringsscherming."
+    },
+    "mobile": {
+      "name": "Mobiel eerst",
+      "desc": "Volwaardige app. Trade overal, altijd."
+    },
+    "global": {
+      "name": "Wereldwijde markten",
+      "desc": "Toegang tot aandelen, cryptocurrencies, ETF's en opties wereldwijd."
+    }
+  },
+  "testimonials": {
+    "title": "Geliefd door traders wereldwijd",
+    "subtitle": "Sluit je aan bij meer dan 2 miljoen beleggers die StockFx vertrouwen"
+  },
+  "stats": {
+    "traders": "Actieve traders",
+    "assets": "Verhandelde activa",
+    "commission": "Commissies",
+    "uptime": "Uptime"
+  },
+  "pricing": {
+    "title": "Investeringsplannen op maat voor u",
+    "subtitle": "Kies een investeringsniveau dat aansluit bij uw portfoliogrootte",
+    "starter": {
+      "name": "Starter",
+      "price": "$1.000 - $5.000",
+      "desc": "Bereik voor startinvestering",
+      "duration": "1 maand"
+    },
+    "pro": {
+      "name": "Pro",
+      "price": "$5.000 - $25.000",
+      "desc": "Groei investeringsbereik",
+      "duration": "2-3 maanden",
+      "popular": "Meest populair"
+    },
+    "enterprise": {
+      "name": "Enterprise",
+      "price": "$25.000+",
+      "desc": "Premium investeringsbereik",
+      "duration": "4+ maanden"
+    },
+    "features": {
+      "commissionFree": "Commissieloos handelen",
+      "basicCharting": "Basisgrafiektools",
+      "mobileAccess": "Mobiele app-toegang",
+      "watchlists": "2 watchlisten",
+      "emailSupport": "E-mailondersteuning",
+      "advancedCharting": "Geavanceerde grafieken en analyse",
+      "level2": "Real-time niveau 2-gegevens",
+      "unlimitedWatchlists": "Onbeperkte watchlisten",
+      "support24": "Prioriteitsondersteuning 24/7",
+      "apiAccess": "API-toegang",
+      "advancedAlerts": "Geavanceerde waarschuwingen",
+      "dedicatedManager": "Toegewezen portefeuillebeheerder",
+      "strategy": "Aangepast strategie advies",
+      "whiteLabel": "White-label-oplossingen",
+      "integrations": "Geavanceerde integraties",
+      "sla": "SLA-garanties",
+      "institutionalPricing": "Institutionele prijsstelling"
+    },
+    "button": "Begin met investeren"
+  },
+  "trust": {
+    "title": "Uw vertrouwen, onze prioriteit",
+    "security": {
+      "name": "Militaire beveiligingsnorm",
+      "desc": "256-bits versleuteling beschermt al uw gegevens in transit en in rust."
+    },
+    "insured": {
+      "name": "Verzekerd door FDIC en SIPC",
+      "desc": "Uw geld ($250k) en effecten ($500k) zijn volledig beschermd."
+    },
+    "compliant": {
+      "name": "Gereglementeerd en conform",
+      "desc": "We voldoen aan alle SEC-, FINRA- en regelgevingsvereisten."
+    }
+  },
+  "cta": {
+    "title": "Klaar om te gaan handelen?",
+    "subtitle": "Sluit je aan bij miljoenen beleggers. Krijg vandaag nog $50 gratis aandelen.",
+    "button": "Gratis account aanmaken"
+  },
+  "footer": {
+    "description": "Platform van de volgende generatie voor aandelen, cryptocurrencies en ETF's. Professionele tools. Nul complexiteit.",
+    "platform": "Platform",
+    "company": "Bedrijf",
+    "legal": "Juridisch",
+    "social": "Volg ons",
+    "features": "Functies",
+    "pricing": "Prijzen",
+    "security": "Veiligheid",
+    "about": "Over ons",
+    "blog": "Blog",
+    "contact": "Contact",
+    "privacy": "Privacy",
+    "terms": "Voorwaarden",
+    "disclosures": "Openbaarmakingen",
+    "twitter": "Twitter",
+    "linkedin": "LinkedIn",
+    "youtube": "YouTube",
+    "copyright": "© 2024 StockFx Investment Inc. Alle rechten voorbehouden. NMLS #123456"
+  },
+  "contact": {
+    "title": "Hulp nodig?",
+    "message": "Vragen over handelen? Onze accountmanagers helpen u graag op weg!",
+    "contact": "Neem contact op met ons team",
+    "later": "Misschien later"
+  },
+  "login": {
+    "title": "Welkom terug",
+    "subtitle": "Of maak een nieuw account",
+    "emailLabel": "E-mailadres",
+    "emailPlaceholder": "u@voorbeeld.com",
+    "passwordLabel": "Wachtwoord",
+    "passwordPlaceholder": "••••••••",
+    "signInButton": "Aanmelden",
+    "noAccount": "maak een nieuw account",
+    "backToHome": "Terug naar start",
+    "serverChecking": "Server controleren...",
+    "serverUp": "Server is actief — probeer opnieuw in te loggen.",
+    "thirdParty": "Of doorgaan met",
+    "thirdPartyDisabled": "Aanmelding van derden is momenteel uitgeschakeld."
+  },
+  "register": {
+    "title": "Maak uw account",
+    "subtitle": "Hebt u al een account?",
+    "haveAccount": "Aanmelden",
+    "firstNameLabel": "Voornaam",
+    "firstNamePlaceholder": "Jan",
+    "lastNameLabel": "Achternaam",
+    "lastNamePlaceholder": "Jansen",
+    "emailLabel": "E-mailadres",
+    "emailPlaceholder": "u@voorbeeld.com",
+    "passwordLabel": "Wachtwoord",
+    "passwordPlaceholder": "Maak een wachtwoord",
+    "passwordHelper": "Moet minimaal 8 tekens bevatten",
+    "termsLabel": "Ik ga akkoord met de",
+    "terms": "Voorwaarden",
+    "and": "en",
+    "privacy": "Privacybeleid",
+    "createButton": "Account aanmaken",
+    "verifyTitle": "Verificatiecode",
+    "verifyPlaceholder": "123456",
+    "verifyError": "Verificatiecode is onjuist.",
+    "devCode": "DEV: Uw code is",
+    "changeEmail": "E-mail wijzigen",
+    "resendCode": "Code opnieuw verzenden",
+    "resendCooldown": "Opnieuw verzenden ({{seconds}}s)",
+    "verifyButton": "Verifiëren"
+  }
+}

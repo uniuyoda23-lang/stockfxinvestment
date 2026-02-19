@@ -4,10 +4,10 @@
     "getStarted": "Get Started"
   },
   "hero": {
-    "badge": "🎉 Zero-fee trading on your first $10,000",
+    "badge": "🎉 Zero-fee investing on your first $10,000",
     "title1": "Invest Smarter.",
     "title2": "Grow Faster.",
-    "description": "The next-generation platform for stocks, crypto, and ETFs. Professional tools. Zero complexity. Trade with confidence.",
+    "description": "The next-generation platform for stocks, ETFs, and dividend investing. Professional tools. Zero complexity. Invest with confidence.",
     "startButton": "Start Investing Free",
     "signInButton": "Sign In"
   },
@@ -15,7 +15,7 @@
     "title": "Why Choose StockFx?",
     "fast": {
       "name": "Lightning Fast",
-      "desc": "Execute trades in milliseconds with ultra-low latency."
+      "desc": "Execute orders in milliseconds with ultra-low latency."
     },
     "security": {
       "name": "Bank-Grade Security",
@@ -23,15 +23,15 @@
     },
     "mobile": {
       "name": "Mobile First",
-      "desc": "Full-featured app. Trade anywhere, anytime."
+      "desc": "Full-featured app. Invest anywhere, anytime."
     },
     "global": {
       "name": "Global Markets",
-      "desc": "Access stocks, crypto, ETFs, and options worldwide."
+      "desc": "Access stocks, ETFs, mutual funds, and bonds worldwide."
     }
   },
   "testimonials": {
-    "title": "Loved by Traders Worldwide",
+    "title": "Loved by Investors Worldwide",
     "subtitle": "Join over 2 million investors who trust StockFx"
   },
   "stats": {
@@ -128,5 +128,111 @@
     "message": "Have questions about trading? Our account officers are here to help you get started!",
     "contact": "Contact Our Team",
     "later": "Maybe Later"
-  }
+  },
+  "login": {
+    "title": "Welcome back",
+    "subtitle": "Or create a new account",
+    "emailLabel": "Email address",
+    "emailPlaceholder": "you@example.com",
+    "passwordLabel": "Password",
+    "passwordPlaceholder": "••••••••",
+    "signInButton": "Sign in",
+    "noAccount": "create a new account",
+    "backToHome": "Back to Home",
+    "serverChecking": "Checking server...",
+    "serverUp": "Server is up — try signing in again.",
+    "thirdParty": "Or continue with",
+    "thirdPartyDisabled": "Third‑party sign-in is currently disabled."
+  },
+  "register": {
+    "title": "Create your account",
+    "subtitle": "Already have an account?",
+    "haveAccount": "Sign in",
+    "firstNameLabel": "First Name",
+    "firstNamePlaceholder": "John",
+    "lastNameLabel": "Last Name",
+    "lastNamePlaceholder": "Doe",
+    "emailLabel": "Email address",
+    "emailPlaceholder": "you@example.com",
+    "passwordLabel": "Password",
+    "passwordPlaceholder": "Create a password",
+    "passwordHelper": "Must be at least 8 characters",
+    "termsLabel": "I agree to the",
+    "terms": "Terms",
+    "and": "and",
+    "privacy": "Privacy Policy",
+    "createButton": "Create Account",
+    "verifyTitle": "Verification code",
+    "verifyPlaceholder": "123456",
+    "verifyError": "The verification code is incorrect.",
+    "devCode": "DEV: Your code is",
+    "changeEmail": "Change email",
+    "resendCode": "Resend code",
+    "resendCooldown": "Resend ({{seconds}}s)",
+    "verifyButton": "Verify"
+  },
+  "dashboard": {
+      "loading": "Loading dashboard...",
+      "notAuthenticated": "Please log in to view your dashboard.",
+      "goToLogin": "Go to Login",
+      "signOut": "Sign Out",
+      "yourHoldings": "Your Holdings",
+      "portfolioSummary": "Portfolio Summary",
+      "totalValue": "Total Value",
+      "unrealizedGains": "Unrealized Gains",
+      "return": "Return %",
+      "allocation": "Allocation",
+      "assets": "Assets",
+      "performance": "Performance",
+      "welcome": "Welcome, {{name}}!",
+      "accountCreated": "Account created successfully",
+      "emailAddress": "Email Address",
+      "accountStatus": "Account Status",
+      "active": "Active",
+      "currentBalance": "Current Balance",
+      "overviewTab": "Overview",
+      "portfolioTab": "Portfolio",
+      "settingsTab": "Settings",
+      "accountSettings": "Account Settings",
+      "manageAccount": "Manage your account and preferences",
+      "profileInformation": "Profile Information",
+      "fullName": "Full Name",
+      "security": "Security",
+      "newPassword": "New Password (optional)",
+      "leaveBlank": "Leave blank to keep current password",
+      "preferences": "Preferences",
+      "emailNotifications": "Email notifications",
+      "priceAlerts": "Price alerts",
+      "marketingEmails": "Marketing emails",
+      "saveChanges": "Save Changes",
+      "cancel": "Cancel",
+      "noChanges": "No changes to save",
+      "settingsUpdated": "Settings updated successfully!",
+      "failedToSave": "Failed to save settings",
+      "searchAssets": "Search assets...",
+      "notifications": "Notifications",
+      "noNotifications": "No notifications yet",
+      "totalBalance": "Total Balance",
+      "totalProfit": "Total Profit",
+      "monthlyIncome": "Monthly Income",
+      "activeTrades": "Active Trades",
+      "marketWatchlist": "Market Watchlist",
+      "viewAll": "View All",
+      "quickTransfer": "Quick Transfer",
+      "transferMessage": "Move funds instantly between accounts.",
+      "send": "Send",
+      "addMoney": "Add Money",
+      "recentActivity": "Recent Activity",
+      "viewAllHistory": "View All History",
+      "assetAllocation": "Asset Allocation",
+      "totalAssets": "Total Assets",
+      "stocks": "Stocks",
+      "crypto": "Crypto",
+      "etfs": "ETFs",
+      "cash": "Cash",
+      "shares": "shares",
+      "yesterday": "Yesterday",
+      "investPro": "InvestPro",
+      "topHoldings": "Your Top Holdings"
+    }
 }

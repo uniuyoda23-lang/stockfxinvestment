@@ -1,0 +1,174 @@
+{
+  "nav": {
+    "signIn": "Zaloguj się",
+    "getStarted": "Zacznij"
+  },
+  "hero": {
+    "badge": "🎉 Bez prowizji na pierwsze $10.000 handlu",
+    "title1": "Inwestuj mądrzej.",
+    "title2": "Rozwijaj się szybciej.",
+    "description": "Platforma nowej generacji dla akcji, kryptowalut i ETF. Narzędzia profesjonalne. Zerowa złożoność. Handluj z pewnością.",
+    "startButton": "Zacznij inwestować za darmo",
+    "signInButton": "Zaloguj się"
+  },
+  "features": {
+    "title": "Dlaczego wybrać StockFx?",
+    "fast": {
+      "name": "Prędkość błyskawicy",
+      "desc": "Wykonuj transakcje w milisekundach z ultra-niskim opóźnieniem."
+    },
+    "security": {
+      "name": "Bezpieczeństwo klasy bankowej",
+      "desc": "Szyfrowanie 256-bitowe, 2FA, ochrona ubezpieczenia FDIC."
+    },
+    "mobile": {
+      "name": "Mobile first",
+      "desc": "Pełnowartościowa aplikacja. Handluj wszędzie, zawsze."
+    },
+    "global": {
+      "name": "Rynki globalne",
+      "desc": "Dostęp do akcji, kryptowalut, ETF i opcji na całym świecie."
+    }
+  },
+  "testimonials": {
+    "title": "Kochany przez traderów na całym świecie",
+    "subtitle": "Dołącz do ponad 2 milionów inwestorów, którzy ufają StockFx"
+  },
+  "stats": {
+    "traders": "Aktywni handlowcy",
+    "assets": "Zmieniane aktywa",
+    "commission": "Prowizje",
+    "uptime": "Czas działania"
+  },
+  "pricing": {
+    "title": "Plany inwestycyjne dostosowane do Ciebie",
+    "subtitle": "Wybierz poziom inwestycji odpowiadający wielkości Twojego portfela",
+    "starter": {
+      "name": "Starter",
+      "price": "$1.000 - $5.000",
+      "desc": "Zakres inwestycji początkowej",
+      "duration": "1 miesiąc"
+    },
+    "pro": {
+      "name": "Pro",
+      "price": "$5.000 - $25.000",
+      "desc": "Zakres wzrostu inwestycji",
+      "duration": "2-3 miesiące",
+      "popular": "Najpopularniejszy"
+    },
+    "enterprise": {
+      "name": "Enterprise",
+      "price": "$25.000+",
+      "desc": "Zakres inwestycji premium",
+      "duration": "4+ miesiące"
+    },
+    "features": {
+      "commissionFree": "Handel bez prowizji",
+      "basicCharting": "Podstawowe narzędzia do tworzenia wykresów",
+      "mobileAccess": "Dostęp do aplikacji mobilnej",
+      "watchlists": "2 listy obserwowanych",
+      "emailSupport": "Wsparcie przez e-mail",
+      "advancedCharting": "Zaawansowane wykresy i analiza",
+      "level2": "Dane poziomu 2 w czasie rzeczywistym",
+      "unlimitedWatchlists": "Nieograniczone listy obserwowanych",
+      "support24": "Priorytetowe wsparcie 24/7",
+      "apiAccess": "Dostęp do API",
+      "advancedAlerts": "Zaawansowane alerty",
+      "dedicatedManager": "Dedykowany menedżer portfela",
+      "strategy": "Konsultacje strategii niestandardowej",
+      "whiteLabel": "Rozwiązania white-label",
+      "integrations": "Zaawansowane integracje",
+      "sla": "Gwarancje SLA",
+      "institutionalPricing": "Ceny instytucjonalne"
+    },
+    "button": "Zacznij inwestować"
+  },
+  "trust": {
+    "title": "Twoje zaufanie, nasza priorytet",
+    "security": {
+      "name": "Bezpieczeństwo klasy wojskowej",
+      "desc": "Szyfrowanie 256-bitowe chroni wszystkie Twoje dane w przesyłaniu i w spoczynku."
+    },
+    "insured": {
+      "name": "Ubezpieczony przez FDIC i SIPC",
+      "desc": "Twoje pieniądze ($250k) i papiery wartościowe ($500k) są w pełni chronione."
+    },
+    "compliant": {
+      "name": "Regulowany i zgodny",
+      "desc": "Spełniamy wszystkie wymagania SEC, FINRA i przepisów prawnych."
+    }
+  },
+  "cta": {
+    "title": "Gotowy do rozpoczęcia handlu?",
+    "subtitle": "Dołącz do milionów inwestorów. Otrzymaj $50 bezpłatnych akcji dzisiaj.",
+    "button": "Utwórz bezpłatne konto"
+  },
+  "footer": {
+    "description": "Platforma nowej generacji dla akcji, kryptowalut i ETF. Narzędzia profesjonalne. Zerowa złożoność.",
+    "platform": "Platforma",
+    "company": "Firma",
+    "legal": "Prawny",
+    "social": "Odwiedź nas",
+    "features": "Funkcje",
+    "pricing": "Ceny",
+    "security": "Bezpieczeństwo",
+    "about": "O nas",
+    "blog": "Blog",
+    "contact": "Kontakt",
+    "privacy": "Prywatność",
+    "terms": "Warunki",
+    "disclosures": "Ujawnienia",
+    "twitter": "Twitter",
+    "linkedin": "LinkedIn",
+    "youtube": "YouTube",
+    "copyright": "© 2024 StockFx Investment Inc. Wszystkie prawa zastrzeżone. NMLS #123456"
+  },
+  "contact": {
+    "title": "Potrzebujesz pomocy?",
+    "message": "Masz pytania dotyczące handlu? Nasi menedżerowie kont chętnie Ci pomogą!",
+    "contact": "Skontaktuj się z naszym zespołem",
+    "later": "Może później"
+  },
+  "login": {
+    "title": "Witaj z powrotem",
+    "subtitle": "Lub utwórz nowe konto",
+    "emailLabel": "Adres e-mail",
+    "emailPlaceholder": "ty@przykład.com",
+    "passwordLabel": "Hasło",
+    "passwordPlaceholder": "••••••••",
+    "signInButton": "Zaloguj się",
+    "noAccount": "utwórz nowe konto",
+    "backToHome": "Wróć do domu",
+    "serverChecking": "Sprawdzanie serwera...",
+    "serverUp": "Serwer działa — spróbuj zalogować się ponownie.",
+    "thirdParty": "Lub kontynuuj za pomocą",
+    "thirdPartyDisabled": "Logowanie stron trzecich jest obecnie wyłączone."
+  },
+  "register": {
+    "title": "Utwórz swoje konto",
+    "subtitle": "Masz już konto?",
+    "haveAccount": "Zaloguj się",
+    "firstNameLabel": "Imię",
+    "firstNamePlaceholder": "Jan",
+    "lastNameLabel": "Nazwisko",
+    "lastNamePlaceholder": "Nowak",
+    "emailLabel": "Adres e-mail",
+    "emailPlaceholder": "ty@przykład.com",
+    "passwordLabel": "Hasło",
+    "passwordPlaceholder": "Utwórz hasło",
+    "passwordHelper": "Musi zawierać co najmniej 8 znaków",
+    "termsLabel": "Zgadzam się na",
+    "terms": "Warunki",
+    "and": "i",
+    "privacy": "Polityka prywatności",
+    "createButton": "Utwórz konto",
+    "verifyTitle": "Kod weryfikacyjny",
+    "verifyPlaceholder": "123456",
+    "verifyError": "Kod weryfikacyjny jest nieprawidłowy.",
+    "devCode": "DEV: Twój kod to",
+    "changeEmail": "Zmień e-mail",
+    "resendCode": "Wyślij kod ponownie",
+    "resendCooldown": "Wyślij ponownie ({{seconds}}s)",
+    "verifyButton": "Zweryfikuj"
+  }
+}

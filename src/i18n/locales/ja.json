@@ -1,0 +1,174 @@
+{
+  "nav": {
+    "signIn": "サインイン",
+    "getStarted": "はじめる"
+  },
+  "hero": {
+    "badge": "🎉 最初の$10,000の取引手数料無料",
+    "title1": "より賢く投資。",
+    "title2": "より速く成長。",
+    "description": "株式、仮想通貨、ETFの次世代プラットフォーム。プロフェッショナルツール。ゼロの複雑性。自信を持って取引してください。",
+    "startButton": "無料で投資を開始",
+    "signInButton": "サインイン"
+  },
+  "features": {
+    "title": "なぜStockFxを選ぶのか？",
+    "fast": {
+      "name": "超高速",
+      "desc": "超低レイテンシーでミリ秒単位で取引を実行します。"
+    },
+    "security": {
+      "name": "銀行レベルのセキュリティ",
+      "desc": "256ビット暗号化、2FA、FDIC保険保護。"
+    },
+    "mobile": {
+      "name": "モバイルファースト",
+      "desc": "フル機能のアプリ。いつでもどこでも取引できます。"
+    },
+    "global": {
+      "name": "グローバル市場",
+      "desc": "世界中の株式、仮想通貨、ETF、オプションにアクセスできます。"
+    }
+  },
+  "testimonials": {
+    "title": "世界中のトレーダーに愛されています",
+    "subtitle": "200万人以上のStockFxを信頼する投資家に参加してください"
+  },
+  "stats": {
+    "traders": "アクティブなトレーダー",
+    "assets": "取引資産",
+    "commission": "手数料",
+    "uptime": "稼働時間"
+  },
+  "pricing": {
+    "title": "あなたのための投資プラン",
+    "subtitle": "ポートフォリオのサイズに合わせた投資レベルを選択してください",
+    "starter": {
+      "name": "スターター",
+      "price": "$1,000 - $5,000",
+      "desc": "初期投資範囲",
+      "duration": "1か月"
+    },
+    "pro": {
+      "name": "プロ",
+      "price": "$5,000 - $25,000",
+      "desc": "成長投資範囲",
+      "duration": "2-3ヶ月",
+      "popular": "最も人気"
+    },
+    "enterprise": {
+      "name": "エンタープライズ",
+      "price": "$25,000+",
+      "desc": "プレミアム投資範囲",
+      "duration": "4ヶ月以上"
+    },
+    "features": {
+      "commissionFree": "手数料無料取引",
+      "basicCharting": "基本的なチャートツール",
+      "mobileAccess": "モバイルアプリアクセス",
+      "watchlists": "2つのウォッチリスト",
+      "emailSupport": "メールサポート",
+      "advancedCharting": "高度なチャートと分析",
+      "level2": "リアルタイムレベル2データ",
+      "unlimitedWatchlists": "無制限ウォッチリスト",
+      "support24": "優先24/7サポート",
+      "apiAccess": "APIアクセス",
+      "advancedAlerts": "高度なアラート",
+      "dedicatedManager": "専任ポートフォリオマネージャー",
+      "strategy": "カスタム戦略コンサルティング",
+      "whiteLabel": "ホワイトレーベルソリューション",
+      "integrations": "高度な統合",
+      "sla": "SLA保証",
+      "institutionalPricing": "機関投資家向け価格設定"
+    },
+    "button": "投資を開始"
+  },
+  "trust": {
+    "title": "あなたの信頼が私たちの優先事項",
+    "security": {
+      "name": "軍事グレードのセキュリティ",
+      "desc": "256ビット暗号化がすべてのデータを転送中および保存中に保護します。"
+    },
+    "insured": {
+      "name": "FDICとSIPCで保険付き",
+      "desc": "あなたの現金($250k)と有価証券($500k)は完全に保護されています。"
+    },
+    "compliant": {
+      "name": "規制対象で準拠",
+      "desc": "SEC、FINRA、およびすべての規制要件に準拠しています。"
+    }
+  },
+  "cta": {
+    "title": "取引を開始できる準備はできていますか？",
+    "subtitle": "数百万の投資家に参加してください。今日$50の無料株を取得してください。",
+    "button": "無料アカウント作成"
+  },
+  "footer": {
+    "description": "株式、仮想通貨、ETFの次世代プラットフォーム。プロフェッショナルツール。ゼロの複雑性。",
+    "platform": "プラットフォーム",
+    "company": "会社",
+    "legal": "法的",
+    "social": "フォローしてください",
+    "features": "機能",
+    "pricing": "価格設定",
+    "security": "セキュリティ",
+    "about": "について",
+    "blog": "ブログ",
+    "contact": "お問い合わせ",
+    "privacy": "プライバシー",
+    "terms": "利用規約",
+    "disclosures": "開示",
+    "twitter": "ツイッター",
+    "linkedin": "リンクドイン",
+    "youtube": "ユーチューブ",
+    "copyright": "© 2024 StockFx Investment Inc. 著作権所有。NMLS #123456"
+  },
+  "contact": {
+    "title": "サポートが必要ですか？",
+    "message": "取引について質問がありますか？当社のアカウント担当者がお手伝いします！",
+    "contact": "当社のチームに連絡してください",
+    "later": "後でもいいです"
+  },
+  "login": {
+    "title": "おかえりなさい",
+    "subtitle": "または新しいアカウントを作成",
+    "emailLabel": "メールアドレス",
+    "emailPlaceholder": "あなた@例.com",
+    "passwordLabel": "パスワード",
+    "passwordPlaceholder": "••••••••",
+    "signInButton": "サインイン",
+    "noAccount": "新しいアカウントを作成",
+    "backToHome": "ホームに戻る",
+    "serverChecking": "サーバーを確認中...",
+    "serverUp": "サーバーは稼働しています。もう一度サインインしてみてください。",
+    "thirdParty": "または続行",
+    "thirdPartyDisabled": "サードパーティのサインインは現在無効です。"
+  },
+  "register": {
+    "title": "アカウントを作成",
+    "subtitle": "すでにアカウントをお持ちですか？",
+    "haveAccount": "サインイン",
+    "firstNameLabel": "名",
+    "firstNamePlaceholder": "太郎",
+    "lastNameLabel": "姓",
+    "lastNamePlaceholder": "山田",
+    "emailLabel": "メールアドレス",
+    "emailPlaceholder": "あなた@例.com",
+    "passwordLabel": "パスワード",
+    "passwordPlaceholder": "パスワードを作成",
+    "passwordHelper": "8文字以上である必要があります",
+    "termsLabel": "利用規約に同意します",
+    "terms": "利用規約",
+    "and": "と",
+    "privacy": "プライバシーポリシー",
+    "createButton": "アカウント作成",
+    "verifyTitle": "検証コード",
+    "verifyPlaceholder": "123456",
+    "verifyError": "検証コードが正しくありません。",
+    "devCode": "DEV: あなたのコーディング",
+    "changeEmail": "メールを変更",
+    "resendCode": "コードを再送信",
+    "resendCooldown": "再送信 ({{seconds}}s)",
+    "verifyButton": "検証"
+  }
+}

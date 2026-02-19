@@ -1,5 +1,6 @@
 /// <reference types="vite/client" />
 import { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Button } from '../components/ui/Button';
 import { Input } from '../components/ui/Input';
 import { Logo } from '../components/investment/Logo';
@@ -10,6 +11,7 @@ interface LoginPageProps {
   onNavigate: (page: string) => void;
 }
 export function LoginPage({ onNavigate }: LoginPageProps) {
+  const { t } = useTranslation();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -77,14 +79,14 @@ export function LoginPage({ onNavigate }: LoginPageProps) {
           </div>
         </div>
         <h2 className="mt-2 text-center text-3xl font-bold tracking-tight text-slate-900">
-          Welcome back
+          {t('login.title')}
         </h2>
         <p className="mt-2 text-center text-sm text-slate-600">
-          Or{' '}
+          {t('login.subtitle')}{' '}
           <button
             onClick={() => onNavigate('register')}
             className="font-medium text-emerald-600 hover:text-emerald-500">
-            create a new account
+            {t('login.noAccount')}
           </button>
         </p>
 
@@ -100,9 +102,9 @@ export function LoginPage({ onNavigate }: LoginPageProps) {
         <div className="bg-white/90 backdrop-blur-sm py-8 px-4 shadow-xl shadow-slate-200/50 sm:rounded-xl sm:px-10 border border-slate-100">
           <form className="space-y-6" onSubmit={handleSubmit}>
             <Input
-              label="Email address"
+              label={t('login.emailLabel')}
               type="email"
-              placeholder="you@example.com"
+              placeholder={t('login.emailPlaceholder')}
               required
               leftIcon={<Mail className="h-5 w-5" />}
               value={email}
@@ -111,9 +113,9 @@ export function LoginPage({ onNavigate }: LoginPageProps) {
             />
 
             <Input
-              label="Password"
+              label={t('login.passwordLabel')}
               type="password"
-              placeholder="••••••••"
+              placeholder={t('login.passwordPlaceholder')}
               required
               leftIcon={<Lock className="h-5 w-5" />}
               value={password}
@@ -127,13 +129,13 @@ export function LoginPage({ onNavigate }: LoginPageProps) {
 
             {serverStatus === 'checking' && (
               <div className="text-sm mt-2 text-center text-slate-600">
-                <div className="text-xs text-slate-500 mt-1">Checking server...</div>
+                <div className="text-xs text-slate-500 mt-1">{t('login.serverChecking')}</div>
               </div>
             )}
 
             {serverStatus === 'up' && (
               <div className="text-sm mt-2 text-center text-emerald-600">
-                Server is up — try signing in again.
+                {t('login.serverUp')}
               </div>
             )}
 
@@ -148,7 +150,7 @@ export function LoginPage({ onNavigate }: LoginPageProps) {
               className="w-full"
               size="lg"
               isLoading={isLoading}>
-              Sign in
+              {t('login.signInButton')}
             </Button>
           </form>
 
@@ -159,13 +161,13 @@ export function LoginPage({ onNavigate }: LoginPageProps) {
               </div>
               <div className="relative flex justify-center text-sm">
                 <span className="bg-white px-2 text-slate-500">
-                  Or continue with
+                  {t('login.thirdParty')}
                 </span>
               </div>
             </div>
 
             <div className="mt-6 text-center">
-              <p className="text-sm text-slate-500">Third‑party sign-in is currently disabled.</p>
+              <p className="text-sm text-slate-500">{t('login.thirdPartyDisabled')}</p>
             </div>
           </div>
         </div>
@@ -176,7 +178,7 @@ export function LoginPage({ onNavigate }: LoginPageProps) {
             className="text-sm text-slate-500 hover:text-slate-900 flex items-center justify-center mx-auto transition-colors">
 
             <ArrowLeft className="h-4 w-4 mr-1" />
-            Back to Home
+            {t('login.backToHome')}
           </button>
         </div>
       </div>
