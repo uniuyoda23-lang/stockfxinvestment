@@ -344,9 +344,9 @@ export function DashboardPage({ onNavigate }: DashboardPageProps) {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50">
-      {/* Desktop Sidebar */}
-      <div className="hidden md:fixed md:inset-y-0 md:left-0 md:w-64 md:z-40">
+    <div className="h-screen bg-slate-50 flex flex-col md:flex-row overflow-hidden">
+      {/* Desktop Sidebar - Always visible */}
+      <div className="hidden md:flex md:flex-col md:h-screen md:w-64 md:flex-shrink-0 md:border-r md:border-slate-200 md:z-40 md:bg-slate-900">
         <DashboardSidebar
           activeTab={activeTab}
           setActiveTab={setActiveTab}
@@ -392,28 +392,28 @@ export function DashboardPage({ onNavigate }: DashboardPageProps) {
         </div>
       )}
 
-      {/* Main Content */}
-      <div className="md:ml-64">
+      {/* Main Content - Scrollable container */}
+      <div className="flex-1 flex flex-col overflow-hidden">
         {/* Top Bar */}
-        <header className="bg-white border-b border-slate-200 sticky top-0 z-30 px-3 sm:px-4 md:px-6 lg:px-8 h-14 sm:h-16 flex items-center justify-between shadow-sm">
-          <div className="flex items-center gap-2 md:gap-4">
+        <header className="bg-white border-b border-slate-200 flex-shrink-0 px-3 sm:px-4 md:px-5 h-14 sm:h-16 flex items-center justify-between shadow-sm">
+          <div className="flex items-center gap-2 min-w-0">
             <button
               onClick={() => setIsMobileMenuOpen(true)}
-              className="md:hidden text-slate-500 hover:text-slate-700 transition-colors p-1"
+              className="md:hidden text-slate-500 hover:text-slate-700 transition-colors p-1 flex-shrink-0"
             >
               <Menu className="h-6 w-6" />
             </button>
-            <h1 className="hidden sm:block text-lg font-semibold text-slate-900">StockFX Dashboard</h1>
+            <h1 className="hidden sm:block text-base md:text-lg font-semibold text-slate-900 truncate">StockFX Dashboard</h1>
           </div>
 
           {/* Right side - Notifications and User */}
-          <div className="flex items-center gap-2 sm:gap-4">
+          <div className="flex items-center gap-2 sm:gap-3 flex-shrink-0">
             <div className="hidden sm:block relative">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400" />
               <input
                 type="text"
                 placeholder={t('dashboard.searchAssets')}
-                className="pl-9 pr-4 py-2 rounded-full border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 w-48 lg:w-64"
+                className="pl-9 pr-4 py-1.5 rounded-full border border-slate-200 text-xs md:text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 w-40 md:w-48"
               />
             </div>
             
@@ -510,12 +510,12 @@ export function DashboardPage({ onNavigate }: DashboardPageProps) {
           </div>
         </header>
 
-        {/* Dashboard Content */}
-        <main className="p-3 sm:p-4 md:p-6 lg:p-8 max-w-7xl mx-auto">
+        {/* Dashboard Content - Scrollable */}
+        <main className="flex-1 overflow-y-auto overflow-x-hidden px-2 sm:px-3 md:px-4 lg:px-6 py-2 sm:py-3 md:py-4">
           {activeTab === 'overview' ? (
             <>
             {/* Stats Grid - Full width on mobile, 2 cols on sm, 4 cols on lg */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mb-6 md:mb-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-3 mb-4 sm:mb-5 md:mb-6">
             <StatsCard
               title="Total Balance"
               value={`$${balance.toFixed(2)}`}
@@ -549,9 +549,9 @@ export function DashboardPage({ onNavigate }: DashboardPageProps) {
 
           </div>
 
-          <div className="grid lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
+          <div className="grid lg:grid-cols-3 gap-2 sm:gap-3 md:gap-4">
             {/* Main Chart Section */}
-            <div className="lg:col-span-2 space-y-4 sm:space-y-6 md:space-y-8">
+            <div className="lg:col-span-2 space-y-2 sm:space-y-3 md:space-y-4">
               <PortfolioChart totalBalance={balance} />
 
               <MarketTrendsChart />
@@ -629,7 +629,7 @@ export function DashboardPage({ onNavigate }: DashboardPageProps) {
             </div>
 
             {/* Right Column - Transactions & Quick Actions */}
-            <div className="space-y-4 sm:space-y-6 md:space-y-8">
+            <div className="space-y-2 sm:space-y-3 md:space-y-4">
               {/* User Profile Card */}
               <div className="bg-gradient-to-br from-emerald-600 to-emerald-700 rounded-xl p-4 sm:p-6 text-white shadow-lg shadow-emerald-600/20 relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-10 -mt-10 blur-2xl"></div>
@@ -656,17 +656,17 @@ export function DashboardPage({ onNavigate }: DashboardPageProps) {
               </div>
 
               {/* Quick Actions */}
-              <div className="bg-blue-600 rounded-xl p-4 sm:p-6 text-white shadow-lg shadow-blue-600/20 relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-10 -mt-10 blur-2xl"></div>
-                <h3 className="font-bold text-base sm:text-lg mb-1 relative z-10">
+              <div className="bg-blue-600 rounded-lg p-3 sm:p-4 text-white shadow-lg shadow-blue-600/20 relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-24 h-24 bg-white/10 rounded-full -mr-8 -mt-8 blur-xl"></div>
+                <h3 className="font-bold text-sm sm:text-base mb-1 relative z-10">
                   {t('dashboard.quickTransfer')}
                 </h3>
-                <p className="text-blue-100 text-xs sm:text-sm mb-4 sm:mb-6 relative z-10">
+                <p className="text-blue-100 text-xs mb-3 sm:mb-4 relative z-10">
                   {t('dashboard.transferMessage')}
                 </p>
 
-                <div className="grid grid-cols-2 gap-2 sm:gap-3 relative z-10">
-                    <button className="bg-white/20 hover:bg-white/30 backdrop-blur-sm p-2 sm:p-3 rounded-lg text-xs sm:text-sm font-medium transition-colors flex flex-col items-center justify-center gap-1 sm:gap-2">
+                <div className="grid grid-cols-2 gap-2 relative z-10">
+                    <button className="bg-white/20 hover:bg-white/30 backdrop-blur-sm p-2 rounded-lg text-xs font-medium transition-colors flex flex-col items-center justify-center gap-1">
                     <ArrowUpRight className="h-4 sm:h-5 w-4 sm:w-5" />
                     {t('dashboard.send')}
                   </button>
@@ -678,9 +678,9 @@ export function DashboardPage({ onNavigate }: DashboardPageProps) {
               </div>
 
               {/* Recent Transactions */}
-              <div className="bg-white rounded-xl border border-slate-100 shadow-sm p-4 sm:p-6">
-                <div className="flex justify-between items-center mb-4 sm:mb-6">
-                  <h3 className="font-bold text-slate-900 text-sm sm:text-base">{t('dashboard.recentActivity')}</h3>
+              <div className="bg-white rounded-lg border border-slate-100 shadow-sm p-3 sm:p-4">
+                <div className="flex justify-between items-center mb-3 sm:mb-4">
+                  <h3 className="font-bold text-slate-900 text-xs sm:text-sm">{t('dashboard.recentActivity')}</h3>
                   <button className="p-1 hover:bg-slate-100 rounded-full text-slate-400 hover:text-slate-600">
                     <Search className="h-4 w-4" />
                   </button>
@@ -725,19 +725,19 @@ export function DashboardPage({ onNavigate }: DashboardPageProps) {
 
 
               {/* Asset Allocation */}
-              <div className="bg-white rounded-xl border border-slate-100 shadow-sm p-6">
-                <h3 className="font-bold text-slate-900 mb-6">
+              <div className="bg-white rounded-lg border border-slate-100 shadow-sm p-3 sm:p-4">
+                <h3 className="font-bold text-slate-900 mb-4 text-xs sm:text-sm">
                   {t('dashboard.assetAllocation')}
                 </h3>
-                <div className="flex items-center justify-center mb-6 relative">
+                <div className="flex items-center justify-center mb-4 relative">
                   {/* Simple CSS Donut Chart */}
-                  <div className="h-40 w-40 rounded-full border-[16px] border-emerald-500 border-r-blue-500 border-b-purple-500 border-l-orange-500 transform rotate-45"></div>
+                  <div className="h-32 w-32 rounded-full border-[12px] border-emerald-500 border-r-blue-500 border-b-purple-500 border-l-orange-500 transform rotate-45"></div>
                   <div className="absolute inset-0 flex items-center justify-center flex-col">
                     <span className="text-xs text-slate-500">{t('dashboard.totalAssets')}</span>
-                    <span className="font-bold text-slate-900">12</span>
+                    <span className="font-bold text-slate-900 text-sm">12</span>
                   </div>
                 </div>
-                <div className="space-y-3">
+                <div className="space-y-2">
                   {[
                   {
                     label: t('dashboard.stocks'),
@@ -781,12 +781,12 @@ export function DashboardPage({ onNavigate }: DashboardPageProps) {
           </div>
 
           {/* Additional Visualization Sections */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 md:gap-8 mt-6 md:mt-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-2 sm:gap-3 md:gap-4 mt-4 sm:mt-5 md:mt-6">
             <AssetAllocationChart />
             <GainLossHeatmap />
           </div>
 
-          <div className="mt-6 md:mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6">
+          <div className="mt-4 sm:mt-5 md:mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-3 md:gap-4 pb-4">
             <PriceMovementCard
               symbol="AAPL"
               name="Apple Inc."
