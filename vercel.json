@@ -3,8 +3,10 @@
   "outputDirectory": "dist",
   "framework": "vite",
   "env": {
+    "MONGODB_URI": "@mongodb_uri",
     "GMAIL_USER": "@gmail_user",
-    "GMAIL_PASSWORD": "@gmail_password"
+    "GMAIL_PASSWORD": "@gmail_password",
+    "JWT_SECRET": "@jwt_secret"
   },
   "functions": {
     "api/**/*.ts": {
