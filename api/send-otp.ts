@@ -6,7 +6,9 @@ const GMAIL_USER = process.env.GMAIL_USER;
 const GMAIL_PASSWORD = process.env.GMAIL_PASSWORD;
 
 if (!GMAIL_USER || !GMAIL_PASSWORD) {
-  console.error('Missing GMAIL_USER or GMAIL_PASSWORD environment variables');
+  console.error('❌ Missing email environment variables');
+  console.error('   GMAIL_USER:', GMAIL_USER ? 'SET' : 'MISSING');
+  console.error('   GMAIL_PASSWORD:', GMAIL_PASSWORD ? 'SET' : 'MISSING');
 }
 
 // Create transporter
@@ -36,6 +38,15 @@ export default async function handler(req: any, res: any) {
   // Only accept POST requests
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
+  }
+
+  // Check if environment variables are configured
+  if (!GMAIL_USER || !GMAIL_PASSWORD) {
+    console.error('❌ Email service not configured - missing Gmail credentials');
+    return res.status(500).json({
+      error: 'Email service not configured',
+      details: 'Gmail SMTP credentials are not set. Please configure GMAIL_USER and GMAIL_PASSWORD environment variables.',
+    });
   }
 
   const { email, otp } = req.body;
