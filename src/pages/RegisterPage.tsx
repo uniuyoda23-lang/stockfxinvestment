@@ -59,15 +59,18 @@ export function RegisterPage({ onNavigate }: RegisterPageProps) {
         }),
       });
 
+      const responseData = await response.json();
+      
       if (!response.ok) {
-        throw new Error('Failed to send OTP email');
+        throw new Error(responseData.error || responseData.details || 'Failed to send OTP email');
       }
 
       setResendCooldown(60);
-      console.info('OTP sent to', toEmail);
+      console.info('✅ OTP sent to', toEmail);
     } catch (err: any) {
-      setSendOtpError('Failed to send OTP. Please try again.');
-      console.error('Error sending OTP:', err);
+      const errorMessage = err?.message || 'Failed to send OTP. Please check your email address and try again.';
+      setSendOtpError(errorMessage);
+      console.error('❌ Error sending OTP:', err);
       deleteOTP(toEmail);
     } finally {
       setIsLoading(false);

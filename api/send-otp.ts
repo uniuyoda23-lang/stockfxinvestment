@@ -11,19 +11,24 @@ if (!GMAIL_USER || !GMAIL_PASSWORD) {
 
 // Create transporter
 const transporter = nodemailer.createTransport({
-  service: 'gmail',
+  host: 'smtp.gmail.com',
+  port: 465,
+  secure: true,
   auth: {
     user: GMAIL_USER,
     pass: GMAIL_PASSWORD,
   },
+  tls: {
+    rejectUnauthorized: false,
+  },
 }) as any;
 
 // Verify transporter connection
-transporter.verify((error: any) => {
+transporter.verify((error: any, success: any) => {
   if (error) {
-    console.error('Email service error:', error);
+    console.error('Email service error:', error.message || error);
   } else {
-    console.log('Email service ready to send messages');
+    console.log('Email service ready - SMTP connection verified');
   }
 });
 
