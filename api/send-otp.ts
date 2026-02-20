@@ -16,10 +16,10 @@ const transporter = nodemailer.createTransport({
     user: GMAIL_USER,
     pass: GMAIL_PASSWORD,
   },
-});
+}) as any;
 
 // Verify transporter connection
-transporter.verify((error: Error | null) => {
+transporter.verify((error: any) => {
   if (error) {
     console.error('Email service error:', error);
   } else {

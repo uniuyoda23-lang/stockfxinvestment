@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { Button } from '../components/ui/Button';
 import { Input } from '../components/ui/Input';
 import { Logo } from '../components/investment/Logo';
-import { Mail, Lock, CheckCircle2, AlertCircle } from 'lucide-react';
+import { Mail, Lock, AlertCircle } from 'lucide-react';
 import { setCurrentUserFromProfile, apiRegister } from '../lib/session';
 import { generateOTP, storeOTP, verifyOTP, deleteOTP, getOTPAttempts } from '../lib/otpService';
 interface RegisterPageProps {
@@ -21,13 +21,11 @@ export function RegisterPage({ onNavigate }: RegisterPageProps) {
 
   // Verification flow
   const [step, setStep] = useState<'form' | 'verify'>('form');
-  const [sentOTP, setSentOTP] = useState<string | null>(null);
   const [codeInput, setCodeInput] = useState('');
   const [isVerifying, setIsVerifying] = useState(false);
   const [verifyError, setVerifyError] = useState<string | null>(null);
   const [resendCooldown, setResendCooldown] = useState(0);
   const [sendOtpError, setSendOtpError] = useState<string | null>(null);
-  const [remainingAttempts, setRemainingAttempts] = useState(5);
 
   useEffect(() => {
     let t: number | undefined;
@@ -65,7 +63,6 @@ export function RegisterPage({ onNavigate }: RegisterPageProps) {
         throw new Error('Failed to send OTP email');
       }
 
-      setSentOTP(otp);
       setResendCooldown(60);
       console.info('OTP sent to', toEmail);
     } catch (err: any) {
@@ -107,7 +104,6 @@ export function RegisterPage({ onNavigate }: RegisterPageProps) {
       // Verify OTP
       if (!verifyOTP(email, codeInput.trim())) {
         const attempts = getOTPAttempts(email);
-        setRemainingAttempts(attempts);
         if (attempts === 0) {
           setVerifyError('Too many incorrect attempts. Please request a new code.');
         } else {
