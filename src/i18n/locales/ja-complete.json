@@ -1,0 +1,238 @@
+{
+  "nav": {
+    "signIn": "ログイン",
+    "getStarted": "はじめる"
+  },
+  "hero": {
+    "badge": "🎉 最初の$10,000の取引手数料無料",
+    "title1": "もっと賢く投資しましょう。",
+    "title2": "より速く成長させましょう。",
+    "description": "株式、ETF、配当投資用の次世代プラットフォーム。プロフェッショナルツール。ゼロの複雑性。自信を持って投資してください。",
+    "startButton": "無料で投資を始める",
+    "signInButton": "ログイン"
+  },
+  "features": {
+    "title": "StockFxを選ぶ理由?",
+    "fast": {
+      "name": "ライトニングファスト",
+      "desc": "超低遅延でミリ秒単位で注文を実行します。"
+    },
+    "security": {
+      "name": "銀行レベルのセキュリティ",
+      "desc": "256ビット暗号化、2FA、FDIC保険保護。"
+    },
+    "mobile": {
+      "name": "モバイルファースト",
+      "desc": "完全機能のアプリ。いつでもどこでも投資します。"
+    },
+    "global": {
+      "name": "グローバル市場",
+      "desc": "世界中の株式、ETF、投資信託、債券にアクセスしてください。"
+    }
+  },
+  "testimonials": {
+    "title": "世界中の投資家に愛されています",
+    "subtitle": "StockFxを信頼する200万人以上の投資家に参加してください"
+  },
+  "stats": {
+    "traders": "アクティブトレーダー",
+    "assets": "取引資産",
+    "commission": "手数料",
+    "uptime": "稼働率"
+  },
+  "pricing": {
+    "title": "あなたのためにカスタマイズされた投資計画",
+    "subtitle": "ポートフォリオのサイズに合わせて投資レベルを選択してください",
+    "starter": {
+      "name": "スターター",
+      "price": "$1,000 - $5,000",
+      "desc": "初期投資範囲",
+      "duration": "1ヶ月"
+    },
+    "pro": {
+      "name": "プロ",
+      "price": "$5,000 - $25,000",
+      "desc": "成長投資範囲",
+      "duration": "2-3ヶ月",
+      "popular": "最も人気"
+    },
+    "enterprise": {
+      "name": "エンタープライズ",
+      "price": "$25,000+",
+      "desc": "プレミアム投資範囲",
+      "duration": "4+ヶ月"
+    },
+    "features": {
+      "commissionFree": "手数料無料取引",
+      "basicCharting": "基本的なチャートツール",
+      "mobileAccess": "モバイルアプリアクセス",
+      "watchlists": "2つのウォッチリスト",
+      "emailSupport": "メールサポート",
+      "advancedCharting": "高度なチャートと分析",
+      "level2": "リアルタイムレベル2データ",
+      "unlimitedWatchlists": "無制限のウォッチリスト",
+      "support24": "優先24/7サポート",
+      "apiAccess": "APIアクセス",
+      "advancedAlerts": "高度なアラート",
+      "dedicatedManager": "専任ポートフォリオマネージャー",
+      "strategy": "カスタム戦略コンサルティング",
+      "whiteLabel": "ホワイトラベルソリューション",
+      "integrations": "高度な統合",
+      "sla": "SLA保証",
+      "institutionalPricing": "機関投資家向け価格設定"
+    },
+    "button": "投資を始める"
+  },
+  "trust": {
+    "title": "あなたの信頼、私たちの優先事項",
+    "security": {
+      "name": "ミリタリーグレード品のセキュリティ",
+      "desc": "256ビット暗号化は、転送中および保存中のすべてのデータを保護します。"
+    },
+    "insured": {
+      "name": "FDIC & SIPCで保険付き",
+      "desc": "現金(25万ドル)と有価証券(50万ドル)は完全に保護されています。"
+    },
+    "compliant": {
+      "name": "規制され準拠",
+      "desc": "すべてのSEC、FINRA、および規制要件に準拠しています。"
+    }
+  },
+  "cta": {
+    "title": "トレードを始める準備はできていますか?",
+    "subtitle": "数百万人の投資家に参加してください。今日$50の無料ストックを取得してください。",
+    "button": "無料アカウントを作成"
+  },
+  "footer": {
+    "description": "株式、暗号通貨、ETF用の次世代プラットフォーム。プロフェッショナルツール。ゼロの複雑性。",
+    "platform": "プラットフォーム",
+    "company": "会社",
+    "legal": "法律",
+    "social": "フォローしてください",
+    "features": "特徴",
+    "pricing": "価格",
+    "security": "セキュリティ",
+    "about": "について",
+    "blog": "ブログ",
+    "contact": "お問い合わせ",
+    "privacy": "プライバシー",
+    "terms": "利用規約",
+    "disclosures": "開示",
+    "twitter": "ツイッター",
+    "linkedin": "LinkedIn",
+    "youtube": "YouTube",
+    "copyright": "© 2024 StockFx Investment Inc.著作権所有。NMLS#123456"
+  },
+  "contact": {
+    "title": "ヘルプが必要?",
+    "message": "取引についてご質問がありますか?私たちのアカウント担当者がお客様を支援する準備ができています!",
+    "contact": "チームにお問い合わせください",
+    "later": "後で"
+  },
+  "login": {
+    "title": "おかえりなさい",
+    "subtitle": "または新しいアカウントを作成してください",
+    "emailLabel": "メールアドレス",
+    "emailPlaceholder": "you@example.com",
+    "passwordLabel": "パスワード",
+    "passwordPlaceholder": "••••••••",
+    "signInButton": "ログイン",
+    "noAccount": "新しいアカウントを作成する",
+    "backToHome": "ホームに戻る",
+    "serverChecking": "サーバーを確認中...",
+    "serverUp": "サーバーは稼働中です — もう一度サインインしてみてください。",
+    "thirdParty": "または続ける",
+    "thirdPartyDisabled": "サードパーティのサインインは現在無効になっています。"
+  },
+  "register": {
+    "title": "アカウントを作成する",
+    "subtitle": "すでにアカウントをお持ちですか?",
+    "haveAccount": "ログイン",
+    "firstNameLabel": "名",
+    "firstNamePlaceholder": "太郎",
+    "lastNameLabel": "姓",
+    "lastNamePlaceholder": "山田",
+    "emailLabel": "メールアドレス",
+    "emailPlaceholder": "you@example.com",
+    "passwordLabel": "パスワード",
+    "passwordPlaceholder": "パスワードを作成する",
+    "passwordHelper": "最低8文字である必要があります",
+    "termsLabel": "同意します",
+    "terms": "利用規約",
+    "and": "と",
+    "privacy": "プライバシーポリシー",
+    "createButton": "アカウントを作成",
+    "verifyTitle": "確認コード",
+    "verifyPlaceholder": "123456",
+    "verifyError": "確認コードが間違っています。",
+    "devCode": "開発:あなたのコードは",
+    "changeEmail": "メールを変更する",
+    "resendCode": "コードを再送信",
+    "resendCooldown": "再送信({{seconds}}s)",
+    "verifyButton": "確認"
+  },
+  "dashboard": {
+    "loading": "ダッシュボードを読み込み中...",
+    "notAuthenticated": "ダッシュボードを表示するにはログインしてください。",
+    "goToLogin": "ログインに進む",
+    "signOut": "ログアウト",
+    "yourHoldings": "あなたの持ち株",
+    "portfolioSummary": "ポートフォリオの概要",
+    "totalValue": "総価値",
+    "unrealizedGains": "未実現利益",
+    "return": "リターン%",
+    "allocation": "配置",
+    "assets": "資産",
+    "performance": "パフォーマンス",
+    "welcome": "ようこそ、{{name}}!",
+    "accountCreated": "アカウントが正常に作成されました",
+    "emailAddress": "メールアドレス",
+    "accountStatus": "アカウント状態",
+    "active": "アクティブ",
+    "currentBalance": "現在の残高",
+    "overviewTab": "概要",
+    "portfolioTab": "ポートフォリオ",
+    "settingsTab": "設定",
+    "accountSettings": "アカウント設定",
+    "manageAccount": "アカウントと設定を管理する",
+    "profileInformation": "プロフィール情報",
+    "fullName": "フルネーム",
+    "security": "セキュリティ",
+    "newPassword": "新しいパスワード(オプション)",
+    "leaveBlank": "現在のパスワードを保持するには空白のままにしてください",
+    "preferences": "基本設定",
+    "emailNotifications": "メール通知",
+    "priceAlerts": "価格アラート",
+    "marketingEmails": "マーケティングメール",
+    "saveChanges": "変更を保存",
+    "cancel": "キャンセル",
+    "noChanges": "保存する変更がありません",
+    "settingsUpdated": "設定が正常に更新されました!",
+    "failedToSave": "設定の保存に失敗しました",
+    "searchAssets": "資産を検索...",
+    "notifications": "通知",
+    "noNotifications": "まだ通知がありません",
+    "totalBalance": "残高合計",
+    "totalProfit": "合計利益",
+    "monthlyIncome": "月収",
+    "activeTrades": "アクティブなトレード",
+    "marketWatchlist": "市場ウォッチリスト",
+    "viewAll": "すべて表示",
+    "quickTransfer": "クイック転送",
+    "transferMessage": "アカウント間で即座に資金を転送します。",
+    "send": "送信",
+    "addMoney": "資金を追加",
+    "recentActivity": "最近のアクティビティ",
+    "viewAllHistory": "すべての履歴を表示",
+    "assetAllocation": "資産配置",
+    "totalAssets": "総資産",
+    "stocks": "ストック",
+    "crypto": "暗号通貨",
+    "etfs": "ETF",
+    "cash": "現金",
+    "shares": "シェア",
+    "yesterday": "昨日",
+    "investPro": "InvestPro",
+    "topHoldings": "あなたのトップ保有資産"
+  }
+}

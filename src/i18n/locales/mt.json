@@ -1,0 +1,250 @@
+{
+  "nav": {
+    "signIn": "Allinn",
+    "getStarted": "Ibda"
+  },
+  "hero": {
+    "badge": "🎉 Investiment Mingħajr Ħlas fuq l-ewwel $10,000",
+    "title1": "Invista b'Wisgħa.",
+    "title2": "Kbir Aktar Malajr.",
+    "description": "Il-platform tal-ġenerazzjoni li jmiss għal stocks, ETF u investiment ta' dividend. Għodod professjonali. Ebda kumplissità. Invista bix-xgura.",
+    "startButton": "Ibda l-Investiment Mingħajr Ħlas",
+    "signInButton": "Allinn"
+  },
+  "features": {
+    "title": "Liex Agħżel StockFx?",
+    "fast": {
+      "name": "Ħefief Bħal Riedita",
+      "desc": "Esekwixxi ordnijiet f'millisekondi b'latency estremament baxxa."
+    },
+    "security": {
+      "name": "Sigurtà fil-Livell tal-Bank",
+      "desc": "Encryption 256-bit, 2FA, protezzjoni tal-assigurazzjoni FDIC."
+    },
+    "mobile": {
+      "name": "Mobile l-Ewwel",
+      "desc": "App b'karatteristiċi sħaħ. Invista fejn jippjaċik, meta jippjaċik."
+    },
+    "global": {
+      "name": "Suq Globali",
+      "desc": "Aċċess għal stocks, ETF, fondi mutwali u bonds madwar id-Dinja."
+    }
+  },
+  "testimonials": {
+    "title": "Moħbi mill-Investituri Madwar id-Dinja",
+    "subtitle": "Ħaddu ma' aktar minn 2 Miljun Investituri li Jaħtfu StockFx"
+  },
+  "pricing": {
+    "title": "Pjanijiet ta' Investiment Kkustomizzati Għalik",
+    "subtitle": "Agħżel livell ta' investiment li jaqbel mas-saħħa tal-portfolio tiegħek",
+    "starter": {
+      "name": "Standard",
+      "price": "$300 - $5,000",
+      "desc": "Firxa ta' Investiment Bażika",
+      "duration": "1 Xahar"
+    },
+    "pro": {
+      "name": "Premium",
+      "price": "$5,000 - $50,000",
+      "desc": "Firxa ta' Investiment tal-Kbir",
+      "duration": "2-3 Xhur",
+      "popular": "Il-Aktar Popolari"
+    },
+    "gold": {
+      "name": "Deheb",
+      "price": "$50,000+",
+      "desc": "Firxa ta' Investiment Premium",
+      "duration": "3-6 Xhur"
+    },
+    "annual": {
+      "name": "Investiment Annwali",
+      "price": "$100,000+",
+      "desc": "Firxa ta' Investiment Istituzzjonale",
+      "duration": "12+ Xhur"
+    },
+    "enterprise": {
+      "name": "Enterprise",
+      "price": "$25,000+",
+      "desc": "Premium Investment Range",
+      "duration": "4+ Months"
+    },
+    "features": {
+      "commissionFree": "Commission-free trades",
+      "basicCharting": "Basic charting tools",
+      "mobileAccess": "Mobile app access",
+      "watchlists": "2 watchlists",
+      "emailSupport": "Email support",
+      "advancedCharting": "Advanced charting & analysis",
+      "level2": "Real-time Level 2 data",
+      "unlimitedWatchlists": "Unlimited watchlists",
+      "support24": "Priority 24/7 support",
+      "apiAccess": "API access",
+      "advancedAlerts": "Advanced alerts",
+      "dedicatedManager": "Dedicated portfolio manager",
+      "strategy": "Custom strategy consulting",
+      "whiteLabel": "White-label solutions",
+      "integrations": "Advanced integrations",
+      "sla": "SLA guarantees",
+      "institutionalPricing": "Institutional pricing"
+    },
+    "button": "Start Investing"
+  },
+  "login": {
+    "title": "Merħba Lura",
+    "subtitle": "Jew Oħloq kont ġdid",
+    "emailLabel": "Indirizz tal-Email",
+    "emailPlaceholder": "inti@eżempju.mt",
+    "passwordLabel": "Password",
+    "passwordPlaceholder": "••••••••",
+    "signInButton": "Allinn",
+    "noAccount": "Oħloq kont ġdid",
+    "backToHome": "Back to Home",
+    "serverChecking": "Checking server...",
+    "serverUp": "Server is up — try signing in again.",
+    "thirdParty": "Or continue with",
+    "thirdPartyDisabled": "Third‑party sign-in is currently disabled."
+  },
+  "register": {
+    "title": "Oħloq il-kont tiegħek",
+    "subtitle": "Għandek kont diġà?",
+    "haveAccount": "Allinn",
+    "firstNameLabel": "Isem l-Ewwel",
+    "firstNamePlaceholder": "Pawl",
+    "lastNameLabel": "Isem Tat-Twaħħal",
+    "lastNamePlaceholder": "Agius",
+    "emailLabel": "Indirizz tal-Email",
+    "emailPlaceholder": "inti@eżempju.mt",
+    "passwordLabel": "Password",
+    "passwordPlaceholder": "Oħloq password",
+    "passwordHelper": "Irid ikun ta' mill-inqas 8 karattri",
+    "createButton": "Oħloq Kont",
+    "verifyTitle": "Kodiċi ta' Verifika",
+    "verifyPlaceholder": "123456",
+    "verifyError": "Il-kodiċi ta' verifika huwa errat.",
+    "verifyButton": "Ivverifika",
+    "termsLabel": "I agree to the",
+    "terms": "Terms",
+    "and": "and",
+    "privacy": "Privacy Policy",
+    "devCode": "DEV: Your code is",
+    "changeEmail": "Change email",
+    "resendCode": "Resend code",
+    "resendCooldown": "Resend ({{seconds}}s)"
+  },
+  "stats": {
+    "traders": "Active Traders",
+    "assets": "Assets Traded",
+    "commission": "Commission Fees",
+    "uptime": "Uptime"
+  },
+  "trust": {
+    "title": "Your Trust, Our Priority",
+    "security": {
+      "name": "Military-Grade Security",
+      "desc": "256-bit encryption protects all your data in transit and at rest."
+    },
+    "insured": {
+      "name": "FDIC & SIPC Insured",
+      "desc": "Your cash ($250k) and securities ($500k) are fully protected."
+    },
+    "compliant": {
+      "name": "Regulated & Compliant",
+      "desc": "We comply with all SEC, FINRA, and regulatory requirements."
+    }
+  },
+  "cta": {
+    "title": "Ready to Start Trading?",
+    "subtitle": "Join millions of investors. Get $50 in free stock today.",
+    "button": "Create Free Account"
+  },
+  "footer": {
+    "description": "The next-generation platform for stocks, crypto, and ETFs. Professional tools. Zero complexity.",
+    "platform": "Platform",
+    "company": "Company",
+    "legal": "Legal",
+    "social": "Follow Us",
+    "features": "Features",
+    "pricing": "Pricing",
+    "security": "Security",
+    "about": "About Us",
+    "blog": "Blog",
+    "contact": "Contact",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "disclosures": "Disclosures",
+    "twitter": "Twitter",
+    "linkedin": "LinkedIn",
+    "youtube": "YouTube",
+    "copyright": "© 2024 StockFx Investment Inc. All rights reserved. NMLS #123456"
+  },
+  "contact": {
+    "title": "Need Help?",
+    "message": "Have questions about trading? Our account officers are here to help you get started!",
+    "contact": "Contact Our Team",
+    "later": "Maybe Later"
+  },
+  "dashboard": {
+    "loading": "Loading dashboard...",
+    "notAuthenticated": "Please log in to view your dashboard.",
+    "goToLogin": "Go to Login",
+    "signOut": "Sign Out",
+    "yourHoldings": "Your Holdings",
+    "portfolioSummary": "Portfolio Summary",
+    "totalValue": "Total Value",
+    "unrealizedGains": "Unrealized Gains",
+    "return": "Return %",
+    "allocation": "Allocation",
+    "assets": "Assets",
+    "performance": "Performance",
+    "welcome": "Welcome, {{name}}!",
+    "accountCreated": "Account created successfully",
+    "emailAddress": "Email Address",
+    "accountStatus": "Account Status",
+    "active": "Active",
+    "currentBalance": "Current Balance",
+    "overviewTab": "Overview",
+    "portfolioTab": "Portfolio",
+    "settingsTab": "Settings",
+    "accountSettings": "Account Settings",
+    "manageAccount": "Manage your account and preferences",
+    "profileInformation": "Profile Information",
+    "fullName": "Full Name",
+    "security": "Security",
+    "newPassword": "New Password (optional)",
+    "leaveBlank": "Leave blank to keep current password",
+    "preferences": "Preferences",
+    "emailNotifications": "Email notifications",
+    "priceAlerts": "Price alerts",
+    "marketingEmails": "Marketing emails",
+    "saveChanges": "Save Changes",
+    "cancel": "Cancel",
+    "noChanges": "No changes to save",
+    "settingsUpdated": "Settings updated successfully!",
+    "failedToSave": "Failed to save settings",
+    "searchAssets": "Search assets...",
+    "notifications": "Notifications",
+    "noNotifications": "No notifications yet",
+    "totalBalance": "Total Balance",
+    "totalProfit": "Total Profit",
+    "monthlyIncome": "Monthly Income",
+    "activeTrades": "Active Trades",
+    "marketWatchlist": "Market Watchlist",
+    "viewAll": "View All",
+    "quickTransfer": "Quick Transfer",
+    "transferMessage": "Move funds instantly between accounts.",
+    "send": "Send",
+    "addMoney": "Add Money",
+    "recentActivity": "Recent Activity",
+    "viewAllHistory": "View All History",
+    "assetAllocation": "Asset Allocation",
+    "totalAssets": "Total Assets",
+    "stocks": "Stocks",
+    "crypto": "Crypto",
+    "etfs": "ETFs",
+    "cash": "Cash",
+    "shares": "shares",
+    "yesterday": "Yesterday",
+    "investPro": "InvestPro",
+    "topHoldings": "Your Top Holdings"
+  }
+}

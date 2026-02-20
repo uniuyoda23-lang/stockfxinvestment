@@ -1,0 +1,238 @@
+{
+  "nav": {
+    "signIn": "Giriş Yap",
+    "getStarted": "Başlayın"
+  },
+  "hero": {
+    "badge": "🎉 İlk $10.000'da komisyon ücreti olmadan ticaret",
+    "title1": "Daha Akıllıca Yatırım Yapın.",
+    "title2": "Daha Hızlı Büyüyün.",
+    "description": "Hisse senedi, ETF ve temettü yatırımı için yeni nesil platform. Profesyonel araçlar. Sıfır karmaşıklık. Güvenle yatırım yapın.",
+    "startButton": "Ücretsiz Yatırımaya Başlayın",
+    "signInButton": "Giriş Yap"
+  },
+  "features": {
+    "title": "Neden StockFx Seçiniz?",
+    "fast": {
+      "name": "Yıldırım Hızlı",
+      "desc": "Milisaniyeler içinde ultra-düşük gecikme ile emirleri gerçekleştirin."
+    },
+    "security": {
+      "name": "Banka Düzeyi Güvenlik",
+      "desc": "256-bit şifreleme, 2FA, FDIC sigorta koruması."
+    },
+    "mobile": {
+      "name": "Mobil Öncelikli",
+      "desc": "Tam özellikli uygulama. Her yerde, her zaman yatırım yapın."
+    },
+    "global": {
+      "name": "Küresel Pazarlar",
+      "desc": "Dünyadaki hisse senetlerine, ETF'lere, yatırım fonlarına ve tahvillere erişin."
+    }
+  },
+  "testimonials": {
+    "title": "Dünya Çapında Yatırımcılar Tarafından Sevilir",
+    "subtitle": "StockFx'e güvenen 2 milyondan fazla yatırımcıya katılın"
+  },
+  "stats": {
+    "traders": "Aktif Tüccarlar",
+    "assets": "İşlem Gören Varlıklar",
+    "commission": "Komisyon Ücretleri",
+    "uptime": "Çalışma Süresi"
+  },
+  "pricing": {
+    "title": "Sizin İçin Özelleştirilmiş Yatırım Planları",
+    "subtitle": "Portföy boyutunuza uygun bir yatırım seviyesi seçin",
+    "starter": {
+      "name": "Başlangıç",
+      "price": "$1.000 - $5.000",
+      "desc": "İlk Yatırım Aralığı",
+      "duration": "1 Ay"
+    },
+    "pro": {
+      "name": "Pro",
+      "price": "$5.000 - $25.000",
+      "desc": "Büyüme Yatırım Aralığı",
+      "duration": "2-3 Ay",
+      "popular": "En Popüler"
+    },
+    "enterprise": {
+      "name": "Kurumsal",
+      "price": "$25.000+",
+      "desc": "Premium Yatırım Aralığı",
+      "duration": "4+ Ay"
+    },
+    "features": {
+      "commissionFree": "Komisyonsuz ticaret",
+      "basicCharting": "Temel grafik araçları",
+      "mobileAccess": "Mobil uygulama erişimi",
+      "watchlists": "2 izleme listesi",
+      "emailSupport": "E-posta desteği",
+      "advancedCharting": "Gelişmiş grafik ve analiz",
+      "level2": "Gerçek zamanlı Seviye 2 verileri",
+      "unlimitedWatchlists": "Sınırsız izleme listeleri",
+      "support24": "Öncelikli 24/7 destek",
+      "apiAccess": "API erişimi",
+      "advancedAlerts": "Gelişmiş Uyarılar",
+      "dedicatedManager": "Özel portföy yöneticisi",
+      "strategy": "Özel strateji danışmanlığı",
+      "whiteLabel": "Beyaz etiket çözümleri",
+      "integrations": "Gelişmiş entegrasyonlar",
+      "sla": "SLA garantileri",
+      "institutionalPricing": "Kurumsal fiyatlandırma"
+    },
+    "button": "Yatırımaya Başlayın"
+  },
+  "trust": {
+    "title": "Sizin Güveniniz, Bizim Önceliğimiz",
+    "security": {
+      "name": "Askeri Sınıf Güvenlik",
+      "desc": "256-bit şifreleme, aktarımdaki ve beklemedeki tüm verilerinizi korur."
+    },
+    "insured": {
+      "name": "FDIC ve SIPC Sigortalı",
+      "desc": "Nakit ($250k) ve menkul kıymetleriniz ($500k) tam olarak korunur."
+    },
+    "compliant": {
+      "name": "Düzenlenmiş ve Uyumlu",
+      "desc": "Tüm SEC, FINRA ve düzenleyici gereklemelere uyarız."
+    }
+  },
+  "cta": {
+    "title": "Ticarete Başlamaya Hazır mısınız?",
+    "subtitle": "Milyonlarca yatırımcıya katılın. Bugün $50 bedava hisse edinin.",
+    "button": "Ücretsiz Hesap Oluşturun"
+  },
+  "footer": {
+    "description": "Hisse senedi, kripto para ve ETF'ler için yeni nesil platform. Profesyonel araçlar. Sıfır karmaşıklık.",
+    "platform": "Platform",
+    "company": "Şirket",
+    "legal": "Yasal",
+    "social": "Bizi Takip Edin",
+    "features": "Özelikler",
+    "pricing": "Fiyatlandırma",
+    "security": "Güvenlik",
+    "about": "Hakkımızda",
+    "blog": "Blog",
+    "contact": "İletişim",
+    "privacy": "Gizlilik",
+    "terms": "Şartlar",
+    "disclosures": "Açıklamalar",
+    "twitter": "Twitter",
+    "linkedin": "LinkedIn",
+    "youtube": "YouTube",
+    "copyright": "© 2024 StockFx Investment Inc. Tüm hakları saklıdır. NMLS #123456"
+  },
+  "contact": {
+    "title": "Yardım Gereksiyor?",
+    "message": "Ticaret hakkında sorularınız mı var? Hesap görevlilerimiz başlamanıza yardımcı olmaya hazırdır!",
+    "contact": "Ekibimizle İletişime Geçin",
+    "later": "Belki Daha Sonra"
+  },
+  "login": {
+    "title": "Hoş geldin",
+    "subtitle": "Ya da yeni bir hesap oluşturun",
+    "emailLabel": "E-posta Adresi",
+    "emailPlaceholder": "you@example.com",
+    "passwordLabel": "Şifre",
+    "passwordPlaceholder": "••••••••",
+    "signInButton": "Giriş Yap",
+    "noAccount": "yeni bir hesap oluşturun",
+    "backToHome": "Ana Sayfaya Dön",
+    "serverChecking": "Sunucu kontrol ediliyor...",
+    "serverUp": "Sunucu açık — tekrar oturum açmayı deneyin.",
+    "thirdParty": "Veya devam edin",
+    "thirdPartyDisabled": "Üçüncü taraf oturum açma şu anda devre dışıdır."
+  },
+  "register": {
+    "title": "Hesabınızı Oluşturun",
+    "subtitle": "Zaten bir hesabınız var mı?",
+    "haveAccount": "Giriş Yap",
+    "firstNameLabel": "Ad",
+    "firstNamePlaceholder": "Ahmet",
+    "lastNameLabel": "Soyadı",
+    "lastNamePlaceholder": "Yılmaz",
+    "emailLabel": "E-posta Adresi",
+    "emailPlaceholder": "you@example.com",
+    "passwordLabel": "Şifre",
+    "passwordPlaceholder": "Bir şifre oluşturun",
+    "passwordHelper": "En az 8 karakter olmalıdır",
+    "termsLabel": "Katılıyorum",
+    "terms": "Şartlar",
+    "and": "ve",
+    "privacy": "Gizlilik İlkesi",
+    "createButton": "Hesap Oluşturun",
+    "verifyTitle": "Doğrulama kodu",
+    "verifyPlaceholder": "123456",
+    "verifyError": "Doğrulama kodu yanlış.",
+    "devCode": "DEV: Kodunuz",
+    "changeEmail": "E-postayı Değiştirebilirsiniz Gir",
+    "resendCode": "Kodu Yeniden Gönder",
+    "resendCooldown": "Yeniden Gönder ({{seconds}}s)",
+    "verifyButton": "Doğrula"
+  },
+  "dashboard": {
+    "loading": "Pano yükleniyor...",
+    "notAuthenticated": "Panonuzu görmek için lütfen oturum açın.",
+    "goToLogin": "Giriş Sayfasına Git",
+    "signOut": "Çıkış",
+    "yourHoldings": "Sizin Sahip Olduklarınız",
+    "portfolioSummary": "Portföy Özeti",
+    "totalValue": "Toplam Değer",
+    "unrealizedGains": "Gerçekleşmemiş Kazançlar",
+    "return": "Geri Dön %",
+    "allocation": "Tahsisat",
+    "assets": "Varlıklar",
+    "performance": "Performans",
+    "welcome": "Hoş geldin, {{name}}!",
+    "accountCreated": "Hesap başarıyla oluşturuldu",
+    "emailAddress": "E-posta Adresi",
+    "accountStatus": "Hesap Durumu",
+    "active": "Aktif",
+    "currentBalance": "Geçerli Bakiye",
+    "overviewTab": "Genel Bakış",
+    "portfolioTab": "Portföy",
+    "settingsTab": "Ayarlar",
+    "accountSettings": "Hesap Ayarlarısı",
+    "manageAccount": "Hesabınızı ve tercihlerinizi yönetin",
+    "profileInformation": "Profil Bilgileri",
+    "fullName": "Tam Ad",
+    "security": "Güvenlik",
+    "newPassword": "Yeni Şifre (isteğe bağlı)",
+    "leaveBlank": "Mevcut şifreyi tutmak için boş bırakın",
+    "preferences": "Tercihler",
+    "emailNotifications": "E-posta Bildirimleri",
+    "priceAlerts": "Fiyat Uyarıları",
+    "marketingEmails": "Pazarlama E-postaları",
+    "saveChanges": "Değişiklikleri Kaydet",
+    "cancel": "İptal",
+    "noChanges": "Kaydedilecek değişiklik yok",
+    "settingsUpdated": "Ayarlar başarıyla güncellendi!",
+    "failedToSave": "Ayarlar kaydedilemedi",
+    "searchAssets": "Varlıkları ara...",
+    "notifications": "Bildirimler",
+    "noNotifications": "Henüz bildirim yok",
+    "totalBalance": "Toplam Bakiye",
+    "totalProfit": "Toplam Kar",
+    "monthlyIncome": "Aylık Gelir",
+    "activeTrades": "Aktif Ticaret",
+    "marketWatchlist": "Pazar İzleme Listesi",
+    "viewAll": "Tümünü Görüntüle",
+    "quickTransfer": "Hızlı Transfer",
+    "transferMessage": "Hesaplar arasında anında para aktarın.",
+    "send": "Gönder",
+    "addMoney": "Para Ekle",
+    "recentActivity": "Son Etkinlik",
+    "viewAllHistory": "Tüm Tarihçeyi Görüntüle",
+    "assetAllocation": "Varlık Tahsisi",
+    "totalAssets": "Toplam Varlıklar",
+    "stocks": "Hisse Senetleri",
+    "crypto": "Kripto Para",
+    "etfs": "ETF",
+    "cash": "Nakit",
+    "shares": "paylar",
+    "yesterday": "Dün",
+    "investPro": "InvestPro",
+    "topHoldings": "En Önemli Varlıklarınız"
+  }
+}

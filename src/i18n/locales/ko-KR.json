@@ -1,0 +1,250 @@
+{
+  "nav": {
+    "signIn": "로그인",
+    "getStarted": "시작하기"
+  },
+  "hero": {
+    "badge": "🎉 처음 $10,000에서 무료 투자",
+    "title1": "현명하게 투자하세요.",
+    "title2": "더 빠르게 성장하세요.",
+    "description": "주식, ETF 및 배당금 투자를 위한 차세대 플랫폼입니다. 전문적인 도구. 복잡성 제로. 자신 있게 투자하세요.",
+    "startButton": "무료 투자 시작",
+    "signInButton": "로그인"
+  },
+  "features": {
+    "title": "StockFx를 선택하는 이유?",
+    "fast": {
+      "name": "번개 속도",
+      "desc": "매우 낮은 지연 시간으로 밀리초 내에 주문을 완료하세요."
+    },
+    "security": {
+      "name": "은행 수준의 보안",
+      "desc": "256비트 암호화, 2FA, FDIC 보험 보호."
+    },
+    "mobile": {
+      "name": "모바일 우선",
+      "desc": "모든 기능을 갖춘 앱. 어디서나 투자하세요."
+    },
+    "global": {
+      "name": "글로벌 마켓",
+      "desc": "전 세계의 주식, ETF, 뮤추얼 펀드 및 채권에 액세스하세요."
+    }
+  },
+  "testimonials": {
+    "title": "전 세계 투자자들이 사랑하는",
+    "subtitle": "StockFx를 신뢰하는 200만명 이상의 투자자에게 참여하세요"
+  },
+  "pricing": {
+    "title": "귀하를 위해 맞춤 설정된 투자 계획",
+    "subtitle": "포트폴리오 규모에 맞는 투자 수준을 선택하세요",
+    "starter": {
+      "name": "표준",
+      "price": "$300 - $5,000",
+      "desc": "기본 투자 범위",
+      "duration": "1개월"
+    },
+    "pro": {
+      "name": "전문가",
+      "price": "$5,000 - $50,000",
+      "desc": "성장 투자 범위",
+      "duration": "2-3개월",
+      "popular": "가장 인기 있는"
+    },
+    "gold": {
+      "name": "금",
+      "price": "$50,000+",
+      "desc": "프리미엄 투자 범위",
+      "duration": "3-6개월"
+    },
+    "annual": {
+      "name": "연간 투자",
+      "price": "$100,000+",
+      "desc": "기관 투자 범위",
+      "duration": "12+개월"
+    },
+    "enterprise": {
+      "name": "Enterprise",
+      "price": "$25,000+",
+      "desc": "Premium Investment Range",
+      "duration": "4+ Months"
+    },
+    "features": {
+      "commissionFree": "Commission-free trades",
+      "basicCharting": "Basic charting tools",
+      "mobileAccess": "Mobile app access",
+      "watchlists": "2 watchlists",
+      "emailSupport": "Email support",
+      "advancedCharting": "Advanced charting & analysis",
+      "level2": "Real-time Level 2 data",
+      "unlimitedWatchlists": "Unlimited watchlists",
+      "support24": "Priority 24/7 support",
+      "apiAccess": "API access",
+      "advancedAlerts": "Advanced alerts",
+      "dedicatedManager": "Dedicated portfolio manager",
+      "strategy": "Custom strategy consulting",
+      "whiteLabel": "White-label solutions",
+      "integrations": "Advanced integrations",
+      "sla": "SLA guarantees",
+      "institutionalPricing": "Institutional pricing"
+    },
+    "button": "Start Investing"
+  },
+  "login": {
+    "title": "환영합니다",
+    "subtitle": "또는 새 계정 만들기",
+    "emailLabel": "이메일 주소",
+    "emailPlaceholder": "당신@예.kr",
+    "passwordLabel": "비밀번호",
+    "passwordPlaceholder": "••••••••",
+    "signInButton": "로그인",
+    "noAccount": "새 계정 만들기",
+    "backToHome": "Back to Home",
+    "serverChecking": "Checking server...",
+    "serverUp": "Server is up — try signing in again.",
+    "thirdParty": "Or continue with",
+    "thirdPartyDisabled": "Third‑party sign-in is currently disabled."
+  },
+  "register": {
+    "title": "계정 만들기",
+    "subtitle": "이미 계정이 있습니까?",
+    "haveAccount": "로그인",
+    "firstNameLabel": "이름",
+    "firstNamePlaceholder": "철수",
+    "lastNameLabel": "성",
+    "lastNamePlaceholder": "김",
+    "emailLabel": "이메일 주소",
+    "emailPlaceholder": "당신@예.kr",
+    "passwordLabel": "비밀번호",
+    "passwordPlaceholder": "비밀번호 만들기",
+    "passwordHelper": "최소 8자여야 합니다.",
+    "createButton": "계정 만들기",
+    "verifyTitle": "확인 코드",
+    "verifyPlaceholder": "123456",
+    "verifyError": "확인 코드가 잘못되었습니다.",
+    "verifyButton": "확인",
+    "termsLabel": "I agree to the",
+    "terms": "Terms",
+    "and": "and",
+    "privacy": "Privacy Policy",
+    "devCode": "DEV: Your code is",
+    "changeEmail": "Change email",
+    "resendCode": "Resend code",
+    "resendCooldown": "Resend ({{seconds}}s)"
+  },
+  "stats": {
+    "traders": "Active Traders",
+    "assets": "Assets Traded",
+    "commission": "Commission Fees",
+    "uptime": "Uptime"
+  },
+  "trust": {
+    "title": "Your Trust, Our Priority",
+    "security": {
+      "name": "Military-Grade Security",
+      "desc": "256-bit encryption protects all your data in transit and at rest."
+    },
+    "insured": {
+      "name": "FDIC & SIPC Insured",
+      "desc": "Your cash ($250k) and securities ($500k) are fully protected."
+    },
+    "compliant": {
+      "name": "Regulated & Compliant",
+      "desc": "We comply with all SEC, FINRA, and regulatory requirements."
+    }
+  },
+  "cta": {
+    "title": "Ready to Start Trading?",
+    "subtitle": "Join millions of investors. Get $50 in free stock today.",
+    "button": "Create Free Account"
+  },
+  "footer": {
+    "description": "The next-generation platform for stocks, crypto, and ETFs. Professional tools. Zero complexity.",
+    "platform": "Platform",
+    "company": "Company",
+    "legal": "Legal",
+    "social": "Follow Us",
+    "features": "Features",
+    "pricing": "Pricing",
+    "security": "Security",
+    "about": "About Us",
+    "blog": "Blog",
+    "contact": "Contact",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "disclosures": "Disclosures",
+    "twitter": "Twitter",
+    "linkedin": "LinkedIn",
+    "youtube": "YouTube",
+    "copyright": "© 2024 StockFx Investment Inc. All rights reserved. NMLS #123456"
+  },
+  "contact": {
+    "title": "Need Help?",
+    "message": "Have questions about trading? Our account officers are here to help you get started!",
+    "contact": "Contact Our Team",
+    "later": "Maybe Later"
+  },
+  "dashboard": {
+    "loading": "Loading dashboard...",
+    "notAuthenticated": "Please log in to view your dashboard.",
+    "goToLogin": "Go to Login",
+    "signOut": "Sign Out",
+    "yourHoldings": "Your Holdings",
+    "portfolioSummary": "Portfolio Summary",
+    "totalValue": "Total Value",
+    "unrealizedGains": "Unrealized Gains",
+    "return": "Return %",
+    "allocation": "Allocation",
+    "assets": "Assets",
+    "performance": "Performance",
+    "welcome": "Welcome, {{name}}!",
+    "accountCreated": "Account created successfully",
+    "emailAddress": "Email Address",
+    "accountStatus": "Account Status",
+    "active": "Active",
+    "currentBalance": "Current Balance",
+    "overviewTab": "Overview",
+    "portfolioTab": "Portfolio",
+    "settingsTab": "Settings",
+    "accountSettings": "Account Settings",
+    "manageAccount": "Manage your account and preferences",
+    "profileInformation": "Profile Information",
+    "fullName": "Full Name",
+    "security": "Security",
+    "newPassword": "New Password (optional)",
+    "leaveBlank": "Leave blank to keep current password",
+    "preferences": "Preferences",
+    "emailNotifications": "Email notifications",
+    "priceAlerts": "Price alerts",
+    "marketingEmails": "Marketing emails",
+    "saveChanges": "Save Changes",
+    "cancel": "Cancel",
+    "noChanges": "No changes to save",
+    "settingsUpdated": "Settings updated successfully!",
+    "failedToSave": "Failed to save settings",
+    "searchAssets": "Search assets...",
+    "notifications": "Notifications",
+    "noNotifications": "No notifications yet",
+    "totalBalance": "Total Balance",
+    "totalProfit": "Total Profit",
+    "monthlyIncome": "Monthly Income",
+    "activeTrades": "Active Trades",
+    "marketWatchlist": "Market Watchlist",
+    "viewAll": "View All",
+    "quickTransfer": "Quick Transfer",
+    "transferMessage": "Move funds instantly between accounts.",
+    "send": "Send",
+    "addMoney": "Add Money",
+    "recentActivity": "Recent Activity",
+    "viewAllHistory": "View All History",
+    "assetAllocation": "Asset Allocation",
+    "totalAssets": "Total Assets",
+    "stocks": "Stocks",
+    "crypto": "Crypto",
+    "etfs": "ETFs",
+    "cash": "Cash",
+    "shares": "shares",
+    "yesterday": "Yesterday",
+    "investPro": "InvestPro",
+    "topHoldings": "Your Top Holdings"
+  }
+}

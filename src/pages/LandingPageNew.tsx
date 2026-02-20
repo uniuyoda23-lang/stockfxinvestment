@@ -93,7 +93,7 @@ export function LandingPageNew({ onNavigate }: LandingPageProps) {
       company: 'Tokyo Enterprises',
       country: 'Japan',
       flag: '🇯🇵',
-      image: 'https://images.unsplash.com/photo-1507239586826-8acc8d142ec3?w=200&h=200&fit=crop',
+      image: '/yuki-tanaka.jpg',
       quote: 'Invested $30,000 across 15 stocks. Portfolio grew to $41,200 in 18 months. Average return of 37% exceeded my expectations.',
       rating: 5,
     },
@@ -123,7 +123,7 @@ export function LandingPageNew({ onNavigate }: LandingPageProps) {
       company: 'Independent',
       country: 'France',
       flag: '🇫🇷',
-      image: 'https://images.unsplash.com/photo-1505634346881-b72b27e84530?w=200&h=200&fit=crop',
+      image: '/marie-dubois.jpg',
       quote: 'Invested $3,500 monthly for 18 months = $63,000 invested. Now worth $71,450. Passive income helps pay mortgage!',
       rating: 5,
     },
@@ -179,26 +179,33 @@ export function LandingPageNew({ onNavigate }: LandingPageProps) {
 
   const pricing = [
     {
-      name: 'Starter',
-      price: '$1,000 - $5,000',
-      description: 'Initial Investment Range',
+      name: 'Standard',
+      price: '$300 - $5,000',
+      description: 'Basic Investment Range',
       duration: '1 Month',
-      features: ['Commission-free trades', 'Basic charting tools', 'Mobile app access', '2 watchlists', 'Email support'],
+      features: ['Commission-free investments', 'Basic charting tools', 'Mobile app access', '2 watchlists', 'Email support'],
     },
     {
-      name: 'Pro',
-      price: '$5,000 - $25,000',
+      name: 'Premium',
+      price: '$5,000 - $50,000',
       description: 'Growth Investment Range',
       duration: '2-3 Months',
       features: ['Advanced charting & analysis', 'Real-time Level 2 data', 'Unlimited watchlists', 'Priority 24/7 support', 'API access', 'Advanced alerts'],
       popular: true,
     },
     {
-      name: 'Enterprise',
-      price: '$25,000+',
+      name: 'Gold',
+      price: '$50,000+',
       description: 'Premium Investment Range',
-      duration: '4+ Months',
-      features: ['Dedicated portfolio manager', 'Custom strategy consulting', 'White-label solutions', 'Advanced integrations', 'SLA guarantees', 'Institutional pricing'],
+      duration: '3-6 Months',
+      features: ['Dedicated portfolio manager', 'Custom strategy consulting', 'White-label solutions', 'Advanced integrations', 'VIP support', 'Exclusive research'],
+    },
+    {
+      name: 'Annual Investment',
+      price: '$100,000+',
+      description: 'Institutional Investment Range',
+      duration: '12+ Months',
+      features: ['Dedicated investment advisor', 'Full portfolio management', 'Custom hedge strategies', '24/7 concierge support', 'Priority execution', 'Exclusive events & networking'],
     },
   ];
 
@@ -354,55 +361,49 @@ export function LandingPageNew({ onNavigate }: LandingPageProps) {
         </div>
       </section>
 
-      {/* Live Market Ticker Section */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-12" data-observe id="market-ticker">
-        <div className="bg-gradient-to-r from-amber-900/30 to-orange-900/30 border border-amber-500/50 rounded-xl p-6 overflow-hidden">
-          <h3 className="text-white font-semibold text-sm mb-4">📊 Live Market Quotes</h3>
-          <div className="flex overflow-x-auto gap-4 pb-2 scroll-smooth">
-            {[
-              { symbol: 'AAPL', price: '$192.45', change: '+2.3%', trend: 'up' },
-              { symbol: 'GOOGL', price: '$142.18', change: '+1.8%', trend: 'up' },
-              { symbol: 'MSFT', price: '$418.32', change: '+3.1%', trend: 'up' },
-              { symbol: 'TSLA', price: '$242.66', change: '-1.2%', trend: 'down' },
-              { symbol: 'AMZN', price: '$178.94', change: '+2.5%', trend: 'up' },
-              { symbol: 'META', price: '$512.33', change: '+4.2%', trend: 'up' },
-              { symbol: 'NVDA', price: '$878.15', change: '+5.1%', trend: 'up' },
-            ].map((stock, i) => (
-              <div key={i} className="flex-shrink-0 bg-white/5 border border-white/10 rounded-lg p-3 min-w-max hover:bg-white/10 transition">
-                <p className="text-amber-400 font-bold text-sm">{stock.symbol}</p>
-                <p className="text-white font-semibold text-sm">{stock.price}</p>
-                <p className={`text-xs font-semibold ${stock.trend === 'up' ? 'text-emerald-400' : 'text-red-400'}`}>{stock.change}</p>
-              </div>
-            ))}
+      {/* Welcome Video Section */}
+      <section className="max-w-5xl mx-auto px-4 sm:px-6 py-16 sm:py-20" data-observe id="welcome-video">
+        <div className="bg-gradient-to-br from-amber-500/10 to-orange-500/10 border border-amber-500/30 rounded-2xl p-8 sm:p-12 text-center">
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-2">Welcome to StockFx</h2>
+          <p className="text-slate-300 mb-8">Your trusted partner in investment success</p>
+          
+          {/* Video Placeholder */}
+          <div className="relative w-full bg-black/40 rounded-xl overflow-hidden mb-8 aspect-video border border-amber-500/30 flex items-center justify-center group hover:border-amber-400/50 transition">
+            <iframe 
+              src="/video-player.html" 
+              className="w-full h-full border-0"
+              title="StockFx Welcome Video"
+              allow="fullscreen"
+            />
+            <div className="absolute top-4 right-4 bg-amber-500/80 text-white px-3 py-1 rounded-full text-xs font-semibold">
+              5+ Years of Excellence
+            </div>
           </div>
-          <p className="text-xs text-slate-400 mt-3">Prices updated every 30 seconds • Last updated: just now</p>
-        </div>
-      </section>
 
-      {/* Features Section */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-20" data-observe id="features">
-        <h2 className="text-3xl sm:text-4xl font-bold text-white text-center mb-12 sm:mb-16">{t('features.title')}</h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-          <FeatureCard 
-            icon="⚡" 
-            title={t('features.fast.name')} 
-            description={t('features.fast.desc')}
-            color="amber" />
-          <FeatureCard 
-            icon="🔒" 
-            title={t('features.security.name')} 
-            description={t('features.security.desc')}
-            color="blue" />
-          <FeatureCard 
-            icon="📱" 
-            title={t('features.mobile.name')} 
-            description={t('features.mobile.desc')}
-            color="emerald" />
-          <FeatureCard 
-            icon="🌍" 
-            title={t('features.global.name')} 
-            description={t('features.global.desc')}
-            color="purple" />
+          {/* Company Info */}
+          <div className="grid md:grid-cols-3 gap-6 text-left">
+            <div className="bg-white/5 backdrop-blur-sm border border-amber-500/20 rounded-xl p-6 hover:bg-white/10 transition">
+              <div className="text-3xl font-black text-amber-400 mb-2">5+</div>
+              <div className="text-white font-semibold mb-1">Years in Business</div>
+              <p className="text-sm text-slate-400">Serving thousands of investors worldwide with trust and transparency</p>
+            </div>
+            
+            <div className="bg-white/5 backdrop-blur-sm border border-amber-500/20 rounded-xl p-6 hover:bg-white/10 transition">
+              <div className="text-3xl font-black text-amber-400 mb-2">100K+</div>
+              <div className="text-white font-semibold mb-1">Active Investors</div>
+              <p className="text-sm text-slate-400">Growing community of successful investors managing their portfolios</p>
+            </div>
+            
+            <div className="bg-white/5 backdrop-blur-sm border border-amber-500/20 rounded-xl p-6 hover:bg-white/10 transition">
+              <div className="text-3xl font-black text-amber-400 mb-2">$5B+</div>
+              <div className="text-white font-semibold mb-1">Assets Managed</div>
+              <p className="text-sm text-slate-400">Trusted to manage billions in investments across markets</p>
+            </div>
+          </div>
+
+          <p className="text-slate-300 mt-12 text-center">
+            Watch our welcome video to learn about our journey, mission, and the investment platform designed for your success.
+          </p>
         </div>
       </section>
 
@@ -439,16 +440,131 @@ export function LandingPageNew({ onNavigate }: LandingPageProps) {
         </div>
       </section>
 
+      {/* Features Section */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-20" data-observe id="features">
+        <h2 className="text-3xl sm:text-4xl font-bold text-white text-center mb-12 sm:mb-16">{t('features.title')}</h2>
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+          <FeatureCard 
+            icon="⚡" 
+            title={t('features.fast.name')} 
+            description={t('features.fast.desc')}
+            color="amber" />
+          <FeatureCard 
+            icon="🔒" 
+            title={t('features.security.name')} 
+            description={t('features.security.desc')}
+            color="blue" />
+          <FeatureCard 
+            icon="📱" 
+            title={t('features.mobile.name')} 
+            description={t('features.mobile.desc')}
+            color="emerald" />
+          <FeatureCard 
+            icon="🌍" 
+            title={t('features.global.name')} 
+            description={t('features.global.desc')}
+            color="purple" />
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-20" data-observe id="testimonials">
+        <h2 className="text-3xl sm:text-4xl font-bold text-white text-center mb-4">{t('testimonials.title')}</h2>
+        <p className="text-center text-slate-300 mb-12 sm:mb-16">{t('testimonials.subtitle')}</p>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+          {testimonials.map((testim, i) => (
+            <div key={i} className="bg-gradient-to-br from-amber-500/20 to-orange-500/20 backdrop-blur-sm border border-amber-500/40 rounded-xl p-6 hover:border-amber-400 hover:from-amber-500/30 transition transform hover:scale-105">
+              <div className="flex items-start justify-between mb-4">
+                <div className="flex flex-col gap-1">
+                  <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-1 mb-1">
+                      {[...Array(testim.rating)].map((_, j) => (
+                        <Star key={j} className="h-4 w-4 fill-amber-400 text-amber-400" />
+                      ))}
+                    </div>
+                  </div>
+                </div>
+                <span className="text-3xl">{testim.flag}</span>
+              </div>
+              <Quote className="h-6 w-6 text-amber-500/40 mb-3" />
+              <p className="text-sm text-slate-200 mb-5 italic leading-relaxed">"{testim.quote}"</p>
+              <div className="bg-white/10 rounded-lg p-3 mb-4 border border-amber-500/30">
+                <p className="text-xs text-slate-300 mb-1">📍 {testim.country}</p>
+              </div>
+              <div className="flex items-center gap-4">
+                <img loading="lazy" src={testim.image} alt={testim.name} className="h-14 w-14 rounded-full object-cover border-2 border-amber-400 shadow-lg" />
+                <div className="flex-1">
+                  <p className="text-sm font-bold text-white">{testim.name}</p>
+                  <p className="text-xs text-amber-300 font-semibold">{testim.role}</p>
+                  <p className="text-xs text-slate-400">{testim.company}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Pricing Section */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-20" data-observe id="pricing">
+        <h2 className="text-3xl sm:text-4xl font-bold text-white text-center mb-4">Investment Plans</h2>
+        <p className="text-center text-slate-300 mb-12 sm:mb-16">{t('pricing.subtitle')}</p>
+        <div className="grid md:grid-cols-3 gap-4 sm:gap-6">
+          {pricing.map((plan, i) => (
+            <div 
+              key={i}
+              onClick={() => setExpandedPlan(expandedPlan === i ? null : i)}
+              className={`rounded-xl p-6 sm:p-8 border transition-all duration-300 cursor-pointer transform hover:scale-105 ${
+                expandedPlan === i 
+                  ? 'ring-2 ring-amber-400 scale-105' 
+                  : ''
+              } ${plan.popular ? 'bg-gradient-to-br from-amber-500/20 to-orange-500/20 border-amber-500 shadow-xl' : 'bg-white/5 border-white/10'}`}>
+              
+              <div className="flex items-start justify-between mb-4">
+                <div className="flex-1">
+                  {plan.popular && <div className="inline-block px-3 py-1 bg-amber-500 text-white rounded-full text-xs font-semibold mb-4">{t('pricing.pro.popular')}</div>}
+                  <h3 className="text-2xl font-bold text-white mb-1">{plan.name}</h3>
+                  <p className="text-sm text-slate-400 mb-4">{plan.description}</p>
+                </div>
+                <ChevronDown className={`h-6 w-6 text-amber-400 transition-transform duration-300 flex-shrink-0 ml-2 ${expandedPlan === i ? 'rotate-180' : ''}`} />
+              </div>
+
+              <p className="text-3xl font-black text-amber-400 mb-2">{plan.price}</p>
+              <p className="text-sm text-amber-300 font-semibold mb-6">{t('pricing.starter.duration')}: {plan.duration}</p>
+              
+              <ul className={`space-y-3 overflow-hidden transition-all duration-300 ${expandedPlan === i ? 'mb-8 max-h-96 opacity-100' : 'max-h-96 opacity-100'}`}>
+                {plan.features.map((f, j) => (
+                  <li key={j} className="flex items-center gap-2 text-slate-300 text-sm">
+                    <CheckCircle2 className="h-4 w-4 text-amber-400 flex-shrink-0" />
+                    {f}
+                  </li>
+                ))}
+              </ul>
+
+              <AnimatedButton 
+                onClick={(e) => { 
+                  if (e) e.stopPropagation();
+                  onNavigate('register');
+                }} 
+                variant={plan.popular ? "primary" : "outline"}
+                size="sm"
+                className="w-full">
+                {t('pricing.button')}
+              </AnimatedButton>
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* Asset Classes Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-20 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 my-8" data-observe id="asset-classes">
-        <h2 className="text-3xl sm:text-4xl font-bold text-white text-center mb-12 sm:mb-16">Trade All Major Asset Classes</h2>
+        <h2 className="text-3xl sm:text-4xl font-bold text-white text-center mb-12 sm:mb-16">Invest All Major Asset Classes</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           {[
-            { name: 'Stocks', icon: '📈', description: 'Trade 5000+ US & International stocks', features: ['Zero commission', 'Fractional shares', 'Dividend tracking'] },
+            { name: 'Tesla', icon: '🚗', description: 'Invest in Tesla and EV tech stocks', features: ['Zero commission', 'Fractional shares', 'Real-time tracking'] },
             { name: 'ETFs', icon: '🎯', description: 'Access 2000+ ETFs across all sectors', features: ['Instant diversification', 'Lower fees', 'Easy rebalancing'] },
             { name: 'Index Funds', icon: '📊', description: 'Build wealth with passive index investing', features: ['S&P 500', 'NASDAQ-100', 'Total market'] },
             { name: 'Options', icon: '📊', description: 'Advanced options strategies with tools', features: ['All expiration dates', 'Risk analysis', 'Strategy builder'] },
-            { name: 'Dividend Stocks', icon: '💰', description: 'Income-generating dividend stocks', features: ['Monthly dividends', 'Yield tracking', 'DRIP available'] },
+            { name: 'Real Estate', icon: '🏠', description: 'Income-generating real estate investments', features: ['Monthly income', 'Yield tracking', 'REITs available'] },
             { name: 'Bonds', icon: '💳', description: 'Government & corporate bonds', features: ['Fixed income', 'Maturity ladder', 'Yield analysis'] },
             { name: 'Growth Stocks', icon: '⚡', description: 'High-growth stocks like Tesla, NVIDIA', features: ['Tech leaders', 'Growth potential', 'Volatility tools'] },
             { name: 'Mutual Funds', icon: '💼', description: '15,000+ mutual funds available', features: ['Low minimums', 'Professional managed', 'Tax reporting'] },
@@ -543,6 +659,31 @@ export function LandingPageNew({ onNavigate }: LandingPageProps) {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Live Market Ticker Section */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-12" data-observe id="market-ticker">
+        <div className="bg-gradient-to-r from-amber-900/30 to-orange-900/30 border border-amber-500/50 rounded-xl p-6 overflow-hidden">
+          <h3 className="text-white font-semibold text-sm mb-4">📊 Live Market Quotes</h3>
+          <div className="flex overflow-x-auto gap-4 pb-2 scroll-smooth">
+            {[
+              { symbol: 'AAPL', price: '$192.45', change: '+2.3%', trend: 'up' },
+              { symbol: 'GOOGL', price: '$142.18', change: '+1.8%', trend: 'up' },
+              { symbol: 'MSFT', price: '$418.32', change: '+3.1%', trend: 'up' },
+              { symbol: 'TSLA', price: '$242.66', change: '-1.2%', trend: 'down' },
+              { symbol: 'AMZN', price: '$178.94', change: '+2.5%', trend: 'up' },
+              { symbol: 'META', price: '$512.33', change: '+4.2%', trend: 'up' },
+              { symbol: 'NVDA', price: '$878.15', change: '+5.1%', trend: 'up' },
+            ].map((stock, i) => (
+              <div key={i} className="flex-shrink-0 bg-white/5 border border-white/10 rounded-lg p-3 min-w-max hover:bg-white/10 transition">
+                <p className="text-amber-400 font-bold text-sm">{stock.symbol}</p>
+                <p className="text-white font-semibold text-sm">{stock.price}</p>
+                <p className={`text-xs font-semibold ${stock.trend === 'up' ? 'text-emerald-400' : 'text-red-400'}`}>{stock.change}</p>
+              </div>
+            ))}
+          </div>
+          <p className="text-xs text-slate-400 mt-3">Prices updated every 30 seconds • Last updated: just now</p>
         </div>
       </section>
 
@@ -655,11 +796,11 @@ export function LandingPageNew({ onNavigate }: LandingPageProps) {
 
       {/* Performance Metrics Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-20 bg-gradient-to-r from-amber-900/20 to-orange-900/20 rounded-2xl border border-amber-500/20 my-8" data-observe id="performance">
-        <h2 className="text-3xl sm:text-4xl font-bold text-white text-center mb-12 sm:mb-16">Average Trader Performance</h2>
+        <h2 className="text-3xl sm:text-4xl font-bold text-white text-center mb-12 sm:mb-16">Average Investor Performance</h2>
         <div className="grid md:grid-cols-4 gap-4 sm:gap-6">
           {[
-            { metric: 'Avg. Annual Return', value: '18.5%', icon: '📈', change: '+2.3%' },
-            { metric: 'Win Rate', value: '62%', icon: '✓', change: '+5.1%' },
+            { metric: 'Avg. Annual Return', value: '80%', icon: '📈', change: '+2.3%' },
+            { metric: 'Win Rate', value: '90%', icon: '✓', change: '+5.1%' },
             { metric: 'Drawdown Recovery', value: '2.1 days', icon: '⚡', change: 'Faster' },
             { metric: 'Satisfaction Score', value: '4.8/5', icon: '⭐', change: 'Industry High' },
           ].map((perf, i) => (
@@ -668,43 +809,6 @@ export function LandingPageNew({ onNavigate }: LandingPageProps) {
               <p className="text-slate-400 text-sm mb-2">{perf.metric}</p>
               <p className="text-3xl font-black text-amber-400 mb-2">{perf.value}</p>
               <p className="text-xs text-emerald-300 font-semibold">{perf.change}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Testimonials */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-20" data-observe id="testimonials">
-        <h2 className="text-3xl sm:text-4xl font-bold text-white text-center mb-4">{t('testimonials.title')}</h2>
-        <p className="text-center text-slate-300 mb-12 sm:mb-16">{t('testimonials.subtitle')}</p>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-          {testimonials.map((testim, i) => (
-            <div key={i} className="bg-gradient-to-br from-amber-500/20 to-orange-500/20 backdrop-blur-sm border border-amber-500/40 rounded-xl p-6 hover:border-amber-400 hover:from-amber-500/30 transition transform hover:scale-105">
-              <div className="flex items-start justify-between mb-4">
-                <div className="flex flex-col gap-1">
-                  <div className="flex items-center gap-2">
-                    <div className="flex items-center gap-1 mb-1">
-                      {[...Array(testim.rating)].map((_, j) => (
-                        <Star key={j} className="h-4 w-4 fill-amber-400 text-amber-400" />
-                      ))}
-                    </div>
-                  </div>
-                </div>
-                <span className="text-3xl">{testim.flag}</span>
-              </div>
-              <Quote className="h-6 w-6 text-amber-500/40 mb-3" />
-              <p className="text-sm text-slate-200 mb-5 italic leading-relaxed">"{testim.quote}"</p>
-              <div className="bg-white/10 rounded-lg p-3 mb-4 border border-amber-500/30">
-                <p className="text-xs text-slate-300 mb-1">📍 {testim.country}</p>
-              </div>
-              <div className="flex items-center gap-4">
-                <img loading="lazy" src={testim.image} alt={testim.name} className="h-14 w-14 rounded-full object-cover border-2 border-amber-400 shadow-lg" />
-                <div className="flex-1">
-                  <p className="text-sm font-bold text-white">{testim.name}</p>
-                  <p className="text-xs text-amber-300 font-semibold">{testim.role}</p>
-                  <p className="text-xs text-slate-400">{testim.company}</p>
-                </div>
-              </div>
             </div>
           ))}
         </div>
@@ -800,57 +904,6 @@ export function LandingPageNew({ onNavigate }: LandingPageProps) {
         </div>
       </section>
 
-      {/* Pricing Section */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-20" data-observe id="pricing">
-        <h2 className="text-3xl sm:text-4xl font-bold text-white text-center mb-4">Investment Plans</h2>
-        <p className="text-center text-slate-300 mb-12 sm:mb-16">{t('pricing.subtitle')}</p>
-        <div className="grid md:grid-cols-3 gap-4 sm:gap-6">
-          {pricing.map((plan, i) => (
-            <div 
-              key={i}
-              onClick={() => setExpandedPlan(expandedPlan === i ? null : i)}
-              className={`rounded-xl p-6 sm:p-8 border transition-all duration-300 cursor-pointer transform hover:scale-105 ${
-                expandedPlan === i 
-                  ? 'ring-2 ring-amber-400 scale-105' 
-                  : ''
-              } ${plan.popular ? 'bg-gradient-to-br from-amber-500/20 to-orange-500/20 border-amber-500 shadow-xl' : 'bg-white/5 border-white/10'}`}>
-              
-              <div className="flex items-start justify-between mb-4">
-                <div className="flex-1">
-                  {plan.popular && <div className="inline-block px-3 py-1 bg-amber-500 text-white rounded-full text-xs font-semibold mb-4">{t('pricing.pro.popular')}</div>}
-                  <h3 className="text-2xl font-bold text-white mb-1">{plan.name}</h3>
-                  <p className="text-sm text-slate-400 mb-4">{plan.description}</p>
-                </div>
-                <ChevronDown className={`h-6 w-6 text-amber-400 transition-transform duration-300 flex-shrink-0 ml-2 ${expandedPlan === i ? 'rotate-180' : ''}`} />
-              </div>
-
-              <p className="text-3xl font-black text-amber-400 mb-2">{plan.price}</p>
-              <p className="text-sm text-amber-300 font-semibold mb-6">{t('pricing.starter.duration')}: {plan.duration}</p>
-              
-              <ul className={`space-y-3 overflow-hidden transition-all duration-300 ${expandedPlan === i ? 'mb-8 max-h-96 opacity-100' : 'max-h-96 opacity-100'}`}>
-                {plan.features.map((f, j) => (
-                  <li key={j} className="flex items-center gap-2 text-slate-300 text-sm">
-                    <CheckCircle2 className="h-4 w-4 text-amber-400 flex-shrink-0" />
-                    {f}
-                  </li>
-                ))}
-              </ul>
-
-              <AnimatedButton 
-                onClick={(e) => { 
-                  if (e) e.stopPropagation();
-                  onNavigate('register');
-                }} 
-                variant={plan.popular ? "primary" : "outline"}
-                size="sm"
-                className="w-full">
-                {t('pricing.button')}
-              </AnimatedButton>
-            </div>
-          ))}
-        </div>
-      </section>
-
       {/* Success Stories - Case Studies Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-20" data-observe id="case-studies">
         <h2 className="text-3xl sm:text-4xl font-bold text-white text-center mb-4">Success Stories</h2>
@@ -860,7 +913,7 @@ export function LandingPageNew({ onNavigate }: LandingPageProps) {
             {
               name: 'Marcus Chen',
               title: 'Investment Professional & Portfolio Manager',
-              image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face',
+              image: '/profile-3.jpg',
               story: 'Built diversified portfolio starting with $2,000. Used StockFx analysis tools to research dividend stocks and ETFs. Now manages $5M in client portfolios.',
               metric: '12% average annual returns',
               journey: '5 years'
@@ -868,7 +921,7 @@ export function LandingPageNew({ onNavigate }: LandingPageProps) {
             {
               name: 'Priya Patel',
               title: 'Physician to Part-time Investor',
-              image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face',
+              image: '/profile-4.jpg',
               story: 'Invested $50K in diversified portfolio using StockFx tools. Combines medicine career with strategic investing. Passive income covers 30% household expenses.',
               metric: '18% annual returns',
               journey: '3 years'
@@ -876,7 +929,7 @@ export function LandingPageNew({ onNavigate }: LandingPageProps) {
             {
               name: 'James Rodriguez',
               title: 'Tech Manager to Strategic Investor',
-              image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face',
+              image: '/profile-5.jpg',
               story: 'Built systematic stock investment strategy using StockFx API. Focuses on dividend stocks and undervalued growth companies. Automated portfolio rebalancing increased efficiency.',
               metric: '$2.5M net worth',
               journey: '4 years'
@@ -884,7 +937,7 @@ export function LandingPageNew({ onNavigate }: LandingPageProps) {
             {
               name: 'Emma Johnson',
               title: 'Single Mom to Portfolio Manager',
-              image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop&crop=face',
+              image: '/profile-7.jpg',
               story: 'Started investing with $500/month from side gigs. StockFx zero minimums and fractional shares made it possible. Now build 6-figure net worth.',
               metric: '$225K portfolio value',
               journey: '4 years'
@@ -892,7 +945,7 @@ export function LandingPageNew({ onNavigate }: LandingPageProps) {
             {
               name: 'David Kim',
               title: 'Stock Market Competition Winner',
-              image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face',
+              image: '/profile-6.jpg',
               story: 'Used StockFx paper trading to develop stock analysis skills and won campus investing competition. Attracted attention from investment firms. Now manages growth fund.',
               metric: '$150M AUM',
               journey: '3 years'
@@ -900,7 +953,7 @@ export function LandingPageNew({ onNavigate }: LandingPageProps) {
             {
               name: 'Lisa Thompson',
               title: 'Corporate Executive to Independent Investor',
-              image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face',
+              image: '/portrait-chinese-female.jpg',
               story: 'After corporate career, built financial independence through disciplined stock investing. StockFx mobile app enabled research and portfolio management from anywhere.',
               metric: '$1.2M invested',
               journey: '6 years'

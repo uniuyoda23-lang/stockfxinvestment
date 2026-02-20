@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StockFx Welcome Video Generator</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background: #0a0a0f;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        h1 { color: #ffc864; }
+        canvas {
+            width: 100%;
+            max-width: 800px;
+            border: 2px solid #ffc864;
+            border-radius: 8px;
+            margin: 20px 0;
+            background: black;
+        }
+        button {
+            background: #ffc864;
+            color: #0a0a0f;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            margin: 10px 5px 10px 0;
+        }
+        button:hover { background: #ffb347; }
+        .progress { margin: 10px 0; }
+        .progress-bar {
+            width: 100%;
+            height: 30px;
+            background: #333;
+            border-radius: 4px;
+            overflow: hidden;
+            border: 1px solid #ffc864;
+        }
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #ffc864, #ff8c42);
+            transition: width 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #0a0a0f;
+            font-weight: bold;
+        }
+        .message {
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        .info { background: #334455; color: #aaccee; }
+        .success { background: #334433; color: #88dd88; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎬 StockFx Welcome Video Generator</h1>
+        <p>Generate a welcome video in your browser and download as MP4</p>
+        
+        <button onclick="generateVideo()">Generate Video</button>
+        <button onclick="downloadVideo()">Download MP4</button>
+        
+        <div class="progress">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill" style="width: 0%">0%</div>
+            </div>
+        </div>
+        
+        <div id="message"></div>
+        <canvas id="canvas" width="1280" height="720"></canvas>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/recordrtc@5/RecordRTC.js"></script>
+    <script>
+        let recordedBlob = null;
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+        
+        function updateProgress(percent) {
+            document.getElementById('progressFill').style.width = percent + '%';
+            document.getElementById('progressFill').textContent = percent + '%';
+        }
+        
+        function showMessage(text, type = 'info') {
+            const msg = document.getElementById('message');
+            msg.innerHTML = text;
+            msg.className = 'message ' + type;
+        }
+        
+        function drawGradientBackground() {
+            const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
+            gradient.addColorStop(0, '#1a1a24');
+            gradient.addColorStop(1, '#3a3a4a');
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+        }
+        
+        function drawText(text, x, y, fontSize = 32, color = '#ffc864') {
+            ctx.font = `bold ${fontSize}px Arial`;
+            ctx.fillStyle = color;
+            ctx.textAlign = 'center';
+            ctx.fillText(text, x, y);
+        }
+        
+        function drawScene1() {
+            drawGradientBackground();
+            drawText('Welcome to StockFx', canvas.width / 2, 200, 60);
+            drawText('Your Trusted Investment Partner', canvas.width / 2, 350, 40, '#c8c8c8');
+            drawText('5+ Years of Excellence', canvas.width / 2, 500, 36, '#ffc864');
+        }
+        
+        function drawScene2() {
+            drawGradientBackground();
+            drawText('100,000+ Active Investors', canvas.width / 2, 150, 48, '#ffc864');
+            drawText('$5 Billion+ Assets Managed', canvas.width / 2, 280, 48, '#ffc864');
+            drawText('80% Average Annual Returns', canvas.width / 2, 410, 40, '#90ff90');
+            drawText('90% Win Rate', canvas.width / 2, 520, 40, '#90ff90');
+        }
+        
+        function drawScene3() {
+            drawGradientBackground();
+            drawText('Why Choose StockFx?', canvas.width / 2, 80, 52);
+            
+            const features = [
+                '✓ Zero-Fee Investing',
+                '✓ Advanced Research Tools',
+                '✓ Real-Time Market Data',
+                '✓ Dividend Tracking',
+                '✓ Portfolio Analytics'
+            ];
+            
+            let y = 200;
+            features.forEach(feature => {
+                drawText(feature, canvas.width / 2, y, 32, '#90ff90');
+                y += 80;
+            });
+        }
+        
+        function drawScene4(progress) {
+            drawGradientBackground();
+            drawText('Your Investment Journey', canvas.width / 2, 80, 52);
+            
+            const steps = ['Create Account', 'Fund Account', 'Start Investing', 'Watch It Grow'];
+            let y = 200;
+            steps.forEach(step => {
+                drawText('→ ' + step, canvas.width / 2, y, 32, '#c8c8c8');
+                y += 100;
+            });
+            
+            // Progress bar
+            ctx.fillStyle = '#ffc864';
+            ctx.fillRect(150, 600, (canvas.width - 300) * progress, 40);
+            drawText(`${Math.round(progress * 100)}% Complete`, canvas.width / 2, 630, 24, '#0a0a0f');
+        }
+        
+        function drawScene5() {
+            drawGradientBackground();
+            drawText('Start Your Journey Today', canvas.width / 2, 250, 56);
+            drawText('Join StockFx', canvas.width / 2, 380, 48, '#ffc864');
+            drawText('www.stockfx.com', canvas.width / 2, 500, 40, '#90ff90');
+            drawText('5+ Years of Trusted Excellence', canvas.width / 2, 600, 32, '#c8c8c8');
+        }
+        
+        async function generateVideo() {
+            showMessage('🎬 Generating video... Please wait (this may take a minute)', 'info');
+            updateProgress(0);
+            
+            const stream = canvas.captureStream(30); // 30 FPS
+            const mediaRecorder = new MediaRecorder(stream, {
+                mimeType: 'video/webm;codecs=vp8,opus',
+                videoBitsPerSecond: 2500000
+            });
+            
+            const chunks = [];
+            mediaRecorder.ondataavailable = e => chunks.push(e.data);
+            
+            mediaRecorder.onstop = () => {
+                recordedBlob = new Blob(chunks, { type: 'video/webm' });
+                showMessage(`✅ Video generated! Size: ${(recordedBlob.size / 1024 / 1024).toFixed(2)} MB`, 'success');
+                updateProgress(100);
+            };
+            
+            mediaRecorder.start();
+            
+            // Generate 450 frames (15 seconds at 30 fps)
+            let frame = 0;
+            const totalFrames = 450;
+            
+            const interval = setInterval(() => {
+                if (frame >= totalFrames) {
+                    clearInterval(interval);
+                    mediaRecorder.stop();
+                    return;
+                }
+                
+                const percent = Math.round((frame * 10) / 45); // 0-100
+                if (frame % 30 === 0) updateProgress(percent);
+                
+                // Scene selection
+                if (frame < 60) {
+                    drawScene1();
+                } else if (frame < 120) {
+                    drawScene2();
+                } else if (frame < 210) {
+                    drawScene3();
+                } else if (frame < 300) {
+                    const progress = (frame - 210) / 90;
+                    drawScene4(progress);
+                } else if (frame < 360) {
+                    drawScene5();
+                } else {
+                    // Fade to black
+                    ctx.fillStyle = `rgba(0,0,0,${(frame - 360) / 90})`;
+                    ctx.fillRect(0, 0, canvas.width, canvas.height);
+                }
+                
+                frame++;
+            }, 1000 / 30); // 30 FPS
+        }
+        
+        function downloadVideo() {
+            if (!recordedBlob) {
+                showMessage('⚠️ Generate a video first!', 'info');
+                return;
+            }
+            
+            const url = URL.createObjectURL(recordedBlob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'stockfx-welcome.webm';
+            a.click();
+            showMessage('✅ Download started!', 'success');
+        }
+        
+        // Draw initial scene
+        drawScene1();
+    </script>
+</body>
+</html>

@@ -1,0 +1,238 @@
+{
+  "nav": {
+    "signIn": "登录",
+    "getStarted": "开始使用"
+  },
+  "hero": {
+    "badge": "🎉 前$10,000交易零佣金",
+    "title1": "更聪慧地投资。",
+    "title2": "增长更快。",
+    "description": "下一代股票、ETF和股息投资平台。专业工具。零复杂性。自信投资。",
+    "startButton": "免费开始投资",
+    "signInButton": "登录"
+  },
+  "features": {
+    "title": "为什么选择StockFx?",
+    "fast": {
+      "name": "闪电快速",
+      "desc": "以超低延迟在毫秒内执行订单。"
+    },
+    "security": {
+      "name": "银行级安全",
+      "desc": "256位加密、双因素认证、FDIC保险保护。"
+    },
+    "mobile": {
+      "name": "移动优先",
+      "desc": "功能完整的应用。随时随地投资。"
+    },
+    "global": {
+      "name": "全球市场",
+      "desc": "获取全球股票、ETF、共同基金和债券。"
+    }
+  },
+  "testimonials": {
+    "title": "受全球投资者喜爱",
+    "subtitle": "加入200多万相信StockFx的投资者"
+  },
+  "stats": {
+    "traders": "活跃交易者",
+    "assets": "交易资产",
+    "commission": "佣金费用",
+    "uptime": "正常运行时间"
+  },
+  "pricing": {
+    "title": "为您量身定制的投资计划",
+    "subtitle": "选择与您投资组合规模相匹配的投资级别",
+    "starter": {
+      "name": "入门版",
+      "price": "$1,000 - $5,000",
+      "desc": "初始投资范围",
+      "duration": "1个月"
+    },
+    "pro": {
+      "name": "专业版",
+      "price": "$5,000 - $25,000",
+      "desc": "成长投资范围",
+      "duration": "2-3个月",
+      "popular": "最受欢迎"
+    },
+    "enterprise": {
+      "name": "企业版",
+      "price": "$25,000+",
+      "desc": "高级投资范围",
+      "duration": "4+个月"
+    },
+    "features": {
+      "commissionFree": "免佣金交易",
+      "basicCharting": "基础图表工具",
+      "mobileAccess": "移动应用访问",
+      "watchlists": "2个监视列表",
+      "emailSupport": "电子邮件支持",
+      "advancedCharting": "高级图表和分析",
+      "level2": "实时二级数据",
+      "unlimitedWatchlists": "无限监视列表",
+      "support24": "优先24/7支持",
+      "apiAccess": "API访问",
+      "advancedAlerts": "高级警报",
+      "dedicatedManager": "专属投资组合经理",
+      "strategy": "定制战略咨询",
+      "whiteLabel": "白牌解决方案",
+      "integrations": "高级集成",
+      "sla": "SLA保证",
+      "institutionalPricing": "机构定价"
+    },
+    "button": "开始投资"
+  },
+  "trust": {
+    "title": "您的信任，我们的责任",
+    "security": {
+      "name": "军事级安全",
+      "desc": "256位加密保护您传输中和静止时的所有数据。"
+    },
+    "insured": {
+      "name": "FDIC & SIPC已保险",
+      "desc": "您的现金(25万美元)和证券(50万美元)受到完全保护。"
+    },
+    "compliant": {
+      "name": "受监管且合规",
+      "desc": "我们遵守所有美国证券交易委员会、FINRA和监管要求。"
+    }
+  },
+  "cta": {
+    "title": "准备好开始交易吗?",
+    "subtitle": "加入数百万投资者。今天获得$50免费股票。",
+    "button": "创建免费账户"
+  },
+  "footer": {
+    "description": "下一代股票、加密货币和ETF平台。专业工具。零复杂性。",
+    "platform": "平台",
+    "company": "公司",
+    "legal": "法律",
+    "social": "关注我们",
+    "features": "功能",
+    "pricing": "定价",
+    "security": "安全",
+    "about": "关于我们",
+    "blog": "博客",
+    "contact": "联系我们",
+    "privacy": "隐私",
+    "terms": "条款",
+    "disclosures": "披露",
+    "twitter": "推特",
+    "linkedin": "领英",
+    "youtube": "优兔",
+    "copyright": "©2024 StockFx Investment Inc.版权所有。NMLS #123456"
+  },
+  "contact": {
+    "title": "需要帮助?",
+    "message": "对交易有疑问?我们的帐户官员随时准备帮助您开始!",
+    "contact": "联系我们的团队",
+    "later": "之后再说"
+  },
+  "login": {
+    "title": "欢迎回来",
+    "subtitle": "或创建新账户",
+    "emailLabel": "电子邮件地址",
+    "emailPlaceholder": "you@example.com",
+    "passwordLabel": "密码",
+    "passwordPlaceholder": "••••••••",
+    "signInButton": "登录",
+    "noAccount": "创建新账户",
+    "backToHome": "回到首页",
+    "serverChecking": "正在检查服务器...",
+    "serverUp": "服务器已启动 — 请重试登录。",
+    "thirdParty": "或继续使用",
+    "thirdPartyDisabled": "第三方登录当前已禁用。"
+  },
+  "register": {
+    "title": "创建您的账户",
+    "subtitle": "已经有账户吗?",
+    "haveAccount": "登录",
+    "firstNameLabel": "名字",
+    "firstNamePlaceholder": "张",
+    "lastNameLabel": "姓氏",
+    "lastNamePlaceholder": "三",
+    "emailLabel": "电子邮件地址",
+    "emailPlaceholder": "you@example.com",
+    "passwordLabel": "密码",
+    "passwordPlaceholder": "创建密码",
+    "passwordHelper": "必须至少8个字符",
+    "termsLabel": "我同意",
+    "terms": "条款",
+    "and": "和",
+    "privacy": "隐私政策",
+    "createButton": "创建账户",
+    "verifyTitle": "验证码",
+    "verifyPlaceholder": "123456",
+    "verifyError": "验证码不正确。",
+    "devCode": "开发:您的代码是",
+    "changeEmail": "更改电子邮件",
+    "resendCode": "重新发送代码",
+    "resendCooldown": "重新发送({{seconds}}s)",
+    "verifyButton": "验证"
+  },
+  "dashboard": {
+    "loading": "正在加载仪表板...",
+    "notAuthenticated": "请登录查看您的仪表板。",
+    "goToLogin": "去登录",
+    "signOut": "登出",
+    "yourHoldings": "您的持仓",
+    "portfolioSummary": "投资组合摘要",
+    "totalValue": "总价值",
+    "unrealizedGains": "未实现的收益",
+    "return": "回报%",
+    "allocation": "配置",
+    "assets": "资产",
+    "performance": "性能",
+    "welcome": "欢迎，{{name}}!",
+    "accountCreated": "账户创建成功",
+    "emailAddress": "电子邮件地址",
+    "accountStatus": "账户状态",
+    "active": "活跃的",
+    "currentBalance": "当前余额",
+    "overviewTab": "概览",
+    "portfolioTab": "投资组合",
+    "settingsTab": "设置",
+    "accountSettings": "账户设置",
+    "manageAccount": "管理您的账户和偏好",
+    "profileInformation": "个人资料信息",
+    "fullName": "全名",
+    "security": "安全",
+    "newPassword": "新密码(可选)",
+    "leaveBlank": "留空以保留当前密码",
+    "preferences": "偏好",
+    "emailNotifications": "电子邮件通知",
+    "priceAlerts": "价格提醒",
+    "marketingEmails": "营销电子邮件",
+    "saveChanges": "保存更改",
+    "cancel": "取消",
+    "noChanges": "无变化可保存",
+    "settingsUpdated": "设置更新成功!",
+    "failedToSave": "设置保存失败",
+    "searchAssets": "搜索资产...",
+    "notifications": "通知",
+    "noNotifications": "还没有通知",
+    "totalBalance": "总余额",
+    "totalProfit": "总利润",
+    "monthlyIncome": "月收入",
+    "activeTrades": "活跃交易",
+    "marketWatchlist": "市场监视列表",
+    "viewAll": "查看全部",
+    "quickTransfer": "快速转账",
+    "transferMessage": "在账户之间即时转移资金。",
+    "send": "发送",
+    "addMoney": "添加资金",
+    "recentActivity": "最近活动",
+    "viewAllHistory": "查看所有历史记录",
+    "assetAllocation": "资产配置",
+    "totalAssets": "总资产",
+    "stocks": "股票",
+    "crypto": "加密货币",
+    "etfs": "交易所交易基金",
+    "cash": "现金",
+    "shares": "份额",
+    "yesterday": "昨天",
+    "investPro": "InvestPro",
+    "topHoldings": "您的顶级持仓"
+  }
+}

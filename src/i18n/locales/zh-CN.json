@@ -1,0 +1,250 @@
+{
+  "nav": {
+    "signIn": "直接登录",
+    "getStarted": "开始"
+  },
+  "hero": {
+    "badge": "🎉 首笔$10,000免费投资",
+    "title1": "明智地投资。",
+    "title2": "增长更快。",
+    "description": "股票、ETF和股息投资的下一代平台。专业工具。零复杂性。自信地投资。",
+    "startButton": "开始免费投资",
+    "signInButton": "直接登录"
+  },
+  "features": {
+    "title": "为什么选择StockFx?",
+    "fast": {
+      "name": "闪电般的速度",
+      "desc": "以超低延迟在毫秒内完成订单。"
+    },
+    "security": {
+      "name": "银行级别的安全性",
+      "desc": "256位加密，2FA，FDIC保险保护。"
+    },
+    "mobile": {
+      "name": "移动优先",
+      "desc": "具有所有功能的应用。随处投资。"
+    },
+    "global": {
+      "name": "全球市场",
+      "desc": "访问全球的股票、ETF、共同基金和债券。"
+    }
+  },
+  "testimonials": {
+    "title": "受到全球投资者的喜爱",
+    "subtitle": "加入超过200万名信任StockFx的投资者"
+  },
+  "pricing": {
+    "title": "适合您的定制投资计划",
+    "subtitle": "选择适合投资组合规模的投资级别",
+    "starter": {
+      "name": "标准",
+      "price": "$300 - $5,000",
+      "desc": "基本投资范围",
+      "duration": "1个月"
+    },
+    "pro": {
+      "name": "专业",
+      "price": "$5,000 - $50,000",
+      "desc": "增长投资范围",
+      "duration": "2-3个月",
+      "popular": "最受欢迎"
+    },
+    "gold": {
+      "name": "黄金",
+      "price": "$50,000+",
+      "desc": "高级投资范围",
+      "duration": "3-6个月"
+    },
+    "annual": {
+      "name": "年度投资",
+      "price": "$100,000+",
+      "desc": "机构投资范围",
+      "duration": "12+个月"
+    },
+    "enterprise": {
+      "name": "Enterprise",
+      "price": "$25,000+",
+      "desc": "Premium Investment Range",
+      "duration": "4+ Months"
+    },
+    "features": {
+      "commissionFree": "Commission-free trades",
+      "basicCharting": "Basic charting tools",
+      "mobileAccess": "Mobile app access",
+      "watchlists": "2 watchlists",
+      "emailSupport": "Email support",
+      "advancedCharting": "Advanced charting & analysis",
+      "level2": "Real-time Level 2 data",
+      "unlimitedWatchlists": "Unlimited watchlists",
+      "support24": "Priority 24/7 support",
+      "apiAccess": "API access",
+      "advancedAlerts": "Advanced alerts",
+      "dedicatedManager": "Dedicated portfolio manager",
+      "strategy": "Custom strategy consulting",
+      "whiteLabel": "White-label solutions",
+      "integrations": "Advanced integrations",
+      "sla": "SLA guarantees",
+      "institutionalPricing": "Institutional pricing"
+    },
+    "button": "Start Investing"
+  },
+  "login": {
+    "title": "欢迎来到",
+    "subtitle": "或创建新帐户",
+    "emailLabel": "电子邮件地址",
+    "emailPlaceholder": "您@示例.cn",
+    "passwordLabel": "密码",
+    "passwordPlaceholder": "••••••••",
+    "signInButton": "直接登录",
+    "noAccount": "创建新账户",
+    "backToHome": "Back to Home",
+    "serverChecking": "Checking server...",
+    "serverUp": "Server is up — try signing in again.",
+    "thirdParty": "Or continue with",
+    "thirdPartyDisabled": "Third‑party sign-in is currently disabled."
+  },
+  "register": {
+    "title": "创建您的帐户",
+    "subtitle": "已经有帐户了吗?",
+    "haveAccount": "直接登录",
+    "firstNameLabel": "名字",
+    "firstNamePlaceholder": "李",
+    "lastNameLabel": "姓氏",
+    "lastNamePlaceholder": "明",
+    "emailLabel": "电子邮件地址",
+    "emailPlaceholder": "您@示例.cn",
+    "passwordLabel": "密码",
+    "passwordPlaceholder": "创建密码",
+    "passwordHelper": "必须至少8个字符。",
+    "createButton": "创建账户",
+    "verifyTitle": "验证码",
+    "verifyPlaceholder": "123456",
+    "verifyError": "验证码不正确。",
+    "verifyButton": "验证",
+    "termsLabel": "I agree to the",
+    "terms": "Terms",
+    "and": "and",
+    "privacy": "Privacy Policy",
+    "devCode": "DEV: Your code is",
+    "changeEmail": "Change email",
+    "resendCode": "Resend code",
+    "resendCooldown": "Resend ({{seconds}}s)"
+  },
+  "stats": {
+    "traders": "Active Traders",
+    "assets": "Assets Traded",
+    "commission": "Commission Fees",
+    "uptime": "Uptime"
+  },
+  "trust": {
+    "title": "Your Trust, Our Priority",
+    "security": {
+      "name": "Military-Grade Security",
+      "desc": "256-bit encryption protects all your data in transit and at rest."
+    },
+    "insured": {
+      "name": "FDIC & SIPC Insured",
+      "desc": "Your cash ($250k) and securities ($500k) are fully protected."
+    },
+    "compliant": {
+      "name": "Regulated & Compliant",
+      "desc": "We comply with all SEC, FINRA, and regulatory requirements."
+    }
+  },
+  "cta": {
+    "title": "Ready to Start Trading?",
+    "subtitle": "Join millions of investors. Get $50 in free stock today.",
+    "button": "Create Free Account"
+  },
+  "footer": {
+    "description": "The next-generation platform for stocks, crypto, and ETFs. Professional tools. Zero complexity.",
+    "platform": "Platform",
+    "company": "Company",
+    "legal": "Legal",
+    "social": "Follow Us",
+    "features": "Features",
+    "pricing": "Pricing",
+    "security": "Security",
+    "about": "About Us",
+    "blog": "Blog",
+    "contact": "Contact",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "disclosures": "Disclosures",
+    "twitter": "Twitter",
+    "linkedin": "LinkedIn",
+    "youtube": "YouTube",
+    "copyright": "© 2024 StockFx Investment Inc. All rights reserved. NMLS #123456"
+  },
+  "contact": {
+    "title": "Need Help?",
+    "message": "Have questions about trading? Our account officers are here to help you get started!",
+    "contact": "Contact Our Team",
+    "later": "Maybe Later"
+  },
+  "dashboard": {
+    "loading": "Loading dashboard...",
+    "notAuthenticated": "Please log in to view your dashboard.",
+    "goToLogin": "Go to Login",
+    "signOut": "Sign Out",
+    "yourHoldings": "Your Holdings",
+    "portfolioSummary": "Portfolio Summary",
+    "totalValue": "Total Value",
+    "unrealizedGains": "Unrealized Gains",
+    "return": "Return %",
+    "allocation": "Allocation",
+    "assets": "Assets",
+    "performance": "Performance",
+    "welcome": "Welcome, {{name}}!",
+    "accountCreated": "Account created successfully",
+    "emailAddress": "Email Address",
+    "accountStatus": "Account Status",
+    "active": "Active",
+    "currentBalance": "Current Balance",
+    "overviewTab": "Overview",
+    "portfolioTab": "Portfolio",
+    "settingsTab": "Settings",
+    "accountSettings": "Account Settings",
+    "manageAccount": "Manage your account and preferences",
+    "profileInformation": "Profile Information",
+    "fullName": "Full Name",
+    "security": "Security",
+    "newPassword": "New Password (optional)",
+    "leaveBlank": "Leave blank to keep current password",
+    "preferences": "Preferences",
+    "emailNotifications": "Email notifications",
+    "priceAlerts": "Price alerts",
+    "marketingEmails": "Marketing emails",
+    "saveChanges": "Save Changes",
+    "cancel": "Cancel",
+    "noChanges": "No changes to save",
+    "settingsUpdated": "Settings updated successfully!",
+    "failedToSave": "Failed to save settings",
+    "searchAssets": "Search assets...",
+    "notifications": "Notifications",
+    "noNotifications": "No notifications yet",
+    "totalBalance": "Total Balance",
+    "totalProfit": "Total Profit",
+    "monthlyIncome": "Monthly Income",
+    "activeTrades": "Active Trades",
+    "marketWatchlist": "Market Watchlist",
+    "viewAll": "View All",
+    "quickTransfer": "Quick Transfer",
+    "transferMessage": "Move funds instantly between accounts.",
+    "send": "Send",
+    "addMoney": "Add Money",
+    "recentActivity": "Recent Activity",
+    "viewAllHistory": "View All History",
+    "assetAllocation": "Asset Allocation",
+    "totalAssets": "Total Assets",
+    "stocks": "Stocks",
+    "crypto": "Crypto",
+    "etfs": "ETFs",
+    "cash": "Cash",
+    "shares": "shares",
+    "yesterday": "Yesterday",
+    "investPro": "InvestPro",
+    "topHoldings": "Your Top Holdings"
+  }
+}

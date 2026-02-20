@@ -1,0 +1,250 @@
+{
+  "nav": {
+    "signIn": "Vilumuli",
+    "getStarted": "Yambani"
+  },
+  "hero": {
+    "badge": "🎉 Kuchita ndi malipiro pa 10,000 koyamba",
+    "title1": "Chita Luso.",
+    "title2": "Kukula Mwamsanga.",
+    "description": "Platform yachilengedwe chija chikukhala pa zipangidwe, ETF ndi chigawiro cha mgwirizano. Zida za mwamuna. Zovuta sazikhala. Chita popanda malaini.",
+    "startButton": "Yambani chita ndi malipiro",
+    "signInButton": "Vilumuli"
+  },
+  "features": {
+    "title": "Chifukwa chiyani kutsatsa StockFx?",
+    "fast": {
+      "name": "Kuntha Mwamsanga",
+      "desc": "Chita malangizo m'milliseconds ndi matako osachepecha."
+    },
+    "security": {
+      "name": "Khalidwe la Likangano",
+      "desc": "Kusankha kwamakuwa 256-biti, 2FA, chitetezo cha FDIC."
+    },
+    "mobile": {
+      "name": "Mafoni Koyamba",
+      "desc": "Pulogalamu yokwanira zonse. Chita pamene unali, nthawi iliyonse."
+    },
+    "global": {
+      "name": "Misika ya Dziko Lonse",
+      "desc": "Mwalowela zipangidwe, ETF, milanyo, ndi ma bond kwa Dziko lonse."
+    }
+  },
+  "testimonials": {
+    "title": "Kuyimilika kwa Wochita Dziko Lonse",
+    "subtitle": "Gwirizanirani ndi anthu okwera miliyoni 2 amene amakhudziwa StockFx"
+  },
+  "pricing": {
+    "title": "Njira za Kuchita Zomwe Zilungamitsa Inwe",
+    "subtitle": "Sankhani mulingo wa kuchita womwe umagwirizana ndi chiwerengero cha portfolio yanu",
+    "starter": {
+      "name": "Mwalomwe",
+      "price": "$300 - $5,000",
+      "desc": "Mulingo wa Kuchita Woyamba",
+      "duration": "1 Mwezi"
+    },
+    "pro": {
+      "name": "Yopadera",
+      "price": "$5,000 - $50,000",
+      "desc": "Mulingo wa Kuchita wa Kukula",
+      "duration": "2-3 Miyezi",
+      "popular": "Yomwe Imachita"
+    },
+    "gold": {
+      "name": "Golide",
+      "price": "$50,000+",
+      "desc": "Mulingo wa Kuchita Wopadera",
+      "duration": "3-6 Miyezi"
+    },
+    "annual": {
+      "name": "Kuchita Cha Chaka",
+      "price": "$100,000+",
+      "desc": "Mulingo wa Kuchita wa Makampani",
+      "duration": "12+ Miyezi"
+    },
+    "enterprise": {
+      "name": "Enterprise",
+      "price": "$25,000+",
+      "desc": "Premium Investment Range",
+      "duration": "4+ Months"
+    },
+    "features": {
+      "commissionFree": "Commission-free trades",
+      "basicCharting": "Basic charting tools",
+      "mobileAccess": "Mobile app access",
+      "watchlists": "2 watchlists",
+      "emailSupport": "Email support",
+      "advancedCharting": "Advanced charting & analysis",
+      "level2": "Real-time Level 2 data",
+      "unlimitedWatchlists": "Unlimited watchlists",
+      "support24": "Priority 24/7 support",
+      "apiAccess": "API access",
+      "advancedAlerts": "Advanced alerts",
+      "dedicatedManager": "Dedicated portfolio manager",
+      "strategy": "Custom strategy consulting",
+      "whiteLabel": "White-label solutions",
+      "integrations": "Advanced integrations",
+      "sla": "SLA guarantees",
+      "institutionalPricing": "Institutional pricing"
+    },
+    "button": "Start Investing"
+  },
+  "login": {
+    "title": "Salani bwino",
+    "subtitle": "Kapenanso lumikila likonto latsopano",
+    "emailLabel": "Adilesi ya Imelo",
+    "emailPlaceholder": "inwe@chitsanzo.ny",
+    "passwordLabel": "Mawu Achinsinsi",
+    "passwordPlaceholder": "••••••••",
+    "signInButton": "Vilumuli",
+    "noAccount": "lumikila likonto latsopano",
+    "backToHome": "Back to Home",
+    "serverChecking": "Checking server...",
+    "serverUp": "Server is up — try signing in again.",
+    "thirdParty": "Or continue with",
+    "thirdPartyDisabled": "Third‑party sign-in is currently disabled."
+  },
+  "register": {
+    "title": "Lumikila likonto lanu",
+    "subtitle": "Kale muli ndi likonto?",
+    "haveAccount": "Vilumuli",
+    "firstNameLabel": "Dzina Loyamba",
+    "firstNamePlaceholder": "Chiyani",
+    "lastNameLabel": "Dzina Lokwanira",
+    "lastNamePlaceholder": "Banda",
+    "emailLabel": "Adilesi ya Imelo",
+    "emailPlaceholder": "inwe@chitsanzo.ny",
+    "passwordLabel": "Mawu Achinsinsi",
+    "passwordPlaceholder": "Lumikila mawu achinsinsi",
+    "passwordHelper": "Ayenera kukhala ndi zilembo zosachepecha 8",
+    "createButton": "Lumikila Likonto",
+    "verifyTitle": "Nambala ya Kuwonerezana",
+    "verifyPlaceholder": "123456",
+    "verifyError": "Nambala ya kuwonerezana ndi yosalabadwa.",
+    "verifyButton": "Wonerezan",
+    "termsLabel": "I agree to the",
+    "terms": "Terms",
+    "and": "and",
+    "privacy": "Privacy Policy",
+    "devCode": "DEV: Your code is",
+    "changeEmail": "Change email",
+    "resendCode": "Resend code",
+    "resendCooldown": "Resend ({{seconds}}s)"
+  },
+  "stats": {
+    "traders": "Active Traders",
+    "assets": "Assets Traded",
+    "commission": "Commission Fees",
+    "uptime": "Uptime"
+  },
+  "trust": {
+    "title": "Your Trust, Our Priority",
+    "security": {
+      "name": "Military-Grade Security",
+      "desc": "256-bit encryption protects all your data in transit and at rest."
+    },
+    "insured": {
+      "name": "FDIC & SIPC Insured",
+      "desc": "Your cash ($250k) and securities ($500k) are fully protected."
+    },
+    "compliant": {
+      "name": "Regulated & Compliant",
+      "desc": "We comply with all SEC, FINRA, and regulatory requirements."
+    }
+  },
+  "cta": {
+    "title": "Ready to Start Trading?",
+    "subtitle": "Join millions of investors. Get $50 in free stock today.",
+    "button": "Create Free Account"
+  },
+  "footer": {
+    "description": "The next-generation platform for stocks, crypto, and ETFs. Professional tools. Zero complexity.",
+    "platform": "Platform",
+    "company": "Company",
+    "legal": "Legal",
+    "social": "Follow Us",
+    "features": "Features",
+    "pricing": "Pricing",
+    "security": "Security",
+    "about": "About Us",
+    "blog": "Blog",
+    "contact": "Contact",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "disclosures": "Disclosures",
+    "twitter": "Twitter",
+    "linkedin": "LinkedIn",
+    "youtube": "YouTube",
+    "copyright": "© 2024 StockFx Investment Inc. All rights reserved. NMLS #123456"
+  },
+  "contact": {
+    "title": "Need Help?",
+    "message": "Have questions about trading? Our account officers are here to help you get started!",
+    "contact": "Contact Our Team",
+    "later": "Maybe Later"
+  },
+  "dashboard": {
+    "loading": "Loading dashboard...",
+    "notAuthenticated": "Please log in to view your dashboard.",
+    "goToLogin": "Go to Login",
+    "signOut": "Sign Out",
+    "yourHoldings": "Your Holdings",
+    "portfolioSummary": "Portfolio Summary",
+    "totalValue": "Total Value",
+    "unrealizedGains": "Unrealized Gains",
+    "return": "Return %",
+    "allocation": "Allocation",
+    "assets": "Assets",
+    "performance": "Performance",
+    "welcome": "Welcome, {{name}}!",
+    "accountCreated": "Account created successfully",
+    "emailAddress": "Email Address",
+    "accountStatus": "Account Status",
+    "active": "Active",
+    "currentBalance": "Current Balance",
+    "overviewTab": "Overview",
+    "portfolioTab": "Portfolio",
+    "settingsTab": "Settings",
+    "accountSettings": "Account Settings",
+    "manageAccount": "Manage your account and preferences",
+    "profileInformation": "Profile Information",
+    "fullName": "Full Name",
+    "security": "Security",
+    "newPassword": "New Password (optional)",
+    "leaveBlank": "Leave blank to keep current password",
+    "preferences": "Preferences",
+    "emailNotifications": "Email notifications",
+    "priceAlerts": "Price alerts",
+    "marketingEmails": "Marketing emails",
+    "saveChanges": "Save Changes",
+    "cancel": "Cancel",
+    "noChanges": "No changes to save",
+    "settingsUpdated": "Settings updated successfully!",
+    "failedToSave": "Failed to save settings",
+    "searchAssets": "Search assets...",
+    "notifications": "Notifications",
+    "noNotifications": "No notifications yet",
+    "totalBalance": "Total Balance",
+    "totalProfit": "Total Profit",
+    "monthlyIncome": "Monthly Income",
+    "activeTrades": "Active Trades",
+    "marketWatchlist": "Market Watchlist",
+    "viewAll": "View All",
+    "quickTransfer": "Quick Transfer",
+    "transferMessage": "Move funds instantly between accounts.",
+    "send": "Send",
+    "addMoney": "Add Money",
+    "recentActivity": "Recent Activity",
+    "viewAllHistory": "View All History",
+    "assetAllocation": "Asset Allocation",
+    "totalAssets": "Total Assets",
+    "stocks": "Stocks",
+    "crypto": "Crypto",
+    "etfs": "ETFs",
+    "cash": "Cash",
+    "shares": "shares",
+    "yesterday": "Yesterday",
+    "investPro": "InvestPro",
+    "topHoldings": "Your Top Holdings"
+  }
+}

@@ -1,0 +1,238 @@
+{
+  "nav": {
+    "signIn": "ເຂົ້າ",
+    "getStarted": "ເລີ່ມຕົ້ນ"
+  },
+  "hero": {
+    "badge": "🎉 ການລົງທຶນບໍ່ເສຍຄ່າໃນ $10,000 ທໍາອິດ",
+    "title1": "ລົງທຶນໄດ້ສະມາດ.",
+    "title2": "ເລີນຂຶ້ນໄວ.",
+    "description": "ແພັດຟອມຮຸ່ນໃໝ່ສໍາລັບການລົງທຶນໃນສະຕະ, ETFs ແລະເງິນໄຟຟ້າ. ເຄື່ອງມືມືອາຊີບ. ຄວາມສັບສົນສູນ. ລົງທຶນດ້ວຍປະກາດ.",
+    "startButton": "ເລີ່ມຕົ້ນການລົງທຶນເລື້ອ",
+    "signInButton": "ເຂົ້າ"
+  },
+  "features": {
+    "title": "ເປັນຫຍັງຈິ່ງເລືອກ StockFx?",
+    "fast": {
+      "name": "ທ່と້ວສຽງສາຍົາຟ້າແສງ",
+      "desc": "ເຮັດໃຫ້ຄໍາສັ່ງສໍາເລັດພາຍໃນ milliseconds."
+    },
+    "security": {
+      "name": "ຄວາມປະຢັດສະທານລະດັບທະນາຄານ",
+      "desc": "ການເຂົ້າລະຫັດ 256-bit, 2FA, ການປົກປ້ອງກະ."
+    },
+    "mobile": {
+      "name": "ໂທລະສັບ ທໍາອິດ",
+      "desc": "ແອັກອບ coherent ທີ່ມີລາຍລະອຽດທັງໝົດ. ລົງທຶນຢູ່ບ່ອນໃດກໍ່ໄດ"
+    },
+    "global": {
+      "name": "ຕະຫຼາດທົ່ວໂລກ",
+      "desc": "ເຂົ້າເຖິງຫຸ້ນສະ, ETFs, ກອງທຶນສາທາລະນະ ແລະໜີ້ສິນທົ່ວໂລກ."
+    }
+  },
+  "testimonials": {
+    "title": "ມັກໂດຍນັກລົງທຶນທັ່ວໂລກ",
+    "subtitle": "ເຂົ້າເສີມນັກລົງທຶນກວ່າ 2 ລາກທີ່ເຊື່ອຖືໄໝ້ສະ"
+  },
+  "stats": {
+    "traders": "ຜູ້ຄ້າທີ່ຮັກສາ",
+    "assets": "ໄປເຖິງ ສຽ ກຸ່ມ",
+    "commission": "ບໍ່ມີອາຍສະ",
+    "uptime": "ເວລາສະ"
+  },
+  "pricing": {
+    "title": "ຮຸ່ນລົງທຶນ",
+    "subtitle": "ເລືອກລະດັບກຸ່ມສາກົນ",
+    "starter": {
+      "name": "ມາດຕະຖານ",
+      "price": "$1,000 - $5,000",
+      "desc": "ລະດັບລົງທຶນພື້ນຖານ",
+      "duration": "1 ເດືອນ"
+    },
+    "pro": {
+      "name": "ວ່າງາວ",
+      "price": "$5,000 - $25,000",
+      "desc": "ລະດັບາລົງທຶນເລີນ",
+      "duration": "2-3 ເດືອນ",
+      "popular": "ວິທີນິຍົມທີ່ສຸດ"
+    },
+    "enterprise": {
+      "name": "ຕໍ່າກຸ່ມ",
+      "price": "$25,000+",
+      "desc": "ລະດັບລົງທຶນພະແນກ",
+      "duration": "4+ ເດືອນ"
+    },
+    "features": {
+      "commissionFree": "ການຄ້າບໍ່ມີອາຍສະ",
+      "basicCharting": "ເຄື່ອງມືລາຟ استفึ້າມະຖານ",
+      "mobileAccess": "ທະສໄລ້ວັກ",
+      "watchlists": "2 ບັນລາຍການສັກ",
+      "emailSupport": "ສົນທະນາ Email",
+      "advancedCharting": "ລາຟ ມີ້າວັກ ແລະວິເຄາະ",
+      "level2": "ຮັກສາ ທໍາໂລຈຣະດັບ 2",
+      "unlimitedWatchlists": "ບັນລາຍການສັກບໍ່ມີຂໍ້ຈໍາກັດ",
+      "support24": "ສໍາຫຼະ 24/7 ສົນທະນາ",
+      "apiAccess": "ທະສໄລ້ວັກ API",
+      "advancedAlerts": "ລາຟ ສຸ້ຫຍຽ",
+      "dedicatedManager": "ສະພາບຄຸມ ສາກົນ ທີ່ສົ່ວນຕົວ",
+      "strategy": "ຜູ້ຊ່ວຍ ວິທີ້ກຸ່ມ ທຸກສະ",
+      "whiteLabel": "ສາກົນ ສ່ວນຂາວ",
+      "integrations": "ລາຟ ທໍາອິດ",
+      "sla": "ໝາຍ SLA",
+      "institutionalPricing": "ລາຄາ ສະກະ"
+    },
+    "button": "ເລີ່ມຕົ້ນການລົງທຶນ"
+  },
+  "trust": {
+    "title": "ວິຊາຂອງທ່ານ, ບົດບາດ",
+    "security": {
+      "name": "ສຸກロูບາລະ",
+      "desc": "ເຂົ້າລະຫັດ 256-bit ປົກປ້ອງ."
+    },
+    "insured": {
+      "name": "FDIC & SIPC",
+      "desc": "ເງິນ ແລະ ປະກາດ ທ່ານ ປົກປ້ອງ."
+    },
+    "compliant": {
+      "name": "ບົດບາດ ແລະ ເປັນເຕັມ",
+      "desc": "ໍ່າຕັດ SEC ລະກວດ."
+    }
+  },
+  "cta": {
+    "title": "ກະມາວຍ ເລີ່ມ?",
+    "subtitle": "ລາຄາ ຂາວ ເຄື່ອງມື.",
+    "button": "ຍົກສະກະ"
+  },
+  "footer": {
+    "description": "The next-generation platform for stocks, crypto, and ETFs. Professional tools. Zero complexity.",
+    "platform": "Platform",
+    "company": "Company",
+    "legal": "Legal",
+    "social": "Follow Us",
+    "features": "Features",
+    "pricing": "Pricing",
+    "security": "Security",
+    "about": "About Us",
+    "blog": "Blog",
+    "contact": "Contact",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "disclosures": "Disclosures",
+    "twitter": "Twitter",
+    "linkedin": "LinkedIn",
+    "youtube": "YouTube",
+    "copyright": "© 2024 StockFx Investment Inc. All rights reserved. NMLS #123456"
+  },
+  "contact": {
+    "title": "Need Help?",
+    "message": "Have questions about trading? Our account officers are here to help you get started!",
+    "contact": "Contact Our Team",
+    "later": "Maybe Later"
+  },
+  "login": {
+    "title": "Welcome back",
+    "subtitle": "Or create a new account",
+    "emailLabel": "Email address",
+    "emailPlaceholder": "you@example.com",
+    "passwordLabel": "Password",
+    "passwordPlaceholder": "••••••••",
+    "signInButton": "Sign in",
+    "noAccount": "create a new account",
+    "backToHome": "Back to Home",
+    "serverChecking": "Checking server...",
+    "serverUp": "Server is up — try signing in again.",
+    "thirdParty": "Or continue with",
+    "thirdPartyDisabled": "Third‑party sign-in is currently disabled."
+  },
+  "register": {
+    "title": "Create your account",
+    "subtitle": "Already have an account?",
+    "haveAccount": "Sign in",
+    "firstNameLabel": "First Name",
+    "firstNamePlaceholder": "John",
+    "lastNameLabel": "Last Name",
+    "lastNamePlaceholder": "Doe",
+    "emailLabel": "Email address",
+    "emailPlaceholder": "you@example.com",
+    "passwordLabel": "Password",
+    "passwordPlaceholder": "Create a password",
+    "passwordHelper": "Must be at least 8 characters",
+    "termsLabel": "I agree to the",
+    "terms": "Terms",
+    "and": "and",
+    "privacy": "Privacy Policy",
+    "createButton": "Create Account",
+    "verifyTitle": "Verification code",
+    "verifyPlaceholder": "123456",
+    "verifyError": "The verification code is incorrect.",
+    "devCode": "DEV: Your code is",
+    "changeEmail": "Change email",
+    "resendCode": "Resend code",
+    "resendCooldown": "Resend ({{seconds}}s)",
+    "verifyButton": "Verify"
+  },
+  "dashboard": {
+    "loading": "Loading dashboard...",
+    "notAuthenticated": "Please log in to view your dashboard.",
+    "goToLogin": "Go to Login",
+    "signOut": "Sign Out",
+    "yourHoldings": "Your Holdings",
+    "portfolioSummary": "Portfolio Summary",
+    "totalValue": "Total Value",
+    "unrealizedGains": "Unrealized Gains",
+    "return": "Return %",
+    "allocation": "Allocation",
+    "assets": "Assets",
+    "performance": "Performance",
+    "welcome": "Welcome, {{name}}!",
+    "accountCreated": "Account created successfully",
+    "emailAddress": "Email Address",
+    "accountStatus": "Account Status",
+    "active": "Active",
+    "currentBalance": "Current Balance",
+    "overviewTab": "Overview",
+    "portfolioTab": "Portfolio",
+    "settingsTab": "Settings",
+    "accountSettings": "Account Settings",
+    "manageAccount": "Manage your account and preferences",
+    "profileInformation": "Profile Information",
+    "fullName": "Full Name",
+    "security": "Security",
+    "newPassword": "New Password (optional)",
+    "leaveBlank": "Leave blank to keep current password",
+    "preferences": "Preferences",
+    "emailNotifications": "Email notifications",
+    "priceAlerts": "Price alerts",
+    "marketingEmails": "Marketing emails",
+    "saveChanges": "Save Changes",
+    "cancel": "Cancel",
+    "noChanges": "No changes to save",
+    "settingsUpdated": "Settings updated successfully!",
+    "failedToSave": "Failed to save settings",
+    "searchAssets": "Search assets...",
+    "notifications": "Notifications",
+    "noNotifications": "No notifications yet",
+    "totalBalance": "Total Balance",
+    "totalProfit": "Total Profit",
+    "monthlyIncome": "Monthly Income",
+    "activeTrades": "Active Trades",
+    "marketWatchlist": "Market Watchlist",
+    "viewAll": "View All",
+    "quickTransfer": "Quick Transfer",
+    "transferMessage": "Move funds instantly between accounts.",
+    "send": "Send",
+    "addMoney": "Add Money",
+    "recentActivity": "Recent Activity",
+    "viewAllHistory": "View All History",
+    "assetAllocation": "Asset Allocation",
+    "totalAssets": "Total Assets",
+    "stocks": "Stocks",
+    "crypto": "Crypto",
+    "etfs": "ETFs",
+    "cash": "Cash",
+    "shares": "shares",
+    "yesterday": "Yesterday",
+    "investPro": "InvestPro",
+    "topHoldings": "Your Top Holdings"
+  }
+}

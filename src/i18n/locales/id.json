@@ -1,0 +1,250 @@
+{
+  "nav": {
+    "signIn": "Masuk",
+    "getStarted": "Mulai"
+  },
+  "hero": {
+    "badge": "🎉 Investasi bebas biaya pada $10.000 pertama",
+    "title1": "Investasi Lebih Cerdas.",
+    "title2": "Tumbuh Lebih Cepat.",
+    "description": "Platform generasi berikutnya untuk saham, ETF, dan investasi dividen. Alat profesional. Kompleksitas nol. Investasi dengan percaya diri.",
+    "startButton": "Mulai Berinvestasi Gratis",
+    "signInButton": "Masuk"
+  },
+  "features": {
+    "title": "Mengapa Memilih StockFx?",
+    "fast": {
+      "name": "Kilat Cepat",
+      "desc": "Jalankan pesanan dalam milidetik dengan latensi ultra rendah."
+    },
+    "security": {
+      "name": "Keamanan Tingkat Bank",
+      "desc": "Enkripsi 256-bit, 2FA, perlindungan asuransi FDIC."
+    },
+    "mobile": {
+      "name": "Seluler Pertama",
+      "desc": "Aplikasi kaya fitur. Berinvestasi di mana saja, kapan saja."
+    },
+    "global": {
+      "name": "Pasar Global",
+      "desc": "Akses saham, ETF, reksa dana, dan obligasi di seluruh dunia."
+    }
+  },
+  "testimonials": {
+    "title": "Dicintai oleh Investor di Seluruh Dunia",
+    "subtitle": "Bergabunglah dengan lebih dari 2 juta investor yang mempercayai StockFx"
+  },
+  "pricing": {
+    "title": "Rencana Investasi Disesuaikan untuk Anda",
+    "subtitle": "Pilih tingkat investasi yang sesuai dengan ukuran portofolio Anda",
+    "starter": {
+      "name": "Standar",
+      "price": "$300 - $5.000",
+      "desc": "Rentang Investasi Dasar",
+      "duration": "1 Bulan"
+    },
+    "pro": {
+      "name": "Premium",
+      "price": "$5.000 - $50.000",
+      "desc": "Rentang Investasi Pertumbuhan",
+      "duration": "2-3 Bulan",
+      "popular": "Paling Populer"
+    },
+    "gold": {
+      "name": "Emas",
+      "price": "$50.000+",
+      "desc": "Rentang Investasi Premium",
+      "duration": "3-6 Bulan"
+    },
+    "annual": {
+      "name": "Investasi Tahunan",
+      "price": "$100.000+",
+      "desc": "Rentang Investasi Institusional",
+      "duration": "12+ Bulan"
+    },
+    "enterprise": {
+      "name": "Enterprise",
+      "price": "$25,000+",
+      "desc": "Premium Investment Range",
+      "duration": "4+ Months"
+    },
+    "features": {
+      "commissionFree": "Commission-free trades",
+      "basicCharting": "Basic charting tools",
+      "mobileAccess": "Mobile app access",
+      "watchlists": "2 watchlists",
+      "emailSupport": "Email support",
+      "advancedCharting": "Advanced charting & analysis",
+      "level2": "Real-time Level 2 data",
+      "unlimitedWatchlists": "Unlimited watchlists",
+      "support24": "Priority 24/7 support",
+      "apiAccess": "API access",
+      "advancedAlerts": "Advanced alerts",
+      "dedicatedManager": "Dedicated portfolio manager",
+      "strategy": "Custom strategy consulting",
+      "whiteLabel": "White-label solutions",
+      "integrations": "Advanced integrations",
+      "sla": "SLA guarantees",
+      "institutionalPricing": "Institutional pricing"
+    },
+    "button": "Start Investing"
+  },
+  "login": {
+    "title": "Selamat datang kembali",
+    "subtitle": "Atau buat akun baru",
+    "emailLabel": "Alamat Email",
+    "emailPlaceholder": "anda@contoh.id",
+    "passwordLabel": "Sandi",
+    "passwordPlaceholder": "••••••••",
+    "signInButton": "Masuk",
+    "noAccount": "buat akun baru",
+    "backToHome": "Back to Home",
+    "serverChecking": "Checking server...",
+    "serverUp": "Server is up — try signing in again.",
+    "thirdParty": "Or continue with",
+    "thirdPartyDisabled": "Third‑party sign-in is currently disabled."
+  },
+  "register": {
+    "title": "Buat akun Anda",
+    "subtitle": "Sudah memiliki akun?",
+    "haveAccount": "Masuk",
+    "firstNameLabel": "Nama Depan",
+    "firstNamePlaceholder": "Budi",
+    "lastNameLabel": "Nama Belakang",
+    "lastNamePlaceholder": "Santoso",
+    "emailLabel": "Alamat Email",
+    "emailPlaceholder": "anda@contoh.id",
+    "passwordLabel": "Sandi",
+    "passwordPlaceholder": "Buat sandi",
+    "passwordHelper": "Harus minimal 8 karakter",
+    "createButton": "Buat Akun",
+    "verifyTitle": "Kode Verifikasi",
+    "verifyPlaceholder": "123456",
+    "verifyError": "Kode verifikasi salah.",
+    "verifyButton": "Verifikasi",
+    "termsLabel": "I agree to the",
+    "terms": "Terms",
+    "and": "and",
+    "privacy": "Privacy Policy",
+    "devCode": "DEV: Your code is",
+    "changeEmail": "Change email",
+    "resendCode": "Resend code",
+    "resendCooldown": "Resend ({{seconds}}s)"
+  },
+  "stats": {
+    "traders": "Active Traders",
+    "assets": "Assets Traded",
+    "commission": "Commission Fees",
+    "uptime": "Uptime"
+  },
+  "trust": {
+    "title": "Your Trust, Our Priority",
+    "security": {
+      "name": "Military-Grade Security",
+      "desc": "256-bit encryption protects all your data in transit and at rest."
+    },
+    "insured": {
+      "name": "FDIC & SIPC Insured",
+      "desc": "Your cash ($250k) and securities ($500k) are fully protected."
+    },
+    "compliant": {
+      "name": "Regulated & Compliant",
+      "desc": "We comply with all SEC, FINRA, and regulatory requirements."
+    }
+  },
+  "cta": {
+    "title": "Ready to Start Trading?",
+    "subtitle": "Join millions of investors. Get $50 in free stock today.",
+    "button": "Create Free Account"
+  },
+  "footer": {
+    "description": "The next-generation platform for stocks, crypto, and ETFs. Professional tools. Zero complexity.",
+    "platform": "Platform",
+    "company": "Company",
+    "legal": "Legal",
+    "social": "Follow Us",
+    "features": "Features",
+    "pricing": "Pricing",
+    "security": "Security",
+    "about": "About Us",
+    "blog": "Blog",
+    "contact": "Contact",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "disclosures": "Disclosures",
+    "twitter": "Twitter",
+    "linkedin": "LinkedIn",
+    "youtube": "YouTube",
+    "copyright": "© 2024 StockFx Investment Inc. All rights reserved. NMLS #123456"
+  },
+  "contact": {
+    "title": "Need Help?",
+    "message": "Have questions about trading? Our account officers are here to help you get started!",
+    "contact": "Contact Our Team",
+    "later": "Maybe Later"
+  },
+  "dashboard": {
+    "loading": "Loading dashboard...",
+    "notAuthenticated": "Please log in to view your dashboard.",
+    "goToLogin": "Go to Login",
+    "signOut": "Sign Out",
+    "yourHoldings": "Your Holdings",
+    "portfolioSummary": "Portfolio Summary",
+    "totalValue": "Total Value",
+    "unrealizedGains": "Unrealized Gains",
+    "return": "Return %",
+    "allocation": "Allocation",
+    "assets": "Assets",
+    "performance": "Performance",
+    "welcome": "Welcome, {{name}}!",
+    "accountCreated": "Account created successfully",
+    "emailAddress": "Email Address",
+    "accountStatus": "Account Status",
+    "active": "Active",
+    "currentBalance": "Current Balance",
+    "overviewTab": "Overview",
+    "portfolioTab": "Portfolio",
+    "settingsTab": "Settings",
+    "accountSettings": "Account Settings",
+    "manageAccount": "Manage your account and preferences",
+    "profileInformation": "Profile Information",
+    "fullName": "Full Name",
+    "security": "Security",
+    "newPassword": "New Password (optional)",
+    "leaveBlank": "Leave blank to keep current password",
+    "preferences": "Preferences",
+    "emailNotifications": "Email notifications",
+    "priceAlerts": "Price alerts",
+    "marketingEmails": "Marketing emails",
+    "saveChanges": "Save Changes",
+    "cancel": "Cancel",
+    "noChanges": "No changes to save",
+    "settingsUpdated": "Settings updated successfully!",
+    "failedToSave": "Failed to save settings",
+    "searchAssets": "Search assets...",
+    "notifications": "Notifications",
+    "noNotifications": "No notifications yet",
+    "totalBalance": "Total Balance",
+    "totalProfit": "Total Profit",
+    "monthlyIncome": "Monthly Income",
+    "activeTrades": "Active Trades",
+    "marketWatchlist": "Market Watchlist",
+    "viewAll": "View All",
+    "quickTransfer": "Quick Transfer",
+    "transferMessage": "Move funds instantly between accounts.",
+    "send": "Send",
+    "addMoney": "Add Money",
+    "recentActivity": "Recent Activity",
+    "viewAllHistory": "View All History",
+    "assetAllocation": "Asset Allocation",
+    "totalAssets": "Total Assets",
+    "stocks": "Stocks",
+    "crypto": "Crypto",
+    "etfs": "ETFs",
+    "cash": "Cash",
+    "shares": "shares",
+    "yesterday": "Yesterday",
+    "investPro": "InvestPro",
+    "topHoldings": "Your Top Holdings"
+  }
+}

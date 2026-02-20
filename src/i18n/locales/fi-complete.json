@@ -1,0 +1,238 @@
+{
+  "nav": {
+    "signIn": "Kirjaudu",
+    "getStarted": "Aloita"
+  },
+  "hero": {
+    "badge": "🎉 Provisioton kauppa ensimmäisestä $10 000",
+    "title1": "Sijoita Älykkäämmin.",
+    "title2": "Kasvaa Nopeammin.",
+    "description": "Seuraavan sukupolven alusta osakkeille, ETF:ille ja osinkosäästöille. Ammattilaistyökalut. Nolla monimutkaisuutta. Sijoita luottavaisin mielin.",
+    "startButton": "Aloita Sijoittaminen Ilmaiseksi",
+    "signInButton": "Kirjaudu"
+  },
+  "features": {
+    "title": "Miksi Valita StockFx?",
+    "fast": {
+      "name": "Salamannopea",
+      "desc": "Suorita tilaukset millisekunnissa ultra-matalalla viiveellä."
+    },
+    "security": {
+      "name": "Pankkitason Turvallisuus",
+      "desc": "256-bittinen salaus, 2FA, FDIC-vakuutussuoja."
+    },
+    "mobile": {
+      "name": "Mobiiili Ensin",
+      "desc": "Täysin toimiva sovellus. Sijoita missä tahansa, milloin tahansa."
+    },
+    "global": {
+      "name": "Globaalit Markkinat",
+      "desc": "Pääsy osakkeisiin, ETF-rahastoihin, sijoitusrahastoihin ja joukkovelkakirjoihin maailmanlaajuisesti."
+    }
+  },
+  "testimonials": {
+    "title": "Rakastettu Sijoittajien Ympäri Maailmaa",
+    "subtitle": "Liity yli 2 miljoonan sijoittajan kanssa, jotka luottavat StockFx:ään"
+  },
+  "stats": {
+    "traders": "Aktiiviset Kauppiaat",
+    "assets": "Kaupatut Omaisuuserät",
+    "commission": "Provisiokulut",
+    "uptime": "Käyttöaika"
+  },
+  "pricing": {
+    "title": "Sijoitussuunnitelmat Räätälöitu Sinulle",
+    "subtitle": "Valitse sijoitustaso, joka sopii portfoliosi kokoon",
+    "starter": {
+      "name": "Aloittelija",
+      "price": "$1.000 - $5.000",
+      "desc": "Alkuperäinen Sijoitusalue",
+      "duration": "1 Kuukausi"
+    },
+    "pro": {
+      "name": "Pro",
+      "price": "$5.000 - $25.000",
+      "desc": "Kasvun Sijoitusalue",
+      "duration": "2-3 Kuukautta",
+      "popular": "Suosituin"
+    },
+    "enterprise": {
+      "name": "Enterprise",
+      "price": "$25.000+",
+      "desc": "Premium Sijoitusalue",
+      "duration": "4+ Kuukautta"
+    },
+    "features": {
+      "commissionFree": "Provisioton kauppa",
+      "basicCharting": "Peruskaaviotyökalut",
+      "mobileAccess": "Mobiilisovelluksen käyttöoikeus",
+      "watchlists": "2 seurantalistaa",
+      "emailSupport": "Sähköposti-tuki",
+      "advancedCharting": "Kehittynyt kaaviointi ja analyysi",
+      "level2": "Reaaliaikainen tason 2 tiedot",
+      "unlimitedWatchlists": "Rajoittamattomat seurantalistat",
+      "support24": "Etusijalla oleva 24/7-tuki",
+      "apiAccess": "API-pääsy",
+      "advancedAlerts": "Kehittyneet Hälytykset",
+      "dedicatedManager": "Omistettu salkkupäällikkö",
+      "strategy": "Räätälöity strategian neuvonta",
+      "whiteLabel": "White-Label-ratkaisut",
+      "integrations": "Kehittyneet integraatiot",
+      "sla": "SLA-takuut",
+      "institutionalPricing": "Institusionaaliset hinnat"
+    },
+    "button": "Aloita Sijoittaminen"
+  },
+  "trust": {
+    "title": "Luottamuksesi, Prioriteettimme",
+    "security": {
+      "name": "Sotilasluokan Turvallisuus",
+      "desc": "256-bittinen salaus suojaa kaikki tietosi siirron ja levossa."
+    },
+    "insured": {
+      "name": "FDIC & SIPC Vakuutettu",
+      "desc": "Käteisesi ($250k) ja arvopaperit ($500k) ovat täysin suojeltu."
+    },
+    "compliant": {
+      "name": "Säännelty ja Yhteensopiva",
+      "desc": "Noudatamme kaikkia SEC-, FINRA- ja sääntely vaatimuksia."
+    }
+  },
+  "cta": {
+    "title": "Valmiina Aloittamaan Kaupankäynnin?",
+    "subtitle": "Liity miljoonien sijoittajien kanssa. Hanki $50 ilmaista osaketta tänään.",
+    "button": "Luo Ilmainen Tili"
+  },
+  "footer": {
+    "description": "Seuraavan sukupolven alusta osakkeille, kryptovaluuteille ja ETF-rahastoille. Ammattilaisen työkalut. Nolla monimutkaisuutta.",
+    "platform": "Alusta",
+    "company": "Yritys",
+    "legal": "Juridinen",
+    "social": "Seuraa Meitä",
+    "features": "Ominaisuudet",
+    "pricing": "Hinnoittelu",
+    "security": "Turvallisuus",
+    "about": "Tietoja Meistä",
+    "blog": "Blogi",
+    "contact": "Ota Yhteyttä",
+    "privacy": "Yksityisyys",
+    "terms": "Ehdot",
+    "disclosures": "Tiedotteet",
+    "twitter": "Twitter",
+    "linkedin": "LinkedIn",
+    "youtube": "YouTube",
+    "copyright": "© 2024 StockFx Investment Inc. Kaikki oikeudet pidätetään. NMLS #123456"
+  },
+  "contact": {
+    "title": "Tarvitsetko Apua?",
+    "message": "Onko sinulla kysymyksiä kaupankäynnistä? Tilipäälliköitämme ovat täällä auttamaan sinua pääsemään alkuun!",
+    "contact": "Ota Yhteyttä Tiimiin",
+    "later": "Ehkä Myöhemmin"
+  },
+  "login": {
+    "title": "Tervetuloa takaisin",
+    "subtitle": "Tai luo uusi tili",
+    "emailLabel": "Sähköpostiosoite",
+    "emailPlaceholder": "you@example.com",
+    "passwordLabel": "Salasana",
+    "passwordPlaceholder": "••••••••",
+    "signInButton": "Kirjaudu",
+    "noAccount": "luo uusi tili",
+    "backToHome": "Takaisin Etusivulle",
+    "serverChecking": "Tarkistetaan palvelinta...",
+    "serverUp": "Palvelin on käytössä — yritä kirjautua uudelleen.",
+    "thirdParty": "Tai jatka",
+    "thirdPartyDisabled": "Kolmannen osapuolen kirjautuminen on tällä hetkellä poistettu käytöstä."
+  },
+  "register": {
+    "title": "Luo Tilisi",
+    "subtitle": "Onko sinulla jo tili?",
+    "haveAccount": "Kirjaudu",
+    "firstNameLabel": "Etunimi",
+    "firstNamePlaceholder": "Matti",
+    "lastNameLabel": "Sukunimi",
+    "lastNamePlaceholder": "Virtanen",
+    "emailLabel": "Sähköpostiosoite",
+    "emailPlaceholder": "you@example.com",
+    "passwordLabel": "Salasana",
+    "passwordPlaceholder": "Luo salasana",
+    "passwordHelper": "Pitää olla vähintään 8 merkkiä",
+    "termsLabel": "Hyväksyn",
+    "terms": "Ehdot",
+    "and": "ja",
+    "privacy": "Tietosuojakäytäntö",
+    "createButton": "Luo Tili",
+    "verifyTitle": "Vahvistuskoodi",
+    "verifyPlaceholder": "123456",
+    "verifyError": "Vahvistuskoodi on virheellinen.",
+    "devCode": "DEV: Koodi on",
+    "changeEmail": "Vaihda Sähköposti",
+    "resendCode": "Lähetä Koodi Uudelleen",
+    "resendCooldown": "Lähetä Uudelleen ({{seconds}}s)",
+    "verifyButton": "Vahvista"
+  },
+  "dashboard": {
+    "loading": "Ladataan kojelautaa...",
+    "notAuthenticated": "Kirjaudu sisään nähdäksesi kojelautasi.",
+    "goToLogin": "Siirry Kirjautumiseen",
+    "signOut": "Kirjaudu Ulos",
+    "yourHoldings": "Omistuksesi",
+    "portfolioSummary": "Portfolio-Yhteenveto",
+    "totalValue": "Kokonaisarvo",
+    "unrealizedGains": "Realisoitumattomia Voittoja",
+    "return": "Palauta %",
+    "allocation": "Kohdistus",
+    "assets": "Omaisuuserät",
+    "performance": "Suorituskyky",
+    "welcome": "Tervetuloa, {{name}}!",
+    "accountCreated": "Tili luotu onnistuneesti",
+    "emailAddress": "Sähköpostiosoite",
+    "accountStatus": "Tilin Tila",
+    "active": "Aktiivinen",
+    "currentBalance": "Nykyinen Saldo",
+    "overviewTab": "Yleiskatsaus",
+    "portfolioTab": "Portfolio",
+    "settingsTab": "Asetukset",
+    "accountSettings": "Tilin Asetukset",
+    "manageAccount": "Hallitse tiliäsi ja asetuksiasi",
+    "profileInformation": "Profiilin Tiedot",
+    "fullName": "Koko Nimi",
+    "security": "Turvallisuus",
+    "newPassword": "Uusi Salasana (valinnainen)",
+    "leaveBlank": "Jätä tyhjäksi pitääksesi nykyisen salasanan",
+    "preferences": "Asetukset",
+    "emailNotifications": "Sähköposti-ilmoitukset",
+    "priceAlerts": "Hinta-hälytykset",
+    "marketingEmails": "Markkinointi-Sähköpostit",
+    "saveChanges": "Tallenna Muutokset",
+    "cancel": "Peruuta",
+    "noChanges": "Ei muutoksia tallennettavaksi",
+    "settingsUpdated": "Asetukset päivitetty onnistuneesti!",
+    "failedToSave": "Asetusten tallentaminen epäonnistui",
+    "searchAssets": "Hae omaisuuseriä...",
+    "notifications": "Ilmoitukset",
+    "noNotifications": "Ei ilmoituksia vielä",
+    "totalBalance": "Kokonaissaldo",
+    "totalProfit": "Kokonaisvoitto",
+    "monthlyIncome": "Kuukausittainen Tulo",
+    "activeTrades": "Aktiiviset Kaupat",
+    "marketWatchlist": "Markkinoiden Seurantalist",
+    "viewAll": "Näytä Kaikki",
+    "quickTransfer": "Nopea Siirto",
+    "transferMessage": "Siirry välittömästi tilien välillä.",
+    "send": "Lähettää",
+    "addMoney": "Lisää Rahaa",
+    "recentActivity": "Viimeaikainen Toiminta",
+    "viewAllHistory": "Näytä Kaikki Historiat",
+    "assetAllocation": "Omaisuuden Kohdistus",
+    "totalAssets": "Kokonaisomaisuus",
+    "stocks": "Osakkeet",
+    "crypto": "Kryptovaluutta",
+    "etfs": "ETF",
+    "cash": "Käteinen",
+    "shares": "osakkeet",
+    "yesterday": "Eilen",
+    "investPro": "InvestPro",
+    "topHoldings": "Tärkeimmät Omistuksesi"
+  }
+}

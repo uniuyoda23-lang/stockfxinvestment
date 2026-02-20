@@ -1,0 +1,238 @@
+{
+  "nav": {
+    "signIn": "Bejelentkezés",
+    "getStarted": "Kezdje El"
+  },
+  "hero": {
+    "badge": "🎉 Províziómenteskereskedelm az első $10 000-en",
+    "title1": "Tegyenek Okosabban.",
+    "title2": "Nőjön Gyorsabban.",
+    "description": "Új generációs platform a részvényekhez, ETF-hez és osztalék befektetésekhez. Professzionális eszközök. Nulla összetettség. Önbizalommal fektessenek.",
+    "startButton": "Kezdje El A Befektetést Ingyen",
+    "signInButton": "Bejelentkezés"
+  },
+  "features": {
+    "title": "Miért Válassza A StockFx-et?",
+    "fast": {
+      "name": "Villámgyors",
+      "desc": "Végezzen parancsokat milliszekundumban ultramegavolt latenccal."
+    },
+    "security": {
+      "name": "Bankszintű Biztonság",
+      "desc": "256-bites titkosítás, 2FA, FDIC biztosítási védelem."
+    },
+    "mobile": {
+      "name": "Mobileszközök használata",
+      "desc": "Teljesen felszerelt alkalmazás. Fektessenek bárhol, bármikor."
+    },
+    "global": {
+      "name": "Globális Piacok",
+      "desc": "Hozzáférés a részvényekhez, ETF-hez, befektetési alapokhoz és kötvényekhez világszerte."
+    }
+  },
+  "testimonials": {
+    "title": "Világszerte Szeretett A Beruházók",
+    "subtitle": "Csatlakozzon több mint 2 millió beruházóhoz, akik a StockFx-re bízzák magukat"
+  },
+  "stats": {
+    "traders": "Aktív Kereskedők",
+    "assets": "Kereskedett Eszközök",
+    "commission": "Bizottsága Díjak",
+    "uptime": "Üzemidő"
+  },
+  "pricing": {
+    "title": "Befektetési Tervek Az Ön Számára Testreszabott",
+    "subtitle": "Válasszon egy befektetési szintet, amely megfelel a portfóliójának méretével",
+    "starter": {
+      "name": "Indító",
+      "price": "$1.000 - $5.000",
+      "desc": "Kezdeti Befektetési Tartomány",
+      "duration": "1 Hónap"
+    },
+    "pro": {
+      "name": "Pro",
+      "price": "$5.000 - $25.000",
+      "desc": "Növekedés Befektetési Tartomány",
+      "duration": "2-3 Hónap",
+      "popular": "Legkedvelebb"
+    },
+    "enterprise": {
+      "name": "Enterprise",
+      "price": "$25.000+",
+      "desc": "Premium Befektetési Tartomány",
+      "duration": "4+ Hónap"
+    },
+    "features": {
+      "commissionFree": "Provizmiómenteskereskedelm",
+      "basicCharting": "Alapvető chartingeszközök",
+      "mobileAccess": "Mobil alkalmazás-hozzáférés",
+      "watchlists": "2 követési lista",
+      "emailSupport": "E-mail támogatás",
+      "advancedCharting": "Fejlett charting és elemzés",
+      "level2": "Valós idejű 2. szintű adatok",
+      "unlimitedWatchlists": "Korlátlan követési listák",
+      "support24": "Prioritás 24/7 támogatás",
+      "apiAccess": "API hozzáférés",
+      "advancedAlerts": "Fejlett Riasztások",
+      "dedicatedManager": "Dedikált portfólió menedzser",
+      "strategy": "Testreszabott stratégiai tanácsadás",
+      "whiteLabel": "White-label megoldások",
+      "integrations": "Fejlett integrációk",
+      "sla": "SLA garanciák",
+      "institutionalPricing": "Intézményi árak"
+    },
+    "button": "Kezdje El A Befektetést"
+  },
+  "trust": {
+    "title": "Az Ön Bizalma, Az Inkább Prioritás",
+    "security": {
+      "name": "Katonai Szintű Biztonság",
+      "desc": "256-bites titkosítás védi az összes adatát szállítás és pihenő közben."
+    },
+    "insured": {
+      "name": "FDIC & SIPC Biztosított",
+      "desc": "Az Ön készpénz ($250 ezer) és értékpapír ($500 ezer) teljesen védett."
+    },
+    "compliant": {
+      "name": "Sablontfelelős,habillage",
+      "desc": "Megfelelünk az összes SEC-, FINRA- és szabályozási követelménynek."
+    }
+  },
+  "cta": {
+    "title": "Készen Áll A Kereskedés Megkezdésére?",
+    "subtitle": "Csatlakozzon több millió beruházóhoz. Szerezzen $50 ingyenes részvényt ma.",
+    "button": "Ingyenes Fiók Létrehozása"
+  },
+  "footer": {
+    "description": "Új generációs platform a részvényekhez, kriptoválutákhoz és ETF-khez. Professzionális eszközök. Nulla összetettség.",
+    "platform": "Platform",
+    "company": "Cég",
+    "legal": "Jogilag",
+    "social": "Kövessen Minket",
+    "features": "Funkciók",
+    "pricing": "Árazás",
+    "security": "Biztonság",
+    "about": "Rólunk",
+    "blog": "Blog",
+    "contact": "Kapcsolat",
+    "privacy": "Adatvédelem",
+    "terms": "Feltétel",
+    "disclosures": "Nyilvánosítások",
+    "twitter": "Twitter",
+    "linkedin": "LinkedIn",
+    "youtube": "YouTube",
+    "copyright": "©2024 StockFx Investment Inc. Minden jog fenntartva. NMLS #123456"
+  },
+  "contact": {
+    "title": "Szüksége Van Segítségre?",
+    "message": "Kérdéseid Vannak A Kereskedelemről? Számlaadminisztrátoraink Segítenek Neked Megkezdeni!",
+    "contact": "Lépjen Kapcsolatba A Csapatunk",
+    "later": "Talán Később"
+  },
+  "login": {
+    "title": "Üdvözliikünk Vissza",
+    "subtitle": "Vagy hozzál létre egy új fiókot",
+    "emailLabel": "E-mail Cím",
+    "emailPlaceholder": "you@example.com",
+    "passwordLabel": "Jelszó",
+    "passwordPlaceholder": "••••••••",
+    "signInButton": "Bejelentkezés",
+    "noAccount": "Hozz Létre Egy Úi Fiókot",
+    "backToHome": "Vissza Az Otthonból",
+    "serverChecking": "Szerver Ellenőrzése...",
+    "serverUp": "A szerver működik — próbálj meg újra bejelentkezni.",
+    "thirdParty": "Vagy folytass",
+    "thirdPartyDisabled": "A harmadik fél bejelentkezése jelenleg letiltva."
+  },
+  "register": {
+    "title": "Hozz Létre A Fiókodat",
+    "subtitle": "Már Van Fiókodra?",
+    "haveAccount": "Bejelentkezés",
+    "firstNameLabel": "Keresztnév",
+    "firstNamePlaceholder": "János",
+    "lastNameLabel": "Vezetéknév",
+    "lastNamePlaceholder": "Nagy",
+    "emailLabel": "E-mail Cím",
+    "emailPlaceholder": "you@example.com",
+    "passwordLabel": "Jelszó",
+    "passwordPlaceholder": "Jelszó Létrehozása",
+    "passwordHelper": "Legalább 8 karakternek kell lennie",
+    "termsLabel": "Elfogadom Az",
+    "terms": "Feltételeket",
+    "and": "és",
+    "privacy": "Adatvédelmi Nyilatkozat",
+    "createButton": "Fiók Létrehozása",
+    "verifyTitle": "Igazolási Kód",
+    "verifyPlaceholder": "123456",
+    "verifyError": "Annak Az Igazolási Kód Helytelen.",
+    "devCode": "DEV: Kódodra",
+    "changeEmail": "E-mail Módosítása",
+    "resendCode": "Kód Újraküldése",
+    "resendCooldown": "Újraküldés ({{seconds}}s)",
+    "verifyButton": "Igazolás"
+  },
+  "dashboard": {
+    "loading": "Irányítópult Töltés...",
+    "notAuthenticated": "Kérjük, Bejelentkezni A Műszerfal Megtekintéséhez.",
+    "goToLogin": "Menj A Bejelentkezésre",
+    "signOut": "Kijelentkezés",
+    "yourHoldings": "Az Ön Tartósságai",
+    "portfolioSummary": "Portfólió Összefoglalása",
+    "totalValue": "Összesített Érték",
+    "unrealizedGains": "Nem Realizált Nyereségete",
+    "return": "Vissza %",
+    "allocation": "Felosztás",
+    "assets": "Eszközök",
+    "performance": "Teljesítmény",
+    "welcome": "Üdvözöljük, {{name}}!",
+    "accountCreated": "Fiók Sikeresen Létrehozva",
+    "emailAddress": "E-mail Cím",
+    "accountStatus": "Fiók Állapota",
+    "active": "Aktív",
+    "currentBalance": "Aktuális Egyenleg",
+    "overviewTab": "Áttekintés",
+    "portfolioTab": "Portfólió",
+    "settingsTab": "Beallítások",
+    "accountSettings": "Fiók Beálításainak",
+    "manageAccount": "Kezeld a fiókodat és a beállításokat",
+    "profileInformation": "Profil Információ",
+    "fullName": "Teljes Név",
+    "security": "Biztonság",
+    "newPassword": "Új Jelszó (Opcionális)",
+    "leaveBlank": "Hagyja Üresen Az Aktuális Jelszó Megtartásához",
+    "preferences": "Beállítások",
+    "emailNotifications": "E-mail Értesítések",
+    "priceAlerts": "Ár Riasztások",
+    "marketingEmails": "Marketing E-mailok",
+    "saveChanges": "Módosítások Mentése",
+    "cancel": "Mégse",
+    "noChanges": "Nincs Módosítás A Mentéshez",
+    "settingsUpdated": "Beálítások Sikeresen Frissítve!",
+    "failedToSave": "A Beálítások Mentése Sikertelen",
+    "searchAssets": "Keress Eszközöket...",
+    "notifications": "Értesítések",
+    "noNotifications": "Még Nincs Értesítés",
+    "totalBalance": "Teljes Egyenleg",
+    "totalProfit": "Teljes Profit",
+    "monthlyIncome": "Havi Jövedelem",
+    "activeTrades": "Aktív Ügyletek",
+    "marketWatchlist": "Piaci Figyelmlista",
+    "viewAll": "Nézd Meg Az Összes",
+    "quickTransfer": "Gyors Átutalás",
+    "transferMessage": "Azonnalian Utalj Át Pénzt A Fiókok Között.",
+    "send": "Küldés",
+    "addMoney": "Pénz Hozzáadása",
+    "recentActivity": "Legutóbbi Tevékenység",
+    "viewAllHistory": "Nézd Meg Az Összes Történelem",
+    "assetAllocation": "Eszköz Felosztása",
+    "totalAssets": "Összesen Eszközök",
+    "stocks": "Részvények",
+    "crypto": "Kriptovaluta",
+    "etfs": "ETF",
+    "cash": "Készpénz",
+    "shares": "Részvénye",
+    "yesterday": "Tegnap",
+    "investPro": "InvestPro",
+    "topHoldings": "Az Ön Legjobb Tartósságai"
+  }
+}

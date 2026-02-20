@@ -1,0 +1,238 @@
+{
+  "nav": {
+    "signIn": "Entrar",
+    "getStarted": "Começar"
+  },
+  "hero": {
+    "badge": "🎉 Negociação sem comissão nos seus primeiros $10.000",
+    "title1": "Invista com Inteligência.",
+    "title2": "Cresça Mais Rápido.",
+    "description": "A plataforma de próxima geração para ações, ETFs e investimentos em dividendos. Ferramentas profissionais. Zero complexidade. Invista com confiança.",
+    "startButton": "Comece a Investir Gratuitamente",
+    "signInButton": "Entrar"
+  },
+  "features": {
+    "title": "Por Que Escolher StockFx?",
+    "fast": {
+      "name": "Extremamente Rápido",
+      "desc": "Execute ordens em milissegundos com latência ultra-baixa."
+    },
+    "security": {
+      "name": "Segurança de Nível Bancário",
+      "desc": "Criptografia de 256 bits, autenticação 2FA, proteção de seguro FDIC."
+    },
+    "mobile": {
+      "name": "Móvel em Primeiro Lugar",
+      "desc": "Aplicativo completo. Invista em qualquer lugar, a qualquer hora."
+    },
+    "global": {
+      "name": "Mercados Globais",
+      "desc": "Acesse ações, ETFs, fundos mútuos e títulos em todo o mundo."
+    }
+  },
+  "testimonials": {
+    "title": "Adorado por Investidores em Todo o Mundo",
+    "subtitle": "Junte-se a mais de 2 milhões de investidores que confiam em StockFx"
+  },
+  "stats": {
+    "traders": "Traders Ativos",
+    "assets": "Ativos Negociados",
+    "commission": "Taxas de Comissão",
+    "uptime": "Tempo de Atividade"
+  },
+  "pricing": {
+    "title": "Planos de Investimento Personalizados Para Você",
+    "subtitle": "Escolha um nível de investimento que corresponda ao tamanho do seu portfólio",
+    "starter": {
+      "name": "Iniciante",
+      "price": "$1.000 - $5.000",
+      "desc": "Intervalo de Investimento Inicial",
+      "duration": "1 Mês"
+    },
+    "pro": {
+      "name": "Pro",
+      "price": "$5.000 - $25.000",
+      "desc": "Intervalo de Investimento de Crescimento",
+      "duration": "2-3 Meses",
+      "popular": "Mais Popular"
+    },
+    "enterprise": {
+      "name": "Empresa",
+      "price": "$25.000+",
+      "desc": "Intervalo de Investimento Premium",
+      "duration": "4+ Meses"
+    },
+    "features": {
+      "commissionFree": "Negociações sem comissão",
+      "basicCharting": "Ferramentas básicas de gráficos",
+      "mobileAccess": "Acesso ao aplicativo móvel",
+      "watchlists": "2 listas de observação",
+      "emailSupport": "Suporte por e-mail",
+      "advancedCharting": "Gráficos e análise avançados",
+      "level2": "Dados de Nível 2 em tempo real",
+      "unlimitedWatchlists": "Listas de observação ilimitadas",
+      "support24": "Suporte prioritário 24/7",
+      "apiAccess": "Acesso à API",
+      "advancedAlerts": "Alertas avançados",
+      "dedicatedManager": "Gerenciador de portfólio dedicado",
+      "strategy": "Consultoria estratégica personalizada",
+      "whiteLabel": "Soluções de marca branca",
+      "integrations": "Integrações avançadas",
+      "sla": "Garantias SLA",
+      "institutionalPricing": "Preços institucionais"
+    },
+    "button": "Comece a Investir"
+  },
+  "trust": {
+    "title": "Sua Confiança, Nossa Prioridade",
+    "security": {
+      "name": "Segurança Militar",
+      "desc": "Criptografia de 256 bits protege todos os seus dados em trânsito e em repouso."
+    },
+    "insured": {
+      "name": "Segurado por FDIC e SIPC",
+      "desc": "Seu dinheiro ($250 mil) e títulos ($500 mil) estão totalmente protegidos."
+    },
+    "compliant": {
+      "name": "Regulamentado e Compatível",
+      "desc": "Estamos em conformidade com todos os requisitos da SEC, FINRA e regulatórios."
+    }
+  },
+  "cta": {
+    "title": "Pronto para Começar a Negociar?",
+    "subtitle": "Junte-se a milhões de investidores. Obtenha $50 em ações gratuitas hoje.",
+    "button": "Criar Conta Gratuita"
+  },
+  "footer": {
+    "description": "A plataforma de próxima geração para ações, criptomoedas e ETFs. Ferramentas profissionais. Zero complexidade.",
+    "platform": "Plataforma",
+    "company": "Empresa",
+    "legal": "Jurídico",
+    "social": "Siga-Nos",
+    "features": "Recursos",
+    "pricing": "Preços",
+    "security": "Segurança",
+    "about": "Sobre Nós",
+    "blog": "Blog",
+    "contact": "Contato",
+    "privacy": "Privacidade",
+    "terms": "Termos",
+    "disclosures": "Divulgações",
+    "twitter": "Twitter",
+    "linkedin": "LinkedIn",
+    "youtube": "YouTube",
+    "copyright": "© 2024 StockFx Investment Inc. Todos os direitos reservados. NMLS #123456"
+  },
+  "contact": {
+    "title": "Precisa de Ajuda?",
+    "message": "Tem dúvidas sobre negociações? Nossos oficiais de conta estão aqui para ajudá-lo a começar!",
+    "contact": "Entre em Contato com Nossa Equipe",
+    "later": "Talvez Mais Tarde"
+  },
+  "login": {
+    "title": "Bem-vindo de volta",
+    "subtitle": "Ou crie uma nova conta",
+    "emailLabel": "Endereço de e-mail",
+    "emailPlaceholder": "você@exemplo.com",
+    "passwordLabel": "Senha",
+    "passwordPlaceholder": "••••••••",
+    "signInButton": "Entrar",
+    "noAccount": "criar uma nova conta",
+    "backToHome": "Voltar para a Página Inicial",
+    "serverChecking": "Verificando servidor...",
+    "serverUp": "O servidor está ativo — tente entrar novamente.",
+    "thirdParty": "Ou continuar com",
+    "thirdPartyDisabled": "A entrada de terceiros está desativada no momento."
+  },
+  "register": {
+    "title": "Crie sua conta",
+    "subtitle": "Já tem uma conta?",
+    "haveAccount": "Entrar",
+    "firstNameLabel": "Primeiro Nome",
+    "firstNamePlaceholder": "João",
+    "lastNameLabel": "Sobrenome",
+    "lastNamePlaceholder": "Silva",
+    "emailLabel": "Endereço de e-mail",
+    "emailPlaceholder": "você@exemplo.com",
+    "passwordLabel": "Senha",
+    "passwordPlaceholder": "Crie uma senha",
+    "passwordHelper": "Deve ter pelo menos 8 caracteres",
+    "termsLabel": "Concordo com os",
+    "terms": "Termos",
+    "and": "e",
+    "privacy": "Política de Privacidade",
+    "createButton": "Criar Conta",
+    "verifyTitle": "Código de verificação",
+    "verifyPlaceholder": "123456",
+    "verifyError": "O código de verificação está incorreto.",
+    "devCode": "DEV: Seu código é",
+    "changeEmail": "Mudar e-mail",
+    "resendCode": "Reenviar código",
+    "resendCooldown": "Reenviar ({{seconds}}s)",
+    "verifyButton": "Verificar"
+  },
+  "dashboard": {
+    "loading": "Carregando painel...",
+    "notAuthenticated": "Faça login para ver seu painel.",
+    "goToLogin": "Ir para Login",
+    "signOut": "Sair",
+    "yourHoldings": "Suas Participações",
+    "portfolioSummary": "Resumo do Portfólio",
+    "totalValue": "Valor Total",
+    "unrealizedGains": "Ganhos Não Realizados",
+    "return": "Retorno %",
+    "allocation": "Alocação",
+    "assets": "Ativos",
+    "performance": "Desempenho",
+    "welcome": "Bem-vindo, {{name}}!",
+    "accountCreated": "Conta criada com sucesso",
+    "emailAddress": "Endereço de e-mail",
+    "accountStatus": "Status da Conta",
+    "active": "Ativo",
+    "currentBalance": "Saldo Atual",
+    "overviewTab": "Visão Geral",
+    "portfolioTab": "Portfólio",
+    "settingsTab": "Configurações",
+    "accountSettings": "Configurações da Conta",
+    "manageAccount": "Gerencie sua conta e preferências",
+    "profileInformation": "Informações do Perfil",
+    "fullName": "Nome Completo",
+    "security": "Segurança",
+    "newPassword": "Nova Senha (opcional)",
+    "leaveBlank": "Deixe em branco para manter a senha atual",
+    "preferences": "Preferências",
+    "emailNotifications": "Notificações por e-mail",
+    "priceAlerts": "Alertas de Preço",
+    "marketingEmails": "E-mails de Marketing",
+    "saveChanges": "Salvar Alterações",
+    "cancel": "Cancelar",
+    "noChanges": "Nenhuma alteração para salvar",
+    "settingsUpdated": "Configurações atualizadas com sucesso!",
+    "failedToSave": "Falha ao salvar configurações",
+    "searchAssets": "Pesquisar ativos...",
+    "notifications": "Notificações",
+    "noNotifications": "Nenhuma notificação ainda",
+    "totalBalance": "Saldo Total",
+    "totalProfit": "Lucro Total",
+    "monthlyIncome": "Renda Mensal",
+    "activeTrades": "Negociações Ativas",
+    "marketWatchlist": "Lista de Observação do Mercado",
+    "viewAll": "Ver Tudo",
+    "quickTransfer": "Transferência Rápida",
+    "transferMessage": "Transfira fundos instantaneamente entre contas.",
+    "send": "Enviar",
+    "addMoney": "Adicionar Fundos",
+    "recentActivity": "Atividade Recente",
+    "viewAllHistory": "Ver Todo o Histórico",
+    "assetAllocation": "Alocação de Ativos",
+    "totalAssets": "Ativos Totais",
+    "stocks": "Ações",
+    "crypto": "Criptografia",
+    "etfs": "ETF",
+    "cash": "Dinheiro",
+    "shares": "ações",
+    "yesterday": "Ontem",
+    "investPro": "InvestPro",
+    "topHoldings": "Suas Principais Participações"
+  }
+}

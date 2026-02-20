@@ -1,0 +1,250 @@
+{
+  "nav": {
+    "signIn": "Увайсцi",
+    "getStarted": "Пачаць"
+  },
+  "hero": {
+    "badge": "🎉 Бясплатны інвестыцыі на першыя $10.000",
+    "title1": "Інвесцы разумнейБiчы.",
+    "title2": "Растите хутчэй.",
+    "description": "Платформа новага пакалення для акцый, ETF і інвестыцый у дывідэнды. Прафесійныя інструменты. Нулявая сложнасць. Інвесцы з пэўнасцю.",
+    "startButton": "Пачніце бясплатныя інвестыцыі",
+    "signInButton": "Увайсцi"
+  },
+  "features": {
+    "title": "Чамму выбраць StockFx?",
+    "fast": {
+      "name": "Хутка, як планета",
+      "desc": "Выконвайце ордэры за мілісекунды з ультра нізкай затрымкай."
+    },
+    "security": {
+      "name": "Безпека банкаўскага ўзроўню",
+      "desc": "256-бітнае шыфраванне, 2FA, абарона асігурэння FDIC."
+    },
+    "mobile": {
+      "name": "Мобільны спачатку",
+      "desc": "Праграма з усімі функцыямі. Інвесцы дзе завгодна, калі завгодна."
+    },
+    "global": {
+      "name": "Глабальныя рынкi",
+      "desc": "Доступ да акцый, ETF, абшчых фондаў і облігацый на ўсім свеце."
+    }
+  },
+  "testimonials": {
+    "title": "Любімы інвесцарамі па ўсім свеце",
+    "subtitle": "Ўдзяліцеся з больш чым 2 млн інвесцараў, якія давяруць StockFx"
+  },
+  "pricing": {
+    "title": "Планы інвестыцый, адаптаваныя для вас",
+    "subtitle": "Выберыце лiчбу іnvestment, якая адпавідае велічыні вашага портфеля",
+    "starter": {
+      "name": "Стандарт",
+      "price": "$300 - $5.000",
+      "desc": "Базавы дыяпазон інвестыцыі",
+      "duration": "1 месяц"
+    },
+    "pro": {
+      "name": "Прэміум",
+      "price": "$5.000 - $50.000",
+      "desc": "Дыяпазон інвестыцыі роста",
+      "duration": "2-3 месяца",
+      "popular": "Найбольш папулярны"
+    },
+    "gold": {
+      "name": "Золата",
+      "price": "$50.000+",
+      "desc": "Прэміум дыяпазон інвестыцыі",
+      "duration": "3-6 месяцаў"
+    },
+    "annual": {
+      "name": "Гадавая інвестыцыя",
+      "price": "$100.000+",
+      "desc": "Інстыцыйны дыяпазон інвестыцыі",
+      "duration": "12+ месяцаў"
+    },
+    "enterprise": {
+      "name": "Enterprise",
+      "price": "$25,000+",
+      "desc": "Premium Investment Range",
+      "duration": "4+ Months"
+    },
+    "features": {
+      "commissionFree": "Commission-free trades",
+      "basicCharting": "Basic charting tools",
+      "mobileAccess": "Mobile app access",
+      "watchlists": "2 watchlists",
+      "emailSupport": "Email support",
+      "advancedCharting": "Advanced charting & analysis",
+      "level2": "Real-time Level 2 data",
+      "unlimitedWatchlists": "Unlimited watchlists",
+      "support24": "Priority 24/7 support",
+      "apiAccess": "API access",
+      "advancedAlerts": "Advanced alerts",
+      "dedicatedManager": "Dedicated portfolio manager",
+      "strategy": "Custom strategy consulting",
+      "whiteLabel": "White-label solutions",
+      "integrations": "Advanced integrations",
+      "sla": "SLA guarantees",
+      "institutionalPricing": "Institutional pricing"
+    },
+    "button": "Start Investing"
+  },
+  "login": {
+    "title": "Добра пажаловаць",
+    "subtitle": "Або стварыце новы рахунак",
+    "emailLabel": "Адрас электроннай пошты",
+    "emailPlaceholder": "вы@приклад.bу",
+    "passwordLabel": "Пароль",
+    "passwordPlaceholder": "••••••••",
+    "signInButton": "Увайсцi",
+    "noAccount": "стварыце новы рахунак",
+    "backToHome": "Back to Home",
+    "serverChecking": "Checking server...",
+    "serverUp": "Server is up — try signing in again.",
+    "thirdParty": "Or continue with",
+    "thirdPartyDisabled": "Third‑party sign-in is currently disabled."
+  },
+  "register": {
+    "title": "Стварыце свой рахунак",
+    "subtitle": "Ужо ёсць рахунак?",
+    "haveAccount": "Увайсцi",
+    "firstNameLabel": "Имя",
+    "firstNamePlaceholder": "Іван",
+    "lastNameLabel": "Прозвішча",
+    "lastNamePlaceholder": "Петраў",
+    "emailLabel": "Адрас электроннай пошты",
+    "emailPlaceholder": "вы@приклад.bу",
+    "passwordLabel": "Пароль",
+    "passwordPlaceholder": "Стварыце пароль",
+    "passwordHelper": "Павіна быць не менш 8 сімвалаў",
+    "createButton": "Стварыце рахунак",
+    "verifyTitle": "Код верыфікацыі",
+    "verifyPlaceholder": "123456",
+    "verifyError": "Код верыфікацыі неправільны.",
+    "verifyButton": "Верыфесуйце",
+    "termsLabel": "I agree to the",
+    "terms": "Terms",
+    "and": "and",
+    "privacy": "Privacy Policy",
+    "devCode": "DEV: Your code is",
+    "changeEmail": "Change email",
+    "resendCode": "Resend code",
+    "resendCooldown": "Resend ({{seconds}}s)"
+  },
+  "stats": {
+    "traders": "Active Traders",
+    "assets": "Assets Traded",
+    "commission": "Commission Fees",
+    "uptime": "Uptime"
+  },
+  "trust": {
+    "title": "Your Trust, Our Priority",
+    "security": {
+      "name": "Military-Grade Security",
+      "desc": "256-bit encryption protects all your data in transit and at rest."
+    },
+    "insured": {
+      "name": "FDIC & SIPC Insured",
+      "desc": "Your cash ($250k) and securities ($500k) are fully protected."
+    },
+    "compliant": {
+      "name": "Regulated & Compliant",
+      "desc": "We comply with all SEC, FINRA, and regulatory requirements."
+    }
+  },
+  "cta": {
+    "title": "Ready to Start Trading?",
+    "subtitle": "Join millions of investors. Get $50 in free stock today.",
+    "button": "Create Free Account"
+  },
+  "footer": {
+    "description": "The next-generation platform for stocks, crypto, and ETFs. Professional tools. Zero complexity.",
+    "platform": "Platform",
+    "company": "Company",
+    "legal": "Legal",
+    "social": "Follow Us",
+    "features": "Features",
+    "pricing": "Pricing",
+    "security": "Security",
+    "about": "About Us",
+    "blog": "Blog",
+    "contact": "Contact",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "disclosures": "Disclosures",
+    "twitter": "Twitter",
+    "linkedin": "LinkedIn",
+    "youtube": "YouTube",
+    "copyright": "© 2024 StockFx Investment Inc. All rights reserved. NMLS #123456"
+  },
+  "contact": {
+    "title": "Need Help?",
+    "message": "Have questions about trading? Our account officers are here to help you get started!",
+    "contact": "Contact Our Team",
+    "later": "Maybe Later"
+  },
+  "dashboard": {
+    "loading": "Loading dashboard...",
+    "notAuthenticated": "Please log in to view your dashboard.",
+    "goToLogin": "Go to Login",
+    "signOut": "Sign Out",
+    "yourHoldings": "Your Holdings",
+    "portfolioSummary": "Portfolio Summary",
+    "totalValue": "Total Value",
+    "unrealizedGains": "Unrealized Gains",
+    "return": "Return %",
+    "allocation": "Allocation",
+    "assets": "Assets",
+    "performance": "Performance",
+    "welcome": "Welcome, {{name}}!",
+    "accountCreated": "Account created successfully",
+    "emailAddress": "Email Address",
+    "accountStatus": "Account Status",
+    "active": "Active",
+    "currentBalance": "Current Balance",
+    "overviewTab": "Overview",
+    "portfolioTab": "Portfolio",
+    "settingsTab": "Settings",
+    "accountSettings": "Account Settings",
+    "manageAccount": "Manage your account and preferences",
+    "profileInformation": "Profile Information",
+    "fullName": "Full Name",
+    "security": "Security",
+    "newPassword": "New Password (optional)",
+    "leaveBlank": "Leave blank to keep current password",
+    "preferences": "Preferences",
+    "emailNotifications": "Email notifications",
+    "priceAlerts": "Price alerts",
+    "marketingEmails": "Marketing emails",
+    "saveChanges": "Save Changes",
+    "cancel": "Cancel",
+    "noChanges": "No changes to save",
+    "settingsUpdated": "Settings updated successfully!",
+    "failedToSave": "Failed to save settings",
+    "searchAssets": "Search assets...",
+    "notifications": "Notifications",
+    "noNotifications": "No notifications yet",
+    "totalBalance": "Total Balance",
+    "totalProfit": "Total Profit",
+    "monthlyIncome": "Monthly Income",
+    "activeTrades": "Active Trades",
+    "marketWatchlist": "Market Watchlist",
+    "viewAll": "View All",
+    "quickTransfer": "Quick Transfer",
+    "transferMessage": "Move funds instantly between accounts.",
+    "send": "Send",
+    "addMoney": "Add Money",
+    "recentActivity": "Recent Activity",
+    "viewAllHistory": "View All History",
+    "assetAllocation": "Asset Allocation",
+    "totalAssets": "Total Assets",
+    "stocks": "Stocks",
+    "crypto": "Crypto",
+    "etfs": "ETFs",
+    "cash": "Cash",
+    "shares": "shares",
+    "yesterday": "Yesterday",
+    "investPro": "InvestPro",
+    "topHoldings": "Your Top Holdings"
+  }
+}

@@ -1,0 +1,250 @@
+{
+  "nav": {
+    "signIn": "Σύνδεση",
+    "getStarted": "Ξεκινήστε"
+  },
+  "hero": {
+    "badge": "🎉 Επενδύσεις χωρίς προμήθεια στα πρώτα $10.000",
+    "title1": "Επενδύστε Πιο Έξυπνα.",
+    "title2": "Αναπτυχθείτε Ταχύτερα.",
+    "description": "Η πλατφόρμα της επόμενης γενιάς για μετοχές, ETF και επενδύσεις μερισμάτων. Επαγγελματικά εργαλεία. Μηδέν πολυπλοκότητα. Επενδύστε με εμπιστοσύνη.",
+    "startButton": "Ξεκινήστε Επενδύσεις Δωρεάν",
+    "signInButton": "Σύνδεση"
+  },
+  "features": {
+    "title": "Γιατί να επιλέξετε StockFx;",
+    "fast": {
+      "name": "Κεραυνοειδής Ταχύτητα",
+      "desc": "Εκτελέστε παραγγελίες σε χιλιοστά του δευτερολέπτου με εξαιρετικά χαμηλή καθυστέρηση."
+    },
+    "security": {
+      "name": "Ασφάλεια Τράπεζας",
+      "desc": "Κρυπτογράφηση 256-bit, 2FA, προστασία ασφάλισης FDIC."
+    },
+    "mobile": {
+      "name": "Κινητό Πρώτα",
+      "desc": "Εφαρμογή πλήρων χαρακτηριστικών. Επενδύστε οπουδήποτε, οποτεδήποτε."
+    },
+    "global": {
+      "name": "Παγκόσμιες Αγορές",
+      "desc": "Πρόσβαση σε μετοχές, ETF, αμοιβαία κεφάλαια και ομόλογα σε όλο τον κόσμο."
+    }
+  },
+  "testimonials": {
+    "title": "Αγαπημένο από επενδυτές παγκοσμίως",
+    "subtitle": "Ενταχθείτε στους πάνω από 2 εκατομμύρια επενδυτές που εμπιστεύονται το StockFx"
+  },
+  "pricing": {
+    "title": "Σχέδια Επενδύσεων Προσαρμοσμένα για Εσάς",
+    "subtitle": "Επιλέξτε ένα επίπεδο επενδύσεων που ταιριάζει στο μέγεθος του χαρτοφυλακίου σας",
+    "starter": {
+      "name": "Τυπικό",
+      "price": "$300 - $5.000",
+      "desc": "Βασικό Εύρος Επενδύσεων",
+      "duration": "1 Μήνα"
+    },
+    "pro": {
+      "name": "Premium",
+      "price": "$5.000 - $50.000",
+      "desc": "Εύρος Επενδύσεων Ανάπτυξης",
+      "duration": "2-3 Μήνες",
+      "popular": "Πιο δημοφιλές"
+    },
+    "gold": {
+      "name": "Χρυσό",
+      "price": "$50.000+",
+      "desc": "Premium Εύρος Επενδύσεων",
+      "duration": "3-6 Μήνες"
+    },
+    "annual": {
+      "name": "Ετήσια Επένδυση",
+      "price": "$100.000+",
+      "desc": "Θεσμικό Εύρος Επενδύσεων",
+      "duration": "12+ Μήνες"
+    },
+    "enterprise": {
+      "name": "Enterprise",
+      "price": "$25,000+",
+      "desc": "Premium Investment Range",
+      "duration": "4+ Months"
+    },
+    "features": {
+      "commissionFree": "Commission-free trades",
+      "basicCharting": "Basic charting tools",
+      "mobileAccess": "Mobile app access",
+      "watchlists": "2 watchlists",
+      "emailSupport": "Email support",
+      "advancedCharting": "Advanced charting & analysis",
+      "level2": "Real-time Level 2 data",
+      "unlimitedWatchlists": "Unlimited watchlists",
+      "support24": "Priority 24/7 support",
+      "apiAccess": "API access",
+      "advancedAlerts": "Advanced alerts",
+      "dedicatedManager": "Dedicated portfolio manager",
+      "strategy": "Custom strategy consulting",
+      "whiteLabel": "White-label solutions",
+      "integrations": "Advanced integrations",
+      "sla": "SLA guarantees",
+      "institutionalPricing": "Institutional pricing"
+    },
+    "button": "Start Investing"
+  },
+  "login": {
+    "title": "Καλώς ήρθατε πίσω",
+    "subtitle": "Ή δημιουργήστε ένα νέο λογαριασμό",
+    "emailLabel": "Διεύθυνση ηλεκτρονικού ταχυδρομείου",
+    "emailPlaceholder": "εσεις@παραδειγμα.gr",
+    "passwordLabel": "Κωδικός πρόσβασης",
+    "passwordPlaceholder": "••••••••",
+    "signInButton": "Σύνδεση",
+    "noAccount": "δημιουργήστε ένα νέο λογαριασμό",
+    "backToHome": "Back to Home",
+    "serverChecking": "Checking server...",
+    "serverUp": "Server is up — try signing in again.",
+    "thirdParty": "Or continue with",
+    "thirdPartyDisabled": "Third‑party sign-in is currently disabled."
+  },
+  "register": {
+    "title": "Δημιουργήστε τον λογαριασμό σας",
+    "subtitle": "Έχετε ήδη λογαριασμό;",
+    "haveAccount": "Σύνδεση",
+    "firstNameLabel": "Όνομα",
+    "firstNamePlaceholder": "Γιάννης",
+    "lastNameLabel": "Επώνυμο",
+    "lastNamePlaceholder": "Παπαδόπουλος",
+    "emailLabel": "Διεύθυνση ηλεκτρονικού ταχυδρομείου",
+    "emailPlaceholder": "εσεις@παραδειγμα.gr",
+    "passwordLabel": "Κωδικός πρόσβασης",
+    "passwordPlaceholder": "Δημιουργήστε έναν κωδικό πρόσβασης",
+    "passwordHelper": "Πρέπει να είναι τουλάχιστον 8 χαρακτήρες",
+    "createButton": "Δημιουργία Λογαριασμού",
+    "verifyTitle": "Κωδικός επαλήθευσης",
+    "verifyPlaceholder": "123456",
+    "verifyError": "Ο κωδικός επαλήθευσης είναι λανθασμένος.",
+    "verifyButton": "Επαλήθευση",
+    "termsLabel": "I agree to the",
+    "terms": "Terms",
+    "and": "and",
+    "privacy": "Privacy Policy",
+    "devCode": "DEV: Your code is",
+    "changeEmail": "Change email",
+    "resendCode": "Resend code",
+    "resendCooldown": "Resend ({{seconds}}s)"
+  },
+  "stats": {
+    "traders": "Active Traders",
+    "assets": "Assets Traded",
+    "commission": "Commission Fees",
+    "uptime": "Uptime"
+  },
+  "trust": {
+    "title": "Your Trust, Our Priority",
+    "security": {
+      "name": "Military-Grade Security",
+      "desc": "256-bit encryption protects all your data in transit and at rest."
+    },
+    "insured": {
+      "name": "FDIC & SIPC Insured",
+      "desc": "Your cash ($250k) and securities ($500k) are fully protected."
+    },
+    "compliant": {
+      "name": "Regulated & Compliant",
+      "desc": "We comply with all SEC, FINRA, and regulatory requirements."
+    }
+  },
+  "cta": {
+    "title": "Ready to Start Trading?",
+    "subtitle": "Join millions of investors. Get $50 in free stock today.",
+    "button": "Create Free Account"
+  },
+  "footer": {
+    "description": "The next-generation platform for stocks, crypto, and ETFs. Professional tools. Zero complexity.",
+    "platform": "Platform",
+    "company": "Company",
+    "legal": "Legal",
+    "social": "Follow Us",
+    "features": "Features",
+    "pricing": "Pricing",
+    "security": "Security",
+    "about": "About Us",
+    "blog": "Blog",
+    "contact": "Contact",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "disclosures": "Disclosures",
+    "twitter": "Twitter",
+    "linkedin": "LinkedIn",
+    "youtube": "YouTube",
+    "copyright": "© 2024 StockFx Investment Inc. All rights reserved. NMLS #123456"
+  },
+  "contact": {
+    "title": "Need Help?",
+    "message": "Have questions about trading? Our account officers are here to help you get started!",
+    "contact": "Contact Our Team",
+    "later": "Maybe Later"
+  },
+  "dashboard": {
+    "loading": "Loading dashboard...",
+    "notAuthenticated": "Please log in to view your dashboard.",
+    "goToLogin": "Go to Login",
+    "signOut": "Sign Out",
+    "yourHoldings": "Your Holdings",
+    "portfolioSummary": "Portfolio Summary",
+    "totalValue": "Total Value",
+    "unrealizedGains": "Unrealized Gains",
+    "return": "Return %",
+    "allocation": "Allocation",
+    "assets": "Assets",
+    "performance": "Performance",
+    "welcome": "Welcome, {{name}}!",
+    "accountCreated": "Account created successfully",
+    "emailAddress": "Email Address",
+    "accountStatus": "Account Status",
+    "active": "Active",
+    "currentBalance": "Current Balance",
+    "overviewTab": "Overview",
+    "portfolioTab": "Portfolio",
+    "settingsTab": "Settings",
+    "accountSettings": "Account Settings",
+    "manageAccount": "Manage your account and preferences",
+    "profileInformation": "Profile Information",
+    "fullName": "Full Name",
+    "security": "Security",
+    "newPassword": "New Password (optional)",
+    "leaveBlank": "Leave blank to keep current password",
+    "preferences": "Preferences",
+    "emailNotifications": "Email notifications",
+    "priceAlerts": "Price alerts",
+    "marketingEmails": "Marketing emails",
+    "saveChanges": "Save Changes",
+    "cancel": "Cancel",
+    "noChanges": "No changes to save",
+    "settingsUpdated": "Settings updated successfully!",
+    "failedToSave": "Failed to save settings",
+    "searchAssets": "Search assets...",
+    "notifications": "Notifications",
+    "noNotifications": "No notifications yet",
+    "totalBalance": "Total Balance",
+    "totalProfit": "Total Profit",
+    "monthlyIncome": "Monthly Income",
+    "activeTrades": "Active Trades",
+    "marketWatchlist": "Market Watchlist",
+    "viewAll": "View All",
+    "quickTransfer": "Quick Transfer",
+    "transferMessage": "Move funds instantly between accounts.",
+    "send": "Send",
+    "addMoney": "Add Money",
+    "recentActivity": "Recent Activity",
+    "viewAllHistory": "View All History",
+    "assetAllocation": "Asset Allocation",
+    "totalAssets": "Total Assets",
+    "stocks": "Stocks",
+    "crypto": "Crypto",
+    "etfs": "ETFs",
+    "cash": "Cash",
+    "shares": "shares",
+    "yesterday": "Yesterday",
+    "investPro": "InvestPro",
+    "topHoldings": "Your Top Holdings"
+  }
+}

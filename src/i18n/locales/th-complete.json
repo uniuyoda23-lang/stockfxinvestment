@@ -1,0 +1,238 @@
+{
+  "nav": {
+    "signIn": "เข้าสู่ระบบ",
+    "getStarted": "เริ่มต้นใช้งาน"
+  },
+  "hero": {
+    "badge": "🎉 การค้าปลอดค่าคอมมิชชั่นในราคาแรก $10,000",
+    "title1": "ลงทุนอย่างชาญฉลาด",
+    "title2": "เติบโตเร็วขึ้น",
+    "description": "แพลตฟอร์มรุ่นถัดไปสำหรับหุ้น ETF และการลงทุนปันผล เครื่องมือมืออาชีพ ความซับซ้อนเป็นศูนย์ ลงทุนโดยมั่นใจ",
+    "startButton": "เริ่มลงทุนฟรี",
+    "signInButton": "เข้าสู่ระบบ"
+  },
+  "features": {
+    "title": "ทำไมถึงเลือก StockFx?",
+    "fast": {
+      "name": "รวดเร็วสดใจ",
+      "desc": "ดำเนินการสั่งซื้อในมิลลิวินาทีด้วยปุยต่ำมากน้อย"
+    },
+    "security": {
+      "name": "ความปลอดภัยระดับธนาคาร",
+      "desc": "การเข้ารหัส 256 บิต 2FA การป้องกันประกันภัย FDIC"
+    },
+    "mobile": {
+      "name": "ฟักลงมือที่เคลื่อนที่ได้",
+      "desc": "แอป fully featured ลงทุนได้ทุกที่ทุกเวลา"
+    },
+    "global": {
+      "name": "ตลาดโลก",
+      "desc": "เข้าถึงหุ้น ETF กองทุนรวมและพันธบัตรทั่วโลก"
+    }
+  },
+  "testimonials": {
+    "title": "รักษาโดยนักลงทุนทั่วโลก",
+    "subtitle": "เข้าร่วมนักลงทุนกว่า 2 ล้านคนที่ไว้วางใจ StockFx"
+  },
+  "stats": {
+    "traders": "ผู้ค้าที่ใช้งาน",
+    "assets": "สินทรัพย์ที่ซื้อขาย",
+    "commission": "ค่าคอมมิชชั่น",
+    "uptime": "เวลาทำงาน"
+  },
+  "pricing": {
+    "title": "แผนลงทุนที่ปรับแต่งสำหรับคุณ",
+    "subtitle": "เลือกระดับการลงทุนที่เหมาะกับขนาดพอร์ตโฟลิโอของคุณ",
+    "starter": {
+      "name": "สตาร์ทเตอร์",
+      "price": "$1,000 - $5,000",
+      "desc": "ช่วงการลงทุนเบื้องต้น",
+      "duration": "1 เดือน"
+    },
+    "pro": {
+      "name": "Pro",
+      "price": "$5,000 - $25,000",
+      "desc": "ช่วงการลงทุนเพื่อการเติบโต",
+      "duration": "2-3 เดือน",
+      "popular": "ยอดนิยมสุด"
+    },
+    "enterprise": {
+      "name": "สมาชิก",
+      "price": "$25,000+",
+      "desc": "ช่วงการลงทุนพรีเมียม",
+      "duration": "4+ เดือน"
+    },
+    "features": {
+      "commissionFree": "หน่วยการค้าปลอดค่าคอมมิชชั่น",
+      "basicCharting": "เครื่องมือแผนภูมิพื้นฐาน",
+      "mobileAccess": "เข้าถึงแอปโทรศัพท์มือถือ",
+      "watchlists": "รายการเฝ้าดู 2 รายการ",
+      "emailSupport": "การสนับสนุนทางอีเมล",
+      "advancedCharting": "การทำแผนภูมิและการวิเคราะห์ขั้นสูง",
+      "level2": "ข้อมูลระดับ 2 แบบเรียลไทม์",
+      "unlimitedWatchlists": "รายการเฝ้าดูไม่จำกัด",
+      "support24": "การสนับสนุนลำดับความสำคัญ 24/7",
+      "apiAccess": "การเข้าถึง API",
+      "advancedAlerts": "การแจ้งเตือนขั้นสูง",
+      "dedicatedManager": "ตัวจัดการพอร์ตโฟลิโอที่ทุ่มเท",
+      "strategy": "ที่ปรึกษาเกี่ยวกับกลยุทธ์แบบกำหนดเอง",
+      "whiteLabel": "โซลูชัน White-label",
+      "integrations": "การผสานรวมขั้นสูง",
+      "sla": "อสมการ SLA",
+      "institutionalPricing": "ราคาสถาบัน"
+    },
+    "button": "เริ่มลงทุน"
+  },
+  "trust": {
+    "title": "ความเชื่อมั่นของคุณลำดับความสำคัญของเรา",
+    "security": {
+      "name": "ความปลอดภัยระดับทหาร",
+      "desc": "การเข้ารหัส 256 บิตป้องกันข้อมูลของคุณทั้งหมดระหว่างการขนส่งและการพักผ่อน"
+    },
+    "insured": {
+      "name": "ประกันภัย FDIC และ SIPC",
+      "desc": "เงินสดของคุณ ($250,000) และหลักทรัพย์ ($500,000) ได้รับการป้องกันอย่างสมบูรณ์"
+    },
+    "compliant": {
+      "name": "ควบคุมและสอดคล้องกับ",
+      "desc": "เราปฏิบัติตามข้อกำหนด SEC FINRA และข้อกำหนดในการควบคุมทั้งหมด"
+    }
+  },
+  "cta": {
+    "title": "พร้อมเริ่มซื้อขายแล้วหรือ?",
+    "subtitle": "เข้าร่วมนักลงทุนหลายล้านคน ได้รับหุ้น $50 ฟรีวันนี้",
+    "button": "สร้างบัญชีฟรี"
+  },
+  "footer": {
+    "description": "แพลตฟอร์มรุ่นถัดไปสำหรับหุ้น cryptocurrency และ ETF เครื่องมือมืออาชีพ ความซับซ้อนเป็นศูนย์",
+    "platform": "แพลตฟอร์ม",
+    "company": "บริษัท",
+    "legal": "กฎหมาย",
+    "social": "ติดตามเรา",
+    "features": "ลักษณะ",
+    "pricing": "การกำหนดราคา",
+    "security": "ความปลอดภัย",
+    "about": "เกี่ยวกับเรา",
+    "blog": "บล็อก",
+    "contact": "ติดต่อ",
+    "privacy": "ความเป็นส่วนตัว",
+    "terms": "ข้อกำหนด",
+    "disclosures": "การเปิดเผย",
+    "twitter": "Twitter",
+    "linkedin": "LinkedIn",
+    "youtube": "YouTube",
+    "copyright": "© 2024 StockFx Investment Inc. สงวนสิทธิ์ทั้งหมด NMLS #123456"
+  },
+  "contact": {
+    "title": "ต้องการความช่วยเหลืออย่างไร",
+    "message": "มีคำถามเกี่ยวกับการซื้อขายหรือไม่ เจ้าหน้าที่บัญชีของเราอยู่ที่นี่เพื่อช่วยให้คุณเริ่มต้น",
+    "contact": "ติดต่อทีมของเรา",
+    "later": "อาจจะภายหลัง"
+  },
+  "login": {
+    "title": "ยินดีต้อนรับกลับมา",
+    "subtitle": "หรือสร้างบัญชีใหม่",
+    "emailLabel": "ที่อยู่อีเมล",
+    "emailPlaceholder": "you@example.com",
+    "passwordLabel": "รหัสผ่าน",
+    "passwordPlaceholder": "••••••••",
+    "signInButton": "เข้าสู่ระบบ",
+    "noAccount": "สร้างบัญชีใหม่",
+    "backToHome": "กลับไปที่หน้าแรก",
+    "serverChecking": "การตรวจสอบเซิร์ฟเวอร์...",
+    "serverUp": "เซิร์ฟเวอร์ขาขึ้น - ลองเข้าสู่ระบบอีกครั้ง",
+    "thirdParty": "หรือทำให้ต่อเนื่องได้",
+    "thirdPartyDisabled": "การเข้าสู่ระบบของบุคคลที่สามปิดใช้งานอยู่ในขณะนี้"
+  },
+  "register": {
+    "title": "สร้างบัญชีของคุณ",
+    "subtitle": "มีบัญชีอยู่แล้วหรือ",
+    "haveAccount": "เข้าสู่ระบบ",
+    "firstNameLabel": "ชื่อจริง",
+    "firstNamePlaceholder": "สมชาย",
+    "lastNameLabel": "นามสกุล",
+    "lastNamePlaceholder": "เลิศวรรณ",
+    "emailLabel": "ที่อยู่อีเมล",
+    "emailPlaceholder": "you@example.com",
+    "passwordLabel": "รหัสผ่าน",
+    "passwordPlaceholder": "สร้างรหัสผ่าน",
+    "passwordHelper": "ต้องมีอักขระอย่างน้อย 8 ตัว",
+    "termsLabel": "ฉันยอมรับ",
+    "terms": "เงื่อนไข",
+    "and": "และ",
+    "privacy": "นโยบายความเป็นส่วนตัว",
+    "createButton": "สร้างบัญชี",
+    "verifyTitle": "รหัสยืนยัน",
+    "verifyPlaceholder": "123456",
+    "verifyError": "รหัสยืนยันไม่ถูกต้อง",
+    "devCode": "DEV: คุณเล่นรหัสของคุณ",
+    "changeEmail": "เปลี่ยนอีเมล",
+    "resendCode": "ส่งรหัสใหม่",
+    "resendCooldown": "ส่งใหม่ ({{seconds}}s)",
+    "verifyButton": "ยืนยัน"
+  },
+  "dashboard": {
+    "loading": "โหลดแดชบอร์ด...",
+    "notAuthenticated": "โปรดเข้าสู่ระบบเพื่อดูแดชบอร์ดของคุณ",
+    "goToLogin": "ไปยังการเข้าสู่ระบบ",
+    "signOut": "ออกจากระบบ",
+    "yourHoldings": "การถือครองของคุณ",
+    "portfolioSummary": "สรุปพอร์ตโฟลิโอ",
+    "totalValue": "มูลค่ารวม",
+    "unrealizedGains": "กำไรที่ยังไม่เกิดขึ้น",
+    "return": "ส่งกลับ%",
+    "allocation": "การจัดสรร",
+    "assets": "สินทรัพย์",
+    "performance": "การปฏิบัติ",
+    "welcome": "ยินดีต้อนรับ{{name}}!",
+    "accountCreated": "บัญชีสร้างขึ้นสำเร็จ",
+    "emailAddress": "ที่อยู่อีเมล",
+    "accountStatus": "สถานะบัญชี",
+    "active": "ใช้งาน",
+    "currentBalance": "ยอดคงเหลือปัจจุบัน",
+    "overviewTab": "ภาพรวม",
+    "portfolioTab": "พอร์ตโฟลิโอ",
+    "settingsTab": "การตั้งค่า",
+    "accountSettings": "การตั้งค่าบัญชี",
+    "manageAccount": "จัดการบัญชีและความชอบของคุณ",
+    "profileInformation": "ข้อมูลโปรไฟล์",
+    "fullName": "ชื่อเต็ม",
+    "security": "ความปลอดภัย",
+    "newPassword": "รหัสผ่านใหม่ (ตัวเลือก)",
+    "leaveBlank": "ปล่อยว่างไว้เพื่อเก็บรหัสผ่านปัจจุบัน",
+    "preferences": "การตั้งค่า",
+    "emailNotifications": "การแจ้งเตือนทางอีเมล",
+    "priceAlerts": "การแจ้งเตือนราคา",
+    "marketingEmails": "อีเมลการตลาด",
+    "saveChanges": "บันทึกการแก้ไข",
+    "cancel": "ยกเลิก",
+    "noChanges": "ไม่มีการเปลี่ยนแปลงที่จะบันทึก",
+    "settingsUpdated": "การตั้งค่าอัปเดตสำเร็จ!",
+    "failedToSave": "ไม่สามารถบันทึกการตั้งค่า",
+    "searchAssets": "ค้นหาสินทรัพย์...",
+    "notifications": "การแจ้งเตือน",
+    "noNotifications": "ไม่มีการแจ้งเตือนเพิ่งจะ",
+    "totalBalance": "ยอดคงเหลือรวม",
+    "totalProfit": "กำไรรวม",
+    "monthlyIncome": "รายได้รายเดือน",
+    "activeTrades": "การค้าที่ใช้งาน",
+    "marketWatchlist": "รายการเฝ้าดูตลาด",
+    "viewAll": "ดูทั้งหมด",
+    "quickTransfer": "โอนเงินอย่างรวดเร็ว",
+    "transferMessage": "โอนเงินทั้งหมดระหว่างบัญชี",
+    "send": "ส่ง",
+    "addMoney": "เพิ่มเงิน",
+    "recentActivity": "กิจกรรมล่าสุด",
+    "viewAllHistory": "ดูประวัติทั้งหมด",
+    "assetAllocation": "การจัดสรรสินทรัพย์",
+    "totalAssets": "สินทรัพย์ทั้งหมด",
+    "stocks": "สต็อก",
+    "crypto": "เงินสกุลเสมือน",
+    "etfs": "ETFs",
+    "cash": "เงินสด",
+    "shares": "หุ้น",
+    "yesterday": "เมื่อวาน",
+    "investPro": "InvestPro",
+    "topHoldings": "การถือครองที่สำคัญที่สุดของคุณ"
+  }
+}

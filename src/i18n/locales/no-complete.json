@@ -1,0 +1,238 @@
+{
+  "nav": {
+    "signIn": "Logg Inn",
+    "getStarted": "Kom I Gang"
+  },
+  "hero": {
+    "badge": "🎉 Provisjonsfritt handel på dine første $10 000",
+    "title1": "Invester Smartere.",
+    "title2": "Vokse Raskere.",
+    "description": "Neste generasjons plattform for aksjer, ETF-er og utbytteinvesteringer. Profesjonelle verktøy. Null kompleksitet. Invester med selvtillit.",
+    "startButton": "Start Investing Gratis",
+    "signInButton": "Logg Inn"
+  },
+  "features": {
+    "title": "Hvorfor Velge StockFx?",
+    "fast": {
+      "name": "Lyn Rask",
+      "desc": "Utfør ordre i millisekunder med ultralav latens."
+    },
+    "security": {
+      "name": "Banknivåsikkerhet",
+      "desc": "256-bits kryptering, 2FA, FDIC-forsikringsbeskyttelse."
+    },
+    "mobile": {
+      "name": "Mobil Først",
+      "desc": "Fullfunksjonell app. Invester hvor som helst, når som helst."
+    },
+    "global": {
+      "name": "Globale Markeder",
+      "desc": "Få tilgang til aksjer, ETF-er, aksjefond og obligasjoner over hele verden."
+    }
+  },
+  "testimonials": {
+    "title": "Elsket Av Investorer Over Hele Verden",
+    "subtitle": "Bli med over 2 millioner investorer som stoler på StockFx"
+  },
+  "stats": {
+    "traders": "Aktive Handelsmenn",
+    "assets": "Handler Eiendeler",
+    "commission": "Provisjonsgebyrer",
+    "uptime": "Oppetid"
+  },
+  "pricing": {
+    "title": "Investeringsplaner Skreddersydd For Deg",
+    "subtitle": "Velg et investeringsnivå som passer din porteføljestørrelse",
+    "starter": {
+      "name": "Starter",
+      "price": "$1.000 - $5.000",
+      "desc": "Initial Investeringsomfang",
+      "duration": "1 Måned"
+    },
+    "pro": {
+      "name": "Pro",
+      "price": "$5.000 - $25.000",
+      "desc": "Vekst Investeringsomfang",
+      "duration": "2-3 Måneder",
+      "popular": "Mest Populær"
+    },
+    "enterprise": {
+      "name": "Bedrift",
+      "price": "$25.000+",
+      "desc": "Premium Investeringsomfang",
+      "duration": "4+ Måneder"
+    },
+    "features": {
+      "commissionFree": "Provisjonsfri handel",
+      "basicCharting": "Grunnleggende kartverktøy",
+      "mobileAccess": "Mobilappåtkomst",
+      "watchlists": "2 observasjonslister",
+      "emailSupport": "E-poststøtte",
+      "advancedCharting": "Avansert kartlegging og analyse",
+      "level2": "Sanntids nivå 2-data",
+      "unlimitedWatchlists": "Ubegrensede observasjonslister",
+      "support24": "Prioritert 24/7-støtte",
+      "apiAccess": "API-tilgang",
+      "advancedAlerts": "Avanserte Advarsler",
+      "dedicatedManager": "Dedikert porteføljeverge",
+      "strategy": "Tilpasset strategirådgivning",
+      "whiteLabel": "Hvit merke-løsninger",
+      "integrations": "Avanserte integrasjoner",
+      "sla": "SLA-garantier",
+      "institutionalPricing": "Institusjonell prissetting"
+    },
+    "button": "Start Investering"
+  },
+  "trust": {
+    "title": "Din Tillit, Vår Prioritet",
+    "security": {
+      "name": "Militær Sikkerhet",
+      "desc": "256-bits kryptering beskytter all dataene dine i tranzitt og hvile."
+    },
+    "insured": {
+      "name": "FDIC & SIPC Forsikret",
+      "desc": "Din kontanter ($250k) og verdipapirer ($500k) er fullstendig beskyttet."
+    },
+    "compliant": {
+      "name": "Regulert og Kompatibel",
+      "desc": "Vi overholder alle SEC-, FINRA- og regulatoriske krav."
+    }
+  },
+  "cta": {
+    "title": "Klar Til å Begynne Å Handle?",
+    "subtitle": "Bli med millioner av investorer. Få $50 i gratis aksje i dag.",
+    "button": "Opprett Gratis Konto"
+  },
+  "footer": {
+    "description": "Neste generasjons plattform for aksjer, kryptovaluta og ETF-er. Profesjonelle verktøy. Null kompleksitet.",
+    "platform": "Plattform",
+    "company": "Selskap",
+    "legal": "Juridisk",
+    "social": "Følg Oss",
+    "features": "Funksjoner",
+    "pricing": "Prissetting",
+    "security": "Sikkerhet",
+    "about": "Om Oss",
+    "blog": "Blog",
+    "contact": "Kontakt",
+    "privacy": "Personvern",
+    "terms": "Vilkår",
+    "disclosures": "Avsløringer",
+    "twitter": "Twitter",
+    "linkedin": "LinkedIn",
+    "youtube": "YouTube",
+    "copyright": "© 2024 StockFx Investment Inc. Alle rettigheter er reservert. NMLS #123456"
+  },
+  "contact": {
+    "title": "Trenger Hjelp?",
+    "message": "Har du spørsmål om handel? Våre kontomenn er her for å hjelpe deg å komme i gang!",
+    "contact": "Kontakt Teamet Vårt",
+    "later": "Kanskje Senere"
+  },
+  "login": {
+    "title": "Velkommen tilbake",
+    "subtitle": "Eller opprett en ny konto",
+    "emailLabel": "E-postadresse",
+    "emailPlaceholder": "you@example.com",
+    "passwordLabel": "Passord",
+    "passwordPlaceholder": "••••••••",
+    "signInButton": "Logg Inn",
+    "noAccount": "opprett en ny konto",
+    "backToHome": "Tilbake Til Hjem",
+    "serverChecking": "Sjekker server...",
+    "serverUp": "Server er opp — prøv å logge inn igjen.",
+    "thirdParty": "Eller fortsett med",
+    "thirdPartyDisabled": "Tredjeparts pålogging er for tiden deaktivert."
+  },
+  "register": {
+    "title": "Opprett konto",
+    "subtitle": "Har du allerede en konto?",
+    "haveAccount": "Logg Inn",
+    "firstNameLabel": "Fornavn",
+    "firstNamePlaceholder": "Per",
+    "lastNameLabel": "Etternavn",
+    "lastNamePlaceholder": "Hansen",
+    "emailLabel": "E-postadresse",
+    "emailPlaceholder": "you@example.com",
+    "passwordLabel": "Passord",
+    "passwordPlaceholder": "Opprett et passord",
+    "passwordHelper": "Må inneholde minst 8 tegn",
+    "termsLabel": "Jeg godtar",
+    "terms": "Vilkår",
+    "and": "og",
+    "privacy": "Personvernpolitikk",
+    "createButton": "Opprett Konto",
+    "verifyTitle": "Verifikasjonskode",
+    "verifyPlaceholder": "123456",
+    "verifyError": "Verifikasjonskoden er feil.",
+    "devCode": "DEV: Din kode er",
+    "changeEmail": "Endre e-post",
+    "resendCode": "Send kode på nytt",
+    "resendCooldown": "Send på nytt ({{seconds}}s)",
+    "verifyButton": "Verifiser"
+  },
+  "dashboard": {
+    "loading": "Laster instrument...",
+    "notAuthenticated": "Vennligst logg inn for å se instrumentbrettet ditt.",
+    "goToLogin": "Gå Til Innlogging",
+    "signOut": "Logg Ut",
+    "yourHoldings": "Dine Beholdninger",
+    "portfolioSummary": "Porteføljeoversikt",
+    "totalValue": "Total Verdi",
+    "unrealizedGains": "Urealisert Gevinst",
+    "return": "Returnere %",
+    "allocation": "Fordeling",
+    "assets": "Eiendeler",
+    "performance": "Ytelse",
+    "welcome": "Velkommen, {{name}}!",
+    "accountCreated": "Konto opprettet vellykket",
+    "emailAddress": "E-postadresse",
+    "accountStatus": "Kontostatus",
+    "active": "Aktiv",
+    "currentBalance": "Gjeldende Balanse",
+    "overviewTab": "Oversikt",
+    "portfolioTab": "Portefølje",
+    "settingsTab": "Innstillinger",
+    "accountSettings": "Kontoinnstillinger",
+    "manageAccount": "Administrer kontoen og innstillingene dine",
+    "profileInformation": "Profilinformasjon",
+    "fullName": "Fullt Navn",
+    "security": "Sikkerhet",
+    "newPassword": "Nytt Passord (valgfritt)",
+    "leaveBlank": "La stå tomt for å beholde gjeldende passord",
+    "preferences": "Innstillinger",
+    "emailNotifications": "E-postvarsler",
+    "priceAlerts": "Prisvarslinger",
+    "marketingEmails": "Markedsføringse-poster",
+    "saveChanges": "Lagre Endringer",
+    "cancel": "Avbryt",
+    "noChanges": "Ingen endringer å lagre",
+    "settingsUpdated": "Innstillinger oppdatert vellykket!",
+    "failedToSave": "Kunne ikke lagre innstillinger",
+    "searchAssets": "Søk i eiendeler...",
+    "notifications": "Varsler",
+    "noNotifications": "Ingen varsler ennå",
+    "totalBalance": "Total Balanse",
+    "totalProfit": "Total Fortjeneste",
+    "monthlyIncome": "Månedsinnekt",
+    "activeTrades": "Aktive Handler",
+    "marketWatchlist": "Markedsovervåkningsliste",
+    "viewAll": "Se Alt",
+    "quickTransfer": "Hurtig Overføring",
+    "transferMessage": "Overfør penger instant mellom kontoer.",
+    "send": "Sende",
+    "addMoney": "Legg Til Penger",
+    "recentActivity": "Nylig Aktivitet",
+    "viewAllHistory": "Se All Historikk",
+    "assetAllocation": "Aktivaallokering",
+    "totalAssets": "Totale Eiendeler",
+    "stocks": "Aksjer",
+    "crypto": "Kryptovaluta",
+    "etfs": "ETF",
+    "cash": "Kontanter",
+    "shares": "andeler",
+    "yesterday": "I Går",
+    "investPro": "InvestPro",
+    "topHoldings": "Dine Beste Beholdninger"
+  }
+}

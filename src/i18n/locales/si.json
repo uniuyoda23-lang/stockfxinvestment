@@ -1,0 +1,250 @@
+{
+  "nav": {
+    "signIn": "පිවිසෙන්න",
+    "getStarted": "ඉතින් අපි ගිය බැවින්"
+  },
+  "hero": {
+    "badge": "🎉 පළමු $10,000 නිදහස් ආයෝජන",
+    "title1": "බුද්ධිමත් ලෙස ආයෝජනය කරන්න.",
+    "title2": "වඩා වේගයෙන් වර්ධනය වන්න.",
+    "description": "స్టాక్‌లు, ईटीഎफ්‌ සහ ලාභ ආයෝජනය සඳහා ඊළඟ පරපුරෙ ප්ලැટ්ફෝර්ම. ගුණවත් අවබෝධයන්. ශුන්य සංකීර්ණතා. විශ්වාසයෙන් ඉන්වෙස්ට් කරන්න.",
+    "startButton": "නිදහස් ආයෝජන ආරම්භ කරන්න",
+    "signInButton": "පිවිසෙන්න"
+  },
+  "features": {
+    "title": "StockFx ඇයි තෝරාගත යුතු?",
+    "fast": {
+      "name": "ලිහිසි ගதිය",
+      "desc": "ඉතා අඩු අපගමනය සහිත මිලිසෙකන්ඩő තුළ ඉපැත්තු සම්පූර්ණ කරන්න."
+    },
+    "security": {
+      "name": "බැංකු ස්තරයේ ආරක්ෂාව",
+      "desc": "256-බිට් ගුප්තකරණය, 2FA, FDIC බීමා ආරක්ෂාව."
+    },
+    "mobile": {
+      "name": "ජංගම පළමු",
+      "desc": "සියලුම විශේෂත්වයන් සමඟ යෙදුම. ඉතෙක් කිසිසේත්ම ඉන්වෙස්ට් කරන්න."
+    },
+    "global": {
+      "name": "ගෝලීය වෙළඳ සිටුවම්",
+      "desc": "ලෝකයුടු කොපු තොගයි, ईටීএફ, පொതුවල අරමුණු සහ බැඳුම්කර වෙත ප්රවේශය."
+    }
+  },
+  "testimonials": {
+    "title": "ලෝකයුගේ ඉන්වෙස්ටර්‍ගුණ විසින් ප්රිය",
+    "subtitle": "StockFx වරණ කරන ඉන්වෙස්ටර්‍ 2 ඉතිරිම් ඉතිරි කරන්න"
+  },
+  "pricing": {
+    "title": "ඔබ සඳහා අනුකූල ආයෝජන සැලසුම්",
+    "subtitle": "ඔබේ සඳහන් ප්‍රමාණයට ගැලපෙන ආයෝජන මට්ටම තෝරන්න",
+    "starter": {
+      "name": "ප්‍රමිතිය",
+      "price": "$300 - $5,000",
+      "desc": "වන්දි ආයෝජන අනුbăփ්‍ර",
+      "duration": "1 මස"
+    },
+    "pro": {
+      "name": "ව්‍යවසායබද",
+      "price": "$5,000 - $50,000",
+      "desc": "වර්ධන ආයෝජන ශ්‍රේණිය",
+      "duration": "2-3 මස",
+      "popular": "වඩාම ජනප්‍රිය"
+    },
+    "gold": {
+      "name": "ස්වර්ණ",
+      "price": "$50,000+",
+      "desc": "ප්‍රිमियુම් ආයෝජන ශ්‍රේණිය",
+      "duration": "3-6 මස"
+    },
+    "annual": {
+      "name": "වාර්ષික ආයෝජනය",
+      "price": "$100,000+",
+      "desc": "ඉන්ස්టිටিউশනල් ඉන්වෙස්ට්මෙන්ට් බ්र්ಯಾକട",
+      "duration": "12+ මස"
+    },
+    "enterprise": {
+      "name": "Enterprise",
+      "price": "$25,000+",
+      "desc": "Premium Investment Range",
+      "duration": "4+ Months"
+    },
+    "features": {
+      "commissionFree": "Commission-free trades",
+      "basicCharting": "Basic charting tools",
+      "mobileAccess": "Mobile app access",
+      "watchlists": "2 watchlists",
+      "emailSupport": "Email support",
+      "advancedCharting": "Advanced charting & analysis",
+      "level2": "Real-time Level 2 data",
+      "unlimitedWatchlists": "Unlimited watchlists",
+      "support24": "Priority 24/7 support",
+      "apiAccess": "API access",
+      "advancedAlerts": "Advanced alerts",
+      "dedicatedManager": "Dedicated portfolio manager",
+      "strategy": "Custom strategy consulting",
+      "whiteLabel": "White-label solutions",
+      "integrations": "Advanced integrations",
+      "sla": "SLA guarantees",
+      "institutionalPricing": "Institutional pricing"
+    },
+    "button": "Start Investing"
+  },
+  "login": {
+    "title": "සාදරයෙන් පිළිගනිමු",
+    "subtitle": "නැතහොත් නව ගිණුමක් සාදන්න",
+    "emailLabel": "ඊ-තැපැල් ලිපිනය",
+    "emailPlaceholder": "ඔබ@උදාහරණ.lk",
+    "passwordLabel": "මුරපදය",
+    "passwordPlaceholder": "••••••••",
+    "signInButton": "පිවිසෙන්න",
+    "noAccount": "නව ගිණුමක් සාදන්න",
+    "backToHome": "Back to Home",
+    "serverChecking": "Checking server...",
+    "serverUp": "Server is up — try signing in again.",
+    "thirdParty": "Or continue with",
+    "thirdPartyDisabled": "Third‑party sign-in is currently disabled."
+  },
+  "register": {
+    "title": "ඔබගේ ගිණුම සාදන්න",
+    "subtitle": "දැනටමත් ගිණුමක් ඇත්ද?",
+    "haveAccount": "පිවිසෙන්න",
+    "firstNameLabel": "පළමු නම",
+    "firstNamePlaceholder": "පුවතු",
+    "lastNameLabel": "අවසාන නම",
+    "lastNamePlaceholder": "සිට",
+    "emailLabel": "ඊ-තැපැල් ලිපිනය",
+    "emailPlaceholder": "ඔබ@උදාහරණ.lk",
+    "passwordLabel": "මුරපදය",
+    "passwordPlaceholder": "මුරපදය සාදන්න",
+    "passwordHelper": "අවම වශයෙන් අක්ෂර 8 ක් තිබිය යුතුය.",
+    "createButton": "ගිණුම සාදන්න",
+    "verifyTitle": "האימות ಕೋಡ್",
+    "verifyPlaceholder": "123456",
+    "verifyError": "තහවුරු කරන කේතය වැරදිය.",
+    "verifyButton": "තහවුරු කරන්න",
+    "termsLabel": "I agree to the",
+    "terms": "Terms",
+    "and": "and",
+    "privacy": "Privacy Policy",
+    "devCode": "DEV: Your code is",
+    "changeEmail": "Change email",
+    "resendCode": "Resend code",
+    "resendCooldown": "Resend ({{seconds}}s)"
+  },
+  "stats": {
+    "traders": "Active Traders",
+    "assets": "Assets Traded",
+    "commission": "Commission Fees",
+    "uptime": "Uptime"
+  },
+  "trust": {
+    "title": "Your Trust, Our Priority",
+    "security": {
+      "name": "Military-Grade Security",
+      "desc": "256-bit encryption protects all your data in transit and at rest."
+    },
+    "insured": {
+      "name": "FDIC & SIPC Insured",
+      "desc": "Your cash ($250k) and securities ($500k) are fully protected."
+    },
+    "compliant": {
+      "name": "Regulated & Compliant",
+      "desc": "We comply with all SEC, FINRA, and regulatory requirements."
+    }
+  },
+  "cta": {
+    "title": "Ready to Start Trading?",
+    "subtitle": "Join millions of investors. Get $50 in free stock today.",
+    "button": "Create Free Account"
+  },
+  "footer": {
+    "description": "The next-generation platform for stocks, crypto, and ETFs. Professional tools. Zero complexity.",
+    "platform": "Platform",
+    "company": "Company",
+    "legal": "Legal",
+    "social": "Follow Us",
+    "features": "Features",
+    "pricing": "Pricing",
+    "security": "Security",
+    "about": "About Us",
+    "blog": "Blog",
+    "contact": "Contact",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "disclosures": "Disclosures",
+    "twitter": "Twitter",
+    "linkedin": "LinkedIn",
+    "youtube": "YouTube",
+    "copyright": "© 2024 StockFx Investment Inc. All rights reserved. NMLS #123456"
+  },
+  "contact": {
+    "title": "Need Help?",
+    "message": "Have questions about trading? Our account officers are here to help you get started!",
+    "contact": "Contact Our Team",
+    "later": "Maybe Later"
+  },
+  "dashboard": {
+    "loading": "Loading dashboard...",
+    "notAuthenticated": "Please log in to view your dashboard.",
+    "goToLogin": "Go to Login",
+    "signOut": "Sign Out",
+    "yourHoldings": "Your Holdings",
+    "portfolioSummary": "Portfolio Summary",
+    "totalValue": "Total Value",
+    "unrealizedGains": "Unrealized Gains",
+    "return": "Return %",
+    "allocation": "Allocation",
+    "assets": "Assets",
+    "performance": "Performance",
+    "welcome": "Welcome, {{name}}!",
+    "accountCreated": "Account created successfully",
+    "emailAddress": "Email Address",
+    "accountStatus": "Account Status",
+    "active": "Active",
+    "currentBalance": "Current Balance",
+    "overviewTab": "Overview",
+    "portfolioTab": "Portfolio",
+    "settingsTab": "Settings",
+    "accountSettings": "Account Settings",
+    "manageAccount": "Manage your account and preferences",
+    "profileInformation": "Profile Information",
+    "fullName": "Full Name",
+    "security": "Security",
+    "newPassword": "New Password (optional)",
+    "leaveBlank": "Leave blank to keep current password",
+    "preferences": "Preferences",
+    "emailNotifications": "Email notifications",
+    "priceAlerts": "Price alerts",
+    "marketingEmails": "Marketing emails",
+    "saveChanges": "Save Changes",
+    "cancel": "Cancel",
+    "noChanges": "No changes to save",
+    "settingsUpdated": "Settings updated successfully!",
+    "failedToSave": "Failed to save settings",
+    "searchAssets": "Search assets...",
+    "notifications": "Notifications",
+    "noNotifications": "No notifications yet",
+    "totalBalance": "Total Balance",
+    "totalProfit": "Total Profit",
+    "monthlyIncome": "Monthly Income",
+    "activeTrades": "Active Trades",
+    "marketWatchlist": "Market Watchlist",
+    "viewAll": "View All",
+    "quickTransfer": "Quick Transfer",
+    "transferMessage": "Move funds instantly between accounts.",
+    "send": "Send",
+    "addMoney": "Add Money",
+    "recentActivity": "Recent Activity",
+    "viewAllHistory": "View All History",
+    "assetAllocation": "Asset Allocation",
+    "totalAssets": "Total Assets",
+    "stocks": "Stocks",
+    "crypto": "Crypto",
+    "etfs": "ETFs",
+    "cash": "Cash",
+    "shares": "shares",
+    "yesterday": "Yesterday",
+    "investPro": "InvestPro",
+    "topHoldings": "Your Top Holdings"
+  }
+}

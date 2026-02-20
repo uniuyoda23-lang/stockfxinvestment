@@ -1,0 +1,238 @@
+{
+  "nav": {
+    "signIn": "로그인",
+    "getStarted": "시작하기"
+  },
+  "hero": {
+    "badge": "🎉 처음 $10,000 거래 수수료 무료",
+    "title1": "더 스마트하게 투자하세요.",
+    "title2": "더 빠르게 성장하세요.",
+    "description": "주식, ETF 및 배당금 투자를 위한 차세대 플랫폼입니다. 전문 도구. 제로 복잡성. 자신감 있게 투자하십시오.",
+    "startButton": "무료로 투자 시작",
+    "signInButton": "로그인"
+  },
+  "features": {
+    "title": "StockFx를 선택하는 이유?",
+    "fast": {
+      "name": "번개 빠른",
+      "desc": "초저지연으로 밀리초 단위로 주문을 실행합니다."
+    },
+    "security": {
+      "name": "은행 수준 보안",
+      "desc": "256비트 암호화, 2FA, FDIC 보험 보호."
+    },
+    "mobile": {
+      "name": "모바일 우선",
+      "desc": "모든 기능을 갖춘 앱. 언제 어디서나 투자하세요."
+    },
+    "global": {
+      "name": "글로벌 시장",
+      "desc": "전 세계의 주식, ETF, 뮤추얼 펀드 및 채권에 액세스하세요."
+    }
+  },
+  "testimonials": {
+    "title": "전 세계 투자자들이 사랑합니다",
+    "subtitle": "StockFx를 신뢰하는 200만 이상의 투자자에 참여하세요"
+  },
+  "stats": {
+    "traders": "활성 트레이더",
+    "assets": "거래 자산",
+    "commission": "수수료",
+    "uptime": "가동 시간"
+  },
+  "pricing": {
+    "title": "당신을 위한 맞춤형 투자 계획",
+    "subtitle": "포트폴리오 크기에 맞는 투자 수준을 선택하세요",
+    "starter": {
+      "name": "스타터",
+      "price": "$1,000 - $5,000",
+      "desc": "초기 투자 범위",
+      "duration": "1개월"
+    },
+    "pro": {
+      "name": "프로",
+      "price": "$5,000 - $25,000",
+      "desc": "성장 투자 범위",
+      "duration": "2-3개월",
+      "popular": "가장 인기있는"
+    },
+    "enterprise": {
+      "name": "엔터프라이즈",
+      "price": "$25,000+",
+      "desc": "프리미엄 투자 범위",
+      "duration": "4+개월"
+    },
+    "features": {
+      "commissionFree": "수수료 무료 거래",
+      "basicCharting": "기본 차트 도구",
+      "mobileAccess": "모바일 앱 액세스",
+      "watchlists": "2개의 감시 목록",
+      "emailSupport": "이메일 지원",
+      "advancedCharting": "고급 차트 및 분석",
+      "level2": "실시간 레벨 2 데이터",
+      "unlimitedWatchlists": "무제한 감시 목록",
+      "support24": "우선 24/7 지원",
+      "apiAccess": "API 액세스",
+      "advancedAlerts": "고급 경보",
+      "dedicatedManager": "전담 포트폴리오 관리자",
+      "strategy": "맞춤 전략 컨설팅",
+      "whiteLabel": "백라벨 솔루션",
+      "integrations": "고급 통합",
+      "sla": "SLA 보장",
+      "institutionalPricing": "기관투자가 가격"
+    },
+    "button": "투자 시작"
+  },
+  "trust": {
+    "title": "당신의 신뢰, 우리의 우선순위",
+    "security": {
+      "name": "군용급 보안",
+      "desc": "256비트 암호화는 전송 및 저장 중인 모든 데이터를 보호합니다."
+    },
+    "insured": {
+      "name": "FDIC 및 SIPC 보험",
+      "desc": "현금($25만)과 증권($50만)은 완전히 보호됩니다."
+    },
+    "compliant": {
+      "name": "규제 및 준수",
+      "desc": "우리는 모든 SEC, FINRA 및 규제 요건을 준수합니다."
+    }
+  },
+  "cta": {
+    "title": "거래를 시작할 준비가 되셨나요?",
+    "subtitle": "수백만 명의 투자자에 참여하세요. 오늘 $50의 무료 주식을 받으세요.",
+    "button": "무료 계정 생성"
+  },
+  "footer": {
+    "description": "주식, 암호화폐 및 ETF를 위한 차세대 플랫폼. 전문 도구. 제로 복잡성.",
+    "platform": "플랫폼",
+    "company": "회사",
+    "legal": "법적",
+    "social": "따라가기",
+    "features": "특징",
+    "pricing": "가격",
+    "security": "보안",
+    "about": "회사 소개",
+    "blog": "블로그",
+    "contact": "연락처",
+    "privacy": "개인 정보 보호",
+    "terms": "이용 약관",
+    "disclosures": "공개",
+    "twitter": "트위터",
+    "linkedin": "미신",
+    "youtube": "유튜브",
+    "copyright": "© 2024 StockFx Investment Inc. 판권소유. NMLS #123456"
+  },
+  "contact": {
+    "title": "도움이 필요하십니까?",
+    "message": "거래에 대한 질문이 있으신가요? 당사의 계정 담당자가 시작하도록 도와드릴 준비가 되어 있습니다!",
+    "contact": "팀에 문의하세요",
+    "later": "나중에"
+  },
+  "login": {
+    "title": "다시 오신 것을 환영합니다",
+    "subtitle": "또는 새 계정을 만드세요",
+    "emailLabel": "이메일 주소",
+    "emailPlaceholder": "you@example.com",
+    "passwordLabel": "비밀번호",
+    "passwordPlaceholder": "••••••••",
+    "signInButton": "로그인",
+    "noAccount": "새 계정을 만드세요",
+    "backToHome": "홈으로 돌아가기",
+    "serverChecking": "서버 확인 중...",
+    "serverUp": "서버가 작동 중입니다. 다시 로그인해주세요.",
+    "thirdParty": "또는 계속하기",
+    "thirdPartyDisabled": "타사 로그인은 현재 비활성화되어 있습니다."
+  },
+  "register": {
+    "title": "계정을 만드세요",
+    "subtitle": "이미 계정이 있으신가요?",
+    "haveAccount": "로그인",
+    "firstNameLabel": "이름",
+    "firstNamePlaceholder": "민준",
+    "lastNameLabel": "성",
+    "lastNamePlaceholder": "김",
+    "emailLabel": "이메일 주소",
+    "emailPlaceholder": "you@example.com",
+    "passwordLabel": "비밀번호",
+    "passwordPlaceholder": "비밀번호 만들기",
+    "passwordHelper": "최소 8자 이상이어야 합니다",
+    "termsLabel": "동의합니다",
+    "terms": "이용약관",
+    "and": "그리고",
+    "privacy": "개인정보보호정책",
+    "createButton": "계정 만들기",
+    "verifyTitle": "확인 코드",
+    "verifyPlaceholder": "123456",
+    "verifyError": "확인 코드가 잘못되었습니다.",
+    "devCode": "개발자: 귀하의 코드는",
+    "changeEmail": "이메일 변경",
+    "resendCode": "코드 다시 보내기",
+    "resendCooldown": "다시 보내기({{seconds}}s)",
+    "verifyButton": "확인"
+  },
+  "dashboard": {
+    "loading": "대시보드 로드 중...",
+    "notAuthenticated": "대시보드를 보려면 로그인하세요.",
+    "goToLogin": "로그인으로 이동",
+    "signOut": "로그아웃",
+    "yourHoldings": "당신의 보유 자산",
+    "portfolioSummary": "포트폴리오 요약",
+    "totalValue": "총 가치",
+    "unrealizedGains": "미실현 이익",
+    "return": "반환%",
+    "allocation": "배분",
+    "assets": "자산",
+    "performance": "실적",
+    "welcome": "환영합니다, {{name}}!",
+    "accountCreated": "계정이 성공적으로 생성되었습니다",
+    "emailAddress": "이메일 주소",
+    "accountStatus": "계정 상태",
+    "active": "활성",
+    "currentBalance": "현재 잔액",
+    "overviewTab": "개요",
+    "portfolioTab": "포트폴리오",
+    "settingsTab": "설정",
+    "accountSettings": "계정 설정",
+    "manageAccount": "계정 및 환경설정 관리",
+    "profileInformation": "프로필 정보",
+    "fullName": "전체 이름",
+    "security": "보안",
+    "newPassword": "새 비밀번호(선택사항)",
+    "leaveBlank": "현재 암호를 유지하려면 공백으로 두세요",
+    "preferences": "설정",
+    "emailNotifications": "이메일 알림",
+    "priceAlerts": "가격 경고",
+    "marketingEmails": "마케팅 이메일",
+    "saveChanges": "변경사항 저장",
+    "cancel": "취소",
+    "noChanges": "저장할 변동 사항이 없습니다",
+    "settingsUpdated": "설정이 성공적으로 업데이트되었습니다!",
+    "failedToSave": "설정 저장에 실패했습니다",
+    "searchAssets": "자산 검색...",
+    "notifications": "알림",
+    "noNotifications": "아직 알림이 없습니다",
+    "totalBalance": "총 잔액",
+    "totalProfit": "총 이익",
+    "monthlyIncome": "월간 수입",
+    "activeTrades": "활성 거래",
+    "marketWatchlist": "시장 감시 목록",
+    "viewAll": "모두 보기",
+    "quickTransfer": "빠른 전송",
+    "transferMessage": "계정 간에 즉시 자금을 이동합니다.",
+    "send": "보내기",
+    "addMoney": "자금 추가",
+    "recentActivity": "최근 활동",
+    "viewAllHistory": "모든 히스토리 보기",
+    "assetAllocation": "자산 배분",
+    "totalAssets": "총 자산",
+    "stocks": "주식",
+    "crypto": "암호화폐",
+    "etfs": "ETF",
+    "cash": "현금",
+    "shares": "주식",
+    "yesterday": "어제",
+    "investPro": "InvestPro",
+    "topHoldings": "상위 보유 자산"
+  }
+}

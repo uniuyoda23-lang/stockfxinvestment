@@ -1,0 +1,238 @@
+{
+  "nav": {
+    "signIn": "Log Ind",
+    "getStarted": "Kom I Gang"
+  },
+  "hero": {
+    "badge": "🎉 Gebyrfri handel på dine første $10.000",
+    "title1": "Invester Mere Intelligent.",
+    "title2": "Voks Hurtigere.",
+    "description": "Næste generations platform til aktier, ETF'er og udbytteinvesteringer. Professionelle værktøjer. Nul kompleksitet. Invester med tillid.",
+    "startButton": "Begynd At Investere Gratis",
+    "signInButton": "Log Ind"
+  },
+  "features": {
+    "title": "Hvorfor Vælge StockFx?",
+    "fast": {
+      "name": "Lynagtigt Hurtigt",
+      "desc": "Udfør ordrer på millisekunder med ultra-lav latens."
+    },
+    "security": {
+      "name": "Bankniveausikkerhed",
+      "desc": "256-bit kryptering, 2FA, FDIC-forsikringsbeskyttelse."
+    },
+    "mobile": {
+      "name": "Mobil Først",
+      "desc": "Fuldt funktionel app. Invester hvor som helst, når som helst."
+    },
+    "global": {
+      "name": "Globale Markeder",
+      "desc": "Få adgang til aktier, ETF'er, investeringsfonde og obligationer verden over."
+    }
+  },
+  "testimonials": {
+    "title": "Elsket Af Investorer Verden Over",
+    "subtitle": "Slut Dig Til Over 2 Millioner Investorer Der Stoler På StockFx"
+  },
+  "stats": {
+    "traders": "Aktive Handlende",
+    "assets": "Handlede Aktiver",
+    "commission": "Provisiongebyrer",
+    "uptime": "Oppetid"
+  },
+  "pricing": {
+    "title": "Investeringsplaner Skræddersyet Til Dig",
+    "subtitle": "Vælg et investeringsniveau der passer til din porteføljes størrelse",
+    "starter": {
+      "name": "Starter",
+      "price": "$1.000 - $5.000",
+      "desc": "Initial Investeringsinterval",
+      "duration": "1 Måned"
+    },
+    "pro": {
+      "name": "Pro",
+      "price": "$5.000 - $25.000",
+      "desc": "Vækst Investeringsinterval",
+      "duration": "2-3 Måneder",
+      "popular": "Mest Populær"
+    },
+    "enterprise": {
+      "name": "Virksomhed",
+      "price": "$25.000+",
+      "desc": "Premium Investeringsinterval",
+      "duration": "4+ Måneder"
+    },
+    "features": {
+      "commissionFree": "Gebyrfri handel",
+      "basicCharting": "Grundlæggende kortværktøjer",
+      "mobileAccess": "Adgang til mobil app",
+      "watchlists": "2 overvågningslister",
+      "emailSupport": "E-mail support",
+      "advancedCharting": "Avanceret kortlagning og analyse",
+      "level2": "Realtidsdata på niveau 2",
+      "unlimitedWatchlists": "Ubegrænsede overvågningslister",
+      "support24": "Prioriteret 24/7 support",
+      "apiAccess": "API-adgang",
+      "advancedAlerts": "Avancerede Advarsler",
+      "dedicatedManager": "Dedikeret porteføljemanager",
+      "strategy": "Tilpasset strategiradgivning",
+      "whiteLabel": "White-label løsninger",
+      "integrations": "Avancerede integrationer",
+      "sla": "SLA-garantier",
+      "institutionalPricing": "Institutionel prisfastsættelse"
+    },
+    "button": "Begynd At Investere"
+  },
+  "trust": {
+    "title": "Din Tillid, Vores Prioritet",
+    "security": {
+      "name": "Militær-Grade Sikkerhed",
+      "desc": "256-bit kryptering beskytter al din data under transit og i hvile."
+    },
+    "insured": {
+      "name": "FDIC & SIPC Forsikret",
+      "desc": "Dit kontanter ($250k) og værdipapirer ($500k) er fuldt beskyttet."
+    },
+    "compliant": {
+      "name": "Reguleret Og Kompatibel",
+      "desc": "Vi overholder alle SEC-, FINRA- og regulatoriske krav."
+    }
+  },
+  "cta": {
+    "title": "Klar Til At Begynde Handel?",
+    "subtitle": "Slut Dig Til Millioner Af Investorer. Få $50 I Gratis Aktier I Dag.",
+    "button": "Opret Gratis Konto"
+  },
+  "footer": {
+    "description": "Næste generations platform til aktier, kryptovalutaer og ETF'er. Professionelle værktøjer. Nul kompleksitet.",
+    "platform": "Platform",
+    "company": "Virksomhed",
+    "legal": "Juridisk",
+    "social": "Følg Os",
+    "features": "Funktioner",
+    "pricing": "Prisfastsættelse",
+    "security": "Sikkerhed",
+    "about": "Om Os",
+    "blog": "Blog",
+    "contact": "Kontakt",
+    "privacy": "Privatliv",
+    "terms": "Vilkår",
+    "disclosures": "Oplysninger",
+    "twitter": "Twitter",
+    "linkedin": "LinkedIn",
+    "youtube": "YouTube",
+    "copyright": "© 2024 StockFx Investment Inc. Alle rettigheder forbeholdt. NMLS #123456"
+  },
+  "contact": {
+    "title": "Har Du Brug For Hjælp?",
+    "message": "Har du spørgsmål om handel? Vores kontorepræsentanter er her for at hjælpe dig i gang!",
+    "contact": "Kontakt Vores Hold",
+    "later": "Måske Senere"
+  },
+  "login": {
+    "title": "Velkommen tilbage",
+    "subtitle": "Eller opret en ny konto",
+    "emailLabel": "E-mail adresse",
+    "emailPlaceholder": "you@example.com",
+    "passwordLabel": "Adgangskode",
+    "passwordPlaceholder": "••••••••",
+    "signInButton": "Log Ind",
+    "noAccount": "opret en ny konto",
+    "backToHome": "Tilbage Til Hjem",
+    "serverChecking": "Kontrollerer server...",
+    "serverUp": "Serveren er oppe — prøv at logge ind igen.",
+    "thirdParty": "Eller fortsæt med",
+    "thirdPartyDisabled": "Tredjepartssignering er i øjeblikket deaktiveret."
+  },
+  "register": {
+    "title": "Opret Din Konto",
+    "subtitle": "Allerede En Konto?",
+    "haveAccount": "Log Ind",
+    "firstNameLabel": "Fornavn",
+    "firstNamePlaceholder": "Lars",
+    "lastNameLabel": "Efternavn",
+    "lastNamePlaceholder": "Jensen",
+    "emailLabel": "E-mail adresse",
+    "emailPlaceholder": "you@example.com",
+    "passwordLabel": "Adgangskode",
+    "passwordPlaceholder": "Opret en adgangskode",
+    "passwordHelper": "Skal være mindst 8 tegn",
+    "termsLabel": "Jeg accepterer",
+    "terms": "Vilkår",
+    "and": "og",
+    "privacy": "Privatlivspolitik",
+    "createButton": "Opret Konto",
+    "verifyTitle": "Verifikationskode",
+    "verifyPlaceholder": "123456",
+    "verifyError": "Verifikationskoden er forkert.",
+    "devCode": "DEV: Din kode er",
+    "changeEmail": "Skift E-mail",
+    "resendCode": "Gensend Kode",
+    "resendCooldown": "Gensend ({{seconds}}s)",
+    "verifyButton": "Bekræft"
+  },
+  "dashboard": {
+    "loading": "Indlæser instrumentbræt...",
+    "notAuthenticated": "Log venligst ind for at se dit dagligbræt.",
+    "goToLogin": "Gå Til Login",
+    "signOut": "Log Ud",
+    "yourHoldings": "Dine Beholdninger",
+    "portfolioSummary": "Porteføljeoversigt",
+    "totalValue": "Samlet værdi",
+    "unrealizedGains": "Urealiseret Gevinst",
+    "return": "Returnere %",
+    "allocation": "Fordeling",
+    "assets": "Aktiver",
+    "performance": "Ydeevne",
+    "welcome": "Velkommen, {{name}}!",
+    "accountCreated": "Konto oprettet med succes",
+    "emailAddress": "E-mail-adresse",
+    "accountStatus": "Kontostatus",
+    "active": "Aktiv",
+    "currentBalance": "Nuværende Saldo",
+    "overviewTab": "Oversigt",
+    "portfolioTab": "Portefølje",
+    "settingsTab": "Indstillinger",
+    "accountSettings": "Kontoindstillinger",
+    "manageAccount": "Administrer din konto og indstillinger",
+    "profileInformation": "Profilinformation",
+    "fullName": "Fuldt Navn",
+    "security": "Sikkerhed",
+    "newPassword": "Ny Adgangskode (valgfrit)",
+    "leaveBlank": "Lad være tomt for at bevare aktuel adgangskode",
+    "preferences": "Indstillinger",
+    "emailNotifications": "E-mail-underretninger",
+    "priceAlerts": "Prisadvarsler",
+    "marketingEmails": "Markedsføringsemails",
+    "saveChanges": "Gem Ændringer",
+    "cancel": "Annuller",
+    "noChanges": "Ingen ændringer at gemme",
+    "settingsUpdated": "Indstillinger opdateret med succes!",
+    "failedToSave": "Kunne ikke gemme indstillinger",
+    "searchAssets": "Søg efter aktiver...",
+    "notifications": "Underretninger",
+    "noNotifications": "Ingen underretninger endnu",
+    "totalBalance": "Samlet Saldo",
+    "totalProfit": "Samlet Profit",
+    "monthlyIncome": "Månedsindtægt",
+    "activeTrades": "Aktive Handler",
+    "marketWatchlist": "Markedsoversigt",
+    "viewAll": "Se Alt",
+    "quickTransfer": "Hurtig Overførsel",
+    "transferMessage": "Overför penge øjeblikkeligt mellem konti.",
+    "send": "Sende",
+    "addMoney": "Tilføj Penge",
+    "recentActivity": "Seneste Aktivitet",
+    "viewAllHistory": "Vis Alt Historik",
+    "assetAllocation": "Aktivfordeling",
+    "totalAssets": "Aktiver I Alt",
+    "stocks": "Aktier",
+    "crypto": "Kryptovaluta",
+    "etfs": "ETF'er",
+    "cash": "Kontanter",
+    "shares": "aktier",
+    "yesterday": "I Går",
+    "investPro": "InvestPro",
+    "topHoldings": "Dine Top Beholdninger"
+  }
+}

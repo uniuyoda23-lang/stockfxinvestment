@@ -1,0 +1,238 @@
+{
+  "nav": {
+    "signIn": "Inloggen",
+    "getStarted": "Aan de slag"
+  },
+  "hero": {
+    "badge": "🎉 Commissievrij handelen op uw eerste $10.000",
+    "title1": "Beleggen Met Intelligentie.",
+    "title2": "Groei Sneller.",
+    "description": "Het volgende generatie platform voor aandelen, ETF's en dividendbelang. Professionele tools. Zero complexiteit. Belegging met vertrouwen.",
+    "startButton": "Begin Kosteloos Te Beleggen",
+    "signInButton": "Inloggen"
+  },
+  "features": {
+    "title": "Waarom StockFx Kiezen?",
+    "fast": {
+      "name": "Bliksemsnelheid",
+      "desc": "Voer orders uit in milliseconden met extreem lage latentie."
+    },
+    "security": {
+      "name": "Beveiliging op Bankniveau",
+      "desc": "256-bits versleuteling, 2FA, FDIC-verzekeringsbescherming."
+    },
+    "mobile": {
+      "name": "Mobiel Eerst",
+      "desc": "Volwaardige app. Beleggen waar en wanneer dan ook."
+    },
+    "global": {
+      "name": "Wereldwijd Markten",
+      "desc": "Krijg toegang tot aandelen, ETF's, beleggingsfondsen en obligaties wereldwijd."
+    }
+  },
+  "testimonials": {
+    "title": "Bemind Door Beleggers Wereldwijd",
+    "subtitle": "Sluit je aan bij meer dan 2 miljoen beleggers die StockFx vertrouwen"
+  },
+  "stats": {
+    "traders": "Actieve Handelaren",
+    "assets": "Verhandelde Activa",
+    "commission": "Provisiekosten",
+    "uptime": "Bedrijfstijd"
+  },
+  "pricing": {
+    "title": "Beleggingsplannen Afgestemd Op U",
+    "subtitle": "Kies een beleggingsniveau dat aansluit op de grootte van uw portefeuille",
+    "starter": {
+      "name": "Starter",
+      "price": "$1.000 - $5.000",
+      "desc": "Initieel Beleggingsbereik",
+      "duration": "1 Maand"
+    },
+    "pro": {
+      "name": "Pro",
+      "price": "$5.000 - $25.000",
+      "desc": "Groei Beleggingsbereik",
+      "duration": "2-3 Maanden",
+      "popular": "Meest Populair"
+    },
+    "enterprise": {
+      "name": "Enterprise",
+      "price": "$25.000+",
+      "desc": "Premium Beleggingsbereik",
+      "duration": "4+ Maanden"
+    },
+    "features": {
+      "commissionFree": "Commissievrij handelen",
+      "basicCharting": "Basiskaarten tools",
+      "mobileAccess": "Mobiele app-toegang",
+      "watchlists": "2 bewakingslijsten",
+      "emailSupport": "E-mailondersteuning",
+      "advancedCharting": "Geavanceerde grafieken en analyse",
+      "level2": "Real-time niveau 2-gegevens",
+      "unlimitedWatchlists": "Onbeperkte bewakingslijsten",
+      "support24": "Prioriteit 24/7 ondersteuning",
+      "apiAccess": "API-toegang",
+      "advancedAlerts": "Geavanceerde waarschuwingen",
+      "dedicatedManager": "Toegewezen portefeuillebeheerder",
+      "strategy": "Aangepast strategieadvies",
+      "whiteLabel": "White-label-oplossingen",
+      "integrations": "Geavanceerde integraties",
+      "sla": "SLA-garanties",
+      "institutionalPricing": "Institutionele prijzen"
+    },
+    "button": "Begin Te Beleggen"
+  },
+  "trust": {
+    "title": "Uw Vertrouwen, Onze Prioriteit",
+    "security": {
+      "name": "Militaire Veiligheid",
+      "desc": "256-bits versleuteling beschermt al uw gegevens in doorvoer en in rust."
+    },
+    "insured": {
+      "name": "Verzekerd door FDIC en SIPC",
+      "desc": "Uw contanten ($250.000) en effecten ($500.000) zijn volledig beschermd."
+    },
+    "compliant": {
+      "name": "Gereglementeerd en Conform",
+      "desc": "We voldoen aan alle SEC-, FINRA- en regelgevingsvereisten."
+    }
+  },
+  "cta": {
+    "title": "Klaar Om Te Handelen?",
+    "subtitle": "Sluit je aan bij miljoenen beleggers. Krijg vandaag $50 gratis aandelen.",
+    "button": "Maak Een Gratis Account"
+  },
+  "footer": {
+    "description": "Het volgende generatie platform voor aandelen, cryptovaluta en ETF's. Professionele tools. Zero complexiteit.",
+    "platform": "Platform",
+    "company": "Bedrijf",
+    "legal": "Juridisch",
+    "social": "Volg Ons",
+    "features": "Functies",
+    "pricing": "Prijzen",
+    "security": "Veiligheid",
+    "about": "Over Ons",
+    "blog": "Blog",
+    "contact": "Contact",
+    "privacy": "Privacy",
+    "terms": "Voorwaarden",
+    "disclosures": "Openbaarmakingen",
+    "twitter": "Twitter",
+    "linkedin": "LinkedIn",
+    "youtube": "YouTube",
+    "copyright": "© 2024 StockFx Investment Inc. Alle rechten voorbehouden. NMLS #123456"
+  },
+  "contact": {
+    "title": "Hulp Nodig?",
+    "message": "Heeft u vragen over handelen? Onze accountmedewerkers helpen u graag aan de slag!",
+    "contact": "Neem Contact Op Met Ons Team",
+    "later": "Misschien Later"
+  },
+  "login": {
+    "title": "Welkom terug",
+    "subtitle": "Of maak een nieuw account",
+    "emailLabel": "E-mailadres",
+    "emailPlaceholder": "you@example.com",
+    "passwordLabel": "Wachtwoord",
+    "passwordPlaceholder": "••••••••",
+    "signInButton": "Inloggen",
+    "noAccount": "een nieuw account aanmaken",
+    "backToHome": "Terug naar Home",
+    "serverChecking": "Server controleren...",
+    "serverUp": "Server is actief — probeer opnieuw in te loggen.",
+    "thirdParty": "Of ga door met",
+    "thirdPartyDisabled": "Inloggen via derden is momenteel uitgeschakeld."
+  },
+  "register": {
+    "title": "Maak uw account aan",
+    "subtitle": "Heeft u al een account?",
+    "haveAccount": "Inloggen",
+    "firstNameLabel": "Voornaam",
+    "firstNamePlaceholder": "Jan",
+    "lastNameLabel": "Achternaam",
+    "lastNamePlaceholder": "Jansen",
+    "emailLabel": "E-mailadres",
+    "emailPlaceholder": "you@example.com",
+    "passwordLabel": "Wachtwoord",
+    "passwordPlaceholder": "Maak een wachtwoord",
+    "passwordHelper": "Moet minimaal 8 tekens zijn",
+    "termsLabel": "Ik ga akkoord met de",
+    "terms": "Voorwaarden",
+    "and": "en",
+    "privacy": "Privacybeleid",
+    "createButton": "Account Maken",
+    "verifyTitle": "Verificatie code",
+    "verifyPlaceholder": "123456",
+    "verifyError": "De verificatiecode is onjuist.",
+    "devCode": "DEV: Uw code is",
+    "changeEmail": "E-mail wijzigen",
+    "resendCode": "Code opnieuw versturen",
+    "resendCooldown": "Opnieuw versturen ({{seconds}}s)",
+    "verifyButton": "Controleren"
+  },
+  "dashboard": {
+    "loading": "Dashboard laden...",
+    "notAuthenticated": "Meld u aan om uw dashboard te zien.",
+    "goToLogin": "Ga naar Inloggen",
+    "signOut": "Uitloggen",
+    "yourHoldings": "Uw Aandelen",
+    "portfolioSummary": "Portefeuille Samenvatting",
+    "totalValue": "Totale Waarde",
+    "unrealizedGains": "Niet-gerealiseerde Winsten",
+    "return": "Rendement %",
+    "allocation": "Toewijzing",
+    "assets": "Activa",
+    "performance": "Prestaties",
+    "welcome": "Welkom, {{name}}!",
+    "accountCreated": "Account succesvol aangemaakt",
+    "emailAddress": "E-mailadres",
+    "accountStatus": "Accountstatus",
+    "active": "Actief",
+    "currentBalance": "Huidige Saldo",
+    "overviewTab": "Overzicht",
+    "portfolioTab": "Portefeuille",
+    "settingsTab": "Instellingen",
+    "accountSettings": "Accountinstellingen",
+    "manageAccount": "Beheer uw account en voorkeuren",
+    "profileInformation": "Profielgegevens",
+    "fullName": "Volledige Naam",
+    "security": "Veiligheid",
+    "newPassword": "Nieuw Wachtwoord (optioneel)",
+    "leaveBlank": "Laat leeg om huidig wachtwoord te behouden",
+    "preferences": "Voorkeuren",
+    "emailNotifications": "E-mailmeldingen",
+    "priceAlerts": "Prijswaarschuwingen",
+    "marketingEmails": "Marketing E-mails",
+    "saveChanges": "Wijzigingen Opslaan",
+    "cancel": "Annuleer",
+    "noChanges": "Geen wijzigingen om op te slaan",
+    "settingsUpdated": "Instellingen succesvol bijgewerkt!",
+    "failedToSave": "Instellingen opslaan mislukt",
+    "searchAssets": "Activa zoeken...",
+    "notifications": "Meldingen",
+    "noNotifications": "Nog geen meldingen",
+    "totalBalance": "Totale Saldo",
+    "totalProfit": "Totale Winst",
+    "monthlyIncome": "Maandelijks Inkomen",
+    "activeTrades": "Actieve Deals",
+    "marketWatchlist": "Markt Bewakingslijst",
+    "viewAll": "Alles Weergeven",
+    "quickTransfer": "Snelle Overdracht",
+    "transferMessage": "Onmiddellijk geld tussen accounts overbrengen.",
+    "send": "Verzenden",
+    "addMoney": "Geld Toevoegen",
+    "recentActivity": "Recente Activiteit",
+    "viewAllHistory": "Alles Geschiedenis Weergeven",
+    "assetAllocation": "Activaalloc",
+    "totalAssets": "Totale Activa",
+    "stocks": "Aandelen",
+    "crypto": "Cryptovaluta",
+    "etfs": "ETF's",
+    "cash": "Contanten",
+    "shares": "aandelen",
+    "yesterday": "Gisteren",
+    "investPro": "InvestPro",
+    "topHoldings": "Uw Top Aandelen"
+  }
+}

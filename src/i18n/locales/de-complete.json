@@ -1,0 +1,238 @@
+{
+  "nav": {
+    "signIn": "Anmelden",
+    "getStarted": "Jetzt Starten"
+  },
+  "hero": {
+    "badge": "🎉 Provisionsfreier Handel auf Ihre ersten 10.000 $",
+    "title1": "Investieren Sie Intelligenter.",
+    "title2": "Wachsen Sie Schneller.",
+    "description": "Die nächstgenerative Plattform für Aktien, ETFs und Dividendeneinkünfte. Professionelle Tools. Null Komplexität. Investieren Sie mit Zuversicht.",
+    "startButton": "Kostenlos mit Investieren Beginnen",
+    "signInButton": "Anmelden"
+  },
+  "features": {
+    "title": "Warum StockFx Wählen?",
+    "fast": {
+      "name": "Blitzschnell",
+      "desc": "Führen Sie Trades in Millisekunden mit ultra-niedriger Latenz aus."
+    },
+    "security": {
+      "name": "Banksicherheit",
+      "desc": "256-Bit-Verschlüsselung, Zwei-Faktor-Authentifizierung, FDIC-Schutz."
+    },
+    "mobile": {
+      "name": "Mobile First",
+      "desc": "Vollständiges App. Investieren Sie überall, jederzeit."
+    },
+    "global": {
+      "name": "Globale Märkte",
+      "desc": "Zugang zu Aktien, ETFs, Investmentfonds und Anleihen weltweit."
+    }
+  },
+  "testimonials": {
+    "title": "Von Investoren weltweit geliebt",
+    "subtitle": "Schließen Sie sich über 2 Millionen Investoren an, die StockFx vertrauen"
+  },
+  "stats": {
+    "traders": "Aktive Handelspartner",
+    "assets": "Gehandelte Vermögenswerte",
+    "commission": "Provisionsgebühren",
+    "uptime": "Verfügbarkeit"
+  },
+  "pricing": {
+    "title": "Investitionspläne, die zu Ihnen passen",
+    "subtitle": "Wählen Sie eine Investmentebene, die zu Ihrer Portfoliogröße passt",
+    "starter": {
+      "name": "Einsteiger",
+      "price": "1.000 $ - 5.000 $",
+      "desc": "Anfängliche Investitionsspanne",
+      "duration": "1 Monat"
+    },
+    "pro": {
+      "name": "Pro",
+      "price": "5.000 $ - 25.000 $",
+      "desc": "Wachstums-Investitionsspanne",
+      "duration": "2-3 Monate",
+      "popular": "Beliebteste"
+    },
+    "enterprise": {
+      "name": "Unternehmen",
+      "price": "25.000 $+",
+      "desc": "Premium-Investitionsspanne",
+      "duration": "4+ Monate"
+    },
+    "features": {
+      "commissionFree": "Provisionsfreier Handel",
+      "basicCharting": "Grundlegende Charting-Tools",
+      "mobileAccess": "Zugang zur mobilen Anwendung",
+      "watchlists": "2 Beobachtungslisten",
+      "emailSupport": "E-Mail-Unterstützung",
+      "advancedCharting": "Erweiterte Charting und Analyse",
+      "level2": "Echtzeit-Level-2-Daten",
+      "unlimitedWatchlists": "Unbegrenzte Beobachtungslisten",
+      "support24": "Priorisierter 24/7-Support",
+      "apiAccess": "API-Zugang",
+      "advancedAlerts": "Erweiterte Warnungen",
+      "dedicatedManager": "Dedizierter Portfoliomanager",
+      "strategy": "Maßgeschneiderte Strategieberatung",
+      "whiteLabel": "White-Label-Lösungen",
+      "integrations": "Erweiterte Integrationen",
+      "sla": "SLA-Garantien",
+      "institutionalPricing": "Institutionelle Preisgestaltung"
+    },
+    "button": "Mit Investieren Beginnen"
+  },
+  "trust": {
+    "title": "Ihr Vertrauen ist Unsere Priorität",
+    "security": {
+      "name": "Militärische Sicherheit",
+      "desc": "256-Bit-Verschlüsselung schützt alle Ihre Daten beim Transit und in Ruhe."
+    },
+    "insured": {
+      "name": "FDIC & SIPC Versichert",
+      "desc": "Ihre Bargeldmittel (250.000 $) und Wertpapiere (500.000 $) sind vollständig geschützt."
+    },
+    "compliant": {
+      "name": "Reguliert und Konform",
+      "desc": "Wir erfüllen alle SEC-, FINRA- und behördliche Anforderungen."
+    }
+  },
+  "cta": {
+    "title": "Bereit zu Handeln?",
+    "subtitle": "Schließen Sie sich Millionen von Investoren an. Erhalten Sie heute 50 $ kostenlosen Bestand.",
+    "button": "Kostenloses Konto Erstellen"
+  },
+  "footer": {
+    "description": "Die nächstgenerative Plattform für Aktien, Kryptowährungen und ETFs. Professionelle Tools. Null Komplexität.",
+    "platform": "Plattform",
+    "company": "Unternehmen",
+    "legal": "Rechtlich",
+    "social": "Folgen Sie Uns",
+    "features": "Funktionen",
+    "pricing": "Preisgestaltung",
+    "security": "Sicherheit",
+    "about": "Über Uns",
+    "blog": "Blog",
+    "contact": "Kontakt",
+    "privacy": "Datenschutz",
+    "terms": "Nutzungsbedingungen",
+    "disclosures": "Offenlegungen",
+    "twitter": "Twitter",
+    "linkedin": "LinkedIn",
+    "youtube": "YouTube",
+    "copyright": "© 2024 StockFx Investment Inc. Alle Rechte vorbehalten. NMLS #123456"
+  },
+  "contact": {
+    "title": "Benötigen Sie Hilfe?",
+    "message": "Haben Sie Fragen zum Handel? Unsere Kontomanager sind bereit, Ihnen beim Einstieg zu helfen!",
+    "contact": "Kontaktieren Sie Unser Team",
+    "later": "Vielleicht Später"
+  },
+  "login": {
+    "title": "Willkommen zurück",
+    "subtitle": "Oder erstellen Sie ein neues Konto",
+    "emailLabel": "E-Mail-Adresse",
+    "emailPlaceholder": "sie@beispiel.de",
+    "passwordLabel": "Passwort",
+    "passwordPlaceholder": "••••••••",
+    "signInButton": "Anmelden",
+    "noAccount": "neues Konto erstellen",
+    "backToHome": "Zurück zur Startseite",
+    "serverChecking": "Server wird überprüft...",
+    "serverUp": "Server ist aktiv — versuchen Sie erneut, sich anzumelden.",
+    "thirdParty": "Oder fahren Sie fort mit",
+    "thirdPartyDisabled": "Die Anmeldung durch Dritte ist derzeit deaktiviert."
+  },
+  "register": {
+    "title": "Erstellen Sie Ihr Konto",
+    "subtitle": "Sie haben bereits ein Konto?",
+    "haveAccount": "Anmelden",
+    "firstNameLabel": "Vorname",
+    "firstNamePlaceholder": "Max",
+    "lastNameLabel": "Nachname",
+    "lastNamePlaceholder": "Müller",
+    "emailLabel": "E-Mail-Adresse",
+    "emailPlaceholder": "Sie@beispiel.de",
+    "passwordLabel": "Passwort",
+    "passwordPlaceholder": "Passwort erstellen",
+    "passwordHelper": "Muss mindestens 8 Zeichen lang sein",
+    "termsLabel": "Ich stimme den zu",
+    "terms": "Nutzungsbedingungen",
+    "and": "und",
+    "privacy": "Datenschutzrichtlinie",
+    "createButton": "Konto Erstellen",
+    "verifyTitle": "Bestätigungscode",
+    "verifyPlaceholder": "123456",
+    "verifyError": "Der Bestätigungscode ist falsch.",
+    "devCode": "DEV: Ihr Code ist",
+    "changeEmail": "E-Mail ändern",
+    "resendCode": "Code erneut senden",
+    "resendCooldown": "Erneut senden ({{seconds}}s)",
+    "verifyButton": "Bestätigen"
+  },
+  "dashboard": {
+    "loading": "Dashboard wird geladen...",
+    "notAuthenticated": "Bitte melden Sie sich an, um Ihr Dashboard anzuzeigen.",
+    "goToLogin": "Zur Anmeldung Gehen",
+    "signOut": "Abmelden",
+    "yourHoldings": "Ihre Bestände",
+    "portfolioSummary": "Portfolio-Zusammenfassung",
+    "totalValue": "Gesamtwert",
+    "unrealizedGains": "Unrealisierte Gewinne",
+    "return": "Rendite %",
+    "allocation": "Allokation",
+    "assets": "Vermögenswerte",
+    "performance": "Leistung",
+    "welcome": "Willkommen, {{name}}!",
+    "accountCreated": "Konto erfolgreich erstellt",
+    "emailAddress": "E-Mail-Adresse",
+    "accountStatus": "Kontostatus",
+    "active": "Aktiv",
+    "currentBalance": "Aktueller Kontostand",
+    "overviewTab": "Übersicht",
+    "portfolioTab": "Portfolio",
+    "settingsTab": "Einstellungen",
+    "accountSettings": "Kontoeinstellungen",
+    "manageAccount": "Verwalten Sie Ihr Konto und Ihre Einstellungen",
+    "profileInformation": "Profilinformationen",
+    "fullName": "Vollständiger Name",
+    "security": "Sicherheit",
+    "newPassword": "Neues Passwort (optional)",
+    "leaveBlank": "Lassen Sie leer, um das aktuelle Passwort beizubehalten",
+    "preferences": "Einstellungen",
+    "emailNotifications": "E-Mail-Benachrichtigungen",
+    "priceAlerts": "Preisnotierungen",
+    "marketingEmails": "Marketing-E-Mails",
+    "saveChanges": "Änderungen Speichern",
+    "cancel": "Abbrechen",
+    "noChanges": "Keine Änderungen zum Speichern",
+    "settingsUpdated": "Einstellungen erfolgreich aktualisiert!",
+    "failedToSave": "Fehler beim Speichern der Einstellungen",
+    "searchAssets": "Vermögenswerte suchen...",
+    "notifications": "Benachrichtigungen",
+    "noNotifications": "Noch keine Benachrichtigungen",
+    "totalBalance": "Gesamtkontostand",
+    "totalProfit": "Gesamtgewinn",
+    "monthlyIncome": "Monatliches Einkommen",
+    "activeTrades": "Aktive Trades",
+    "marketWatchlist": "Markt-Beobachtungsliste",
+    "viewAll": "Alles Anzeigen",
+    "quickTransfer": "Schnelle Überweisung",
+    "transferMessage": "Übertragen Sie Geld sofort zwischen Konten.",
+    "send": "Senden",
+    "addMoney": "Geld Hinzufügen",
+    "recentActivity": "Aktuelle Aktivität",
+    "viewAllHistory": "Alle Änderungsverlauf Anzeigen",
+    "assetAllocation": "Vermögensallokation",
+    "totalAssets": "Gesamtvermögenswerte",
+    "stocks": "Aktien",
+    "crypto": "Kryptowährung",
+    "etfs": "ETFs",
+    "cash": "Bargeld",
+    "shares": "Anteile",
+    "yesterday": "Gestern",
+    "investPro": "InvestPro",
+    "topHoldings": "Ihre Top-Bestände"
+  }
+}

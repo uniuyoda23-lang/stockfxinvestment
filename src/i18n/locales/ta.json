@@ -1,0 +1,250 @@
+{
+  "nav": {
+    "signIn": "உள்நுழைக",
+    "getStarted": "தொடங்க"
+  },
+  "hero": {
+    "badge": "🎉 முதல் $10,000-க்கு இலவச முதலீடு",
+    "title1": "மிகவும் புத்திசாலितামாக முதலீடு செய்யுங்கள்.",
+    "title2": "வேகமாக வளரவும்.",
+    "description": "பங்குகள், ஈ.டி.எஃப் மற்றும் ஈவுடன் முதலீட்டுக்கான அடுத்த தலைமுறை தளம். தொழிலாதார சாதனங்கள். பூஜ்ய சிக்கலைতা. நம்பிக்கையுடன் முதலீடு செய்யுங்கள்.",
+    "startButton": "இலவச முதலீடு தொடங்கவும்",
+    "signInButton": "உள்நுழைக"
+  },
+  "features": {
+    "title": "ஸ்டாக்எஃப்க்ஸ் ஏன் தேர்வு செய்ய வேண்டும்?",
+    "fast": {
+      "name": "மின்னல் வேகம்",
+      "desc": "மிக குறைந்த தாமதத்துடன் மில்லிசெகண்டுகளில் ஆர்டர்களை செய்பவர்."
+    },
+    "security": {
+      "name": "வங்கி-தர பாதுகாப்பு",
+      "desc": "256-பிட் குறியாக்கம், 2FA, எஃப்.டி.ஐ.சி குறிப்பீட்டு பாதுகாப்பு."
+    },
+    "mobile": {
+      "name": "மொபைல் முதலாவதாக",
+      "desc": "முழு-வைশிষ்ட்য பயன்பாடு. எங்கும், எப்போதும் முதலீடு செய்யுங்கள்."
+    },
+    "global": {
+      "name": "உலக வெளிமாநகரங்கள்",
+      "desc": "உலக முழுவதும் பங்குகள், ஈ.டி.எஃப், பரஸ்பர நிதிகள் மற்றும் பதன்களை அணுகவும்."
+    }
+  },
+  "testimonials": {
+    "title": "உலக முழுவதும் முதலீட்டாளர்களால் விரும்பப்படுகிறது",
+    "subtitle": "ஸ்டாக்எஃப்க்ஸ்-ல் நம்பிக்கை வைக்கும் 2 மில்லியனுக்கு மேல் முதலீட்டாளர்களுடன் இணைந்து கொள்ளுங்கள்"
+  },
+  "pricing": {
+    "title": "உங்களுக்கு ஏற்றா முதலீட்டு திட்டங்கள்",
+    "subtitle": "உங்கள் போர்ட்ஃபோலியோ அளவுக்கு பொருந்தும் முதலீட்டு நிலை தேர்வு செய்யுங்கள்",
+    "starter": {
+      "name": "தரநிலை",
+      "price": "$300 - $5,000",
+      "desc": "அடிப்படை முதலீட்டு வரம்பு",
+      "duration": "1 மாதம்"
+    },
+    "pro": {
+      "name": "பிரீமியம்",
+      "price": "$5,000 - $50,000",
+      "desc": "வளர்ச்சி முதலீட்டு வரம்பு",
+      "duration": "2-3 மாதங்கள்",
+      "popular": "மிகவும் பிரபலமான"
+    },
+    "gold": {
+      "name": "தங்க",
+      "price": "$50,000+",
+      "desc": "பிரீமியம் முதலீட்டு வரம்பு",
+      "duration": "3-6 மாதங்கள்"
+    },
+    "annual": {
+      "name": "வার்ষிக முதலீடு",
+      "price": "$100,000+",
+      "desc": "संस्थास्थ सिद्धार्थ मथुलीडु",
+      "duration": "12+ மாதங்கள்"
+    },
+    "enterprise": {
+      "name": "Enterprise",
+      "price": "$25,000+",
+      "desc": "Premium Investment Range",
+      "duration": "4+ Months"
+    },
+    "features": {
+      "commissionFree": "Commission-free trades",
+      "basicCharting": "Basic charting tools",
+      "mobileAccess": "Mobile app access",
+      "watchlists": "2 watchlists",
+      "emailSupport": "Email support",
+      "advancedCharting": "Advanced charting & analysis",
+      "level2": "Real-time Level 2 data",
+      "unlimitedWatchlists": "Unlimited watchlists",
+      "support24": "Priority 24/7 support",
+      "apiAccess": "API access",
+      "advancedAlerts": "Advanced alerts",
+      "dedicatedManager": "Dedicated portfolio manager",
+      "strategy": "Custom strategy consulting",
+      "whiteLabel": "White-label solutions",
+      "integrations": "Advanced integrations",
+      "sla": "SLA guarantees",
+      "institutionalPricing": "Institutional pricing"
+    },
+    "button": "Start Investing"
+  },
+  "login": {
+    "title": "உங்களுக்கு நல்வரவு",
+    "subtitle": "அல்லது புதிய கணக்கை உருவாக்குக",
+    "emailLabel": "மின்னஞ்சல் முகவரி",
+    "emailPlaceholder": "நீங்கள்@உதாரணம்.com",
+    "passwordLabel": "கடவுসொல்",
+    "passwordPlaceholder": "••••••••",
+    "signInButton": "உள்நுழைக",
+    "noAccount": "புதிய கணக்கை உருவாக்குக",
+    "backToHome": "Back to Home",
+    "serverChecking": "Checking server...",
+    "serverUp": "Server is up — try signing in again.",
+    "thirdParty": "Or continue with",
+    "thirdPartyDisabled": "Third‑party sign-in is currently disabled."
+  },
+  "register": {
+    "title": "உங்கள் கணக்கை உருவாக்குக",
+    "subtitle": "ஏற்கனவே கணக்கு உள்ளதா?",
+    "haveAccount": "உள்நுழைக",
+    "firstNameLabel": "முதல் பெயர்",
+    "firstNamePlaceholder": "ராவண்டி",
+    "lastNameLabel": "கடைசி பெயர்",
+    "lastNamePlaceholder": "சரவணா",
+    "emailLabel": "மின்னஞ்சல் முகவரி",
+    "emailPlaceholder": "நீங்கள்@உதாரணம்.com",
+    "passwordLabel": "கடவுசொல்",
+    "passwordPlaceholder": "கடவுசொல் உருவாக்குக",
+    "passwordHelper": "குறைந்தபட்சம் 8 சேனல் இருக்க வேண்டும்",
+    "createButton": "கணக்கை உருவாக்குக",
+    "verifyTitle": "சரிபார்ப்பு குறியீடு",
+    "verifyPlaceholder": "123456",
+    "verifyError": "சரிபார்ப்பு குறியீடு தவறு.",
+    "verifyButton": "சரிபார்க்க",
+    "termsLabel": "I agree to the",
+    "terms": "Terms",
+    "and": "and",
+    "privacy": "Privacy Policy",
+    "devCode": "DEV: Your code is",
+    "changeEmail": "Change email",
+    "resendCode": "Resend code",
+    "resendCooldown": "Resend ({{seconds}}s)"
+  },
+  "stats": {
+    "traders": "Active Traders",
+    "assets": "Assets Traded",
+    "commission": "Commission Fees",
+    "uptime": "Uptime"
+  },
+  "trust": {
+    "title": "Your Trust, Our Priority",
+    "security": {
+      "name": "Military-Grade Security",
+      "desc": "256-bit encryption protects all your data in transit and at rest."
+    },
+    "insured": {
+      "name": "FDIC & SIPC Insured",
+      "desc": "Your cash ($250k) and securities ($500k) are fully protected."
+    },
+    "compliant": {
+      "name": "Regulated & Compliant",
+      "desc": "We comply with all SEC, FINRA, and regulatory requirements."
+    }
+  },
+  "cta": {
+    "title": "Ready to Start Trading?",
+    "subtitle": "Join millions of investors. Get $50 in free stock today.",
+    "button": "Create Free Account"
+  },
+  "footer": {
+    "description": "The next-generation platform for stocks, crypto, and ETFs. Professional tools. Zero complexity.",
+    "platform": "Platform",
+    "company": "Company",
+    "legal": "Legal",
+    "social": "Follow Us",
+    "features": "Features",
+    "pricing": "Pricing",
+    "security": "Security",
+    "about": "About Us",
+    "blog": "Blog",
+    "contact": "Contact",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "disclosures": "Disclosures",
+    "twitter": "Twitter",
+    "linkedin": "LinkedIn",
+    "youtube": "YouTube",
+    "copyright": "© 2024 StockFx Investment Inc. All rights reserved. NMLS #123456"
+  },
+  "contact": {
+    "title": "Need Help?",
+    "message": "Have questions about trading? Our account officers are here to help you get started!",
+    "contact": "Contact Our Team",
+    "later": "Maybe Later"
+  },
+  "dashboard": {
+    "loading": "Loading dashboard...",
+    "notAuthenticated": "Please log in to view your dashboard.",
+    "goToLogin": "Go to Login",
+    "signOut": "Sign Out",
+    "yourHoldings": "Your Holdings",
+    "portfolioSummary": "Portfolio Summary",
+    "totalValue": "Total Value",
+    "unrealizedGains": "Unrealized Gains",
+    "return": "Return %",
+    "allocation": "Allocation",
+    "assets": "Assets",
+    "performance": "Performance",
+    "welcome": "Welcome, {{name}}!",
+    "accountCreated": "Account created successfully",
+    "emailAddress": "Email Address",
+    "accountStatus": "Account Status",
+    "active": "Active",
+    "currentBalance": "Current Balance",
+    "overviewTab": "Overview",
+    "portfolioTab": "Portfolio",
+    "settingsTab": "Settings",
+    "accountSettings": "Account Settings",
+    "manageAccount": "Manage your account and preferences",
+    "profileInformation": "Profile Information",
+    "fullName": "Full Name",
+    "security": "Security",
+    "newPassword": "New Password (optional)",
+    "leaveBlank": "Leave blank to keep current password",
+    "preferences": "Preferences",
+    "emailNotifications": "Email notifications",
+    "priceAlerts": "Price alerts",
+    "marketingEmails": "Marketing emails",
+    "saveChanges": "Save Changes",
+    "cancel": "Cancel",
+    "noChanges": "No changes to save",
+    "settingsUpdated": "Settings updated successfully!",
+    "failedToSave": "Failed to save settings",
+    "searchAssets": "Search assets...",
+    "notifications": "Notifications",
+    "noNotifications": "No notifications yet",
+    "totalBalance": "Total Balance",
+    "totalProfit": "Total Profit",
+    "monthlyIncome": "Monthly Income",
+    "activeTrades": "Active Trades",
+    "marketWatchlist": "Market Watchlist",
+    "viewAll": "View All",
+    "quickTransfer": "Quick Transfer",
+    "transferMessage": "Move funds instantly between accounts.",
+    "send": "Send",
+    "addMoney": "Add Money",
+    "recentActivity": "Recent Activity",
+    "viewAllHistory": "View All History",
+    "assetAllocation": "Asset Allocation",
+    "totalAssets": "Total Assets",
+    "stocks": "Stocks",
+    "crypto": "Crypto",
+    "etfs": "ETFs",
+    "cash": "Cash",
+    "shares": "shares",
+    "yesterday": "Yesterday",
+    "investPro": "InvestPro",
+    "topHoldings": "Your Top Holdings"
+  }
+}

@@ -1,0 +1,238 @@
+{
+  "nav": {
+    "signIn": "Logga In",
+    "getStarted": "Kom Igång"
+  },
+  "hero": {
+    "badge": "🎉 Provisionsfrij handel på dina första $10 000",
+    "title1": "Investera Intelligentare.",
+    "title2": "Väx Snabbare.",
+    "description": "Nästa generations plattform för aktier, ETF:er och utdelningsinvesteringar. Professionella verktyg. Noll komplexitet. Investera med säkerhet.",
+    "startButton": "Börja Investera Gratis",
+    "signInButton": "Logga In"
+  },
+  "features": {
+    "title": "Varför Välja StockFx?",
+    "fast": {
+      "name": "Blixtsnabb",
+      "desc": "Genomför order inom millisekunder med ultralåg latens."
+    },
+    "security": {
+      "name": "Banksäkerhet",
+      "desc": "256-bitars kryptering, 2FA, FDIC-försäkringsskydd."
+    },
+    "mobile": {
+      "name": "Mobil Först",
+      "desc": "Fullständig app. Investera var som helst, när som helst."
+    },
+    "global": {
+      "name": "Globala Marknader",
+      "desc": "Få tillgång till aktier, ETF:er, fonder och obligationer världen över."
+    }
+  },
+  "testimonials": {
+    "title": "Älskad Av Investerare Världen Över",
+    "subtitle": "Anslut till över 2 miljoner investerare som litar på StockFx"
+  },
+  "stats": {
+    "traders": "Aktiva Handlare",
+    "assets": "Handlade Tillgångar",
+    "commission": "Provisionsavgifter",
+    "uptime": "Drifttid"
+  },
+  "pricing": {
+    "title": "Investeringsplaner Anpassade För Dig",
+    "subtitle": "Välj en investeringsnivå som passar din portföljstorlek",
+    "starter": {
+      "name": "Starter",
+      "price": "$1.000 - $5.000",
+      "desc": "Initialt Investeringsintervall",
+      "duration": "1 Månad"
+    },
+    "pro": {
+      "name": "Pro",
+      "price": "$5.000 - $25.000",
+      "desc": "Tillväxt Investeringsintervall",
+      "duration": "2-3 Månader",
+      "popular": "Mest Populär"
+    },
+    "enterprise": {
+      "name": "Enterprise",
+      "price": "$25.000+",
+      "desc": "Premium Investeringsintervall",
+      "duration": "4+ Månader"
+    },
+    "features": {
+      "commissionFree": "Provisionsfriad handel",
+      "basicCharting": "Grundläggande kartverktyg",
+      "mobileAccess": "Mobilappsåtkomst",
+      "watchlists": "2 bevakningslistor",
+      "emailSupport": "E-poststöd",
+      "advancedCharting": "Avancerad kartläggning och analys",
+      "level2": "Realtidsdata för nivå 2",
+      "unlimitedWatchlists": "Obegränsade bevakningslistor",
+      "support24": "Prioriterad 24/7-support",
+      "apiAccess": "API-åtkomst",
+      "advancedAlerts": "Avancerade Varningar",
+      "dedicatedManager": "Dedikerad portföljförvaltare",
+      "strategy": "Anpassad strategirådgivning",
+      "whiteLabel": "Vita märken-lösningar",
+      "integrations": "Avancerade integreringar",
+      "sla": "SLA-garantier",
+      "institutionalPricing": "Institutionell prissättning"
+    },
+    "button": "Börja Investera"
+  },
+  "trust": {
+    "title": "Ditt Förtroende, Vår Prioritet",
+    "security": {
+      "name": "Militärklasssäkerhet",
+      "desc": "256-bitars kryptering skyddar all din data i transit och i vila."
+    },
+    "insured": {
+      "name": "FDIC & SIPC Försäkrad",
+      "desc": "Din kontanter ($250k) och värdepapper ($500k) är helt skyddade."
+    },
+    "compliant": {
+      "name": "Reglerad och Kompatibel",
+      "desc": "Vi följer alla SEC-, FINRA- och regulatoriska krav."
+    }
+  },
+  "cta": {
+    "title": "Redo Att Börja Handla?",
+    "subtitle": "Anslut till miljoner investerare. Få $50 i gratis aktier idag.",
+    "button": "Skapa Gratis Konto"
+  },
+  "footer": {
+    "description": "Nästa generations plattform för aktier, kryptovalutor och ETF:er. Professionella verktyg. Noll komplexitet.",
+    "platform": "Plattform",
+    "company": "Företag",
+    "legal": "Juridiska",
+    "social": "Följ Oss",
+    "features": "Funktioner",
+    "pricing": "Prissättning",
+    "security": "Säkerhet",
+    "about": "Om Oss",
+    "blog": "Blogg",
+    "contact": "Kontakt",
+    "privacy": "Integritet",
+    "terms": "Villkor",
+    "disclosures": "Upplysningar",
+    "twitter": "Twitter",
+    "linkedin": "LinkedIn",
+    "youtube": "YouTube",
+    "copyright": "© 2024 StockFx Investment Inc. Alla rättigheter förbehållna. NMLS #123456"
+  },
+  "contact": {
+    "title": "Behöver Du Hjälp?",
+    "message": "Har du frågor om handel? Våra kontoansvariga är här för att hjälpa dig att komma igång!",
+    "contact": "Kontakta Vårt Team",
+    "later": "Kanske Senare"
+  },
+  "login": {
+    "title": "Välkommen",
+    "subtitle": "Eller skapa ett nytt konto",
+    "emailLabel": "E-postadress",
+    "emailPlaceholder": "you@example.com",
+    "passwordLabel": "Lösenord",
+    "passwordPlaceholder": "••••••••",
+    "signInButton": "Logga In",
+    "noAccount": "skapa ett nytt konto",
+    "backToHome": "Tillbaka Till Hem",
+    "serverChecking": "Kontrollerar servern...",
+    "serverUp": "Servern är igång — försök att logga in igen.",
+    "thirdParty": "Eller fortsätt med",
+    "thirdPartyDisabled": "Inloggning från tredje part är för närvarande inaktiverad."
+  },
+  "register": {
+    "title": "Skapa Ditt Konto",
+    "subtitle": "Har du redan ett konto?",
+    "haveAccount": "Logga In",
+    "firstNameLabel": "Förnamn",
+    "firstNamePlaceholder": "Johan",
+    "lastNameLabel": "Efternamn",
+    "lastNamePlaceholder": "Andersson",
+    "emailLabel": "E-postadress",
+    "emailPlaceholder": "you@example.com",
+    "passwordLabel": "Lösenord",
+    "passwordPlaceholder": "Skapa ett lösenord",
+    "passwordHelper": "Måste innehålla minst 8 tecken",
+    "termsLabel": "Jag accepterar",
+    "terms": "Villkoren",
+    "and": "och",
+    "privacy": "Sekretesspolicy",
+    "createButton": "Skapa Konto",
+    "verifyTitle": "Verifieringskod",
+    "verifyPlaceholder": "123456",
+    "verifyError": "Verifieringskoden är felaktig.",
+    "devCode": "DEV: Din kod är",
+    "changeEmail": "Ändra e-post",
+    "resendCode": "Skicka kod igen",
+    "resendCooldown": "Skicka igen ({{seconds}}s)",
+    "verifyButton": "Verifiera"
+  },
+  "dashboard": {
+    "loading": "Läser in kontrollpanelen...",
+    "notAuthenticated": "Vänligen logga in för att se din kontrollpanel.",
+    "goToLogin": "Gå Till Inloggning",
+    "signOut": "Logga Ut",
+    "yourHoldings": "Dina Innehav",
+    "portfolioSummary": "Portföljsammanfattning",
+    "totalValue": "Totalt Värde",
+    "unrealizedGains": "Orealiserade Vinster",
+    "return": "Returnera %",
+    "allocation": "Allokering",
+    "assets": "Tillgångar",
+    "performance": "Prestanda",
+    "welcome": "Välkommen, {{name}}!",
+    "accountCreated": "Konto skapades framgångsrikt",
+    "emailAddress": "E-postadress",
+    "accountStatus": "Kontostatus",
+    "active": "Aktiv",
+    "currentBalance": "Aktuellt Saldo",
+    "overviewTab": "Överblick",
+    "portfolioTab": "Portfölj",
+    "settingsTab": "Inställningar",
+    "accountSettings": "Kontoinställningar",
+    "manageAccount": "Hantera ditt konto och inställningar",
+    "profileInformation": "Profilinformation",
+    "fullName": "Fullt Namn",
+    "security": "Säkerhet",
+    "newPassword": "Nytt Lösenord (valfritt)",
+    "leaveBlank": "Lämna tomt för att behålla nuvarande lösenord",
+    "preferences": "Preferenser",
+    "emailNotifications": "E-postmeddelanden",
+    "priceAlerts": "Prisvarningar",
+    "marketingEmails": "Marknadsföringssamtal",
+    "saveChanges": "Spara Ändringar",
+    "cancel": "Annullera",
+    "noChanges": "Inga ändringar att spara",
+    "settingsUpdated": "Inställningarna uppdaterades framgångsrikt!",
+    "failedToSave": "Misslyckades att spara inställningar",
+    "searchAssets": "Sök tillgångar...",
+    "notifications": "Meddelanden",
+    "noNotifications": "Inga meddelanden ännu",
+    "totalBalance": "Totalt Saldo",
+    "totalProfit": "Total Vinst",
+    "monthlyIncome": "Månadsinkomst",
+    "activeTrades": "Aktiva Affärer",
+    "marketWatchlist": "Marknadsbevakningslista",
+    "viewAll": "Visa Alla",
+    "quickTransfer": "Snabb Överföring",
+    "transferMessage": "Överför medel omedelbar mellan konton.",
+    "send": "Skicka",
+    "addMoney": "Lägg Till Pengar",
+    "recentActivity": "Senaste Aktiviteter",
+    "viewAllHistory": "Visa All Historik",
+    "assetAllocation": "Tillgångsallokering",
+    "totalAssets": "Totala Tillgångar",
+    "stocks": "Aktier",
+    "crypto": "Kryptovaluta",
+    "etfs": "ETF",
+    "cash": "Kontanter",
+    "shares": "aktier",
+    "yesterday": "Igår",
+    "investPro": "InvestPro",
+    "topHoldings": "Dina Toppinnehav"
+  }
+}

@@ -1,0 +1,238 @@
+{
+  "nav": {
+    "signIn": "Đăng Nhập",
+    "getStarted": "Bắt Đầu"
+  },
+  "hero": {
+    "badge": "🎉 Giao dịch không hoa hồng trên $10.000 đầu tiên",
+    "title1": "Đầu Tư Thông Minh Hơn.",
+    "title2": "Phát Triển Nhanh Hơn.",
+    "description": "Nền tảng thế hệ tiếp theo cho cổ phiếu, ETF và đầu tư cổ tức. Công cụ chuyên nghiệp. Không phức tạp. Đầu tư với tự tin.",
+    "startButton": "Bắt Đầu Đầu Tư Miễn Phí",
+    "signInButton": "Đăng Nhập"
+  },
+  "features": {
+    "title": "Tại Sao Chọn StockFx?",
+    "fast": {
+      "name": "Cực Nhanh",
+      "desc": "Thực hiện lệnh trong mili giây với độ trễ cực thấp."
+    },
+    "security": {
+      "name": "Bảo Mật Cấp Độ Ngân Hàng",
+      "desc": "Mã hóa 256-bit, 2FA, bảo vệ bảo hiểm FDIC."
+    },
+    "mobile": {
+      "name": "Ưu Tiên Di Động",
+      "desc": "Ứng dụng đầy đủ chức năng. Đầu tư ở bất cứ đâu, bất kỳ lúc nào."
+    },
+    "global": {
+      "name": "Thị Trường Toàn Cầu",
+      "desc": "Truy cập cổ phiếu, ETF, quỹ lợi ích chung và trái phiếu trên toàn thế giới."
+    }
+  },
+  "testimonials": {
+    "title": "Được Yêu Thích Bởi Các Nhà Đầu Tư Trên Toàn Thế Giới",
+    "subtitle": "Tham gia hơn 2 triệu nhà đầu tư tin tưởng StockFx"
+  },
+  "stats": {
+    "traders": "Những Nhà Giao Dịch Tích Cực",
+    "assets": "Tài Sản Được Giao Dịch",
+    "commission": "Phí Hoa Hồng",
+    "uptime": "Thời Gian Hoạt Động"
+  },
+  "pricing": {
+    "title": "Kế Hoạch Đầu Tư Tùy Chỉnh Cho Bạn",
+    "subtitle": "Chọn mức đầu tư phù hợp với kích thước danh mục đầu tư của bạn",
+    "starter": {
+      "name": "Người Mới Bắt Đầu",
+      "price": "$1.000 - $5.000",
+      "desc": "Phạm Vi Đầu Tư Ban Đầu",
+      "duration": "1 Tháng"
+    },
+    "pro": {
+      "name": "Pro",
+      "price": "$5.000 - $25.000",
+      "desc": "Phạm Vi Đầu Tư Tăng Trưởng",
+      "duration": "2-3 Tháng",
+      "popular": "Phổ Biến Nhất"
+    },
+    "enterprise": {
+      "name": "Doanh Nghiệp",
+      "price": "$25.000+",
+      "desc": "Phạm Vi Đầu Tư Premium",
+      "duration": "4+ Tháng"
+    },
+    "features": {
+      "commissionFree": "Giao dịch không hoa hồng",
+      "basicCharting": "Công cụ biểu đồ cơ bản",
+      "mobileAccess": "Quyền truy cập ứng dụng di động",
+      "watchlists": "2 danh sách theo dõi",
+      "emailSupport": "Hỗ trợ qua email",
+      "advancedCharting": "Biểu đồ và phân tích nâng cao",
+      "level2": "Dữ liệu cấp độ 2 thời gian thực",
+      "unlimitedWatchlists": "Danh sách theo dõi không giới hạn",
+      "support24": "Hỗ trợ ưu tiên 24/7",
+      "apiAccess": "Truy cập API",
+      "advancedAlerts": "Cảnh Báo Nâng Cao",
+      "dedicatedManager": "Trình quản lý danh mục đầu tư chuyên dụng",
+      "strategy": "Tư vấn chiến lược tùy chỉnh",
+      "whiteLabel": "Giải pháp bản cá nhân hóa",
+      "integrations": "Tích hợp nâng cao",
+      "sla": "Bảo đảm SLA",
+      "institutionalPricing": "Giá cấp độ tổ chức"
+    },
+    "button": "Bắt Đầu Đầu Tư"
+  },
+  "trust": {
+    "title": "Sự Tin Tưởng Của Bạn, Ưu Tiên Của Chúng Tôi",
+    "security": {
+      "name": "Bảo Mật Cấp Quân Sự",
+      "desc": "Mã hóa 256-bit bảo vệ tất cả dữ liệu của bạn trong quá trình truyền tải và lưu trữ."
+    },
+    "insured": {
+      "name": "Được Bảo Hiểm FDIC & SIPC",
+      "desc": "Tiền mặt ($250k) và chứng khoán ($500k) của bạn được bảo vệ hoàn toàn."
+    },
+    "compliant": {
+      "name": "Được Quy Định Và Tuân Thủ",
+      "desc": "Chúng tôi tuân thủ tất cả các yêu cầu SEC, FINRA và quy định."
+    }
+  },
+  "cta": {
+    "title": "Sẵn Sàng Bắt Đầu Giao Dịch?",
+    "subtitle": "Tham gia hàng triệu nhà đầu tư. Nhận $50 cổ phiếu miễn phí hôm nay.",
+    "button": "Tạo Tài Khoản Miễn Phí"
+  },
+  "footer": {
+    "description": "Nền tảng thế hệ tiếp theo cho cổ phiếu, tiền điện tử và ETF. Công cụ chuyên nghiệp. Không phức tạp.",
+    "platform": "Nền Tảng",
+    "company": "Công Ty",
+    "legal": "Pháp Lý",
+    "social": "Theo Dõi Chúng Tôi",
+    "features": "Tính Năng",
+    "pricing": "Giá Cả",
+    "security": "Bảo Mật",
+    "about": "Về Chúng Tôi",
+    "blog": "Blog",
+    "contact": "Liên Hệ",
+    "privacy": "Quyền Riêng Tư",
+    "terms": "Điều Khoản",
+    "disclosures": "Công Khai Thông Tin",
+    "twitter": "Twitter",
+    "linkedin": "LinkedIn",
+    "youtube": "YouTube",
+    "copyright": "©2024 StockFx Investment Inc. Bất động sản đã được bảo lưu. NMLS #123456"
+  },
+  "contact": {
+    "title": "Cần Giúp Đỡ?",
+    "message": "Có câu hỏi về giao dịch không? Nhân viên tài khoản của chúng tôi ở đây để giúp bạn bắt đầu!",
+    "contact": "Liên Hệ Nhóm Của Chúng Tôi",
+    "later": "Có Thể Sau"
+  },
+  "login": {
+    "title": "Chào mừng trở lại",
+    "subtitle": "Hoặc tạo một tài khoản mới",
+    "emailLabel": "Địa Chỉ Email",
+    "emailPlaceholder": "you@example.com",
+    "passwordLabel": "Mật Khẩu",
+    "passwordPlaceholder": "••••••••",
+    "signInButton": "Đăng Nhập",
+    "noAccount": "tạo một tài khoản mới",
+    "backToHome": "Quay Lại Trang Chủ",
+    "serverChecking": "Kiểm tra máy chủ...",
+    "serverUp": "Máy chủ đang hoạt động — hãy thử đăng nhập lại.",
+    "thirdParty": "Hoặc tiếp tục với",
+    "thirdPartyDisabled": "Đăng nhập của bên thứ ba hiện bị vô hiệu hóa."
+  },
+  "register": {
+    "title": "Tạo Tài Khoản của Bạn",
+    "subtitle": "Đã có tài khoản?",
+    "haveAccount": "Đăng Nhập",
+    "firstNameLabel": "Tên",
+    "firstNamePlaceholder": "Hùng",
+    "lastNameLabel": "Họ",
+    "lastNamePlaceholder": "Nguyễn",
+    "emailLabel": "Địa Chỉ Email",
+    "emailPlaceholder": "you@example.com",
+    "passwordLabel": "Mật Khẩu",
+    "passwordPlaceholder": "Tạo mật khẩu",
+    "passwordHelper": "Phải có ít nhất 8 ký tự",
+    "termsLabel": "Tôi Đồng Ý Với",
+    "terms": "Điều Khoản",
+    "and": "và",
+    "privacy": "Chính Sách Bảo Mật",
+    "createButton": "Tạo Tài Khoản",
+    "verifyTitle": "Mã Xác Minh",
+    "verifyPlaceholder": "123456",
+    "verifyError": "Mã xác minh không chính xác.",
+    "devCode": "DEV: Mã của bạn là",
+    "changeEmail": "Thay Đổi Email",
+    "resendCode": "Gửi Lại Mã",
+    "resendCooldown": "Gửi Lại ({{seconds}}s)",
+    "verifyButton": "Xác Minh"
+  },
+  "dashboard": {
+    "loading": "Đang Tải Bảng Điều Khiển...",
+    "notAuthenticated": "Vui Lòng Đăng Nhập Để Xem Bảng Điều Khiển Của Bạn.",
+    "goToLogin": "Đi Đến Đăng Nhập",
+    "signOut": "Đăng Xuất",
+    "yourHoldings": "Nắm Giữ Của Bạn",
+    "portfolioSummary": "Tóm Tắt Danh Mục Đầu Tư",
+    "totalValue": "Tổng Giá Trị",
+    "unrealizedGains": "Lợi Nhuận Chưa Thực Hiện",
+    "return": "Khoản Hoàn Vốn %",
+    "allocation": "Phân Bố",
+    "assets": "Tài Sản",
+    "performance": "Hiệu Suất",
+    "welcome": "Chào mừng, {{name}}!",
+    "accountCreated": "Tài Khoản Được Tạo Thành Công",
+    "emailAddress": "Địa Chỉ Email",
+    "accountStatus": "Trạng Thái Tài Khoản",
+    "active": "Hoạt Động",
+    "currentBalance": "Số Dư Hiện Tại",
+    "overviewTab": "Tổng Quan",
+    "portfolioTab": "Danh Mục Đầu Tư",
+    "settingsTab": "Cài Đặt",
+    "accountSettings": "Cài Đặt Tài Khoản",
+    "manageAccount": "Quản lý tài khoản và sở thích của bạn",
+    "profileInformation": "Thông Tin Hồ Sơ",
+    "fullName": "Tên Đầy Đủ",
+    "security": "Bảo Mật",
+    "newPassword": "Mật Khẩu Mới (Tùy Chọn)",
+    "leaveBlank": "Để Trống Để Giữ Mật Khẩu Hiện Tại",
+    "preferences": "Sở Thích",
+    "emailNotifications": "Thông Báo Email",
+    "priceAlerts": "Cảnh Báo Giá",
+    "marketingEmails": "Email Tiếp Thị",
+    "saveChanges": "Lưu Các Thay Đổi",
+    "cancel": "Hủy Bỏ",
+    "noChanges": "Không Có Thay Đổi Để Lưu",
+    "settingsUpdated": "Cài Đặt Được Cập Nhật Thành Công!",
+    "failedToSave": "Không Thể Lưu Cài Đặt",
+    "searchAssets": "Tìm Kiếm Tài Sản...",
+    "notifications": "Thông Báo",
+    "noNotifications": "Chưa Có Thông Báo",
+    "totalBalance": "Tổng Số Dư",
+    "totalProfit": "Tổng Lợi Nhuận",
+    "monthlyIncome": "Thu Nhập Hàng Tháng",
+    "activeTrades": "Giao Dịch Tích Cực",
+    "marketWatchlist": "Danh Sách Theo Dõi Thị Trường",
+    "viewAll": "Xem Tất Cả",
+    "quickTransfer": "Chuyển Khoản Nhanh",
+    "transferMessage": "Chuyển tiền tức thì giữa các tài khoản.",
+    "send": "Gửi",
+    "addMoney": "Thêm Tiền",
+    "recentActivity": "Hoạt Động Gần Đây",
+    "viewAllHistory": "Xem Toàn Bộ Lịch Sử",
+    "assetAllocation": "Phân Bổ Tài Sản",
+    "totalAssets": "Tổng Tài Sản",
+    "stocks": "Cổ Phiếu",
+    "crypto": "Tiền Điện Tử",
+    "etfs": "ETF",
+    "cash": "Tiền Mặt",
+    "shares": "cổ phiếu",
+    "yesterday": "Hôm Qua",
+    "investPro": "InvestPro",
+    "topHoldings": "Nắm Giữ Hàng Đầu Của Bạn"
+  }
+}

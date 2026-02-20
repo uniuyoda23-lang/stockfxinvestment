@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StockFx Welcome Video</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #0a0a0f;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            width: 100%;
+            max-width: 1280px;
+            padding: 20px;
+        }
+        .video-player {
+            position: relative;
+            width: 100%;
+            background: black;
+            border: 2px solid #ffc864;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(255, 200, 100, 0.3);
+        }
+        canvas {
+            display: block;
+            width: 100%;
+            height: auto;
+            background: black;
+        }
+        .controls {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px;
+            background: linear-gradient(135deg, rgba(20, 20, 30, 0.9), rgba(50, 50, 70, 0.9));
+            border-top: 1px solid #ffc864;
+        }
+        button {
+            background: #ffc864;
+            color: #0a0a0f;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        button:hover {
+            background: #ffb347;
+            transform: scale(1.05);
+        }
+        button:disabled {
+            background: #888;
+            cursor: not-allowed;
+            opacity: 0.5;
+        }
+        .time-display {
+            flex: 1;
+            text-align: center;
+            color: #ffc864;
+            font-weight: bold;
+        }
+        .progress-bar {
+            flex: 2;
+            height: 4px;
+            background: #333;
+            border-radius: 2px;
+            cursor: pointer;
+            position: relative;
+        }
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #ffc864, #ff8c42);
+            border-radius: 2px;
+            transition: width 0.1s;
+        }
+        .volume-control {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .volume-slider {
+            width: 80px;
+            height: 4px;
+            background: #333;
+            border-radius: 2px;
+            cursor: pointer;
+        }
+        .fullscreen-btn {
+            background: transparent;
+            border: 1px solid #ffc864;
+            color: #ffc864;
+            padding: 6px 12px;
+        }
+        .fullscreen-btn:hover {
+            background: #ffc864;
+            color: #0a0a0f;
+        }
+        .loading {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #ffc864;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            z-index: 10;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="video-player">
+            <div class="loading" id="loading">Loading video frames...</div>
+            <canvas id="videoCanvas" width="1280" height="720"></canvas>
+            <div class="controls">
+                <button id="playBtn" onclick="togglePlay()">▶ Play</button>
+                <button id="stopBtn" onclick="stop()" style="display:none;">⏹ Stop</button>
+                <div class="progress-bar" id="progressBar" onclick="seek(event)">
+                    <div class="progress-fill" id="progressFill" style="width: 0%"></div>
+                </div>
+                <div class="time-display">
+                    <span id="currentTime">0:00</span> / <span id="totalTime">0:15</span>
+                </div>
+                <button onclick="toggleFullscreen()" class="fullscreen-btn">⛶ Fullscreen</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const canvas = document.getElementById('videoCanvas');
+        const ctx = canvas.getContext('2d');
+        const playBtn = document.getElementById('playBtn');
+        const stopBtn = document.getElementById('stopBtn');
+        const progressFill = document.getElementById('progressFill');
+        const currentTimeSpan = document.getElementById('currentTime');
+        const loadingDiv = document.getElementById('loading');
+        
+        let frames = [];
+        let isPlaying = false;
+        let currentFrame = 0;
+        const fps = 30;
+        const totalFrames = 450;
+        let animationId = null;
+        let autoPlay = true;  // Auto-play enabled
+        let loop = true;      // Loop enabled
+        
+        async function loadFrames() {
+            console.log('Loading frames...');
+            try {
+                for (let i = 0; i < totalFrames; i++) {
+                    const img = new Image();
+                    img.src = `video_frames/frame_${String(i).padStart(4, '0')}.png`;
+                    frames.push(img);
+                    
+                    if ((i + 1) % 50 === 0) {
+                        console.log(`Loaded ${i + 1}/${totalFrames} frames`);
+                    }
+                }
+                
+                // Wait for images to load
+                await Promise.all(frames.map(img => {
+                    return new Promise(resolve => {
+                        img.onload = resolve;
+                        img.onerror = resolve;
+                        // Timeout after 5 seconds
+                        setTimeout(resolve, 5000);
+                    });
+                }));
+                
+                console.log('All frames loaded');
+                loadingDiv.style.display = 'none';
+                displayFrame(0);
+                
+                // Auto-play video
+                if (autoPlay) {
+                    isPlaying = true;
+                    playBtn.textContent = '⏸ Pause';
+                    stopBtn.style.display = 'inline-block';
+                    play();
+                }
+                
+            } catch (error) {
+                console.error('Error loading frames:', error);
+                loadingDiv.textContent = 'Error loading video';
+            }
+        }
+        
+        function displayFrame(frameIndex) {
+            if (frameIndex >= 0 && frameIndex < frames.length && frames[frameIndex].complete) {
+                ctx.drawImage(frames[frameIndex], 0, 0);
+                updateProgress(frameIndex);
+            }
+        }
+        
+        function updateProgress(frameIndex) {
+            const progress = (frameIndex / totalFrames) * 100;
+            progressFill.style.width = progress + '%';
+            
+            const seconds = Math.floor(frameIndex / fps);
+            const minutes = Math.floor(seconds / 60);
+            const displaySeconds = seconds % 60;
+            currentTimeSpan.textContent = `${minutes}:${String(displaySeconds).padStart(2, '0')}`;
+        }
+        
+        function togglePlay() {
+            if (isPlaying) {
+                isPlaying = false;
+                playBtn.textContent = '▶ Play';
+                stopBtn.style.display = 'none';
+                if (animationId) cancelAnimationFrame(animationId);
+            } else {
+                isPlaying = true;
+                playBtn.textContent = '⏸ Pause';
+                stopBtn.style.display = 'inline-block';
+                play();
+            }
+        }
+        
+        function play() {
+            if (!isPlaying) {
+                return;
+            }
+            
+            if (currentFrame >= totalFrames) {
+                if (loop) {
+                    currentFrame = 0;  // Restart from beginning
+                    displayFrame(currentFrame);
+                    currentFrame++;
+                    animationId = setTimeout(() => {
+                        play();
+                    }, 1000 / fps);
+                } else {
+                    isPlaying = false;
+                    playBtn.textContent = '▶ Play';
+                    stopBtn.style.display = 'none';
+                }
+                return;
+            }
+            
+            displayFrame(currentFrame);
+            currentFrame++;
+            
+            animationId = setTimeout(() => {
+                play();
+            }, 1000 / fps);
+        }
+        
+        function stop() {
+            isPlaying = false;
+            currentFrame = 0;
+            playBtn.textContent = '▶ Play';
+            stopBtn.style.display = 'none';
+            if (animationId) cancelAnimationFrame(animationId);
+            displayFrame(0);
+        }
+        
+        function seek(event) {
+            const rect = event.currentTarget.getBoundingClientRect();
+            const percent = (event.clientX - rect.left) / rect.width;
+            currentFrame = Math.floor(percent * totalFrames);
+            displayFrame(currentFrame);
+        }
+        
+        function toggleFullscreen() {
+            if (document.fullscreenElement) {
+                document.exitFullscreen();
+            } else {
+                document.getElementById('videoCanvas').parentElement.requestFullscreen();
+            }
+        }
+        
+        // Load frames on page load
+        window.addEventListener('load', loadFrames);
+    </script>
+</body>
+</html>
