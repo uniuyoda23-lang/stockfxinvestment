@@ -1,4 +1,11 @@
-require('dotenv').config();
+const dotenv = require('dotenv');
+const pathModule = require('path');
+
+// Try to load .env.local from auth-backend or parent directory
+dotenv.config({ path: pathModule.resolve(__dirname, '../.env.local') });
+dotenv.config({ path: pathModule.resolve(__dirname, '../../.env.local') });
+dotenv.config();
+
 const express = require('express');
 const cors = require('cors');
 const bcrypt = require('bcryptjs');
