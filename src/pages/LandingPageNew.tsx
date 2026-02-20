@@ -317,7 +317,6 @@ export function LandingPageNew({ onNavigate }: LandingPageProps) {
         </div>
         <div className="flex gap-2 sm:gap-3 items-center flex-wrap justify-end">
           <LanguageSwitcher />
-          <AnimatedButton onClick={() => onNavigate('admin-login')} variant="ghost" size="sm">Admin</AnimatedButton>
           <AnimatedButton onClick={() => onNavigate('login')} variant="ghost" size="sm">{t('nav.signIn')}</AnimatedButton>
           <AnimatedButton onClick={() => onNavigate('register')} variant="primary" size="sm">{t('nav.getStarted')}</AnimatedButton>
         </div>

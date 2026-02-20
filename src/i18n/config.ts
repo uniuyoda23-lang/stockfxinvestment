@@ -14,7 +14,7 @@ import nlTranslations from './locales/nl.json';
 import plTranslations from './locales/pl.json';
 import trTranslations from './locales/tr.json';
 import svTranslations from './locales/sv.json';
-import noTranslations from './locales/no.json';
+import noTranslations from './locales/no-complete.json';
 import { SUPPORTED_LANGUAGES } from './languages';
 
 // Main language translations (translated)

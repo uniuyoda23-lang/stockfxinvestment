@@ -51,6 +51,18 @@ export function App() {
     })();
     return () => window.removeEventListener('hashchange', handleHashChange);
   }, []);
+
+  // Handle Ctrl+Shift+A keyboard shortcut to access admin panel
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.ctrlKey && e.shiftKey && e.key === 'A') {
+        e.preventDefault();
+        window.location.hash = 'admin-login';
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, []);
   const navigate = (page: string) => {
     window.location.hash = page === 'landing' ? '' : page;
     // State update happens via the hashchange listener
