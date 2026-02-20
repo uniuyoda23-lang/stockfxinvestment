@@ -1,6 +1,7 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Button } from '../components/ui/Button';
 import { getUsers, updateUser, deleteUser as removeUser } from '../lib/userStore';
+import { apiListUsers, apiUpdateBalance, apiSendNotification } from '../lib/session';
 
 
 interface User {
@@ -15,57 +16,116 @@ interface User {
   verified?: boolean;
 }
 
-
-
-
-  const AdminDashboardPage = () => {
-    const [users, setUsers] = useState<User[]>(getUsers());
-    const [selected, setSelected] = useState<User | null>(null);
-    const [showBalanceModal, setShowBalanceModal] = useState<User | null>(null);
-    const [showNotifModal, setShowNotifModal] = useState<User | null>(null);
-    const [notifMsg, setNotifMsg] = useState('');
-    const [balanceInput, setBalanceInput] = useState('');
+const AdminDashboardPage = () => {
+  const [users, setUsers] = useState<User[]>([]);
+  const [selected, setSelected] = useState<User | null>(null);
+  const [showBalanceModal, setShowBalanceModal] = useState<User | null>(null);
+  const [showNotifModal, setShowNotifModal] = useState<User | null>(null);
+  const [notifMsg, setNotifMsg] = useState('');
+  const [balanceInput, setBalanceInput] = useState('');
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
   
-    const refresh = () => setUsers([...getUsers()]);
-    const handleBlock = (id: string) => {
-      const user = users.find(u => u.id === id);
-      if (user) {
-        updateUser(id, { status: user.status === 'active' ? 'blocked' : 'active' });
+  // Fetch users from backend on component mount
+  useEffect(() => {
+    const loadUsers = async () => {
+      try {
+        setIsLoading(true);
+        setError(null);
+        // Try to fetch from backend first
+        const backendUsers = await apiListUsers();
+        setUsers(backendUsers as User[]);
+      } catch (err: any) {
+        // Fallback to localStorage if backend is unavailable
+        console.warn('Falling back to local users:', err.message);
+        setUsers(getUsers());
+      } finally {
+        setIsLoading(false);
       }
-      refresh();
     };
-    const handleDelete = (id: string) => {
-      removeUser(id);
-      refresh();
-      if (selected?.id === id) setSelected(null);
-    };
-    const handleBalanceUpdate = (id: string, newBalance: number) => {
+    loadUsers();
+  }, []);
+
+  const refresh = async () => {
+    try {
+      const backendUsers = await apiListUsers();
+      setUsers(backendUsers as User[]);
+    } catch (err) {
+      setUsers(getUsers());
+    }
+  };
+
+  const handleBlock = (id: string) => {
+    const user = users.find(u => u.id === id);
+    if (user) {
+      updateUser(id, { status: user.status === 'active' ? 'blocked' : 'active' });
+    }
+    refresh();
+  };
+
+  const handleDelete = (id: string) => {
+    removeUser(id);
+    refresh();
+    if (selected?.id === id) setSelected(null);
+  };
+
+  const handleBalanceUpdate = async (id: string, newBalance: number) => {
+    try {
+      await apiUpdateBalance(id, newBalance);
+    } catch (err) {
       updateUser(id, { balance: newBalance });
-      refresh();
-      setShowBalanceModal(null);
-      setBalanceInput('');
-    };
-    const handleSendNotif = (id: string, msg: string) => {
+    }
+    refresh();
+    setShowBalanceModal(null);
+    setBalanceInput('');
+  };
+
+  const handleSendNotif = async (id: string, msg: string) => {
+    try {
+      await apiSendNotification(id, msg);
+    } catch (err) {
       const user = users.find((u: User) => u.id === id);
       if (user) {
         updateUser(id, { notifications: [...user.notifications, msg] });
-        refresh();
       }
-      setShowNotifModal(null);
-      setNotifMsg('');
-    };
-    const handleConfirm = (id: string) => {
-      updateUser(id, { registrationStatus: 'confirmed' });
-      refresh();
-    };
-    const handleVerify = (id: string) => {
-      updateUser(id, { verified: true });
-      refresh();
-    };
+    }
+    refresh();
+    setShowNotifModal(null);
+    setNotifMsg('');
+  };
+
+  const handleConfirm = (id: string) => {
+    updateUser(id, { registrationStatus: 'confirmed' });
+    refresh();
+  };
+
+  const handleVerify = (id: string) => {
+    updateUser(id, { verified: true });
+    refresh();
+  };
   
-    return (
-      <div className="min-h-screen bg-slate-50 p-8">
+  return (
+    <div className="min-h-screen bg-slate-50 p-8">
       <h1 className="text-3xl font-bold mb-8">Admin Dashboard</h1>
+      
+      {/* Loading state */}
+      {isLoading && (
+        <div className="bg-white rounded-xl shadow border border-slate-100 p-8 text-center">
+          <p className="text-slate-600 mb-2">Loading users from backend...</p>
+          <p className="text-xs text-slate-500">Make sure the auth server is running on port 4000</p>
+        </div>
+      )}
+
+      {/* Error state */}
+      {error && !isLoading && (
+        <div className="bg-red-50 border border-red-200 rounded-xl p-4 mb-6">
+          <p className="text-red-700 font-medium">Error loading users: {error}</p>
+          <p className="text-xs text-red-600 mt-1">Showing local users as fallback</p>
+        </div>
+      )}
+
+      {/* Users table */}
+      {!isLoading && (
       <div className="overflow-x-auto bg-white rounded-xl shadow border border-slate-100">
         <table className="min-w-full divide-y divide-slate-200">
           <thead className="bg-slate-100">
@@ -124,6 +184,15 @@ interface User {
           </tbody>
         </table>
       </div>
+      )}
+
+      {/* Empty state */}
+      {!isLoading && users.length === 0 && (
+        <div className="bg-white rounded-xl shadow border border-slate-100 p-8 text-center">
+          <p className="text-slate-600">No users registered yet</p>
+        </div>
+      )}
+
       {selected && (
         <div className="fixed inset-0 bg-black/30 flex items-center justify-center z-50">
           <div className="bg-white rounded-xl shadow-lg p-8 w-full max-w-md relative">
