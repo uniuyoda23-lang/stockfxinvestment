@@ -118,7 +118,12 @@ export function RegisterPage({ onNavigate }: RegisterPageProps) {
 
       // OTP verified! Now register the user
       const name = `${firstName} ${lastName}`.trim();
+      console.log('📝 REGISTERING USER WITH:');
+      console.log('  Name:', name);
+      console.log('  Email:', email);
+      console.log('  Password: ***');
       const user = await apiRegister(name, email, password);
+      console.log('✅ REGISTRATION SUCCESSFUL, GOT BACK:', user);
       setCurrentUserFromProfile(user);
       
       // Navigate to dashboard
