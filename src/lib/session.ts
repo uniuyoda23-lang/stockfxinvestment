@@ -2,16 +2,32 @@ import { UserRecord, getUsers, addUser, updateUser, setUserBalance, pushUserNoti
 import {
   registerUser,
   loginUser,
-  logoutUser as firebaseLogout,
-  getCurrentUser as getFirebaseUser,
+  logoutUser as supabaseLogout,
+  getCurrentSession,
   getAllUsers,
   updateUserBalance,
-  getUserById
-} from './firebaseAuth';
+  getUserById,
+  type SupabaseUser
+} from './supabaseAuth';
 
 let currentUser: UserRecord | null = null;
 
 const API_BASE = import.meta.env.VITE_API_BASE || 'http://localhost:4000';
+
+// Convert SupabaseUser to UserRecord
+function convertSupabaseToUserRecord(supabaseUser: SupabaseUser): UserRecord {
+  return {
+    id: supabaseUser.id,
+    name: supabaseUser.name || '',
+    email: supabaseUser.email,
+    status: (supabaseUser.status as 'active' | 'blocked') || 'active',
+    createdAt: supabaseUser.createdAt,
+    balance: supabaseUser.balance || 0,
+    notifications: [],
+    registrationStatus: (supabaseUser.registrationStatus as 'pending' | 'confirmed') || 'confirmed',
+    verified: true,
+  };
+}
 
 // Store/retrieve token in localStorage
 function setToken(token: string) {
@@ -80,16 +96,18 @@ export function refreshCurrentUser() {
   }
 }
 
-// --- Firebase Auth helpers ---
+// --- Supabase Auth helpers ---
 export async function apiLogin(email: string, password: string) {
   try {
-    const user = await loginUser(email, password);
-    setToken('firebase_' + user.id);
-    setCurrentUserFromProfile(user);
-    return user;
+    const { user, error } = await loginUser(email, password);
+    if (error || !user) throw error || new Error('Login failed');
+    const userRecord = convertSupabaseToUserRecord(user);
+    setToken('supabase_' + user.id);
+    setCurrentUserFromProfile(userRecord);
+    return userRecord;
   } catch (err: any) {
     // Fallback to local users for dev/testing
-    console.warn('Firebase login failed, trying local users:', err?.message || err);
+    console.warn('WarningAPI login failed, using local storage:', err?.message || err);
     const local = getUsers().find(u => u.email.toLowerCase() === email.toLowerCase());
     if (local) {
       setToken('local_token_' + local.id);
@@ -102,13 +120,15 @@ export async function apiLogin(email: string, password: string) {
 
 export async function apiRegister(name: string, email: string, password: string) {
   try {
-    const user = await registerUser(email, password, name);
-    setToken('firebase_' + user.id);
-    setCurrentUserFromProfile(user);
-    return user;
+    const { user, error } = await registerUser(email, password, name);
+    if (error || !user) throw error || new Error('Registration failed');
+    const userRecord = convertSupabaseToUserRecord(user);
+    setToken('supabase_' + user.id);
+    setCurrentUserFromProfile(userRecord);
+    return userRecord;
   } catch (err: any) {
-    // Fall back to local registration if Firebase fails
-    console.warn('Firebase registration failed, using local storage:', err.message);
+    // Fall back to local registration if Supabase fails
+    console.warn('WarningAPI registration failed, using local storage:', err.message);
     const newUser: UserRecord = {
       id: Date.now().toString(),
       name,
@@ -134,9 +154,12 @@ export async function getDashboard() {
   if (!token) throw new Error('Not authenticated');
   
   try {
-    const user = await getFirebaseUser();
-    if (user) {
-      return user;
+    const session = await getCurrentSession();
+    if (session?.user) {
+      const user = await getUserById(session.user.id);
+      if (user) {
+        return convertSupabaseToUserRecord(user);
+      }
     }
     // Fall back to local user data
     const localUser = getCurrentUser();
@@ -146,7 +169,7 @@ export async function getDashboard() {
     throw new Error('Not authenticated');
   } catch (err: any) {
     // Fall back to local user data
-    console.warn('Firebase dashboard failed, using local storage:', err.message);
+    console.warn('WarningAPI dashboard failed, using local storage:', err.message);
     const localUser = getCurrentUser();
     if (localUser) {
       return localUser;
@@ -157,8 +180,12 @@ export async function getDashboard() {
 
 export async function fetchCurrentUser() {
   try {
-    const user = await getFirebaseUser();
-    return user as UserRecord | null;
+    const session = await getCurrentSession();
+    if (session?.user) {
+      const user = await getUserById(session.user.id);
+      return user ? convertSupabaseToUserRecord(user) : null;
+    }
+    return null;
   } catch (e) {
     return null;
   }
@@ -166,7 +193,7 @@ export async function fetchCurrentUser() {
 
 export async function apiLogout() {
   try {
-    await firebaseLogout();
+    await supabaseLogout();
   } catch (e) {
     console.warn('Logout error:', e);
   }
@@ -183,24 +210,27 @@ export async function apiHealth() {
   }
 }
 
-// --- Admin API helpers (using Firebase) ---
+// --- Admin API helpers (using Supabase) ---
 export async function apiListUsers() {
   try {
     const users = await getAllUsers();
     return users;
   } catch (err: any) {
-    console.warn('Firebase getAllUsers failed, using local users:', err?.message || err);
+    console.warn('WarningAPI getAllUsers failed, using local users:', err?.message || err);
     return getUsers();
   }
 }
 
 export async function apiUpdateBalance(userId: string, amount: number) {
   try {
-    await updateUserBalance(userId, amount);
-    return { ok: true, balance: amount };
+    const user = await updateUserBalance(userId, amount);
+    if (user) {
+      return { ok: true, balance: amount };
+    }
+    throw new Error('User not found');
   } catch (err: any) {
     // Fallback: update local user store
-    console.warn('Firebase update balance failed, updating local user:', err?.message || err);
+    console.warn('WarningAPI update balance failed, updating local user:', err?.message || err);
     setUserBalance(userId, amount);
     const local = getUsers().find(u => u.id === userId);
     if (local) {
@@ -228,10 +258,15 @@ export async function apiEditName(userId: string, name: string) {
 
 export async function apiSendNotification(userId: string, message: string) {
   try {
-    // For now, just update locally since Firebase doesn't have a notifications endpoint
+    // For now, just update locally since Supabase doesn't have a notifications endpoint
     pushUserNotification(userId, message);
     if (currentUser && currentUser.id === userId) {
-      const newNotifications = [...(currentUser.notifications || []), message];
+      const notif: import('./userStore').Notification = {
+        id: Date.now().toString(),
+        message,
+        timestamp: new Date().toISOString()
+      };
+      const newNotifications = [...(currentUser.notifications || []), notif];
       updateUser(userId, { notifications: newNotifications });
       setCurrentUserFromProfile({ ...currentUser, notifications: newNotifications });
     }

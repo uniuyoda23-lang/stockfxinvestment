@@ -1,20 +1,10 @@
 import { useState, useEffect } from 'react';
 import { Button } from '../components/ui/Button';
-import { getUsers, updateUser, deleteUser as removeUser } from '../lib/userStore';
+import { getUsers, updateUser, deleteUser as removeUser, type Notification, type UserRecord } from '../lib/userStore';
 import { apiListUsers, apiUpdateBalance, apiSendNotification } from '../lib/session';
 
 
-interface User {
-  id: string;
-  name: string;
-  email: string;
-  status: 'active' | 'blocked';
-  createdAt: string;
-  balance: number;
-  notifications: string[];
-  registrationStatus: 'pending' | 'confirmed';
-  verified?: boolean;
-}
+interface User extends UserRecord {}
 
 const AdminDashboardPage = () => {
   const [users, setUsers] = useState<User[]>([]);
@@ -88,7 +78,8 @@ const AdminDashboardPage = () => {
     } catch (err) {
       const user = users.find((u: User) => u.id === id);
       if (user) {
-        updateUser(id, { notifications: [...user.notifications, msg] });
+        const notif: Notification = { id: Date.now().toString(), message: msg, timestamp: new Date().toISOString() };
+        updateUser(id, { notifications: [...user.notifications, notif] });
       }
     }
     refresh();
