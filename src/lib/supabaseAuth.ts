@@ -16,6 +16,7 @@ export interface SupabaseUser {
  */
 export async function registerUser(email: string, password: string, name: string, balance: number = 0): Promise<{ user: SupabaseUser; error: null } | { user: null; error: any }> {
   console.log('🚀 Starting Supabase registration for:', email);
+  console.log('🚀 Name:', name);
   
   try {
     // 1. Create auth user in Supabase Auth
@@ -32,6 +33,8 @@ export async function registerUser(email: string, password: string, name: string
 
     if (authError) {
       console.error('❌ Supabase Auth error:', authError);
+      console.error('   Error code:', authError.code);
+      console.error('   Error message:', authError.message);
       return { user: null, error: authError };
     }
 
@@ -41,10 +44,14 @@ export async function registerUser(email: string, password: string, name: string
     }
 
     const userId = authData.user.id;
-    console.log('✅ Supabase Auth user created:', userId);
+    console.log('✅ Supabase Auth user created with ID:', userId);
 
     // 2. Save user profile to 'users' table
-    console.log('💾 Saving user profile to database...');
+    console.log('💾 Inserting user profile to database...');
+    console.log('   ID:', userId);
+    console.log('   Email:', email);
+    console.log('   Name:', name);
+    
     const { data: userData, error: userError } = await supabase
       .from('users')
       .insert([
@@ -62,16 +69,26 @@ export async function registerUser(email: string, password: string, name: string
       .single();
 
     if (userError) {
-      console.error('❌ Database error:', userError);
-      // Cleanup: delete auth user if profile save fails
-      await supabase.auth.admin.deleteUser(userId);
+      console.error('❌ Database INSERT error:', userError);
+      console.error('   Error code:', userError.code);
+      console.error('   Error message:', userError.message);
+      console.error('   Error details:', userError.details);
+      // DON'T delete auth user - user might want to try again
       return { user: null, error: userError };
     }
 
-    console.log('✅ User profile saved:', userData);
+    if (!userData) {
+      console.error('❌ No data returned from insert');
+      return { user: null, error: new Error('Insert returned no data') };
+    }
+
+    console.log('✅ User profile saved successfully!');
+    console.log('✅ Returned data:', userData);
     return { user: userData, error: null };
   } catch (err: any) {
-    console.error('❌ Registration error:', err.message);
+    console.error('❌ Registration catch error:', err);
+    console.error('   Error message:', err.message);
+    console.error('   Error stack:', err.stack);
     return { user: null, error: err };
   }
 }
