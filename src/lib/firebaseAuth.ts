@@ -11,11 +11,14 @@ import { auth, firestore } from './firebase';
 // Register user with Firebase
 export async function registerUser(email: string, password: string, name: string) {
   try {
+    console.log('🚀 Starting Firebase registration for:', email);
+    
     const userCredential = await createUserWithEmailAndPassword(auth, email, password);
     const user = userCredential.user;
+    console.log('✅ Firebase Auth created:', user.uid);
 
     // Save additional user data to Firestore
-    await setDoc(doc(firestore, 'users', user.uid), {
+    const userData = {
       id: user.uid,
       email: user.email,
       name: name || email,
@@ -23,7 +26,11 @@ export async function registerUser(email: string, password: string, name: string
       createdAt: new Date(),
       status: 'active',
       registrationStatus: 'confirmed'
-    });
+    };
+    
+    console.log('💾 Saving user data to Firestore:', userData);
+    await setDoc(doc(firestore, 'users', user.uid), userData);
+    console.log('✅ User saved to Firestore successfully!');
 
     return {
       id: user.uid,
@@ -31,6 +38,11 @@ export async function registerUser(email: string, password: string, name: string
       name: name || email
     };
   } catch (error: any) {
+    console.error('❌ Firebase registration error:', {
+      code: error.code,
+      message: error.message,
+      fullError: error
+    });
     throw new Error(error.message);
   }
 }
@@ -38,12 +50,16 @@ export async function registerUser(email: string, password: string, name: string
 // Login user with Firebase
 export async function loginUser(email: string, password: string) {
   try {
+    console.log('🔓 Attempting Firebase login for:', email);
+    
     const userCredential = await signInWithEmailAndPassword(auth, email, password);
     const user = userCredential.user;
+    console.log('✅ Firebase Auth login successful:', user.uid);
 
     // Get user data from Firestore
     const userDoc = await getDoc(doc(firestore, 'users', user.uid));
     const userData = userDoc.data();
+    console.log('📄 User data from Firestore:', userData);
 
     return {
       id: user.uid,
@@ -52,6 +68,11 @@ export async function loginUser(email: string, password: string) {
       balance: userData?.balance || 0
     };
   } catch (error: any) {
+    console.error('❌ Firebase login error:', {
+      code: error.code,
+      message: error.message,
+      fullError: error
+    });
     throw new Error(error.message);
   }
 }
