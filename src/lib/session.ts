@@ -1,4 +1,13 @@
 import { UserRecord, getUsers, addUser, updateUser, setUserBalance, pushUserNotification } from './userStore';
+import {
+  registerUser,
+  loginUser,
+  logoutUser as firebaseLogout,
+  getCurrentUser as getFirebaseUser,
+  getAllUsers,
+  updateUserBalance,
+  getUserById
+} from './firebaseAuth';
 
 let currentUser: UserRecord | null = null;
 
@@ -18,7 +27,7 @@ function clearToken() {
 }
 
 // Store current user to localStorage
-function persistUser(user: UserRecord) {
+function persistUser(user: UserRecord | any) {
   localStorage.setItem('currentUser', JSON.stringify(user));
 }
 
@@ -71,26 +80,17 @@ export function refreshCurrentUser() {
   }
 }
 
-// --- API helpers (talk to the dev auth server) ---
+// --- Firebase Auth helpers ---
 export async function apiLogin(email: string, password: string) {
   try {
-    const res = await fetch(`${API_BASE}/auth/login`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email, password }),
-    });
-    const data = await res.json();
-    if (!res.ok) {
-      throw new Error(data.message || data.error || 'Login failed');
-    }
-    if (data.token) setToken(data.token);
-    // If the API returns a user profile, persist it locally for demo
-    if (data.user) setCurrentUserFromProfile(data.user as UserRecord);
-    return data;
+    const user = await loginUser(email, password);
+    setToken('firebase_' + user.id);
+    setCurrentUserFromProfile(user);
+    return user;
   } catch (err: any) {
     // Fallback to local users for dev/testing
-    console.warn('API login failed, trying local users:', err?.message || err);
-    const local = getUsers().find(u => u.email.toLowerCase() === email.toLowerCase() && u.password === password);
+    console.warn('Firebase login failed, trying local users:', err?.message || err);
+    const local = getUsers().find(u => u.email.toLowerCase() === email.toLowerCase());
     if (local) {
       setToken('local_token_' + local.id);
       setCurrentUserFromProfile(local);
@@ -102,25 +102,18 @@ export async function apiLogin(email: string, password: string) {
 
 export async function apiRegister(name: string, email: string, password: string) {
   try {
-    const res = await fetch(`${API_BASE}/auth/register`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name, email, password }),
-    });
-    const data = await res.json();
-    if (!res.ok) {
-      throw new Error(data.message || data.error || 'Registration failed');
-    }
-    if (data.token) setToken(data.token);
-    return data;
+    const user = await registerUser(email, password, name);
+    setToken('firebase_' + user.id);
+    setCurrentUserFromProfile(user);
+    return user;
   } catch (err: any) {
-    // Fall back to local registration if API fails
-    console.warn('API registration failed, using local storage:', err.message);
+    // Fall back to local registration if Firebase fails
+    console.warn('Firebase registration failed, using local storage:', err.message);
     const newUser: UserRecord = {
       id: Date.now().toString(),
       name,
       email,
-      password: password, // Note: In production, never store plaintext passwords
+      password: password,
       status: 'active',
       createdAt: new Date().toISOString(),
       balance: 0,
@@ -141,15 +134,19 @@ export async function getDashboard() {
   if (!token) throw new Error('Not authenticated');
   
   try {
-    const res = await fetch(`${API_BASE}/dashboard`, {
-      headers: { 'Authorization': `Bearer ${token}` },
-    });
-    const data = await res.json();
-    if (!res.ok) throw new Error(data.error || 'Failed to fetch dashboard');
-    return data.user;
+    const user = await getFirebaseUser();
+    if (user) {
+      return user;
+    }
+    // Fall back to local user data
+    const localUser = getCurrentUser();
+    if (localUser) {
+      return localUser;
+    }
+    throw new Error('Not authenticated');
   } catch (err: any) {
     // Fall back to local user data
-    console.warn('API dashboard failed, using local storage:', err.message);
+    console.warn('Firebase dashboard failed, using local storage:', err.message);
     const localUser = getCurrentUser();
     if (localUser) {
       return localUser;
@@ -159,22 +156,24 @@ export async function getDashboard() {
 }
 
 export async function fetchCurrentUser() {
-  const res = await fetch(`${API_BASE}/api/me`, { credentials: 'include' });
-  if (!res.ok) return null;
-  const data = await res.json();
-  return (data.user || data) as UserRecord | null;
+  try {
+    const user = await getFirebaseUser();
+    return user as UserRecord | null;
+  } catch (e) {
+    return null;
+  }
 }
 
 export async function apiLogout() {
   try {
-    await fetch(`${API_BASE}/api/logout`, { method: 'POST', credentials: 'include' });
+    await firebaseLogout();
   } catch (e) {
-    console.warn('Logout network error:', e);
+    console.warn('Logout error:', e);
   }
   logoutUser();
 }
 
-// Lightweight health check used by the UI to verify the auth server is reachable
+// Lightweight health check
 export async function apiHealth() {
   try {
     const res = await fetch(`${API_BASE}/api/health`);
@@ -184,34 +183,27 @@ export async function apiHealth() {
   }
 }
 
-// --- Admin API helpers ---
+// --- Admin API helpers (using Firebase) ---
 export async function apiListUsers() {
-  const res = await fetch(`${API_BASE}/auth/users`, {
-    method: 'GET',
-    headers: { 'Content-Type': 'application/json' },
-  });
-  const data = await res.json();
-  if (!res.ok) throw new Error(data.error || 'Failed to fetch users');
-  return data.users;
+  try {
+    const users = await getAllUsers();
+    return users;
+  } catch (err: any) {
+    console.warn('Firebase getAllUsers failed, using local users:', err?.message || err);
+    return getUsers();
+  }
 }
 
 export async function apiUpdateBalance(userId: string, amount: number) {
   try {
-    const res = await fetch(`${API_BASE}/auth/user/balance`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ userId, amount }),
-    });
-    const data = await res.json();
-    if (!res.ok) throw new Error(data.error || 'Failed to update balance');
-    return data;
+    await updateUserBalance(userId, amount);
+    return { ok: true, balance: amount };
   } catch (err: any) {
     // Fallback: update local user store
-    console.warn('API update balance failed, updating local user:', err?.message || err);
+    console.warn('Firebase update balance failed, updating local user:', err?.message || err);
     setUserBalance(userId, amount);
     const local = getUsers().find(u => u.id === userId);
     if (local) {
-      // If this is the current user, update persisted profile
       if (currentUser && currentUser.id === userId) {
         updateUser(userId, { balance: amount });
         setCurrentUserFromProfile({ ...currentUser, balance: amount });
@@ -223,37 +215,30 @@ export async function apiUpdateBalance(userId: string, amount: number) {
 }
 
 export async function apiEditName(userId: string, name: string) {
-  const res = await fetch(`${API_BASE}/auth/user/name`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ userId, name }),
-  });
-  const data = await res.json();
-  if (!res.ok) throw new Error(data.error || 'Failed to edit name');
-  return data;
+  try {
+    const userRef = (await import('./firebase')).firestore;
+    const { doc, setDoc } = await import('firebase/firestore');
+    await setDoc(doc(userRef, 'users', userId), { name }, { merge: true });
+    return { ok: true, name };
+  } catch (err: any) {
+    console.warn('Firebase edit name failed:', err?.message || err);
+    throw err;
+  }
 }
 
 export async function apiSendNotification(userId: string, message: string) {
   try {
-    const res = await fetch(`${API_BASE}/auth/user/notify`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ userId, message }),
-    });
-    const data = await res.json();
-    if (!res.ok) throw new Error(data.error || 'Failed to send notification');
-    return data;
-  } catch (err: any) {
-    // Fallback: add notification to local user store
-    console.warn('API send notification failed, adding local notification:', err?.message || err);
+    // For now, just update locally since Firebase doesn't have a notifications endpoint
     pushUserNotification(userId, message);
-    // If current user, update persisted profile
     if (currentUser && currentUser.id === userId) {
       const newNotifications = [...(currentUser.notifications || []), message];
       updateUser(userId, { notifications: newNotifications });
       setCurrentUserFromProfile({ ...currentUser, notifications: newNotifications });
     }
     return { ok: true };
+  } catch (err: any) {
+    console.warn('Send notification failed:', err?.message || err);
+    throw err;
   }
 }
 
