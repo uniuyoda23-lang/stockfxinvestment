@@ -34,10 +34,12 @@ const AdminDashboardPage = () => {
         setError(null);
         // Try to fetch from backend first
         const backendUsers = await apiListUsers();
+        console.log('✅ Fetched users from Firebase:', backendUsers);
         setUsers(backendUsers as User[]);
       } catch (err: any) {
         // Fallback to localStorage if backend is unavailable
-        console.warn('Falling back to local users:', err.message);
+        console.warn('⚠️ Falling back to local users:', err.message);
+        setError(err.message);
         setUsers(getUsers());
       } finally {
         setIsLoading(false);
@@ -106,13 +108,21 @@ const AdminDashboardPage = () => {
   
   return (
     <div className="min-h-screen bg-slate-50 p-8">
-      <h1 className="text-3xl font-bold mb-8">Admin Dashboard</h1>
+      <div className="flex justify-between items-center mb-8">
+        <h1 className="text-3xl font-bold">Admin Dashboard</h1>
+        <button
+          onClick={refresh}
+          disabled={isLoading}
+          className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:opacity-50"
+        >
+          {isLoading ? 'Loading...' : 'Refresh Users'}
+        </button>
+      </div>
       
       {/* Loading state */}
       {isLoading && (
         <div className="bg-white rounded-xl shadow border border-slate-100 p-8 text-center">
-          <p className="text-slate-600 mb-2">Loading users from backend...</p>
-          <p className="text-xs text-slate-500">Make sure the auth server is running on port 4000</p>
+          <p className="text-slate-600 mb-2">Loading users from Firebase...</p>
         </div>
       )}
 
@@ -121,6 +131,13 @@ const AdminDashboardPage = () => {
         <div className="bg-red-50 border border-red-200 rounded-xl p-4 mb-6">
           <p className="text-red-700 font-medium">Error loading users: {error}</p>
           <p className="text-xs text-red-600 mt-1">Showing local users as fallback</p>
+        </div>
+      )}
+
+      {/* Users count */}
+      {!isLoading && (
+        <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 mb-6">
+          <p className="text-blue-700 font-medium">Total Users: {users.length}</p>
         </div>
       )}
 
