@@ -1,26 +1,41 @@
+// This file is deprecated - Firebase auth is now handled in firebaseAuth.ts
+// Keeping for backward compatibility but using Firebase directly
+
+import {
+  registerUser as firebaseRegisterUser,
+  loginUser as firebaseLoginUser,
+  getCurrentUser as firebaseGetCurrentUser
+} from './firebaseAuth';
+
 const API_URL = 'http://localhost:4000';
 
+// Deprecated - use Firebase directly
 export async function registerUser(name: string, email: string, password: string) {
-  const res = await fetch(`${API_URL}/register`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ name, email, password })
-  });
-  return res.json();
+  try {
+    return await firebaseRegisterUser(email, password, name);
+  } catch (err: any) {
+    console.error('Firebase registration failed:', err);
+    throw err;
+  }
 }
 
+// Deprecated - use Firebase directly
 export async function loginUser(email: string, password: string) {
-  const res = await fetch(`${API_URL}/login`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ email, password })
-  });
-  return res.json();
+  try {
+    return await firebaseLoginUser(email, password);
+  } catch (err: any) {
+    console.error('Firebase login failed:', err);
+    throw err;
+  }
 }
 
+// Deprecated - use Firebase directly
 export async function getDashboard(token: string) {
-  const res = await fetch(`${API_URL}/dashboard`, {
-    headers: { 'Authorization': `Bearer ${token}` }
-  });
-  return res.json();
+  try {
+    const user = await firebaseGetCurrentUser();
+    return user;
+  } catch (err: any) {
+    console.error('Firebase getDashboard failed:', err);
+    throw err;
+  }
 }

@@ -10,6 +10,8 @@ import { TermsPage } from './pages/TermsPage';
 import { DisclosuresPage } from './pages/DisclosuresPage';
 import { CookiePolicyPage } from './pages/CookiePolicyPage';
 import './i18n/config';
+// Initialize Firebase
+import './lib/firebase';
 
 type Page = 'landing' | 'login' | 'register' | 'dashboard' | 'admin' | 'admin-login' | 'privacy' | 'terms' | 'disclosures' | 'cookies';
 import { ErrorBoundary } from './components/ErrorBoundary';
