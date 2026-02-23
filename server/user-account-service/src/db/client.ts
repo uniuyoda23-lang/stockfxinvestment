@@ -1,5 +1,9 @@
-import { PrismaClient } from '@prisma/client';
+import { dbUser, dbUserAccount, dbSession } from './queries';
 
-const client = new PrismaClient();
+async function initializeData(userId: string) {
+  const userData = await dbUser(userId);
+  const accountData = await dbUserAccount(userId);
+  const sessionData = await dbSession(userId);
+}
 
-export default client;
+export {};

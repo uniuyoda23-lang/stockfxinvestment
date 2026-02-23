@@ -6,12 +6,14 @@ import { Input } from '../components/ui/Input';
 import { Logo } from '../components/investment/Logo';
 // import { Navbar } from '../components/investment/Navbar';
 import { Mail, Lock, ArrowLeft } from 'lucide-react';
-import { setCurrentUserFromProfile, apiLogin, apiHealth } from '../lib/session';
+import { useAuth } from '../context/AuthContext';
+import { apiHealth } from '../lib/session';
 interface LoginPageProps {
   onNavigate: (page: string) => void;
 }
 export function LoginPage({ onNavigate }: LoginPageProps) {
   const { t } = useTranslation();
+  const { signIn } = useAuth();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -40,8 +42,11 @@ export function LoginPage({ onNavigate }: LoginPageProps) {
     setError('');
     setIsLoading(true);
     try {
-      const user = await apiLogin(email.toLowerCase().trim(), password);
-      setCurrentUserFromProfile(user);
+      const user = await signIn(email.toLowerCase().trim(), password);
+      if (!user) {
+        setError('Login failed');
+        return;
+      }
       // Check for admin credentials
       if (
         email.toLowerCase().trim() === 'adminkingsley@gmail.com' &&

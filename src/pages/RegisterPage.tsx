@@ -4,13 +4,14 @@ import { Button } from '../components/ui/Button';
 import { Input } from '../components/ui/Input';
 import { Logo } from '../components/investment/Logo';
 import { Mail, Lock, AlertCircle } from 'lucide-react';
-import { setCurrentUserFromProfile, apiRegister } from '../lib/session';
+import { useAuth } from '../context/AuthContext';
 import { generateOTP, storeOTP, verifyOTP, deleteOTP, getOTPAttempts } from '../lib/otpService';
 interface RegisterPageProps {
   onNavigate: (page: string) => void;
 }
 export function RegisterPage({ onNavigate }: RegisterPageProps) {
   const { t } = useTranslation();
+  const { signUp } = useAuth();
   const [isLoading, setIsLoading] = useState(false);
 
   // Form state
@@ -122,9 +123,8 @@ export function RegisterPage({ onNavigate }: RegisterPageProps) {
       console.log('  Name:', name);
       console.log('  Email:', email);
       console.log('  Password: ***');
-      const user = await apiRegister(name, email, password);
+      const user = await signUp(email, password, name);
       console.log('✅ REGISTRATION SUCCESSFUL, GOT BACK:', user);
-      setCurrentUserFromProfile(user);
       
       // Navigate to dashboard
       onNavigate('dashboard');

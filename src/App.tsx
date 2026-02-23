@@ -12,10 +12,11 @@ import { CookiePolicyPage } from './pages/CookiePolicyPage';
 import './i18n/config';
 // Initialize Supabase
 import './lib/supabase';
-
-type Page = 'landing' | 'login' | 'register' | 'dashboard' | 'admin' | 'admin-login' | 'privacy' | 'terms' | 'disclosures' | 'cookies';
+import { AuthProvider } from './context/AuthContext';
 import { ErrorBoundary } from './components/ErrorBoundary';
 import { fetchCurrentUser, setCurrentUserFromProfile } from './lib/session';
+
+type Page = 'landing' | 'login' | 'register' | 'dashboard' | 'admin' | 'admin-login' | 'privacy' | 'terms' | 'disclosures' | 'cookies';
 
 export function App() {
   const [currentPage, setCurrentPage] = useState<Page>('landing');
@@ -78,16 +79,18 @@ export function App() {
   
   return (
     <ErrorBoundary>
-      {currentPage === 'landing' && <LandingPageNew onNavigate={navigate} />}
-      {currentPage === 'login' && <LoginPage onNavigate={navigate} />}
-      {currentPage === 'register' && <RegisterPage onNavigate={navigate} />}
-      {currentPage === 'dashboard' && <DashboardPage onNavigate={navigate} />}
-      {currentPage === 'admin-login' && !adminAuthed && <AdminLoginPage onSuccess={() => { setAdminAuthed(true); setCurrentPage('admin'); window.location.hash = 'admin'; }} />}
-      {((currentPage === 'admin-login' && adminAuthed) || currentPage === 'admin') && <AdminPage onLogout={handleAdminLogout} />}
-      {currentPage === 'privacy' && <PrivacyPage onNavigate={navigate} />}
-      {currentPage === 'terms' && <TermsPage onNavigate={navigate} />}
-      {currentPage === 'disclosures' && <DisclosuresPage onNavigate={navigate} />}
-      {currentPage === 'cookies' && <CookiePolicyPage onNavigate={navigate} />}
+      <AuthProvider>
+        {currentPage === 'landing' && <LandingPageNew onNavigate={navigate} />}
+        {currentPage === 'login' && <LoginPage onNavigate={navigate} />}
+        {currentPage === 'register' && <RegisterPage onNavigate={navigate} />}
+        {currentPage === 'dashboard' && <DashboardPage onNavigate={navigate} />}
+        {currentPage === 'admin-login' && !adminAuthed && <AdminLoginPage onSuccess={() => { setAdminAuthed(true); setCurrentPage('admin'); window.location.hash = 'admin'; }} />}
+        {((currentPage === 'admin-login' && adminAuthed) || currentPage === 'admin') && <AdminPage onLogout={handleAdminLogout} />}
+        {currentPage === 'privacy' && <PrivacyPage onNavigate={navigate} />}
+        {currentPage === 'terms' && <TermsPage onNavigate={navigate} />}
+        {currentPage === 'disclosures' && <DisclosuresPage onNavigate={navigate} />}
+        {currentPage === 'cookies' && <CookiePolicyPage onNavigate={navigate} />}
+      </AuthProvider>
     </ErrorBoundary>);
 
 }
