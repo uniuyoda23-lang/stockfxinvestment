@@ -105,7 +105,7 @@ npm run dev
 
 ### Check Admin Dashboard
 1. **Access admin:** Press `Ctrl+Shift+A` on any page
-2. **Admin login:** `adminkingsley@gmail.com` / `Kingsley2000`
+2. **Admin login:** `admin@example.com` / `<ADMIN_PASSWORD>`
 3. **View users:** All registered users now appear from the backend
 4. **Manage users:** Update balance, send notifications, block/delete
 

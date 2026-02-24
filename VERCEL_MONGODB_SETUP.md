@@ -53,7 +53,7 @@ Your StockFx app now supports **two storage modes**:
 
 **Example:**
 ```
-mongodb+srv://admin_user:MySecurePassword123@cluster0.a1b2c3.mongodb.net/stockfx?retryWrites=true&w=majority
+mongodb+srv://<DB_USER>:<DB_PASSWORD>@<CLUSTER_HOST>/<DATABASE>?retryWrites=true&w=majority
 ```
 
 ---
@@ -65,14 +65,14 @@ Create or update this file in your project root:
 
 ```env
 # MongoDB Connection (for production on Vercel)
-MONGODB_URI=mongodb+srv://admin_user:YOUR_PASSWORD@cluster0.xxxxx.mongodb.net/stockfx?retryWrites=true&w=majority
+MONGODB_URI=mongodb+srv://<DB_USER>:<DB_PASSWORD>@<CLUSTER_HOST>/<DATABASE>?retryWrites=true&w=majority
 
 # Email OTP Verification
 GMAIL_USER=your-email@gmail.com
-GMAIL_PASSWORD=your-app-password
+GMAIL_PASSWORD=<YOUR_GMAIL_APP_PASSWORD>
 
 # JWT Secret
-JWT_SECRET=your-super-secret-key-here-change-this
+JWT_SECRET=<YOUR_JWT_SECRET>
 ```
 
 **Important:** Never commit `.env.local` to GitHub (already in `.gitignore`)
@@ -157,8 +157,8 @@ Your Vercel link should also have admin access:
 
 1. Press `Ctrl+Shift+A` on the Vercel site
 2. Login with:
-   - **Email**: `adminkingsley@gmail.com`
-   - **Password**: `Kingsley2000`
+        - **Email**: `admin@example.com`
+        - **Password**: `<ADMIN_PASSWORD>`
 3. **You should see your newly registered user** in the table! ✅
 
 ---

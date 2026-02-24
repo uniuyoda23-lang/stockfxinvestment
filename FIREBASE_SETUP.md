@@ -50,8 +50,8 @@ npm run dev
 ### 3. **Check Admin Dashboard**
 1. Press `Ctrl+Shift+A` (to show admin button)
 2. Login with:
-   - **Email**: `adminkingsley@gmail.com`
-   - **Password**: `Kingsley2000`
+  - **Email**: `admin@example.com`
+  - **Password**: `<ADMIN_PASSWORD>`
 3. You should see your newly registered user!
 
 ---

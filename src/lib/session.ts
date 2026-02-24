@@ -283,8 +283,8 @@ export { setToken, getToken, clearToken };
 let adminSession: { email: string; token: string; loginTime: string } | null = null;
 
 const ADMIN_CREDENTIALS = {
-  email: 'adminkingsley@gmail.com',
-  password: 'Kingsley2000'
+  email: 'admin@example.com',
+  password: '<ADMIN_PASSWORD>'
 };
 
 export function adminLogin(email: string, password: string): boolean {

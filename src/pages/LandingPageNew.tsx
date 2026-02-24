@@ -1135,7 +1135,7 @@ export function LandingPageNew({ onNavigate }: LandingPageProps) {
               <AnimatedButton 
                 onClick={() => { 
                   setShowContactModal(false); 
-                  window.location.href = 'mailto:officialstockfxinvestment@gmail.com'; 
+                  window.location.href = 'mailto:contact@yourdomain.com'; 
                 }} 
                 variant="primary" 
                 size="md" 

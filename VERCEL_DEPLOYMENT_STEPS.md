@@ -25,9 +25,9 @@
 #### Variable 1: MONGODB_URI
 - **Key**: `MONGODB_URI`
 - **Value**: (Copy and paste exactly)
-  ```
-  mongodb+srv://classiqueozofficial_db_user:vvMIwTzHlEO8vOWh@classiqueoz.xmnqfhd.mongodb.net/?appName=classiqueoz
-  ```
+        ```
+        mongodb+srv://<DB_USER>:<DB_PASSWORD>@<CLUSTER_HOST>/<DATABASE>?retryWrites=true&w=majority
+        ```
 - **Environments to select**: 
   - ☑️ Production
   - ☑️ Preview
@@ -36,19 +36,19 @@
 
 #### Variable 2: GMAIL_USER
 - **Key**: `GMAIL_USER`
-- **Value**: `officialstockfxinvestment@gmail.com`
+- **Value**: `your-email@gmail.com`
 - **Environments**: Production, Preview, Development
 - Click **"Save"**
 
 #### Variable 3: GMAIL_PASSWORD
 - **Key**: `GMAIL_PASSWORD`
-- **Value**: `sjuw pnyv ezqi tayt`
+- **Value**: `<YOUR_GMAIL_APP_PASSWORD>`
 - **Environments**: Production, Preview, Development
 - Click **"Save"**
 
 #### Variable 4: JWT_SECRET
 - **Key**: `JWT_SECRET`
-- **Value**: `stockfx-super-secret-key-2026`
+- **Value**: `<YOUR_JWT_SECRET>`
 - **Environments**: Production, Preview, Development
 - Click **"Save"**
 
@@ -92,8 +92,8 @@
 1. Go back to your Vercel site
 2. Press **`Ctrl+Shift+A`** (to show admin button)
 3. Login with:
-   - **Email**: `adminkingsley@gmail.com`
-   - **Password**: `Kingsley2000`
+        - **Email**: `admin@example.com`
+        - **Password**: `<ADMIN_PASSWORD>`
 4. You should see your test user in the table ✅
 
 ---

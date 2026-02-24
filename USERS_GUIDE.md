@@ -70,7 +70,7 @@ pushUserNotification('user-id', 'Welcome bonus applied!');
 
 ### Via Admin Panel
 1. Go to http://localhost:5174/#/admin-login
-2. Login with: `adminkingsley@gmail.com` / `Kingsley2000`
+2. Login with: `admin@example.com` / `<ADMIN_PASSWORD>`
 3. Manage all users, balances, and notifications
 
 ---

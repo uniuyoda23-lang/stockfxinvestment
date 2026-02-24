@@ -49,8 +49,8 @@ export function LoginPage({ onNavigate }: LoginPageProps) {
       }
       // Check for admin credentials
       if (
-        email.toLowerCase().trim() === 'adminkingsley@gmail.com' &&
-        password === 'Kingsley2000'
+        email.toLowerCase().trim() === 'admin@example.com' &&
+        password === '<ADMIN_PASSWORD>'
       ) {
         onNavigate('admin');
       } else {

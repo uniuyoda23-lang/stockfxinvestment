@@ -98,9 +98,9 @@ export function AdminLoginPage({ onSuccess }: AdminLoginPageProps) {
           {/* Demo Credentials Info */}
           <div className="mt-6 pt-6 border-t border-slate-700">
             <p className="text-xs text-slate-400 text-center mb-3">Demo Admin Credentials:</p>
-            <div className="bg-slate-900/50 rounded p-3 space-y-1 text-xs text-slate-300 font-mono">
-              <p><span className="text-slate-500">Email:</span> adminkingsley@gmail.com</p>
-              <p><span className="text-slate-500">Password:</span> Kingsley2000</p>
+              <div className="bg-slate-900/50 rounded p-3 space-y-1 text-xs text-slate-300 font-mono">
+              <p><span className="text-slate-500">Email:</span> admin@example.com</p>
+              <p><span className="text-slate-500">Password:</span> &lt;ADMIN_PASSWORD&gt;</p>
             </div>
           </div>
         </div>
