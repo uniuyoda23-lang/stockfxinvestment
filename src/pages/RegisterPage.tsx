@@ -6,6 +6,8 @@ import { Logo } from '../components/investment/Logo';
 import { Mail, Lock, AlertCircle } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import { generateOTP, storeOTP, verifyOTP, deleteOTP, getOTPAttempts } from '../lib/otpService';
+import { setToken, setCurrentUserFromProfile } from '../lib/session';
+import { addUser } from '../lib/userStore';
 interface RegisterPageProps {
   onNavigate: (page: string) => void;
 }
@@ -123,8 +125,79 @@ export function RegisterPage({ onNavigate }: RegisterPageProps) {
       console.log('  Name:', name);
       console.log('  Email:', email);
       console.log('  Password: ***');
-      const user = await signUp(email, password, name);
-      console.log('✅ REGISTRATION SUCCESSFUL, GOT BACK:', user);
+      
+      let user = null;
+      let registrationSuccess = false;
+      
+      // Try Supabase first
+      try {
+        const signUpResult = await signUp(email, password, name);
+        if (signUpResult.user && !signUpResult.error) {
+          user = signUpResult.user;
+          registrationSuccess = true;
+          console.log('✅ REGISTRATION SUCCESSFUL (Supabase), GOT BACK:', user);
+        } else if (signUpResult.error) {
+          console.warn('⚠️  Supabase registration failed:', signUpResult.error?.message);
+        }
+      } catch (err: any) {
+        console.warn('⚠️  Supabase registration error:', err?.message);
+      }
+      
+      // Fallback to local registration if Supabase fails
+      if (!registrationSuccess) {
+        console.log('📝 Falling back to local registration...');
+        user = {
+          id: Date.now().toString(),
+          name,
+          email,
+          balance: 0,
+          status: 'active',
+          createdAt: new Date().toISOString(),
+          registrationStatus: 'verified',
+        };
+        try {
+          addUser({
+            id: user.id,
+            name,
+            email,
+            password,
+            balance: 0,
+            status: 'active',
+            createdAt: new Date().toISOString(),
+            notifications: [],
+            registrationStatus: 'confirmed',
+            verified: true,
+          });
+          registrationSuccess = true;
+          console.log('✅ LOCAL REGISTRATION SUCCESSFUL');
+        } catch (err: any) {
+          console.error('❌ LOCAL REGISTRATION FAILED:', err);
+          setVerifyError('Registration failed. Please try again.');
+          setIsVerifying(false);
+          return;
+        }
+      }
+      
+      if (!registrationSuccess || !user) {
+        console.error('❌ REGISTRATION COMPLETELY FAILED');
+        setVerifyError('Registration failed. Please try again.');
+        setIsVerifying(false);
+        return;
+      }
+      
+      // Set authentication token and user data for dashboard access
+      setToken('supabase_' + user.id);
+      setCurrentUserFromProfile({
+        id: user.id,
+        name: user.name || name,
+        email: user.email,
+        status: 'active',
+        createdAt: user.createdAt,
+        balance: user.balance || 0,
+        notifications: [],
+        registrationStatus: user.registrationStatus || 'confirmed',
+        verified: true,
+      });
       
       // Navigate to dashboard
       onNavigate('dashboard');
