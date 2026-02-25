@@ -1,5 +1,11 @@
 // Vercel Serverless Function to send OTP via Gmail SMTP
 import nodemailer from 'nodemailer';
+import { createClient } from '@supabase/supabase-js';
+
+const supabase = createClient(
+  process.env.SUPABASE_URL || '',
+  process.env.SUPABASE_SERVICE_KEY || ''
+);
 
 // Verify environment variables
 const GMAIL_USER = process.env.GMAIL_USER;
@@ -43,6 +49,15 @@ transporter.verify((error: any, success: any) => {
 });
 
 export default async function handler(req: any, res: any) {
+  // Enable CORS
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+
+  if (req.method === 'OPTIONS') {
+    return res.status(200).end();
+  }
+
   // Only accept POST requests
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
@@ -70,6 +85,26 @@ export default async function handler(req: any, res: any) {
   }
 
   try {
+    // Store OTP in Supabase with 10-minute expiry
+    const expiresAt = new Date(Date.now() + 10 * 60 * 1000).toISOString();
+    
+    const { error: insertError } = await supabase
+      .from('otp_codes')
+      .insert({
+        email,
+        code: otp,
+        expires_at: expiresAt,
+        verified: false,
+      });
+
+    if (insertError) {
+      console.error('Failed to store OTP in Supabase:', insertError);
+      return res.status(500).json({
+        error: 'Failed to process OTP request',
+        details: insertError.message,
+      });
+    }
+
     // Send email
     await transporter.sendMail({
       from: GMAIL_USER,
