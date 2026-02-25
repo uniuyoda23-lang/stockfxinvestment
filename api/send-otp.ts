@@ -173,9 +173,22 @@ export default async function handler(req: any, res: any) {
     if (error && typeof error === 'object' && 'response' in (error as any)) console.error('   Error response:', (error as any).response);
     if (error && typeof error === 'object' && 'stack' in (error as any)) console.error('   Stack:', (error as any).stack);
 
-    return res.status(500).json({
-      error: 'Failed to send OTP. Please try again.',
-      details: error instanceof Error ? error.message : 'Unknown error',
-    });
+    // If VERCEL_DEBUG is enabled, include full error details in the response to aid debugging
+    const isDebug = (process.env.VERCEL_DEBUG || process.env.DEBUG || '').toLowerCase() === 'true';
+    const errorMessage = error instanceof Error ? error.message : 'Unknown error';
+    const fullError = (() => {
+      try {
+        const names = Object.getOwnPropertyNames(error || {});
+        return JSON.parse(JSON.stringify(error, names));
+      } catch (e) {
+        return String(error);
+      }
+    })();
+
+    return res.status(500).json(
+      isDebug
+        ? { error: 'Failed to send OTP. Debug details below.', details: errorMessage, fullError }
+        : { error: 'Failed to send OTP. Please try again.', details: errorMessage }
+    );
   }
 }
