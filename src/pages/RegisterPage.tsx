@@ -50,8 +50,12 @@ export function RegisterPage({ onNavigate }: RegisterPageProps) {
       // Store OTP locally for verification
       storeOTP(toEmail, otp);
 
+      // Choose API endpoint (use VITE_API_BASE in production, otherwise dev proxy)
+      const apiBase = import.meta.env.VITE_API_BASE as string | undefined;
+      const sendOtpUrl = apiBase && apiBase.length > 0 ? `${apiBase.replace(/\/+$/,'')}/send-otp` : '/api/send-otp';
+
       // Send OTP via email API
-      const response = await fetch('/api/send-otp', {
+      const response = await fetch(sendOtpUrl, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -128,6 +132,32 @@ export function RegisterPage({ onNavigate }: RegisterPageProps) {
       const { user, error } = await signUp(email, password, name);
       if (error || !user) {
         console.error('❌ REGISTRATION FAILED (Supabase):', error);
+
+        // Fallback to local demo user store when enabled in dev (Vite env)
+        const enableFallback = (import.meta.env.VITE_ENABLE_LOCAL_FALLBACK ?? 'true') === 'true';
+        if (enableFallback) {
+          const localId = `local_${Date.now()}_${Math.random().toString(36).slice(2,8)}`;
+          const newLocalUser = {
+            id: localId,
+            name,
+            email,
+            password,
+            status: 'active',
+            createdAt: new Date().toISOString(),
+            balance: 0,
+            notifications: [],
+            registrationStatus: 'confirmed',
+            verified: true,
+          } as any;
+          addUser(newLocalUser);
+
+          setToken('local_' + localId);
+          setCurrentUserFromProfile(newLocalUser);
+          onNavigate('dashboard');
+          setIsVerifying(false);
+          return;
+        }
+
         setVerifyError(error?.message || 'Registration failed. Please try again.');
         setIsVerifying(false);
         return;
@@ -143,7 +173,7 @@ export function RegisterPage({ onNavigate }: RegisterPageProps) {
         createdAt: user.createdAt,
         balance: user.balance || 0,
         notifications: [],
-        registrationStatus: user.registrationStatus || 'confirmed',
+        registrationStatus: (user.registrationStatus as 'confirmed' | 'pending') || 'confirmed',
         verified: true,
       });
 

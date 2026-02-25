@@ -38,8 +38,14 @@ if (GMAIL_USER && GMAIL_PASSWORD) {
   transporter.verify((error, success) => {
     if (error) {
       console.error('❌ Email service error:', error.message || error);
-      console.error('   Error code:', error.code);
-      console.error('   Error response:', error.response);
+      console.error('   Error code:', (error && error.code) || 'N/A');
+      console.error('   Error response:', (error && error.response) || 'N/A');
+      try {
+        console.error('   Full error object:', JSON.stringify(error, Object.getOwnPropertyNames(error)));
+      } catch (e) {
+        console.error('   Could not stringify error object:', e);
+      }
+      if (error && error.stack) console.error('   Stack:', error.stack);
     } else {
       console.log('✅ Email service ready - SMTP connection verified');
       console.log('   Server:', success);
@@ -127,10 +133,57 @@ app.post('/send-otp', async (req, res) => {
   } catch (error) {
     const errorMessage = error instanceof Error ? error.message : 'Unknown error';
     console.error('❌ Failed to send OTP:', errorMessage);
+    // Verbose logging for debugging - include code, response and stack when available
+    try {
+      console.error('   Full error object:', JSON.stringify(error, Object.getOwnPropertyNames(error)));
+    } catch (e) {
+      console.error('   Could not stringify full error object:', e);
+    }
+    if (error && error.code) console.error('   Error code:', error.code);
+    if (error && error.response) console.error('   Error response:', error.response);
+    if (error && error.stack) console.error('   Stack:', error.stack);
+
     res.status(500).json({
       error: 'Failed to send OTP. Please try again.',
       details: errorMessage,
     });
+  }
+});
+
+// Temporary test endpoint to exercise transporter/sendMail with verbose logging
+app.post('/send-otp-test', async (req, res) => {
+  const { email, otp } = req.body || {};
+  const target = email || GMAIL_USER;
+  const code = otp || String(Math.floor(100000 + Math.random() * 900000));
+
+  if (!target) {
+    return res.status(400).json({ error: 'No target email provided and GMAIL_USER not configured' });
+  }
+
+  if (!transporter) {
+    console.error('⚠️ Email transporter not configured for send-otp-test');
+    return res.status(500).json({ error: 'Email service not configured' });
+  }
+
+  try {
+    console.log(`🔬 [TEST] Sending test OTP to ${target} — code: ${code}`);
+    const info = await transporter.sendMail({
+      from: GMAIL_USER,
+      to: target,
+      subject: '[TEST] StockFX Verification Code',
+      text: `Your test verification code is: ${code}`,
+      html: `<div style="font-family:Arial,sans-serif"><h3>Test OTP</h3><p>Your test code: <strong>${code}</strong></p></div>`,
+    });
+
+    console.log('🔬 [TEST] sendMail response:', info && (info.response || info));
+    return res.status(200).json({ success: true, message: 'Test email sent', info });
+  } catch (err) {
+    console.error('🔬 [TEST] Failed to send test email:', err instanceof Error ? err.message : err);
+    try { console.error('   Full error object:', JSON.stringify(err, Object.getOwnPropertyNames(err))); } catch (e) { console.error('   Could not stringify test error object:', e); }
+    if (err && err.code) console.error('   Error code:', err.code);
+    if (err && err.response) console.error('   Error response:', err.response);
+    if (err && err.stack) console.error('   Stack:', err.stack);
+    return res.status(500).json({ error: 'Failed to send test email', details: err instanceof Error ? err.message : String(err) });
   }
 });
 

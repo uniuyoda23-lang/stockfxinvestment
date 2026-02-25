@@ -29,6 +29,14 @@ const transporter = nodemailer.createTransport({
 transporter.verify((error: any, success: any) => {
   if (error) {
     console.error('Email service error:', error.message || error);
+    console.error('   Error code:', (error && error.code) || 'N/A');
+    console.error('   Error response:', (error && error.response) || 'N/A');
+    try {
+      console.error('   Full error object:', JSON.stringify(error, Object.getOwnPropertyNames(error)));
+    } catch (e) {
+      console.error('   Could not stringify error object:', e);
+    }
+    if (error && error.stack) console.error('   Stack:', error.stack);
   } else {
     console.log('Email service ready - SMTP connection verified');
   }
@@ -120,6 +128,16 @@ export default async function handler(req: any, res: any) {
     });
   } catch (error: unknown) {
     console.error('Failed to send OTP email:', error);
+    // Verbose error details for debugging
+    try {
+      console.error('   Full error object:', JSON.stringify(error, Object.getOwnPropertyNames(error)));
+    } catch (e) {
+      console.error('   Could not stringify full error object:', e);
+    }
+    if (error && typeof error === 'object' && 'code' in (error as any)) console.error('   Error code:', (error as any).code);
+    if (error && typeof error === 'object' && 'response' in (error as any)) console.error('   Error response:', (error as any).response);
+    if (error && typeof error === 'object' && 'stack' in (error as any)) console.error('   Stack:', (error as any).stack);
+
     return res.status(500).json({
       error: 'Failed to send OTP. Please try again.',
       details: error instanceof Error ? error.message : 'Unknown error',
