@@ -60,6 +60,8 @@ VITE_FIREBASE_STORAGE_BUCKET=stockfx-investment.firebasestorage.app
 VITE_FIREBASE_MESSAGING_SENDER_ID=827847409452
 VITE_FIREBASE_APP_ID=1:827847409452:web:13616c958038c32f47f689
 VITE_FIREBASE_MEASUREMENT_ID=G-XBDJWK7X16
+SUPABASE_URL=https://your-supabase-project.supabase.co
+SUPABASE_ANON_KEY=your-supabase-anon-key
 ```
 
 3. Click **"Save"** for each variable
@@ -97,6 +99,7 @@ GMAIL_USER=officialstockfxinvestment@gmail.com
 GMAIL_PASSWORD=ufsh hyxm nhls uphn
 PORT=3001
 NODE_ENV=production
+SUPABASE_SERVICE_ROLE_KEY=your-supabase-service-role-key
 ```
 
 3. Click **"Save"** for each variable
@@ -161,7 +164,13 @@ Your Supabase database is already hosted. Make sure these are in your environmen
 ```
 VITE_FIREBASE_API_KEY=AIzaSyBDIK2wATxtLesDpbc1ZtIeTSFiCONG55c
 VITE_FIREBASE_AUTH_DOMAIN=stockfx-investment.firebaseapp.com
-...
+VITE_FIREBASE_PROJECT_ID=stockfx-investment
+VITE_FIREBASE_STORAGE_BUCKET=stockfx-investment.firebasestorage.app
+VITE_FIREBASE_MESSAGING_SENDER_ID=827847409452
+VITE_FIREBASE_APP_ID=1:827847409452:web:13616c958038c32f47f689
+VITE_FIREBASE_MEASUREMENT_ID=G-XBDJWK7X16
+SUPABASE_URL=https://your-supabase-project.supabase.co
+SUPABASE_ANON_KEY=your-supabase-anon-key
 ```
 
 Both use the same Supabase instance configured in:

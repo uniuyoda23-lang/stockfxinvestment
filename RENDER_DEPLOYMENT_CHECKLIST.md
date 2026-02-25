@@ -99,6 +99,8 @@ VITE_FIREBASE_STORAGE_BUCKET=stockfx-investment.firebasestorage.app
 VITE_FIREBASE_MESSAGING_SENDER_ID=827847409452
 VITE_FIREBASE_APP_ID=1:827847409452:web:13616c958038c32f47f689
 VITE_FIREBASE_MEASUREMENT_ID=G-XBDJWK7X16
+SUPABASE_URL=https://your-supabase-project.supabase.co
+SUPABASE_ANON_KEY=your-supabase-anon-key
 ```
 
 ### Backend (Render Web Service)
@@ -107,7 +109,13 @@ GMAIL_USER=officialstockfxinvestment@gmail.com
 GMAIL_PASSWORD=ufsh hyxm nhls uphn
 PORT=3001
 NODE_ENV=production
+SUPABASE_SERVICE_ROLE_KEY=your-supabase-service-role-key
 ```
+
+## Important: Supabase-first registration
+
+- The app now uses Supabase as the primary source of truth for user accounts. Ensure `SUPABASE_URL` and `SUPABASE_ANON_KEY` are set for the frontend and `SUPABASE_SERVICE_ROLE_KEY` (optional) is set for the backend if you need privileged operations.
+- Development fallbacks (localStorage/demo users) have been removed from the signup flow to guarantee cross-device persistence.
 
 ---
 
