@@ -23,7 +23,7 @@ export default async function handler(req: any, res: any) {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  const { email, otp } = req.body;
+  const { email, otp, deviceId, deviceName, deviceType, browser, os } = req.body;
 
   // Validate input
   if (!email || !otp) {
@@ -84,6 +84,105 @@ export default async function handler(req: any, res: any) {
       JWT_SECRET,
       { expiresIn: '7d' }
     );
+
+    // Register device if deviceId is provided (cross-device support)
+    if (deviceId) {
+      try {
+        // Check if device exists
+        const { data: existingDevice } = await supabase
+          .from('devices')
+          .select('id')
+          .eq('user_id', userId)
+          .eq('device_id', deviceId)
+          .single();
+
+        let deviceDbId: string;
+
+        if (existingDevice) {
+          // Update existing device
+          const { data: updated } = await supabase
+            .from('devices')
+            .update({
+              last_active: new Date().toISOString(),
+              is_active: true,
+              device_name: deviceName || undefined,
+              device_type: deviceType || 'web',
+              browser: browser || undefined,
+              os: os || undefined,
+              updated_at: new Date().toISOString(),
+            })
+            .eq('id', existingDevice.id)
+            .select('id')
+            .single();
+          deviceDbId = updated?.id;
+        } else {
+          // Register new device
+          const { data: newDevice } = await supabase
+            .from('devices')
+            .insert({
+              user_id: userId,
+              device_id: deviceId,
+              device_name: deviceName,
+              device_type: deviceType || 'web',
+              browser: browser,
+              os: os,
+              ip_address: req.headers['x-forwarded-for']?.split(',')[0] || req.socket.remoteAddress,
+              last_active: new Date().toISOString(),
+            })
+            .select('id')
+            .single();
+          deviceDbId = newDevice?.id;
+        }
+
+        // Create device session
+        const expiresAt = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000).toISOString();
+
+        const { data: existingSession } = await supabase
+          .from('device_sessions')
+          .select('id')
+          .eq('device_id', deviceDbId)
+          .single();
+
+        if (existingSession) {
+          await supabase
+            .from('device_sessions')
+            .update({
+              token,
+              expires_at: expiresAt,
+              is_active: true,
+              updated_at: new Date().toISOString(),
+            })
+            .eq('id', existingSession.id);
+        } else {
+          await supabase
+            .from('device_sessions')
+            .insert({
+              device_id: deviceDbId,
+              user_id: userId,
+              token,
+              expires_at: expiresAt,
+              is_active: true,
+            });
+        }
+
+        // Log session event
+        await supabase
+          .from('session_events')
+          .insert({
+            user_id: userId,
+            device_id: deviceDbId,
+            event_type: 'login',
+            event_data: {
+              device_name: deviceName,
+              device_type: deviceType,
+              timestamp: new Date().toISOString(),
+            },
+          });
+      } catch (deviceError) {
+        console.error('Failed to register device:', deviceError);
+        // Don't fail the whole request if device registration fails
+      }
+    }
 
     return res.status(200).json({
       success: true,

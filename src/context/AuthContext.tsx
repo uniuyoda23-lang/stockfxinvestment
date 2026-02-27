@@ -1,6 +1,7 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import { supabase } from '../lib/supabase';
 import { loginUser, registerUser, SupabaseUser } from '../lib/supabaseAuth';
+import { useSessionSync, useActiveDevices, useLogoutDetection } from '../hooks/useSessionSync';
 
 interface AuthContextType {
   user: SupabaseUser | null;
@@ -9,6 +10,10 @@ interface AuthContextType {
   signIn: (email: string, password: string) => Promise<{ user: SupabaseUser | null; error: any }>;
   signOut: () => Promise<void>;
   userBalance: number;
+  activeDevices: any[];
+  devicesLoading: boolean;
+  removeDevice: (deviceId: string) => Promise<void>;
+  logoutFromAllDevices: () => Promise<void>;
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
@@ -17,6 +22,36 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [user, setUser] = useState<SupabaseUser | null>(null);
   const [loading, setLoading] = useState(true);
   const [userBalance, setUserBalance] = useState(0);
+
+  // Get active devices for current user
+  const { devices: activeDevices, loading: devicesLoading, removeDevice } = useActiveDevices(user?.id);
+
+  // Setup session sync and logout detection
+  const { isLoggedOut } = useLogoutDetection(user?.id);
+
+  useSessionSync({
+    userId: user?.id,
+    onSessionChange: async (event) => {
+      if (event.event_type === 'session_sync' && event.event_data?.data) {
+        // Handle session data sync from other devices
+        console.log('Session synced from another device:', event.event_data.data);
+      }
+    },
+    onLogout: () => {
+      // User was logged out from another device
+      setUser(null);
+      setUserBalance(0);
+      console.log('Logged out from another device');
+    },
+  });
+
+  // Check if logged out from another device
+  useEffect(() => {
+    if (isLoggedOut) {
+      setUser(null);
+      setUserBalance(0);
+    }
+  }, [isLoggedOut]);
 
   // Initialize auth state on mount
   useEffect(() => {
@@ -127,8 +162,30 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     }
   };
 
+  const logoutFromAllDevices = async () => {
+    try {
+      // This will trigger logout on all devices via the session_events
+      await supabase.auth.signOut();
+      setUser(null);
+      setUserBalance(0);
+    } catch (err) {
+      console.error('Error logging out from all devices:', err);
+    }
+  };
+
   return (
-    <AuthContext.Provider value={{ user, loading, signUp, signIn, signOut, userBalance }}>
+    <AuthContext.Provider value={{
+      user,
+      loading,
+      signUp,
+      signIn,
+      signOut,
+      userBalance,
+      activeDevices,
+      devicesLoading,
+      removeDevice,
+      logoutFromAllDevices,
+    }}>
       {children}
     </AuthContext.Provider>
   );
