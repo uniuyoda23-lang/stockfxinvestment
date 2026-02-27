@@ -32,7 +32,7 @@ const transporter = nodemailer.createTransport({
 }) as any;
 
 // Verify transporter connection
-transporter.verify((error: any, success: any) => {
+transporter.verify((error: any) => {
   if (error) {
     console.error('Email service error:', error.message || error);
     console.error('   Error code:', (error && error.code) || 'N/A');
