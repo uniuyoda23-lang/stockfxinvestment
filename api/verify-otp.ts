@@ -65,9 +65,17 @@ export default async function handler(req: any, res: any) {
 
     // Create user if doesn't exist
     if (!userId) {
+      // create new user record with full defaults so admin dashboard can display it
       const { data: newUser, error: createError } = await supabase
         .from('users')
-        .insert([{ email, created_at: new Date().toISOString() }])
+        .insert([{
+          email,
+          name: '',
+          balance: 0,
+          status: 'active',
+          registrationStatus: 'confirmed',
+          createdAt: new Date().toISOString(),
+        }])
         .select('id')
         .single();
 
