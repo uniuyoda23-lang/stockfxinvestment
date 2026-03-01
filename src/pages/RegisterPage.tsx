@@ -66,6 +66,11 @@ export function RegisterPage({ onNavigate }: RegisterPageProps) {
         }),
       });
 
+      const contentType = response.headers.get('content-type');
+      if (!contentType || !contentType.includes('application/json')) {
+        const text = await response.text();
+        throw new Error('Expected JSON, got: ' + text);
+      }
       const responseData = await response.json();
       
       if (!response.ok) {
@@ -134,19 +139,21 @@ export function RegisterPage({ onNavigate }: RegisterPageProps) {
         console.error('❌ REGISTRATION FAILED (Supabase):', error);
         // fallback: register locally so user can at least proceed to dashboard
         try {
-          const local = addUser({
-            id: 'local_' + Date.now(),
+          const userId = 'local_' + Date.now();
+          const localUser = {
+            id: userId,
             name,
             email,
-            status: 'active',
+            status: 'active' as const,
             createdAt: new Date().toISOString(),
             balance: 0,
             notifications: [],
-            registrationStatus: 'confirmed',
+            registrationStatus: 'confirmed' as const,
             verified: true,
-          });
-          setToken('local_token_' + local.id);
-          setCurrentUserFromProfile(local);
+          };
+          addUser(localUser);
+          setToken('local_token_' + userId);
+          setCurrentUserFromProfile(localUser);
           onNavigate('dashboard');
           setIsVerifying(false);
           return;

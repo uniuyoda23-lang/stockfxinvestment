@@ -95,9 +95,13 @@ export const authService = {
         }
       );
 
+      const contentType = response.headers.get('content-type');
+      if (!contentType || !contentType.includes('application/json')) {
+        const text = await response.text();
+        throw new Error('Expected JSON, got: ' + text);
+      }
       const data = await response.json();
       if (!response.ok) throw new Error(data.error);
-
       return { success: true, message: data.message };
     } catch (error) {
       return { success: false, error: error instanceof Error ? error.message : 'Failed to send OTP' };
@@ -131,9 +135,13 @@ export const authService = {
         }
       );
 
+      const contentType = response.headers.get('content-type');
+      if (!contentType || !contentType.includes('application/json')) {
+        const text = await response.text();
+        throw new Error('Expected JSON, got: ' + text);
+      }
       const data = await response.json();
       if (!response.ok) throw new Error(data.error);
-
       // Store token and device info
       this.storeToken(data.token);
       this.storeDeviceInfo({
@@ -141,7 +149,6 @@ export const authService = {
         deviceName: `${deviceInfo.os} - ${timestamp}`,
         ...deviceInfo,
       });
-
       return {
         success: true,
         token: data.token,
@@ -168,6 +175,11 @@ export const authService = {
         },
       });
 
+      const contentType = response.headers.get('content-type');
+      if (!contentType || !contentType.includes('application/json')) {
+        const text = await response.text();
+        throw new Error('Expected JSON, got: ' + text);
+      }
       const data = await response.json();
       return { valid: data.valid, user: data.user };
     } catch (error) {
@@ -187,6 +199,11 @@ export const authService = {
       });
 
       if (!response.ok) return [];
+      const contentType = response.headers.get('content-type');
+      if (!contentType || !contentType.includes('application/json')) {
+        const text = await response.text();
+        throw new Error('Expected JSON, got: ' + text);
+      }
       const data = await response.json();
       return data.devices || [];
     } catch (error) {
@@ -209,9 +226,13 @@ export const authService = {
         body: JSON.stringify({ deviceId }),
       });
 
+      const contentType = response.headers.get('content-type');
+      if (!contentType || !contentType.includes('application/json')) {
+        const text = await response.text();
+        throw new Error('Expected JSON, got: ' + text);
+      }
       const data = await response.json();
       if (!response.ok) throw new Error(data.error);
-
       return { success: true };
     } catch (error) {
       return { success: false, error: error instanceof Error ? error.message : 'Failed to remove device' };
@@ -257,6 +278,11 @@ export const authService = {
         body: JSON.stringify({ action: 'sync_data', data }),
       });
 
+      const contentType = response.headers.get('content-type');
+      if (!contentType || !contentType.includes('application/json')) {
+        const text = await response.text();
+        throw new Error('Expected JSON, got: ' + text);
+      }
       const responseData = await response.json();
       if (!response.ok) throw new Error(responseData.error);
 
