@@ -13,10 +13,25 @@ import { createClient } from '@supabase/supabase-js';
 // You can override the URL by setting VITE_SUPABASE_PROXY_URL to a custom
 // proxy (e.g. a dedicated subdomain) or, in rare cases, set it directly to the
 // Supabase URL if you truly don't want to use the proxy.
-const SUPABASE_URL =
-  process.env.VITE_SUPABASE_PROXY_URL ||
-  '/api/supabase-proxy' ||
-  'https://ngxptvwtklwalmkbnylq.supabase.co';
+// choose proxy or direct URL and ensure it is absolute; Supabase client
+// rejects relative URLs so we construct the full host if needed.
+function getSupabaseUrl() {
+  let url = process.env.VITE_SUPABASE_PROXY_URL || '/api/supabase-proxy' ||
+    'https://ngxptvwtklwalmkbnylq.supabase.co';
+
+  // if url is relative, prefix with the current origin (browser) or localhost
+  if (!/^https?:\/\//i.test(url)) {
+    if (typeof window !== 'undefined' && window.location) {
+      url = window.location.origin + url;
+    } else {
+      // during SSR/build we don't have a window; default to localhost
+      url = 'http://localhost:5173' + url;
+    }
+  }
+  return url;
+}
+
+const SUPABASE_URL = getSupabaseUrl();
 
 const SUPABASE_ANON_KEY =
   process.env.VITE_SUPABASE_ANON_KEY ||
