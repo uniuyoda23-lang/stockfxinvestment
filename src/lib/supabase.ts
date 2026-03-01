@@ -4,13 +4,18 @@ import { createClient } from '@supabase/supabase-js';
 // https://myapp.example/api/supabase-proxy.  This proxy will forward all
 // requests to the real Supabase host on behalf of the client, which is useful
 // when devices cannot resolve the direct Supabase domain.
-// During development we can route all Supabase requests through the local
-// serverless proxy so we don't hit DNS issues and so developers don't have to
-// remember to set an env var. In production the proxy URL is optional and will
-// only be used if the env var is provided.
+// Always route Supabase traffic through our own serverless proxy by default.
+// This ensures the app continues working even when the client network cannot
+// resolve the real Supabase hostname (which happens on some school/firewall
+// networks). The proxy simply forwards requests to Supabase, so there's no
+// loss of functionality, just an extra hop on the same origin.
+//
+// You can override the URL by setting VITE_SUPABASE_PROXY_URL to a custom
+// proxy (e.g. a dedicated subdomain) or, in rare cases, set it directly to the
+// Supabase URL if you truly don't want to use the proxy.
 const SUPABASE_URL =
-  (import.meta.env.DEV ? '/api/supabase-proxy' : undefined) ||
   process.env.VITE_SUPABASE_PROXY_URL ||
+  '/api/supabase-proxy' ||
   'https://ngxptvwtklwalmkbnylq.supabase.co';
 
 const SUPABASE_ANON_KEY =
