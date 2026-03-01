@@ -25,15 +25,35 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     const supabaseUrl = process.env.SUPABASE_URL || 'https://ngxptvwtklwalmkbnylq.supabase.co';
     const url = supabaseUrl + targetPath;
 
+    console.log('[proxy] incoming', req.method, req.url);
+    console.log('[proxy] forwarding to', url);
+
+    // prepare request body: node-fetch expects a string or Buffer. Vercel may
+    // provide parsed JSON, so stringify it unless it is already a string.
+    let body: any;
+    if (req.method !== 'GET' && req.method !== 'HEAD') {
+      if (req.body == null) {
+        body = undefined;
+      } else if (typeof req.body === 'string' || Buffer.isBuffer(req.body)) {
+        body = req.body;
+      } else {
+        body = JSON.stringify(req.body);
+      }
+    }
+
     const options: any = {
       method: req.method,
       headers: {
-        // pass along headers except host
+        // pass along headers except host; node-fetch will set its own host
         ...req.headers,
         host: new URL(supabaseUrl).host,
       },
-      body: req.method !== 'GET' && req.method !== 'HEAD' ? req.body : undefined,
+      body,
     };
+
+    if (body) {
+      console.log('[proxy] body:', body.toString().slice(0, 200));
+    }
 
     const response = await fetch(url, options);
     const body = await response.text();
