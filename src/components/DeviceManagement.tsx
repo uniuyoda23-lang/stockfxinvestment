@@ -1,5 +1,5 @@
 // Example Component: Device Management UI
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useAuth } from '../context/AuthContext';
 import { authService } from '../services/authService';
 
