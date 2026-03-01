@@ -174,20 +174,6 @@ export async function fetchCurrentUser() {
   }
 }
 
-
-export async function apiDeleteUser(userId: string) {
-  try {
-    const { error } = await (await import('./supabaseAuth')).supabase
-      .from('users')
-      .delete()
-      .eq('id', userId);
-    if (error) throw error;
-    return { ok: true };
-  } catch (err: any) {
-    console.warn('WarningAPI delete user failed, removing locally:', err?.message || err);
-    deleteUser(userId);
-    return { ok: true };
-  }
 }
 
 export async function apiLogout() {
