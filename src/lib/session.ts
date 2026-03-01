@@ -172,6 +172,7 @@ export async function fetchCurrentUser() {
   } catch (e) {
     return null;
   }
+}
 
 export async function apiLogout() {
   try {
