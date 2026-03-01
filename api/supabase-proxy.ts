@@ -8,8 +8,20 @@ import fetch from 'node-fetch';
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   try {
-    // build target url by stripping the proxy path prefix
-    const targetPath = req.url?.replace(/^\/supabase/, '') || '';
+    // build target url by stripping our function prefix. When deployed to
+    // Vercel the proxy is available at `/api/supabase-proxy`; in development we
+    // also want to remove `/api` since the dev server rewrites it.
+    //
+    // Example incoming urls:
+    //   /api/supabase-proxy/auth/v1/signup
+    //   /supabase/auth/v1/signup       (if you ever use a custom rewrite)
+    //
+    // After removal we should be left with `/auth/v1/signup` so the request is
+    // forwarded to the correct Supabase endpoint.
+    let targetPath = req.url || '';
+    targetPath = targetPath.replace(/^\/api\/supabase-proxy/, '');
+    targetPath = targetPath.replace(/^\/supabase/, '');
+
     const supabaseUrl = process.env.SUPABASE_URL || 'https://ngxptvwtklwalmkbnylq.supabase.co';
     const url = supabaseUrl + targetPath;
 
