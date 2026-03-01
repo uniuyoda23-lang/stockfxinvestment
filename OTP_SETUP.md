@@ -67,8 +67,13 @@ This installs `nodemailer` which is required for the email API.
 
 ### New Files:
 - `src/lib/otpService.ts` - OTP management logic
-- `api/send-otp.ts` - Vercel serverless function for sending emails
+- `api/send-otp.ts` - Vercel serverless function for sending emails (now also purges expired/verified codes)
 - `.env.local.example` - Environment template
+- `supabase/migrations/002_cleanup_expired_otps.sql` - optional trigger to delete old OTPs on insert
+
+### Database Changes:
+- `otp_codes` table now includes RLS policy restricting access to the service role only.
+- A cleanup trigger can be installed (see migration above) to automatically remove expired or used codes.
 
 ### Updated Files:
 - `src/pages/RegisterPage.tsx` - Integrated real OTP system

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { getUsers, deleteUser } from '../lib/userStore';
-import { apiUpdateBalance, apiSendNotification, refreshCurrentUser, adminLogout, terminateAllUserSessions, terminateUserSession, getActiveSessions } from '../lib/session';
+import { apiListUsers, apiUpdateBalance, apiSendNotification, refreshCurrentUser, adminLogout, terminateAllUserSessions, terminateUserSession, getActiveSessions } from '../lib/session';
 import { updateDashboardStats } from '../lib/userStore';
 import { Wallet, Send, Edit2, LogOut, Home, ArrowLeft, TrendingUp, DollarSign, Activity, Zap, AlertCircle, Trash2 } from 'lucide-react';
 
@@ -25,21 +25,18 @@ export function AdminPage({ onLogout }: AdminPageProps) {
   const [showSessionPanel, setShowSessionPanel] = useState(false);
 
   useEffect(() => {
-    loadUsers();
-    loadSessions();
+    (async () => {
+      await loadUsers();
+      loadSessions();
+    })();
   }, []);
 
-  const loadUsers = () => {
+  const loadUsers = async () => {
     try {
-      // Try API first, fall back to local store
-      Promise.resolve(getUsers())
-        .then(data => {
-          setUsers(Array.isArray(data) ? data : []);
-        })
-        .catch(() => {
-          setUsers(getUsers());
-        });
-    } catch (e) {
+      const data = await apiListUsers();
+      setUsers(Array.isArray(data) ? (data as any[]) : []);
+    } catch (err) {
+      console.warn('Failed to load users from backend, falling back to local store', err);
       setUsers(getUsers());
     }
   };
@@ -138,13 +135,15 @@ export function AdminPage({ onLogout }: AdminPageProps) {
     loadSessions();
   };
 
-  const handleDeleteUser = (userId: string, userName: string) => {
+  const handleDeleteUser = async (userId: string, userName: string) => {
     if (window.confirm(`Are you sure you want to permanently delete "${userName}" and all their data? This action cannot be undone.`)) {
       try {
+        await apiDeleteUser(userId);
+        // also clear from local store to keep UI in sync
         deleteUser(userId);
         showStatus(`User "${userName}" has been deleted successfully`, 'success');
         setExpandedUserId(null);
-        loadUsers();
+        await loadUsers();
         loadSessions();
       } catch (err: any) {
         showStatus(`Error deleting user: ${err.message}`, 'error');
@@ -246,12 +245,16 @@ export function AdminPage({ onLogout }: AdminPageProps) {
                     if (window.confirm('Are you absolutely sure? This will permanently delete ALL users and their data. This action cannot be undone.')) {
                       try {
                         const userCount = users.length;
-                        users.forEach(user => {
+                        // attempt to delete each via API, fallback to local
+                        for (const user of users) {
                           const uid = user.id || user._id;
+                          try {
+                            await apiDeleteUser(uid);
+                          } catch {}
                           deleteUser(uid);
-                        });
+                        }
                         showStatus(`All ${userCount} users have been permanently deleted`, 'success');
-                        loadUsers();
+                        await loadUsers();
                         loadSessions();
                       } catch (err: any) {
                         showStatus(`Error deleting users: ${err.message}`, 'error');

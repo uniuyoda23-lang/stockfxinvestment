@@ -132,32 +132,6 @@ export function RegisterPage({ onNavigate }: RegisterPageProps) {
       const { user, error } = await signUp(email, password, name);
       if (error || !user) {
         console.error('❌ REGISTRATION FAILED (Supabase):', error);
-
-        // Fallback to local demo user store when enabled in dev (Vite env)
-        const enableFallback = (import.meta.env.VITE_ENABLE_LOCAL_FALLBACK ?? 'true') === 'true';
-        if (enableFallback) {
-          const localId = `local_${Date.now()}_${Math.random().toString(36).slice(2,8)}`;
-          const newLocalUser = {
-            id: localId,
-            name,
-            email,
-            password,
-            status: 'active',
-            createdAt: new Date().toISOString(),
-            balance: 0,
-            notifications: [],
-            registrationStatus: 'confirmed',
-            verified: true,
-          } as any;
-          addUser(newLocalUser);
-
-          setToken('local_' + localId);
-          setCurrentUserFromProfile(newLocalUser);
-          onNavigate('dashboard');
-          setIsVerifying(false);
-          return;
-        }
-
         setVerifyError(error?.message || 'Registration failed. Please try again.');
         setIsVerifying(false);
         return;

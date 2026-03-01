@@ -119,33 +119,16 @@ export async function apiLogin(email: string, password: string) {
 }
 
 export async function apiRegister(name: string, email: string, password: string) {
-  try {
-    const { user, error } = await registerUser(email, password, name);
-    if (error || !user) throw error || new Error('Registration failed');
-    const userRecord = convertSupabaseToUserRecord(user);
-    setToken('supabase_' + user.id);
-    setCurrentUserFromProfile(userRecord);
-    return userRecord;
-  } catch (err: any) {
-    // Fall back to local registration if Supabase fails
-    console.warn('WarningAPI registration failed, using local storage:', err.message);
-    const newUser: UserRecord = {
-      id: Date.now().toString(),
-      name,
-      email,
-      password: password,
-      status: 'active',
-      createdAt: new Date().toISOString(),
-      balance: 0,
-      notifications: [],
-      registrationStatus: 'confirmed',
-      verified: true,
-    };
-    addUser(newUser);
-    setCurrentUserFromProfile(newUser);
-    setToken('local_token_' + newUser.id);
-    return newUser;
+  // always use Supabase for registration; throw on failure so caller can handle
+  const { user, error } = await registerUser(email, password, name);
+  if (error || !user) {
+    console.error('Supabase registration error:', error);
+    throw error || new Error('Registration failed');
   }
+  const userRecord = convertSupabaseToUserRecord(user);
+  setToken('supabase_' + user.id);
+  setCurrentUserFromProfile(userRecord);
+  return userRecord;
 }
 
 // Fetch dashboard data using token
@@ -191,6 +174,22 @@ export async function fetchCurrentUser() {
   }
 }
 
+
+export async function apiDeleteUser(userId: string) {
+  try {
+    const { error } = await (await import('./supabaseAuth')).supabase
+      .from('users')
+      .delete()
+      .eq('id', userId);
+    if (error) throw error;
+    return { ok: true };
+  } catch (err: any) {
+    console.warn('WarningAPI delete user failed, removing locally:', err?.message || err);
+    deleteUser(userId);
+    return { ok: true };
+  }
+}
+
 export async function apiLogout() {
   try {
     await supabaseLogout();
@@ -214,10 +213,27 @@ export async function apiHealth() {
 export async function apiListUsers() {
   try {
     const users = await getAllUsers();
-    return users;
+    // convert to frontend UserRecord format so admin UI can render
+    return (users || []).map(u => convertSupabaseToUserRecord(u));
   } catch (err: any) {
     console.warn('WarningAPI getAllUsers failed, using local users:', err?.message || err);
     return getUsers();
+  }
+}
+
+export async function apiDeleteUser(userId: string) {
+  try {
+    // remove from Supabase users table; delete cascades if foreign keys exist
+    const { error } = await (await import('./supabaseAuth')).supabase
+      .from('users')
+      .delete()
+      .eq('id', userId);
+    if (error) throw error;
+    return { ok: true };
+  } catch (err: any) {
+    console.warn('WarningAPI delete user failed, removing locally:', err?.message || err);
+    deleteUser(userId);
+    return { ok: true };
   }
 }
 

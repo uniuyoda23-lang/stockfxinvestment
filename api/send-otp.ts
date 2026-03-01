@@ -85,6 +85,12 @@ export default async function handler(req: any, res: any) {
   }
 
   try {
+    // cleanup any old or already-verified codes first (keeps table small)
+    await supabase
+      .from('otp_codes')
+      .delete()
+      .or(`expires_at.lt.${new Date().toISOString()},verified.eq.true`);
+
     // Store OTP in Supabase with 10-minute expiry
     const expiresAt = new Date(Date.now() + 10 * 60 * 1000).toISOString();
     

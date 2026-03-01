@@ -118,6 +118,19 @@ These are in `src/lib/supabase.ts` and work on any domain/host!
 **Vercel shows "Load failed"**
 → Check that Supabase URL and key are correct in `src/lib/supabase.ts`
 
+---
+
+## 🛡️ Working Around DNS Restrictions
+
+If some devices cannot resolve the Supabase domain (showing `ERR_NAME_NOT_RESOLVED`),
+use the provided proxy function (`api/supabase-proxy.ts`). Deploy it to Vercel,
+Netlify or any serverless host and set an environment variable pointing to its
+URL (e.g. `VITE_SUPABASE_PROXY_URL=https://myapp.example/supabase`).
+Thereafter clients will contact the proxy host instead of the Supabase host,
+which allows them to operate on networks that block the raw `*.supabase.co`
+domain. This is the recommended workaround when you cannot change the
+client's DNS settings.
+
 **Need to change hosting later?**
 → Just point domain to new host - no database config needed! Supabase works from anywhere.
 
