@@ -173,8 +173,6 @@ export async function fetchCurrentUser() {
     return null;
   }
 
-}
-
 export async function apiLogout() {
   try {
     await supabaseLogout();
