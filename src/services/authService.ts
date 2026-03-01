@@ -22,7 +22,12 @@ interface DeviceInfo {
   os?: string;
 }
 
-const API_URL = process.env.REACT_APP_API_URL || 'https://your-vercel-app.vercel.app';
+// Vite uses import.meta.env for environment variables. The legacy REACT_APP_ prefix
+// isn't available in this code, so fall back to a relative path when none is set.
+const API_URL =
+  (import.meta.env.VITE_API_BASE as string) ||
+  window.location.origin ||
+  'https://your-vercel-app.vercel.app';
 
 /**
  * Generate a unique device ID
@@ -81,11 +86,14 @@ export const authService = {
   // Step 1: Request OTP
   async requestOTP(email: string): Promise<{ success: boolean; message?: string; error?: string }> {
     try {
-      const response = await fetch(`${API_URL}/api/send-otp`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, otp: generateOTP() }),
-      });
+      const response = await fetch(
+        `${API_URL.replace(/\/+$/,'')}/api/send-otp`,
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, otp: generateOTP() }),
+        }
+      );
 
       const data = await response.json();
       if (!response.ok) throw new Error(data.error);
@@ -106,19 +114,22 @@ export const authService = {
         day: 'numeric',
       });
 
-      const response = await fetch(`${API_URL}/api/verify-otp`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          email,
-          otp,
-          deviceId,
-          deviceName: `${deviceInfo.os} - ${timestamp}`,
-          deviceType: deviceInfo.deviceType,
-          browser: deviceInfo.browser,
-          os: deviceInfo.os,
-        }),
-      });
+      const response = await fetch(
+        `${API_URL.replace(/\/+$/,'')}/api/verify-otp`,
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            email,
+            otp,
+            deviceId,
+            deviceName: `${deviceInfo.os} - ${timestamp}`,
+            deviceType: deviceInfo.deviceType,
+            browser: deviceInfo.browser,
+            os: deviceInfo.os,
+          }),
+        }
+      );
 
       const data = await response.json();
       if (!response.ok) throw new Error(data.error);
