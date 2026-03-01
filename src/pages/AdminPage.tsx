@@ -241,7 +241,7 @@ export function AdminPage({ onLogout }: AdminPageProps) {
               {/* Delete All Users */}
               <div className="pt-4 border-t border-slate-700">
                 <button
-                  onClick={() => {
+                  onClick={async () => {
                     if (window.confirm('Are you absolutely sure? This will permanently delete ALL users and their data. This action cannot be undone.')) {
                       try {
                         const userCount = users.length;
