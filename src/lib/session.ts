@@ -172,7 +172,6 @@ export async function fetchCurrentUser() {
   } catch (e) {
     return null;
   }
-}
 
 }
 
