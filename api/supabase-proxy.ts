@@ -3,10 +3,11 @@
 // function's URL instead of the raw Supabase domain. This allows clients on
 // restrictive networks to talk to Supabase via a hostname they can resolve.
 
-import type { VercelRequest, VercelResponse } from '@vercel/node';
+// lightweight handler types to avoid pulling in @vercel/node
+// you can install `@vercel/node` or add proper interfaces if desired.
 import fetch from 'node-fetch';
 
-export default async function handler(req: VercelRequest, res: VercelResponse) {
+export default async function handler(req: any, res: any) {
   try {
     // build target url by stripping our function prefix. When deployed to
     // Vercel the proxy is available at `/api/supabase-proxy`; in development we
@@ -30,14 +31,16 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
     // prepare request body: node-fetch expects a string or Buffer. Vercel may
     // provide parsed JSON, so stringify it unless it is already a string.
-    let body: any;
+    // note: we name this `reqBody` so it doesn't conflict with the later
+    // `body` variable that holds the proxied response text.
+    let reqBody: any;
     if (req.method !== 'GET' && req.method !== 'HEAD') {
       if (req.body == null) {
-        body = undefined;
+        reqBody = undefined;
       } else if (typeof req.body === 'string' || Buffer.isBuffer(req.body)) {
-        body = req.body;
+        reqBody = req.body;
       } else {
-        body = JSON.stringify(req.body);
+        reqBody = JSON.stringify(req.body);
       }
     }
 
@@ -48,15 +51,15 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         ...req.headers,
         host: new URL(supabaseUrl).host,
       },
-      body,
+      body: reqBody,
     };
 
-    if (body) {
-      console.log('[proxy] body:', body.toString().slice(0, 200));
+    if (reqBody) {
+      console.log('[proxy] body:', reqBody.toString().slice(0, 200));
     }
 
     const response = await fetch(url, options);
-    const body = await response.text();
+    const responseBody = await response.text();
 
     res.status(response.status);
     response.headers.forEach((value, key) => {
@@ -65,7 +68,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         res.setHeader(key, value);
       }
     });
-    res.send(body);
+    res.send(responseBody);
   } catch (err: any) {
     console.error('Proxy error:', err);
     res.status(500).json({ error: 'Proxy error', details: err.message });
