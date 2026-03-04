@@ -1,476 +1,510 @@
-import React, { useEffect, useState } from 'react';
-import { getUsers, deleteUser } from '../lib/userStore';
-import { apiListUsers, apiUpdateBalance, apiSendNotification, refreshCurrentUser, adminLogout, terminateAllUserSessions, terminateUserSession, getActiveSessions } from '../lib/session';
-import { updateDashboardStats } from '../lib/userStore';
-import { Wallet, Send, Edit2, LogOut, Home, ArrowLeft, TrendingUp, DollarSign, Activity, Zap, AlertCircle, Trash2 } from 'lucide-react';
+import { useState } from "react";
+import {
+  LogOut,
+  Home,
+  Zap,
+  Trash2,
+  User as UserIcon,
+  CheckCircle2,
+  XCircle,
+  ArrowUpRight,
+  ArrowDownLeft,
+  Send as SendIcon,
+} from "lucide-react";
+import { Button } from "../components/ui/Button";
+import {
+  useUsers,
+  useUpdateBalance,
+  useSendNotification,
+  useDeleteUser,
+  useAllTransactions,
+  useApproveTransaction,
+  useRejectTransaction,
+  useUpdateStats,
+} from "../hooks/useApi";
 
 interface AdminPageProps {
   onLogout?: () => void;
 }
 
 export function AdminPage({ onLogout }: AdminPageProps) {
-  const [users, setUsers] = useState<any[]>([]);
-  const [statusMsg, setStatusMsg] = useState<string | null>(null);
-  const [statusType, setStatusType] = useState<'success' | 'error' | null>(null);
-  const [loading, setLoading] = useState(false);
-  const [editName, setEditName] = useState<{[id: string]: string}>({});
-  const [editBalance, setEditBalance] = useState<{[id: string]: number}>({});
-  const [notifyMsg, setNotifyMsg] = useState<{[id: string]: string}>({});
-  const [editProfit, setEditProfit] = useState<{[id: string]: number}>({});
-  const [editIncome, setEditIncome] = useState<{[id: string]: number}>({});
-  const [editTrades, setEditTrades] = useState<{[id: string]: number}>({});
-  const [editPerformance, setEditPerformance] = useState<{[id: string]: number}>({});
+  const { data: users = [], isLoading } = useUsers();
+  const { data: allTransactions = [], isLoading: txLoading } =
+    useAllTransactions();
+
+  const updateBalanceMutation = useUpdateBalance();
+  const sendNotificationMutation = useSendNotification();
+  const deleteUserMutation = useDeleteUser();
+  const approveTxMutation = useApproveTransaction();
+  const rejectTxMutation = useRejectTransaction();
+  const updateStatsMutation = useUpdateStats();
+
+  const [activeTab, setActiveTab] = useState<"users" | "transactions">("users");
+  const [status, setStatus] = useState<{
+    type: "success" | "error" | null;
+    message: string;
+  }>({ type: null, message: "" });
   const [expandedUserId, setExpandedUserId] = useState<string | null>(null);
-  const [activeSessions, setActiveSessions] = useState<any[]>([]);
-  const [showSessionPanel, setShowSessionPanel] = useState(false);
 
-  useEffect(() => {
-    (async () => {
-      await loadUsers();
-      loadSessions();
-    })();
-  }, []);
+  // Edit states
+  const [editBalance, setEditBalance] = useState<{ [id: string]: string }>({});
+  const [notifyMsg, setNotifyMsg] = useState<{ [id: string]: string }>({});
+  const [editStats, setEditStats] = useState<{
+    [id: string]: { totalInvestment: string; accountType: string };
+  }>({});
 
-  const loadUsers = async () => {
-    try {
-      const data = await apiListUsers();
-      setUsers(Array.isArray(data) ? (data as any[]) : []);
-    } catch (err) {
-      console.warn('Failed to load users from backend, falling back to local store', err);
-      setUsers(getUsers());
-    }
+  const showStatus = (message: string, type: "success" | "error") => {
+    setStatus({ message, type });
+    setTimeout(() => setStatus({ message: "", type: null }), 3000);
   };
 
-  const showStatus = (msg: string, type: 'success' | 'error') => {
-    setStatusMsg(msg);
-    setStatusType(type);
-    setTimeout(() => {
-      setStatusMsg(null);
-      setStatusType(null);
-    }, 3000);
+  const handleUpdateBalance = async (userId: string) => {
+    const amount = Number(editBalance[userId]);
+    if (isNaN(amount)) return showStatus("Invalid amount", "error");
+    updateBalanceMutation.mutate(
+      { userId, balance: amount },
+      {
+        onSuccess: () => {
+          showStatus("Balance updated", "success");
+          setEditBalance({ ...editBalance, [userId]: "" });
+        },
+        onError: (err: any) => showStatus(err.message, "error"),
+      },
+    );
   };
 
-  const handleUpdateBalance = async (userId: string, amount: number) => {
-    if (amount === undefined || amount === null) {
-      showStatus('Enter a valid amount', 'error');
-      return;
-    }
-    setLoading(true);
-    try {
-      await apiUpdateBalance(userId, amount);
-      showStatus(`Balance updated to $${amount.toFixed(2)}`, 'success');
-      setEditBalance(prev => ({ ...prev, [userId]: 0 }));
-      refreshCurrentUser();
-      loadUsers();
-    } catch (err: any) {
-      showStatus(`Error: ${err.message}`, 'error');
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  const handleSendNotification = async (userId: string, message: string) => {
-    if (!message.trim()) {
-      showStatus('Enter a message', 'error');
-      return;
-    }
-    setLoading(true);
-    try {
-      await apiSendNotification(userId, message);
-      showStatus('Notification sent!', 'success');
-      setNotifyMsg(prev => ({ ...prev, [userId]: '' }));
-      refreshCurrentUser();
-      loadUsers();
-    } catch (err: any) {
-      showStatus(`Error: ${err.message}`, 'error');
-    } finally {
-      setLoading(false);
-    }
+  const handleSendNotification = async (userId: string) => {
+    const msg = notifyMsg[userId];
+    if (!msg) return showStatus("Message required", "error");
+    sendNotificationMutation.mutate(
+      { userId, message: msg },
+      {
+        onSuccess: () => {
+          showStatus("Notification sent", "success");
+          setNotifyMsg((prev) => ({ ...prev, [userId]: "" }));
+        },
+        onError: (err: any) => showStatus(err.message, "error"),
+      },
+    );
   };
 
   const handleUpdateStats = async (userId: string) => {
-    setLoading(true);
-    try {
-      updateDashboardStats(userId, {
-        totalProfit: editProfit[userId] ?? 0,
-        monthlyIncome: editIncome[userId] ?? 0,
-        activeTrades: editTrades[userId] ?? 0,
-        portfolioPerformance: editPerformance[userId] ?? 0,
-      });
-      showStatus('Dashboard stats updated!', 'success');
-      setEditProfit(prev => ({ ...prev, [userId]: 0 }));
-      setEditIncome(prev => ({ ...prev, [userId]: 0 }));
-      setEditTrades(prev => ({ ...prev, [userId]: 0 }));
-      setEditPerformance(prev => ({ ...prev, [userId]: 0 }));
-      refreshCurrentUser();
-      loadUsers();
-    } catch (err: any) {
-      showStatus(`Error: ${err.message}`, 'error');
-    } finally {
-      setLoading(false);
-    }
+    const stats = editStats[userId] || {
+      totalInvestment: "",
+      accountType: "standard",
+    };
+    updateStatsMutation.mutate(
+      {
+        userId,
+        stats: {
+          totalInvestment: Number(stats.totalInvestment),
+          accountType: stats.accountType,
+        },
+      },
+      {
+        onSuccess: () => showStatus("Stats updated", "success"),
+        onError: (err: any) => showStatus(err.message, "error"),
+      },
+    );
   };
 
-  const loadSessions = () => {
-    const sessions = getActiveSessions();
-    setActiveSessions(sessions);
+  const handleDeleteUser = async (userId: string) => {
+    if (!window.confirm("Are you sure you want to delete this user?")) return;
+    deleteUserMutation.mutate(userId, {
+      onSuccess: () => showStatus("User deleted", "success"),
+      onError: (err: any) => showStatus(err.message, "error"),
+    });
+  };
+
+  const handleApprove = async (txId: string) => {
+    approveTxMutation.mutate(txId, {
+      onSuccess: () => showStatus("Transaction approved", "success"),
+      onError: (err: any) => showStatus(err.message, "error"),
+    });
+  };
+
+  const handleReject = async (txId: string) => {
+    rejectTxMutation.mutate(txId, {
+      onSuccess: () => showStatus("Transaction rejected", "success"),
+      onError: (err: any) => showStatus(err.message, "error"),
+    });
   };
 
   const handleLogout = () => {
-    adminLogout();
-    if (onLogout) onLogout();
+    localStorage.removeItem("admin_token");
+    onLogout?.();
   };
-
-  const handleTerminateAllSessions = () => {
-    if (window.confirm('Are you sure? This will terminate all active user sessions.')) {
-      const result = terminateAllUserSessions();
-      showStatus(result.message, result.success ? 'success' : 'error');
-      loadSessions();
-    }
-  };
-
-  const handleTerminateUserSession = (userId: string) => {
-    const result = terminateUserSession(userId);
-    showStatus(result.message, result.success ? 'success' : 'error');
-    loadSessions();
-  };
-
-  const handleDeleteUser = async (userId: string, userName: string) => {
-    if (window.confirm(`Are you sure you want to permanently delete "${userName}" and all their data? This action cannot be undone.`)) {
-      try {
-        await apiDeleteUser(userId);
-        // also clear from local store to keep UI in sync
-        deleteUser(userId);
-        showStatus(`User "${userName}" has been deleted successfully`, 'success');
-        setExpandedUserId(null);
-        await loadUsers();
-        loadSessions();
-      } catch (err: any) {
-        showStatus(`Error deleting user: ${err.message}`, 'error');
-      }
-    }
-  };
-
-  const userId = users[0]?.id || '';
-  const userId_alt = userId ? users[0]?._id || users[0]?.id : '';
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 to-slate-800 p-6">
+    <div className="min-h-screen bg-slate-900 p-4 sm:p-6 lg:p-8">
       <div className="max-w-6xl mx-auto">
-        {/* Header */}
-        <div className="flex items-center justify-between mb-8">
-          <div className="flex items-center gap-3">
-            <div className="p-2 bg-emerald-600 rounded-lg">
-              <Wallet className="h-6 w-6 text-white" />
+        <header className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6 mb-12 bg-slate-800/50 p-6 rounded-3xl border border-slate-700/50 backdrop-blur-xl">
+          <div className="flex items-center gap-4">
+            <div className="p-4 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-2xl shadow-xl shadow-emerald-500/20">
+              <Zap className="h-7 w-7 text-white animate-pulse" />
             </div>
-            <h1 className="text-3xl font-bold text-white">Admin Panel</h1>
+            <div>
+              <h1 className="text-3xl font-black text-white tracking-tight">
+                Nexus <span className="text-emerald-500">Core</span>
+              </h1>
+              <p className="text-slate-400 text-xs font-bold uppercase tracking-widest flex items-center gap-2">
+                <span className="h-1.5 w-1.5 rounded-full bg-emerald-500"></span>
+                System Authority
+              </p>
+            </div>
           </div>
+          <div className="flex gap-3">
+            <Button
+              onClick={() => (window.location.hash = "dashboard")}
+              variant="outline"
+              className="bg-slate-800/80 border-slate-700 text-slate-300 hover:bg-slate-700 hover:text-white rounded-xl px-6"
+            >
+              <Home className="h-4 w-4 mr-2" /> Dashboard
+            </Button>
+            <Button
+              onClick={handleLogout}
+              className="bg-red-500 hover:bg-red-600 text-white rounded-xl px-6 shadow-lg shadow-red-500/20 transition-all active:scale-95"
+            >
+              <LogOut className="h-4 w-4 mr-2" /> Terminate Session
+            </Button>
+          </div>
+        </header>
+
+        <div className="flex gap-4 mb-8">
           <button
-            onClick={handleLogout}
-            className="flex items-center gap-2 px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors"
+            onClick={() => setActiveTab("users")}
+            className={`px-6 py-2 rounded-xl font-bold transition-all ${activeTab === "users" ? "bg-emerald-600 text-white shadow-lg shadow-emerald-600/20" : "bg-slate-800 text-slate-400 hover:text-slate-200"}`}
           >
-            <LogOut className="h-4 w-4" />
-            Logout
+            User Management
+          </button>
+          <button
+            onClick={() => setActiveTab("transactions")}
+            className={`px-6 py-2 rounded-xl font-bold transition-all ${activeTab === "transactions" ? "bg-emerald-600 text-white shadow-lg shadow-emerald-600/20" : "bg-slate-800 text-slate-400 hover:text-slate-200"}`}
+          >
+            Approval Queue
+            {allTransactions.filter((t: any) => t.status === "pending").length >
+              0 && (
+              <span className="ml-2 bg-red-500 text-white text-[10px] px-1.5 py-0.5 rounded-full">
+                {
+                  allTransactions.filter((t: any) => t.status === "pending")
+                    .length
+                }
+              </span>
+            )}
           </button>
         </div>
 
-        {/* Status Message */}
-        {statusMsg && (
+        {status.message && (
           <div
-            className={`mb-6 p-4 rounded-lg flex items-center gap-3 ${
-              statusType === 'success'
-                ? 'bg-emerald-900/50 border border-emerald-600 text-emerald-200'
-                : 'bg-red-900/50 border border-red-600 text-red-200'
-            }`}
+            className={`mb-6 p-4 rounded-xl border flex items-center gap-3 animate-fade-in ${status.type === "success" ? "bg-emerald-900/20 border-emerald-500/50 text-emerald-300" : "bg-red-900/20 border-red-500/50 text-red-300"}`}
           >
-            <div className={`h-2 w-2 rounded-full ${statusType === 'success' ? 'bg-emerald-400' : 'bg-red-400'}`}></div>
-            {statusMsg}
+            <div
+              className={`h-2 w-2 rounded-full ${status.type === "success" ? "bg-emerald-500" : "bg-red-500"} shadow-[0_0_8px_rgba(16,185,129,0.5)]`}
+            ></div>
+            {status.message}
           </div>
         )}
 
-        {/* Session Management Panel */}
-        <div className="mb-6 bg-slate-800 rounded-lg border border-slate-700 p-6">
-          <div className="flex justify-between items-center mb-4">
-            <h2 className="text-xl font-bold text-white flex items-center gap-2">
-              <Zap className="h-5 w-5 text-yellow-500" />
-              Session Management
-            </h2>
-            <button
-              onClick={() => setShowSessionPanel(!showSessionPanel)}
-              className="text-slate-400 hover:text-slate-200 text-sm font-medium"
-            >
-              {showSessionPanel ? 'Hide' : 'Show'}
-            </button>
-          </div>
-
-          {showSessionPanel && (
-            <div className="space-y-4">
-              {/* Active Sessions */}
-              {activeSessions.length > 0 && (
-                <div>
-                  <p className="text-sm text-slate-400 mb-3">Active Sessions ({activeSessions.length})</p>
-                  <div className="space-y-2 mb-4">
-                    {activeSessions.map((session: any, idx: number) => (
-                      <div key={idx} className="flex items-center justify-between bg-slate-900 p-3 rounded border border-slate-700">
-                        <div>
-                          <p className="text-sm font-medium text-slate-200">{session.name}</p>
-                          <p className="text-xs text-slate-500">{session.email}</p>
-                        </div>
-                        <button
-                          onClick={() => handleTerminateUserSession(session.userId)}
-                          className="px-3 py-1 text-sm bg-red-600 hover:bg-red-700 text-white rounded transition-colors"
-                        >
-                          Terminate
-                        </button>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
-
-              {/* Terminate All Sessions */}
-              <button
-                onClick={handleTerminateAllSessions}
-                className="w-full px-4 py-3 bg-red-600 hover:bg-red-700 text-white font-medium rounded-lg transition-colors flex items-center justify-center gap-2"
-              >
-                <AlertCircle className="h-4 w-4" />
-                Terminate All User Sessions
-              </button>
-              <p className="text-xs text-slate-500">This will log out all users immediately</p>
-
-              {/* Delete All Users */}
-              <div className="pt-4 border-t border-slate-700">
-                <button
-                  onClick={async () => {
-                    if (window.confirm('Are you absolutely sure? This will permanently delete ALL users and their data. This action cannot be undone.')) {
-                      try {
-                        const userCount = users.length;
-                        // attempt to delete each via API, fallback to local
-                        for (const user of users) {
-                          const uid = user.id || user._id;
-                          try {
-                            await apiDeleteUser(uid);
-                          } catch {}
-                          deleteUser(uid);
-                        }
-                        showStatus(`All ${userCount} users have been permanently deleted`, 'success');
-                        await loadUsers();
-                        loadSessions();
-                      } catch (err: any) {
-                        showStatus(`Error deleting users: ${err.message}`, 'error');
-                      }
-                    }
-                  }}
-                  className="w-full px-4 py-3 bg-red-900 hover:bg-red-800 text-red-100 font-medium rounded-lg transition-colors flex items-center justify-center gap-2"
-                >
-                  <Trash2 className="h-4 w-4" />
-                  Delete All Users & Data
-                </button>
-                <p className="text-xs text-red-400 mt-2">🔥 Extreme caution - this will erase all user accounts permanently</p>
+        {activeTab === "users" ? (
+          <div className="space-y-4">
+            {isLoading ? (
+              <div className="py-20 text-center text-slate-500">
+                Loading system data...
               </div>
-            </div>
-          )}
-        </div>
-
-        {/* Users List */}
-        <div className="space-y-4">
-          {users.length === 0 ? (
-            <div className="bg-slate-800 rounded-lg p-8 text-center">
-              <p className="text-slate-400 text-lg">No users found</p>
-            </div>
-          ) : (
-            users.map(user => {
-              const uid = user.id || user._id;
-              return (
+            ) : users.length === 0 ? (
+              <div className="py-20 text-center bg-slate-800/50 rounded-2xl border border-slate-700 text-slate-500">
+                No users found
+              </div>
+            ) : (
+              users.map((user) => (
                 <div
-                  key={uid}
-                  className="bg-slate-800 rounded-lg border border-slate-700 hover:border-slate-600 transition-colors overflow-hidden"
+                  key={user.id}
+                  className="bg-slate-800 rounded-2xl border border-slate-700 overflow-hidden shadow-lg transition-all hover:border-slate-600"
                 >
-                  {/* User Row */}
                   <div
-                    className="p-6 flex items-center justify-between cursor-pointer hover:bg-slate-750"
-                    onClick={() => setExpandedUserId(expandedUserId === uid ? null : uid)}
+                    onClick={() =>
+                      setExpandedUserId(
+                        expandedUserId === user.id ? null : user.id,
+                      )
+                    }
+                    className="p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 cursor-pointer hover:bg-slate-700/50 transition-colors"
                   >
-                    <div className="flex-1">
-                      <h3 className="text-lg font-semibold text-white">{user.name || 'Unnamed User'}</h3>
-                      <p className="text-sm text-slate-400">{user.email}</p>
+                    <div className="flex items-center gap-4">
+                      <div className="h-12 w-12 rounded-full bg-slate-700 flex items-center justify-center text-slate-300 font-bold border border-slate-600">
+                        <UserIcon className="h-5 w-5" />
+                      </div>
+                      <div>
+                        <div className="flex items-center gap-2">
+                          <h3 className="text-lg font-bold text-white">
+                            {user.name || "Unnamed"}
+                          </h3>
+                          {user.is_admin && (
+                            <span className="bg-emerald-500/10 text-emerald-500 text-[10px] px-1.5 py-0.5 rounded-full border border-emerald-500/20 font-bold uppercase">
+                              Admin
+                            </span>
+                          )}
+                        </div>
+                        <p className="text-sm text-slate-400">{user.email}</p>
+                      </div>
                     </div>
-                    <div className="text-right mr-4">
-                      <p className="text-2xl font-bold text-emerald-400">${(user.balance ?? 0).toFixed(2)}</p>
-                      <p className="text-xs text-slate-400">Current Balance</p>
-                    </div>
-                    <div className="text-slate-400">
-                      {expandedUserId === uid ? '▼' : '▶'}
+                    <div className="flex items-center gap-6 w-full sm:w-auto justify-between sm:justify-start">
+                      <div className="text-right">
+                        <p className="text-xl font-black text-emerald-400">
+                          ${(user.balance || 0).toLocaleString()}
+                        </p>
+                        <p className="text-[10px] uppercase tracking-wider text-slate-500 font-bold">
+                          Balance
+                        </p>
+                      </div>
+                      <div className="text-slate-500">
+                        {expandedUserId === user.id ? "▲" : "▼"}
+                      </div>
                     </div>
                   </div>
 
-                  {/* Expanded Details */}
-                  {expandedUserId === uid && (
-                    <div className="bg-slate-900/50 border-t border-slate-700 p-6 space-y-6">
-                      {/* Update Balance */}
-                      <div>
-                        <label className="block text-sm font-medium text-slate-300 mb-2">Update Balance</label>
-                        <div className="flex gap-2">
-                          <input
-                            type="number"
-                            placeholder="Enter new balance"
-                            value={editBalance[uid] ?? ''}
-                            onChange={e => setEditBalance(b => ({ ...b, [uid]: e.target.value ? Number(e.target.value) : 0 }))}
-                            className="flex-1 px-4 py-2 bg-slate-700 border border-slate-600 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-emerald-500"
-                          />
-                          <button
-                            onClick={() => handleUpdateBalance(uid, editBalance[uid] ?? 0)}
-                            disabled={loading}
-                            className="px-6 py-2 bg-emerald-600 hover:bg-emerald-700 disabled:opacity-50 text-white rounded-lg transition-colors flex items-center gap-2"
-                          >
-                            <Wallet className="h-4 w-4" />
-                            Update
-                          </button>
-                        </div>
-                      </div>
-
-                      {/* Send Notification */}
-                      <div>
-                        <label className="block text-sm font-medium text-slate-300 mb-2">Send Notification</label>
-                        <div className="flex gap-2">
-                          <input
-                            type="text"
-                            placeholder="Enter notification message..."
-                            value={notifyMsg[uid] ?? ''}
-                            onChange={e => setNotifyMsg(m => ({ ...m, [uid]: e.target.value }))}
-                            className="flex-1 px-4 py-2 bg-slate-700 border border-slate-600 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                          />
-                          <button
-                            onClick={() => handleSendNotification(uid, notifyMsg[uid] ?? '')}
-                            disabled={loading}
-                            className="px-6 py-2 bg-blue-600 hover:bg-blue-700 disabled:opacity-50 text-white rounded-lg transition-colors flex items-center gap-2"
-                          >
-                            <Send className="h-4 w-4" />
-                            Send
-                          </button>
-                        </div>
-                      </div>
-
-                      {/* Dashboard Stats */}
-                      <div className="pt-4 border-t border-slate-700">
-                        <label className="block text-sm font-medium text-slate-300 mb-3">Dashboard Stats</label>
-                        <div className="grid grid-cols-2 gap-3 mb-4">
-                          <div>
-                            <label className="text-xs text-slate-400 mb-1 block">Total Profit ($)</label>
-                            <input
-                              type="number"
-                              placeholder="0.00"
-                              value={editProfit[uid] ?? user.totalProfit ?? 0}
-                              onChange={e => setEditProfit(p => ({ ...p, [uid]: Number(e.target.value) }))}
-                              className="w-full px-3 py-2 bg-slate-700 border border-slate-600 rounded text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-emerald-500 text-sm"
-                            />
-                          </div>
-                          <div>
-                            <label className="text-xs text-slate-400 mb-1 block">Monthly Income ($)</label>
-                            <input
-                              type="number"
-                              placeholder="0.00"
-                              value={editIncome[uid] ?? user.monthlyIncome ?? 0}
-                              onChange={e => setEditIncome(i => ({ ...i, [uid]: Number(e.target.value) }))}
-                              className="w-full px-3 py-2 bg-slate-700 border border-slate-600 rounded text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-emerald-500 text-sm"
-                            />
-                          </div>
-                          <div>
-                            <label className="text-xs text-slate-400 mb-1 block">Active Trades</label>
-                            <input
-                              type="number"
-                              placeholder="0"
-                              value={editTrades[uid] ?? user.activeTrades ?? 0}
-                              onChange={e => setEditTrades(t => ({ ...t, [uid]: Number(e.target.value) }))}
-                              className="w-full px-3 py-2 bg-slate-700 border border-slate-600 rounded text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-emerald-500 text-sm"
-                            />
-                          </div>
-                          <div>
-                            <label className="text-xs text-slate-400 mb-1 block">Portfolio Perf. (%)</label>
-                            <input
-                              type="number"
-                              placeholder="0.0"
-                              step="0.1"
-                              value={editPerformance[uid] ?? user.portfolioPerformance ?? 0}
-                              onChange={e => setEditPerformance(pf => ({ ...pf, [uid]: Number(e.target.value) }))}
-                              className="w-full px-3 py-2 bg-slate-700 border border-slate-600 rounded text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-emerald-500 text-sm"
-                            />
-                          </div>
-                        </div>
-                        <button
-                          onClick={() => handleUpdateStats(uid)}
-                          disabled={loading}
-                          className="w-full px-4 py-2 bg-purple-600 hover:bg-purple-700 disabled:opacity-50 text-white rounded-lg transition-colors flex items-center justify-center gap-2"
-                        >
-                          <TrendingUp className="h-4 w-4" />
-                          Update Stats
-                        </button>
-                      </div>
-
-                      {/* Notifications List */}
-                      {user.notifications && user.notifications.length > 0 && (
+                  {expandedUserId === user.id && (
+                    <div className="p-6 bg-slate-900/50 border-t border-slate-700 flex flex-col lg:flex-row gap-8">
+                      <div className="flex-1 space-y-6">
                         <div>
-                          <label className="block text-sm font-medium text-slate-300 mb-2">Recent Notifications</label>
-                          <div className="bg-slate-800 rounded p-3 max-h-32 overflow-y-auto space-y-2">
-                            {user.notifications.map((notif: any, idx: number) => (
-                              <p key={idx} className="text-sm text-slate-300">• {typeof notif === 'string' ? notif : notif.message}</p>
-                            ))}
+                          <label className="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">
+                            Update User Balance
+                          </label>
+                          <div className="flex gap-2">
+                            <input
+                              type="number"
+                              placeholder="New balance amount"
+                              value={editBalance[user.id] || ""}
+                              onChange={(e) =>
+                                setEditBalance({
+                                  ...editBalance,
+                                  [user.id]: e.target.value,
+                                })
+                              }
+                              className="bg-slate-800 border border-slate-700 rounded-lg px-4 py-2 text-white w-full outline-none focus:ring-2 focus:ring-emerald-500 transition-all"
+                            />
+                            <Button
+                              onClick={() => handleUpdateBalance(user.id)}
+                              className="whitespace-nowrap"
+                            >
+                              Update
+                            </Button>
                           </div>
                         </div>
-                      )}
+                        <div>
+                          <label className="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">
+                            Push Notification
+                          </label>
+                          <div className="flex gap-2">
+                            <input
+                              type="text"
+                              placeholder="Direct message to user"
+                              value={notifyMsg[user.id] || ""}
+                              onChange={(e) =>
+                                setNotifyMsg({
+                                  ...notifyMsg,
+                                  [user.id]: e.target.value,
+                                })
+                              }
+                              className="bg-slate-800 border border-slate-700 rounded-lg px-4 py-2 text-white w-full outline-none focus:ring-2 focus:ring-blue-500 transition-all"
+                            />
+                            <Button
+                              onClick={() => handleSendNotification(user.id)}
+                              className="bg-blue-600 hover:bg-blue-700 whitespace-nowrap"
+                            >
+                              Send
+                            </Button>
+                          </div>
+                        </div>
 
-                      {/* User Info */}
-                      <div className="pt-4 border-t border-slate-700">
-                        <div className="grid grid-cols-2 gap-4 text-sm">
+                        {/* Stats Management */}
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 border-t border-slate-700">
                           <div>
-                            <p className="text-slate-400">Account Status</p>
-                            <p className="text-slate-200 font-medium capitalize">{user.status || 'active'}</p>
+                            <label className="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">
+                              Total Investment ($)
+                            </label>
+                            <input
+                              type="number"
+                              value={
+                                editStats[user.id]?.totalInvestment ??
+                                (user as any).total_investment ??
+                                ""
+                              }
+                              onChange={(e) =>
+                                setEditStats({
+                                  ...editStats,
+                                  [user.id]: {
+                                    ...(editStats[user.id] || {
+                                      accountType:
+                                        (user as any).account_type ||
+                                        "standard",
+                                    }),
+                                    totalInvestment: e.target.value,
+                                  },
+                                })
+                              }
+                              className="bg-slate-800 border border-slate-700 rounded-lg px-4 py-2 text-white w-full outline-none focus:ring-2 focus:ring-emerald-500 transition-all"
+                            />
                           </div>
                           <div>
-                            <p className="text-slate-400">Created</p>
-                            <p className="text-slate-200 font-medium">
-                              {user.createdAt ? new Date(user.createdAt).toLocaleDateString() : 'N/A'}
-                            </p>
+                            <label className="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">
+                              Account Type
+                            </label>
+                            <select
+                              value={
+                                editStats[user.id]?.accountType ??
+                                (user as any).account_type ??
+                                "standard"
+                              }
+                              onChange={(e) =>
+                                setEditStats({
+                                  ...editStats,
+                                  [user.id]: {
+                                    ...(editStats[user.id] || {
+                                      totalInvestment:
+                                        (user as any).total_investment || "",
+                                    }),
+                                    accountType: e.target.value,
+                                  },
+                                })
+                              }
+                              className="bg-slate-800 border border-slate-700 rounded-lg px-4 py-2 text-white w-full outline-none focus:ring-2 focus:ring-emerald-500 transition-all"
+                            >
+                              <option value="standard">Standard</option>
+                              <option value="gold">Gold</option>
+                              <option value="premium">Premium</option>
+                              <option value="vip">VIP</option>
+                            </select>
+                          </div>
+                          <div className="sm:col-span-2">
+                            <Button
+                              onClick={() => handleUpdateStats(user.id)}
+                              className="w-full bg-slate-700 hover:bg-slate-600"
+                              disabled={updateStatsMutation.isPending}
+                            >
+                              Update Stats
+                            </Button>
                           </div>
                         </div>
                       </div>
-
-                      {/* Delete User */}
-                      <div className="pt-4 border-t border-slate-700">
-                        <button
-                          onClick={() => handleDeleteUser(uid, user.name || user.email)}
-                          className="w-full px-4 py-3 bg-red-600 hover:bg-red-700 text-white font-medium rounded-lg transition-colors flex items-center justify-center gap-2"
+                      <div className="w-full lg:w-72 space-y-4">
+                        <div className="bg-slate-800 rounded-xl p-4 border border-slate-700">
+                          <h4 className="text-xs font-bold uppercase tracking-wider text-slate-500 mb-3">
+                            User Overview
+                          </h4>
+                          <div className="space-y-2">
+                            <div className="flex justify-between text-sm">
+                              <span className="text-slate-400">Status</span>
+                              <span className="text-emerald-400 font-bold capitalize">
+                                {user.status || "Active"}
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                        <Button
+                          onClick={() => handleDeleteUser(user.id)}
+                          variant="danger"
+                          className="w-full py-3 bg-red-600/10 text-red-500 border border-red-500/20 hover:bg-red-600 hover:text-white transition-all"
                         >
-                          <Trash2 className="h-4 w-4" />
-                          Delete User & All Data
-                        </button>
-                        <p className="text-xs text-red-300 mt-2">⚠️ This will permanently remove the user and cannot be undone.</p>
+                          <Trash2 className="h-4 w-4 mr-2" /> Delete Account
+                        </Button>
                       </div>
                     </div>
                   )}
                 </div>
-              );
-            })
-          )}
-        </div>
-
-        {/* Navigation */}
-        <div className="mt-12 flex justify-center gap-4">
-          <a
-            href="#/dashboard"
-            className="flex items-center gap-2 px-6 py-2 bg-slate-700 hover:bg-slate-600 text-white rounded-lg transition-colors"
-          >
-            <ArrowLeft className="h-4 w-4" />
-            Dashboard
-          </a>
-          <a
-            href="#/"
-            className="flex items-center gap-2 px-6 py-2 bg-slate-700 hover:bg-slate-600 text-white rounded-lg transition-colors"
-          >
-            <Home className="h-4 w-4" />
-            Home
-          </a>
-        </div>
+              ))
+            )}
+          </div>
+        ) : (
+          <div className="space-y-4">
+            {txLoading ? (
+              <div className="py-20 text-center text-slate-500">
+                Loading transaction queue...
+              </div>
+            ) : allTransactions.length === 0 ? (
+              <div className="py-20 text-center bg-slate-800/50 rounded-2xl border border-slate-700 text-slate-500">
+                No transactions in history
+              </div>
+            ) : (
+              allTransactions.map((tx: any) => (
+                <div
+                  key={tx.id}
+                  className="bg-slate-800 rounded-2xl border border-slate-700 p-6 flex items-center justify-between gap-4"
+                >
+                  <div className="flex items-center gap-4">
+                    <div
+                      className={`h-12 w-12 rounded-xl flex items-center justify-center ${
+                        tx.type === "deposit"
+                          ? "bg-emerald-500/10 text-emerald-500"
+                          : tx.type === "withdrawal"
+                            ? "bg-red-500/10 text-red-500"
+                            : "bg-blue-500/10 text-blue-500"
+                      }`}
+                    >
+                      {tx.type === "deposit" ? (
+                        <ArrowDownLeft />
+                      ) : tx.type === "withdrawal" ? (
+                        <ArrowUpRight />
+                      ) : (
+                        <SendIcon className="h-5 w-5" />
+                      )}
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-white capitalize">
+                        {tx.type} Request
+                      </h4>
+                      <p className="text-sm text-slate-400">
+                        {tx.user?.name || tx.user?.email}
+                      </p>
+                      <p className="text-[10px] text-slate-500 mt-1">
+                        {new Date(tx.created_at).toLocaleString()}
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-8">
+                    <div className="text-right">
+                      <p
+                        className={`text-xl font-black ${tx.type === "deposit" ? "text-emerald-400" : "text-red-400"}`}
+                      >
+                        {tx.type === "deposit" ? "+" : "-"}$
+                        {tx.amount?.toLocaleString()}
+                      </p>
+                      <span
+                        className={`text-[10px] font-bold uppercase ${
+                          tx.status === "pending"
+                            ? "text-amber-500"
+                            : tx.status === "completed"
+                              ? "text-emerald-500"
+                              : "text-red-500"
+                        }`}
+                      >
+                        {tx.status}
+                      </span>
+                    </div>
+                    {tx.status === "pending" && (
+                      <div className="flex gap-2">
+                        <Button
+                          onClick={() => handleApprove(tx.id)}
+                          className="bg-emerald-600 hover:bg-emerald-700 h-10 w-10 p-0 flex items-center justify-center rounded-lg"
+                          title="Approve"
+                        >
+                          <CheckCircle2 className="h-5 w-5" />
+                        </Button>
+                        <Button
+                          onClick={() => handleReject(tx.id)}
+                          variant="danger"
+                          className="bg-red-600 hover:bg-red-700 h-10 w-10 p-0 flex items-center justify-center rounded-lg"
+                          title="Reject"
+                        >
+                          <XCircle className="h-5 w-5" />
+                        </Button>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              ))
+            )}
+          </div>
+        )}
       </div>
     </div>
   );

@@ -1,4 +1,0 @@
-{
-  "watch": ["*.js"],
-  "ignore": ["db.json", ".db.json.tmp", "node_modules/**"]
-}
