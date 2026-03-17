@@ -424,6 +424,17 @@ export const authService = {
     return null;
   },
 
+  getAdminToken(): string | null {
+    if (typeof window !== "undefined") {
+      return localStorage.getItem("admin_token");
+    }
+    return null;
+  },
+
+  getActiveToken(): string | null {
+    return this.getAdminToken() || this.getToken();
+  },
+
   // Store device info
   storeDeviceInfo(deviceInfo: DeviceInfo): void {
     if (typeof window !== "undefined") {
@@ -495,7 +506,7 @@ export const authService = {
 
   // Admin: List all users
   async listUsers(): Promise<any[]> {
-    const token = this.getToken();
+    const token = this.getActiveToken();
     if (!token) return [];
 
     const response = await fetch(`${API_URL}/api/admin/users`, {
@@ -582,9 +593,7 @@ export const authService = {
 
   // Get authorization headers for API calls
   getAuthHeaders(): HeadersInit {
-    const token = this.getToken();
-    const adminToken = localStorage.getItem("admin_token");
-    const activeToken = adminToken || token;
+    const activeToken = this.getActiveToken();
 
     return {
       "Content-Type": "application/json",

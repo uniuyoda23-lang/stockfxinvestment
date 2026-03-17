@@ -1,17 +1,47 @@
-export function adminLogin(email: string, password: string): boolean {
-  // Simple session-based admin check for now
-  // In a real app, this should call the backend
-  if (email === "admin@example.com" && password === "admin123") {
-    localStorage.setItem("admin_token", "session_admin_verified");
-    return true;
-  }
-  return false;
+import { authService } from "../services/authService";
+
+export async function adminLogin(
+  email: string,
+  password: string,
+): Promise<boolean> {
+  const response = await authService.adminLogin(email, password);
+  return Boolean(response?.success && response?.token);
 }
 
 export function isAdminAuthenticated(): boolean {
-  return localStorage.getItem("admin_token") === "session_admin_verified";
+  if (typeof window === "undefined") {
+    return false;
+  }
+
+  return Boolean(localStorage.getItem("admin_token"));
 }
 
-export function logoutAdmin() {
+export function logoutAdmin(): void {
+  if (typeof window === "undefined") {
+    return;
+  }
+
   localStorage.removeItem("admin_token");
+}
+
+export async function apiListUsers(): Promise<any[]> {
+  return authService.listUsers();
+}
+
+export async function apiUpdateBalance(
+  userId: string,
+  balance: number,
+): Promise<any> {
+  return authService.updateBalance(userId, balance);
+}
+
+export async function apiSendNotification(
+  userId: string,
+  message: string,
+): Promise<any> {
+  return authService.sendNotification(userId, message);
+}
+
+export async function apiDeleteUser(userId: string): Promise<any> {
+  return authService.deleteUser(userId);
 }

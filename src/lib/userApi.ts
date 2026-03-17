@@ -7,8 +7,6 @@ import {
   getCurrentUser as firebaseGetCurrentUser
 } from './firebaseAuth';
 
-const API_URL = 'http://localhost:4000';
-
 // Deprecated - use Firebase directly
 export async function registerUser(name: string, email: string, password: string) {
   try {
@@ -30,7 +28,7 @@ export async function loginUser(email: string, password: string) {
 }
 
 // Deprecated - use Firebase directly
-export async function getDashboard(token: string) {
+export async function getDashboard(_token: string) {
   try {
     const user = await firebaseGetCurrentUser();
     return user;

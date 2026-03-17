@@ -1,6 +1,7 @@
 // Example Component: Device Management UI
 import React from 'react';
 import { useAuth } from '../context/AuthContext';
+import { useLogoutDetection } from '../hooks/useSessionSync';
 import { authService } from '../services/authService';
 
 export function DeviceManagement() {
@@ -59,7 +60,6 @@ export function DeviceManagement() {
  * Settings page example showing how to use cross-device features
  */
 export function SettingsPage() {
-  const { user } = useAuth();
   const [isSyncing, setIsSyncing] = React.useState(false);
 
   const handleSyncData = async () => {
@@ -132,6 +132,3 @@ export function LogoutWarning() {
     </div>
   );
 }
-
-// Import the hook
-import { useLogoutDetection } from '../hooks/useSessionSync';
