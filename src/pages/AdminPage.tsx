@@ -28,9 +28,12 @@ interface AdminPageProps {
 }
 
 export function AdminPage({ onLogout }: AdminPageProps) {
-  const { data: users = [], isLoading } = useUsers();
-  const { data: allTransactions = [], isLoading: txLoading } =
-    useAllTransactions();
+  const usersQuery = useUsers();
+  const transactionsQuery = useAllTransactions();
+  const users = usersQuery.data ?? [];
+  const isLoading = usersQuery.isLoading;
+  const allTransactions = transactionsQuery.data ?? [];
+  const txLoading = transactionsQuery.isLoading;
 
   const updateBalanceMutation = useUpdateBalance();
   const sendNotificationMutation = useSendNotification();
@@ -49,9 +52,9 @@ export function AdminPage({ onLogout }: AdminPageProps) {
   // Edit states
   const [editBalance, setEditBalance] = useState<{ [id: string]: string }>({});
   const [notifyMsg, setNotifyMsg] = useState<{ [id: string]: string }>({});
-  const [editStats, setEditStats] = useState<{
-    [id: string]: { totalInvestment: string; accountType: string };
-  }>({});
+  const [editTotalInvestment, setEditTotalInvestment] = useState<{ [id: string]: string }>({});
+  const [editMonthlyIncome, setEditMonthlyIncome] = useState<{ [id: string]: string }>({});
+  const [editAccountType, setEditAccountType] = useState<{ [id: string]: string }>({});
 
   const showStatus = (message: string, type: "success" | "error") => {
     setStatus({ message, type });
@@ -67,6 +70,7 @@ export function AdminPage({ onLogout }: AdminPageProps) {
         onSuccess: () => {
           showStatus("Balance updated", "success");
           setEditBalance({ ...editBalance, [userId]: "" });
+          usersQuery.refetch();
         },
         onError: (err: any) => showStatus(err.message, "error"),
       },
@@ -88,21 +92,106 @@ export function AdminPage({ onLogout }: AdminPageProps) {
     );
   };
 
+  const handleUpdateTotalInvestment = async (userId: string) => {
+    const amount = Number(editTotalInvestment[userId]);
+    if (isNaN(amount)) return showStatus("Invalid amount", "error");
+    console.log("Updating total investment:", { userId, amount });
+    updateStatsMutation.mutate(
+      {
+        userId,
+        stats: {
+          total_investment: amount,
+        },
+      },
+      {
+        onSuccess: (data) => {
+          console.log("Total Investment update success:", data);
+          showStatus("Total Investment updated", "success");
+          setEditTotalInvestment({ ...editTotalInvestment, [userId]: "" });
+          usersQuery.refetch();
+        },
+        onError: (err: any) => {
+          console.error("Total Investment update error:", err);
+          showStatus(err?.message || "Failed to update Total Investment", "error");
+        },
+      },
+    );
+  };
+
+  const handleUpdateMonthlyIncome = async (userId: string) => {
+    const amount = Number(editMonthlyIncome[userId]);
+    if (isNaN(amount)) return showStatus("Invalid amount", "error");
+    console.log("Updating monthly income:", { userId, amount });
+    updateStatsMutation.mutate(
+      {
+        userId,
+        stats: {
+          monthly_income: amount,
+        },
+      },
+      {
+        onSuccess: (data) => {
+          console.log("Monthly Income update success:", data);
+          showStatus("Monthly Income updated", "success");
+          setEditMonthlyIncome({ ...editMonthlyIncome, [userId]: "" });
+          usersQuery.refetch();
+        },
+        onError: (err: any) => {
+          console.error("Monthly Income update error:", err);
+          showStatus(err?.message || "Failed to update Monthly Income", "error");
+        },
+      },
+    );
+  };
+
+  const handleUpdateAccountType = async (userId: string) => {
+    const accountType = editAccountType[userId];
+    if (!accountType) return showStatus("Select an account type", "error");
+    console.log("Updating account type:", { userId, accountType });
+    updateStatsMutation.mutate(
+      {
+        userId,
+        stats: {
+          account_type: accountType,
+        },
+      },
+      {
+        onSuccess: (data) => {
+          console.log("Account Type update success:", data);
+          showStatus("Account Type updated", "success");
+          setEditAccountType({ ...editAccountType, [userId]: "" });
+          usersQuery.refetch();
+        },
+        onError: (err: any) => {
+          console.error("Account Type update error:", err);
+          showStatus(err?.message || "Failed to update Account Type", "error");
+        },
+      },
+    );
+  };
+
   const handleUpdateStats = async (userId: string) => {
-    const stats = editStats[userId] || {
-      totalInvestment: "",
-      accountType: "standard",
+    const stats = {
+      totalInvestment: editTotalInvestment[userId],
+      monthlyIncome: editMonthlyIncome[userId],
+      accountType: editAccountType[userId],
     };
     updateStatsMutation.mutate(
       {
         userId,
         stats: {
-          totalInvestment: Number(stats.totalInvestment),
-          accountType: stats.accountType,
+          total_investment: Number(stats.totalInvestment) || 0,
+          monthly_income: Number(stats.monthlyIncome) || 0,
+          account_type: stats.accountType,
         },
       },
       {
-        onSuccess: () => showStatus("Stats updated", "success"),
+        onSuccess: () => {
+          showStatus("Stats updated successfully", "success");
+          setEditTotalInvestment({ ...editTotalInvestment, [userId]: "" });
+          setEditMonthlyIncome({ ...editMonthlyIncome, [userId]: "" });
+          setEditAccountType({ ...editAccountType, [userId]: "" });
+        },
         onError: (err: any) => showStatus(err.message, "error"),
       },
     );
@@ -316,73 +405,106 @@ export function AdminPage({ onLogout }: AdminPageProps) {
                           </div>
                         </div>
 
-                        {/* Stats Management */}
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 border-t border-slate-700">
+                        {/* Stats Management - Individual Updates */}
+                        <div className="space-y-4 pt-4 border-t border-slate-700">
                           <div>
                             <label className="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">
-                              Total Investment ($)
+                              Update Total Investment
                             </label>
-                            <input
-                              type="number"
-                              value={
-                                editStats[user.id]?.totalInvestment ??
-                                (user as any).total_investment ??
-                                ""
-                              }
-                              onChange={(e) =>
-                                setEditStats({
-                                  ...editStats,
-                                  [user.id]: {
-                                    ...(editStats[user.id] || {
-                                      accountType:
-                                        (user as any).account_type ||
-                                        "standard",
-                                    }),
-                                    totalInvestment: e.target.value,
-                                  },
-                                })
-                              }
-                              className="bg-slate-800 border border-slate-700 rounded-lg px-4 py-2 text-white w-full outline-none focus:ring-2 focus:ring-emerald-500 transition-all"
-                            />
+                            <div className="flex gap-2">
+                              <input
+                                type="number"
+                                placeholder="Total investment amount"
+                                value={editTotalInvestment[user.id] || ""}
+                                onChange={(e) =>
+                                  setEditTotalInvestment({
+                                    ...editTotalInvestment,
+                                    [user.id]: e.target.value,
+                                  })
+                                }
+                                className="bg-slate-800 border border-slate-700 rounded-lg px-4 py-2 text-white w-full outline-none focus:ring-2 focus:ring-emerald-500 transition-all"
+                              />
+                              <Button
+                                onClick={() => handleUpdateTotalInvestment(user.id)}
+                                className="whitespace-nowrap"
+                                disabled={updateStatsMutation.isPending}
+                              >
+                                Update
+                              </Button>
+                            </div>
+                            {(user as any).total_investment && (
+                              <p className="text-xs text-slate-400 mt-1">
+                                Current: ${Number((user as any).total_investment).toLocaleString()}
+                              </p>
+                            )}
                           </div>
+
                           <div>
                             <label className="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">
-                              Account Type
+                              Update Monthly Income
                             </label>
-                            <select
-                              value={
-                                editStats[user.id]?.accountType ??
-                                (user as any).account_type ??
-                                "standard"
-                              }
-                              onChange={(e) =>
-                                setEditStats({
-                                  ...editStats,
-                                  [user.id]: {
-                                    ...(editStats[user.id] || {
-                                      totalInvestment:
-                                        (user as any).total_investment || "",
-                                    }),
-                                    accountType: e.target.value,
-                                  },
-                                })
-                              }
-                              className="bg-slate-800 border border-slate-700 rounded-lg px-4 py-2 text-white w-full outline-none focus:ring-2 focus:ring-emerald-500 transition-all"
-                            >
-                              <option value="standard">Standard</option>
-                              <option value="gold">Gold</option>
-                              <option value="premium">Premium</option>
-                              <option value="vip">VIP</option>
-                            </select>
+                            <div className="flex gap-2">
+                              <input
+                                type="number"
+                                placeholder="Monthly income amount"
+                                value={editMonthlyIncome[user.id] || ""}
+                                onChange={(e) =>
+                                  setEditMonthlyIncome({
+                                    ...editMonthlyIncome,
+                                    [user.id]: e.target.value,
+                                  })
+                                }
+                                className="bg-slate-800 border border-slate-700 rounded-lg px-4 py-2 text-white w-full outline-none focus:ring-2 focus:ring-emerald-500 transition-all"
+                              />
+                              <Button
+                                onClick={() => handleUpdateMonthlyIncome(user.id)}
+                                className="whitespace-nowrap"
+                                disabled={updateStatsMutation.isPending}
+                              >
+                                Update
+                              </Button>
+                            </div>
+                            {(user as any).monthly_income && (
+                              <p className="text-xs text-slate-400 mt-1">
+                                Current: ${Number((user as any).monthly_income).toLocaleString()}
+                              </p>
+                            )}
                           </div>
-                          <div className="sm:col-span-2">
-                            <Button
-                              onClick={() => handleUpdateStats(user.id)}
-                              className="w-full bg-slate-700 hover:bg-slate-600"
-                              disabled={updateStatsMutation.isPending}
-                            >
-                              Update Stats
-                            </Button>
+
+                          <div>
+                            <label className="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">
+                              Update Account Type
+                            </label>
+                            <div className="flex gap-2">
+                              <select
+                                value={editAccountType[user.id] || ""}
+                                onChange={(e) =>
+                                  setEditAccountType({
+                                    ...editAccountType,
+                                    [user.id]: e.target.value,
+                                  })
+                                }
+                                className="bg-slate-800 border border-slate-700 rounded-lg px-4 py-2 text-white w-full outline-none focus:ring-2 focus:ring-emerald-500 transition-all"
+                              >
+                                <option value="">-- Select Type --</option>
+                                <option value="standard">Standard</option>
+                                <option value="gold">Gold</option>
+                                <option value="premium">Premium</option>
+                                <option value="vip">VIP</option>
+                              </select>
+                              <Button
+                                onClick={() => handleUpdateAccountType(user.id)}
+                                className="whitespace-nowrap"
+                                disabled={updateStatsMutation.isPending}
+                              >
+                                Update
+                              </Button>
+                            </div>
+                            {(user as any).account_type && (
+                              <p className="text-xs text-slate-400 mt-1">
+                                Current: {((user as any).account_type as string).charAt(0).toUpperCase() + ((user as any).account_type as string).slice(1)}
+                              </p>
+                            )}
                           </div>
                         </div>
                       </div>

@@ -551,10 +551,18 @@ export const authService = {
       method: "POST",
       credentials: "include",
       headers: this.getAuthHeaders(),
-      body: JSON.stringify({ userId, ...stats }),
+      body: JSON.stringify({ 
+        userId, 
+        total_investment: stats.total_investment,
+        monthly_income: stats.monthly_income,
+        account_type: stats.account_type,
+      }),
     });
 
-    if (!response.ok) throw new Error("Failed to update stats");
+    if (!response.ok) {
+      const errorData = await response.json().catch(() => ({}));
+      throw new Error(errorData.error || errorData.message || "Failed to update stats");
+    }
     return response.json();
   },
 

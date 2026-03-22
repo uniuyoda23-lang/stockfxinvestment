@@ -189,7 +189,7 @@ export function LandingPageNew({ onNavigate }: LandingPageProps) {
       name: 'Premium',
       price: '$5,000 - $50,000',
       description: 'Growth Investment Range',
-      duration: '2-3 Months',
+      duration: '1 Months',
       features: ['Advanced charting & analysis', 'Real-time Level 2 data', 'Unlimited watchlists', 'Priority 24/7 support', 'API access', 'Advanced alerts'],
       popular: true,
     },
@@ -197,14 +197,14 @@ export function LandingPageNew({ onNavigate }: LandingPageProps) {
       name: 'Gold',
       price: '$50,000+',
       description: 'Premium Investment Range',
-      duration: '3-6 Months',
+      duration: '1 Month',
       features: ['Dedicated portfolio manager', 'Custom strategy consulting', 'White-label solutions', 'Advanced integrations', 'VIP support', 'Exclusive research'],
     },
     {
       name: 'Annual Investment',
       price: '$100,000+',
       description: 'Institutional Investment Range',
-      duration: '12+ Months',
+      duration: '1 Month',
       features: ['Dedicated investment advisor', 'Full portfolio management', 'Custom hedge strategies', '24/7 concierge support', 'Priority execution', 'Exclusive events & networking'],
     },
   ];
@@ -230,7 +230,7 @@ export function LandingPageNew({ onNavigate }: LandingPageProps) {
     },
     {
       number: 4,
-      title: 'Trade',
+      title: 'Invest',
       description: 'Start investing in stocks, dividends, and ETFs',
       icon: '📈',
     },
@@ -246,7 +246,7 @@ export function LandingPageNew({ onNavigate }: LandingPageProps) {
       description: 'Advanced charting, analysis, and research directly in your account',
     },
     {
-      title: '📱 Trade Anywhere',
+      title: '📱 Invest Anywhere',
       description: 'Full-featured mobile app puts everything in your pocket',
     },
     {
@@ -528,7 +528,7 @@ export function LandingPageNew({ onNavigate }: LandingPageProps) {
               </div>
 
               <p className="text-3xl font-black text-amber-400 mb-2">{plan.price}</p>
-              <p className="text-sm text-amber-300 font-semibold mb-6">{t('pricing.starter.duration')}: {plan.duration}</p>
+              <p className="text-sm text-amber-300 font-semibold mb-6">Duration: {plan.duration}</p>
               
               <ul className={`space-y-3 overflow-hidden transition-all duration-300 ${expandedPlan === i ? 'mb-8 max-h-96 opacity-100' : 'max-h-96 opacity-100'}`}>
                 {plan.features.map((f, j) => (
