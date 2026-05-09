@@ -125,7 +125,7 @@ export function RegisterPage({ onNavigate }: RegisterPageProps) {
               className="w-full"
               isLoading={signUpMutation.isPending}
             >
-              Crate Account
+              Create Account
             </Button>
           </form>
         </div>

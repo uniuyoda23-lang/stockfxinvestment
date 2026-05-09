@@ -276,7 +276,7 @@ export function DashboardPage({ onNavigate }: DashboardPageProps) {
           )}
           {activeTab === "overview" && (
             <div className="space-y-6">
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                 <StatsCard
                   title="Total Balance"
                   value={`$${balance.toFixed(2)}`}
@@ -295,13 +295,6 @@ export function DashboardPage({ onNavigate }: DashboardPageProps) {
                   icon={TrendingUp}
                   iconColor="text-blue-600"
                   iconBgColor="bg-blue-50"
-                />
-                <StatsCard
-                  title="Monthly Income"
-                  value={`$${(user.monthlyIncome || 0).toFixed(2)}`}
-                  icon={DollarSign}
-                  iconColor="text-purple-600"
-                  iconBgColor="bg-purple-50"
                 />
                 <StatsCard
                   title="Active Trades"
