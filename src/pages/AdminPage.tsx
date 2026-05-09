@@ -50,7 +50,7 @@ export function AdminPage({ onLogout }: AdminPageProps) {
   const [editBalance, setEditBalance] = useState<{ [id: string]: string }>({});
   const [notifyMsg, setNotifyMsg] = useState<{ [id: string]: string }>({});
   const [editStats, setEditStats] = useState<{
-    [id: string]: { totalInvestment: string; accountType: string };
+    [id: string]: { totalInvestment: string; totalProfit: string; monthlyIncome: string; accountType: string };
   }>({});
 
   const showStatus = (message: string, type: "success" | "error") => {
@@ -91,13 +91,17 @@ export function AdminPage({ onLogout }: AdminPageProps) {
   const handleUpdateStats = async (userId: string) => {
     const stats = editStats[userId] || {
       totalInvestment: "",
+      totalProfit: "",
+      monthlyIncome: "",
       accountType: "standard",
     };
     updateStatsMutation.mutate(
       {
         userId,
         stats: {
-          totalInvestment: Number(stats.totalInvestment),
+          totalInvestment: stats.totalInvestment !== "" ? Number(stats.totalInvestment) : undefined,
+          totalProfit: stats.totalProfit !== "" ? Number(stats.totalProfit) : undefined,
+          monthlyIncome: stats.monthlyIncome !== "" ? Number(stats.monthlyIncome) : undefined,
           accountType: stats.accountType,
         },
       },
@@ -326,7 +330,7 @@ export function AdminPage({ onLogout }: AdminPageProps) {
                               type="number"
                               value={
                                 editStats[user.id]?.totalInvestment ??
-                                (user as any).total_investment ??
+                                (user as any).totalInvestment ??
                                 ""
                               }
                               onChange={(e) =>
@@ -334,11 +338,68 @@ export function AdminPage({ onLogout }: AdminPageProps) {
                                   ...editStats,
                                   [user.id]: {
                                     ...(editStats[user.id] || {
+                                      totalProfit: (user as any).totalProfit || "",
                                       accountType:
                                         (user as any).account_type ||
                                         "standard",
                                     }),
                                     totalInvestment: e.target.value,
+                                  },
+                                })
+                              }
+                              className="bg-slate-800 border border-slate-700 rounded-lg px-4 py-2 text-white w-full outline-none focus:ring-2 focus:ring-emerald-500 transition-all"
+                            />
+                          </div>
+                          <div>
+                            <label className="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">
+                              Total Profit ($)
+                            </label>
+                            <input
+                              type="number"
+                              value={
+                                editStats[user.id]?.totalProfit ??
+                                (user as any).totalProfit ??
+                                ""
+                              }
+                              onChange={(e) =>
+                                setEditStats({
+                                  ...editStats,
+                                  [user.id]: {
+                                    ...(editStats[user.id] || {
+                                      totalInvestment:
+                                        (user as any).totalInvestment || "",
+                                      accountType:
+                                        (user as any).account_type ||
+                                        "standard",
+                                    }),
+                                    totalProfit: e.target.value,
+                                  },
+                                })
+                              }
+                              className="bg-slate-800 border border-slate-700 rounded-lg px-4 py-2 text-white w-full outline-none focus:ring-2 focus:ring-emerald-500 transition-all"
+                            />
+                          </div>
+                          <div>
+                            <label className="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">
+                              Monthly Income ($)
+                            </label>
+                            <input
+                              type="number"
+                              value={
+                                editStats[user.id]?.monthlyIncome ??
+                                (user as any).monthlyIncome ??
+                                ""
+                              }
+                              onChange={(e) =>
+                                setEditStats({
+                                  ...editStats,
+                                  [user.id]: {
+                                    ...(editStats[user.id] || {
+                                      totalInvestment: (user as any).totalInvestment || "",
+                                      totalProfit: (user as any).totalProfit || "",
+                                      accountType: (user as any).account_type || "standard",
+                                    }),
+                                    monthlyIncome: e.target.value,
                                   },
                                 })
                               }
@@ -361,7 +422,8 @@ export function AdminPage({ onLogout }: AdminPageProps) {
                                   [user.id]: {
                                     ...(editStats[user.id] || {
                                       totalInvestment:
-                                        (user as any).total_investment || "",
+                                        (user as any).totalInvestment || "",
+                                      totalProfit: (user as any).totalProfit || "",
                                     }),
                                     accountType: e.target.value,
                                   },
